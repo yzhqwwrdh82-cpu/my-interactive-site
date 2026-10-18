@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>האתר שלי | רעיון מפליא</title>
+  <meta name="description" content="אתר חדש, נקי ואינטראקטיבי.">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f7f3;
+      color: #20231f;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+    }
+    nav a { color: inherit; text-decoration: none; }
+    .logo { font-weight: bold; font-size: 20px; }
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 70px 24px;
+    }
+    .tag {
+      border: 1px solid #d6d5cb;
+      padding: 9px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+    h1 {
+      font-size: clamp(42px, 8vw, 88px);
+      letter-spacing: -2px;
+      line-height: 1.08;
+      margin: 28px 0 18px;
+    }
+    .hero p {
+      color: #686a62;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 520px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 16px 25px;
+      background: #20231f;
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+      transition: transform .25s, background .25s;
+    }
+    .button:hover {
+      transform: translateY(-4px);
+      background: #454a40;
+    }
+    section.details {
+      padding: 65px 8%;
+      text-align: center;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+    .card {
+      padding: 30px;
+      border: 1px solid #e5e3db;
+      border-radius: 20px;
+      background: white;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px #20231f12;
+    }
+    footer {
+      text-align: center;
+      padding: 35px;
+      color: #777;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s, transform .7s;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="#">האתר שלי.</a>
+    <a href="#about">לגלות עוד ↙</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <span class="tag">רעיון חדש מתחיל כאן</span>
+      <h1>פחות רעש.<br>יותר חוויה.</h1>
+      <p>מרחב דיגיטלי נקי, עם תנועה עדינה, אינטראקציות קטנות ותשומת לב לכל פרט.</p>
+      <a class="button" href="#about">בואו לגלות</a>
+    </section>
+
+    <section class="details" id="about">
+      <span class="tag">הגישה שלנו</span>
+      <h2>פשוט. מדויק. אינטראקטיבי.</h2>
+      <div class="cards">
+        <article class="card reveal">
+          <h3>תנועה עדינה</h3>
+          <p>מעברים נעימים שמוסיפים חיים בלי להעמיס.</p>
+        </article>
+        <article class="card reveal">
+          <h3>עיצוב נקי</h3>
+          <p>תוכן ברור, מרווחים נכונים וחוויית שימוש נוחה.</p>
+        </article>
+        <article class="card reveal">
+          <h3>נוח בכל מסך</h3>
+          <p>אתר שמותאם למחשב, לטאבלט ולטלפון.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>נבנה באהבה · 2026</footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
