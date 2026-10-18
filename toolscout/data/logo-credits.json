@@ -6,111 +6,129 @@
   "icons": {
     "openai": {
       "title": "OpenAI",
-      "hex": "412991",
-      "license": "CC0-1.0",
-      "source": "https://openai.com/brand"
+      "hex": "000000",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://openai.com/brand",
+      "guidelines": "https://openai.com/brand"
     },
     "claude": {
       "title": "Claude",
       "hex": "D97757",
-      "license": "CC0-1.0",
-      "source": "https://claude.ai"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://claude.ai",
+      "guidelines": null
     },
     "googlegemini": {
       "title": "Google Gemini",
       "hex": "8E75B2",
-      "license": "CC0-1.0",
-      "source": "https://gemini.google.com"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://gemini.google.com",
+      "guidelines": null
     },
     "perplexity": {
       "title": "Perplexity",
       "hex": "1FB8CD",
-      "license": "CC0-1.0",
-      "source": "https://www.perplexity.ai"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.perplexity.ai",
+      "guidelines": null
     },
     "grammarly": {
       "title": "Grammarly",
       "hex": "027E6F",
-      "license": "CC0-1.0",
-      "source": "https://www.grammarly.com/media-assets"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.grammarly.com/media-assets",
+      "guidelines": null
     },
     "deepl": {
       "title": "DeepL",
       "hex": "0F2B46",
-      "license": "CC0-1.0",
-      "source": "https://www.deepl.com/press.html"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.deepl.com/press.html",
+      "guidelines": null
     },
     "canva": {
       "title": "Canva",
       "hex": "00C4CC",
-      "license": "CC0-1.0",
-      "source": "https://www.canva.com"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.canva.com",
+      "guidelines": null
     },
     "figma": {
       "title": "Figma",
       "hex": "F24E1E",
-      "license": "CC0-1.0",
-      "source": "https://www.figma.com/using-the-figma-brand/"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.figma.com/using-the-figma-brand/",
+      "guidelines": "https://www.figma.com/using-the-figma-brand/"
     },
     "adobe": {
       "title": "Adobe",
       "hex": "FF0000",
-      "license": "CC0-1.0",
-      "source": "https://www.adobe.com"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.adobe.com",
+      "guidelines": "https://developer.adobe.com/developer-distribution/creative-cloud/docs/guides/branding_guidelines"
     },
     "blender": {
       "title": "Blender",
       "hex": "E87D0D",
-      "license": "CC0-1.0",
-      "source": "https://www.blender.org/about/logo"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.blender.org/about/logo",
+      "guidelines": "https://www.blender.org/about/logo"
     },
     "elevenlabs": {
       "title": "ElevenLabs",
       "hex": "000000",
-      "license": "CC0-1.0",
-      "source": "https://elevenlabs.io/brand"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://elevenlabs.io/brand",
+      "guidelines": "https://elevenlabs.io/brand"
     },
     "suno": {
       "title": "Suno",
       "hex": "000000",
-      "license": "CC0-1.0",
-      "source": "https://suno.com"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://suno.com",
+      "guidelines": null
     },
     "davinciresolve": {
       "title": "DaVinci Resolve",
       "hex": "233A51",
-      "license": "CC0-1.0",
-      "source": "https://www.blackmagicdesign.com/media/images/davinci-resolve-logo-square"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.blackmagicdesign.com/media/images/davinci-resolve-logo-square",
+      "guidelines": null
     },
     "obsstudio": {
       "title": "OBS Studio",
       "hex": "302E31",
-      "license": "CC0-1.0",
-      "source": "https://commons.wikimedia.org/wiki/File:OBS.svg"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://commons.wikimedia.org/wiki/File:OBS.svg",
+      "guidelines": null
     },
     "audacity": {
       "title": "Audacity",
       "hex": "0000CC",
-      "license": "CC0-1.0",
-      "source": "https://github.com/audacity/audacity/blob/c818449c69193f5311b430fbf600d8d6cbe49047/images/audacity.svg"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://github.com/audacity/audacity/blob/c818449c69193f5311b430fbf600d8d6cbe49047/images/audacity.svg",
+      "guidelines": null
     },
     "githubcopilot": {
       "title": "GitHub Copilot",
       "hex": "000000",
       "license": "MIT",
-      "source": "https://primer.style/foundations/icons/copilot-24"
+      "source": "https://primer.style/foundations/icons/copilot-24",
+      "guidelines": null
     },
     "notion": {
       "title": "Notion",
       "hex": "000000",
-      "license": "CC0-1.0",
-      "source": "https://www.notion.so"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.notion.so",
+      "guidelines": null
     },
     "obsidian": {
       "title": "Obsidian",
       "hex": "7C3AED",
-      "license": "CC0-1.0",
-      "source": "https://obsidian.md"
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://obsidian.md",
+      "guidelines": null
     }
   }
 }

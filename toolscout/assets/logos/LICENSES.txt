@@ -1,0 +1,28 @@
+Brand logos in this folder come from Simple Icons 13.21.0 (https://simpleicons.org/, CC0-1.0 project license).
+Logos are trademarks of their respective owners and are used only to identify the products. Use does not imply endorsement.
+See toolscout/docs/licenses.md for per-brand details and guidelines.
+
+githubcopilot.svg — GitHub Copilot icon from GitHub Primer Octicons (https://primer.style/foundations/icons/copilot-24), licensed under the MIT License:
+
+MIT License
+
+Copyright (c) GitHub Inc.
+(Verify the exact copyright line at https://github.com/primer/octicons/blob/main/LICENSE before launch.)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

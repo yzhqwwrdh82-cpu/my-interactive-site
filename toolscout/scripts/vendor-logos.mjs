@@ -22,6 +22,8 @@ const bySlug = Object.fromEntries(icons.map((t) => [slugOf(t), t]));
 const data = JSON.parse(readFileSync(join(root, 'data/tools.json'), 'utf8'));
 const outDir = join(root, 'assets/logos');
 mkdirSync(outDir, { recursive: true });
+// Brand-guideline overrides: some brands forbid recoloring their mark (e.g. OpenAI: no added colors).
+const COLOR_OVERRIDE = { openai: '000000' };
 const credits = { source: 'Simple Icons', version: pkg.version, url: 'https://simpleicons.org/', projectLicense: 'CC0-1.0', icons: {} };
 
 for (const tool of data.tools) {
@@ -30,9 +32,9 @@ for (const tool of data.tools) {
   if (!icon) { console.warn('missing icon', tool.logo.slug); continue; }
   const raw = readFileSync(join(pkgDir, 'icons', tool.logo.slug + '.svg'), 'utf8');
   const path = raw.match(/<path d="([^"]+)"/)[1];
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path fill="#${icon.hex}" d="${path}"/></svg>\n`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"><path fill="#${COLOR_OVERRIDE[tool.logo.slug] || icon.hex}" d="${path}"/></svg>\n`;
   writeFileSync(join(outDir, tool.logo.slug + '.svg'), svg);
-  credits.icons[tool.logo.slug] = { title: icon.title, hex: icon.hex, license: icon.license ? icon.license.type : 'CC0-1.0', source: icon.source };
+  credits.icons[tool.logo.slug] = { title: icon.title, hex: COLOR_OVERRIDE[tool.logo.slug] || icon.hex, license: icon.license ? icon.license.type : 'CC0-1.0 (project default; not confirmed per icon)', source: icon.source, guidelines: icon.guidelines || null };
   console.log('logo', tool.logo.slug);
 }
 writeFileSync(join(root, 'data/logo-credits.json'), JSON.stringify(credits, null, 2) + '\n');

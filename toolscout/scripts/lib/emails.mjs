@@ -6,10 +6,10 @@ const C = { bg: '#F4F6F5', card: '#FFFFFF', ink: '#10242B', muted: '#4A5D65', li
 
 export const EMAILS = {
   welcome: {
-    he: { subject: 'ברוכים הבאים ל-ToolScout', pre: 'תודה שהצטרפתם. כך תקבלו מאיתנו את המיטב.', h: 'ברוכים הבאים, {{first_name}}',
+    he: { subject: 'פרסומת: ברוכים הבאים ל-ToolScout', pre: 'תודה שהצטרפתם. כך תקבלו מאיתנו את המיטב.', h: 'ברוכים הבאים, {{first_name}}',
       p: ['תודה שהצטרפתם לעדכונים של ToolScout. פעם בחודש נשלח סיכום קצר: כלים חדשים בקטלוג, שינויים בתמחור שבדקנו ומדריכים חדשים.', 'אנחנו בודקים כל פרט מול האתר הרשמי ומציינים מה לא אומת. בלי ספאם, ובלי למכור את הכתובת שלכם.'],
       cta: 'לקטלוג הכלים', ctaUrl: '{{catalog_url}}' },
-    en: { subject: 'Welcome to ToolScout', pre: "Thanks for joining. Here's what to expect.", h: 'Welcome, {{first_name}}',
+    en: { subject: 'פרסומת | Advertisement: Welcome to ToolScout', pre: "Thanks for joining. Here's what to expect.", h: 'Welcome, {{first_name}}',
       p: ['Thanks for subscribing to ToolScout updates. Once a month we send a short round-up: new tools in the catalog, pricing changes we checked, and new guides.', "We check every detail against the official site and mark what we couldn't verify. No spam, and we never sell your address."],
       cta: 'Browse the catalog', ctaUrl: '{{catalog_url}}' }
   },
@@ -22,10 +22,10 @@ export const EMAILS = {
       cta: 'Confirm subscription', ctaUrl: '{{confirm_url}}', note: 'This link is valid for 48 hours.' }
   },
   update: {
-    he: { subject: 'ToolScout: מה חדש החודש', pre: 'כלים חדשים, שינויי תמחור ומדריך חדש.', h: 'מה חדש החודש',
+    he: { subject: 'פרסומת: מה חדש החודש ב-ToolScout', pre: 'כלים חדשים, שינויי תמחור ומדריך חדש.', h: 'מה חדש החודש',
       p: ['{{intro_text}}'], list: ['{{item_1}}', '{{item_2}}', '{{item_3}}'],
       cta: 'לכל העדכונים', ctaUrl: '{{updates_url}}' },
-    en: { subject: "ToolScout: what's new this month", pre: 'New tools, pricing changes and a new guide.', h: "What's new this month",
+    en: { subject: "פרסומת | Advertisement: what's new at ToolScout", pre: 'New tools, pricing changes and a new guide.', h: "What's new this month",
       p: ['{{intro_text}}'], list: ['{{item_1}}', '{{item_2}}', '{{item_3}}'],
       cta: 'See all updates', ctaUrl: '{{updates_url}}' }
   },
@@ -48,8 +48,8 @@ export const EMAILS = {
 };
 
 const FOOT = {
-  he: { why: 'קיבלתם את ההודעה כי נרשמתם לעדכונים מ-ToolScout.', unsub: 'הסרה מהרשימה', prefs: 'ניהול העדפות', sender: '{{sender_name}} · {{sender_address}}', transactional: 'זו הודעת שירות שקשורה לפנייה או לחשבון שלכם.' },
-  en: { why: 'You received this because you subscribed to ToolScout updates.', unsub: 'Unsubscribe', prefs: 'Manage preferences', sender: '{{sender_name}} · {{sender_address}}', transactional: 'This is a service message about your request or account.' }
+  he: { why: 'קיבלתם את ההודעה כי נרשמתם לעדכונים מ-ToolScout. אפשר לסרב לקבל דברי פרסומת בכל עת: בלחיצה על "הסרה מהרשימה", או במענה למייל הזה עם המילה "הסר".', unsub: 'הסרה מהרשימה', prefs: 'ניהול העדפות', sender: '{{sender_name}} · {{sender_address}} · {{sender_email}} · {{website_url}}', transactional: 'זו הודעת שירות שקשורה לפנייה או לחשבון שלכם.' },
+  en: { why: 'You received this because you subscribed to ToolScout updates. You can refuse promotional emails at any time: click "Unsubscribe", or reply to this email with the word "unsubscribe".', unsub: 'Unsubscribe', prefs: 'Manage preferences', sender: '{{sender_name}} · {{sender_address}} · {{sender_email}} · {{website_url}}', transactional: 'This is a service message about your request or account.' }
 };
 
 export function emailHtml(name, lang) {

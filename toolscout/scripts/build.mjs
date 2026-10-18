@@ -73,7 +73,9 @@ const catalog = {
   platforms: data.platforms.map((p) => ({ id: p.id, he: p.he, en: p.en })),
   tools: data.tools.map((t) => ({
     id: t.id, name: t.name, maker: t.maker, category: t.category, pricing: t.pricing, uses: t.uses,
-    platforms: t.platforms, openSource: t.openSource, url: t.url, pricingUrl: t.pricingUrl,
+    platforms: t.platforms, openSource: t.openSource, pricingUrl: t.pricingUrl,
+    url: (t.affiliate && t.affiliate.status === 'approved' && t.affiliate.url) ? t.affiliate.url : t.url,
+    paidLink: !!(t.affiliate && t.affiliate.status === 'approved' && t.affiliate.url),
     logo: t.logo ? t.logo.slug : null, monogram: t.monogram || null, checkedAt: t.checkedAt, addedAt: t.addedAt,
     description: pick(t.description), audience: t.audience,
     pros: t.pros.map(pick), cons: t.cons.map(pick), verification: { pricing: t.verification.pricing, platforms: t.verification.platforms }

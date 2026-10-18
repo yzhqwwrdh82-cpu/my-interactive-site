@@ -40,7 +40,8 @@ export const S = {
     card: {
       details: 'פרטים', visit: 'לאתר הרשמי', newTab: '(נפתח בחלון חדש)',
       fav: 'הוספה למועדפים', unfav: 'הסרה מהמועדפים', compare: 'השוואה',
-      verified: 'תמחור אומת', unverified: 'תמחור לא אומת', openSource: 'קוד פתוח', pick: 'בחירת העורכים', by: 'מאת'
+      verified: 'תמחור אומת', unverified: 'תמחור לא אומת', openSource: 'קוד פתוח', pick: 'בחירת העורכים', by: 'מאת',
+      paidLink: 'קישור בתשלום: ייתכן שנקבל עמלה על רכישה דרכו', paidShort: 'קישור בתשלום', sponsored: 'פרסומת'
     },
     catalog: {
       title: 'קטלוג הכלים | ToolScout', desc: 'חיפוש וסינון של כלי AI ותוכנות לפי קטגוריה, שימוש, מחיר ופלטפורמה.',
@@ -79,10 +80,11 @@ export const S = {
     },
     guides: { title: 'מדריכים | ToolScout', desc: 'מדריכים קצרים לבחירת כלי AI ותוכנות, על בסיס המידע שבקטלוג.', h1: 'מדריכים', lead: 'מדריכים קצרים שמבוססים על הנתונים שבקטלוג.', read: 'לקריאה', minutes: (m) => `${m} דקות קריאה`, toolsIn: 'הכלים במדריך', updated: 'עודכן' },
     contact: {
-      title: 'יצירת קשר | ToolScout', desc: 'יצירת קשר עם ToolScout.', h1: 'יצירת קשר', lead: 'שאלה, תיקון למידע בקטלוג או הצעה לכלי חדש.',
+      title: 'יצירת קשר | ToolScout', desc: 'יצירת קשר עם ToolScout: שאלות, תיקונים למידע בקטלוג והצעות לכלים חדשים.', h1: 'יצירת קשר', lead: 'שאלה, תיקון למידע בקטלוג או הצעה לכלי חדש.',
       demo: 'מצב הדגמה: הטופס עדיין לא מחובר לשרת. ההודעה לא תישלח ולא תישמר.',
       name: 'שם', email: 'אימייל', topic: 'נושא', topics: ['שאלה כללית', 'תיקון מידע בקטלוג', 'הצעה לכלי חדש', 'שיתוף פעולה', 'נגישות'],
-      message: 'הודעה', consent: 'אני מסכים/ה שהפרטים ישמשו רק כדי לענות לפנייה.', privacy: 'מדיניות הפרטיות',
+      message: 'הודעה', consent: 'אני מסכים/ה שהפרטים ישמשו רק כדי לענות לפנייה.',
+      notice: 'מסירת הפרטים אינה חובה, אבל בלעדיהם לא נוכל לענות. הם ישמשו רק כדי לטפל בפנייה, ויישמרו אצל [להשלמה: ספק הטפסים או מערכת התמיכה]. אפשר לבקש לעיין בהם או לתקן אותם.', privacy: 'מדיניות הפרטיות',
       send: 'שליחת הפנייה', required: 'שדה חובה',
       errName: 'נא למלא שם.', errEmail: 'נא למלא כתובת אימייל תקינה.', errMessage: 'נא לכתוב הודעה של 10 תווים לפחות.', errConsent: 'נא לאשר את השימוש בפרטים.',
       errSummary: 'יש לתקן את השדות המסומנים.',
@@ -92,7 +94,8 @@ export const S = {
     },
     newsletter: {
       title: 'עדכונים מ-ToolScout', lead: 'סיכום חודשי של כלים חדשים ושינויים בתמחור. בלי ספאם, וההסרה בלחיצה אחת.',
-      email: 'כתובת אימייל', consent: 'אני רוצה לקבל עדכונים מ-ToolScout באימייל. אפשר להסיר את ההרשמה בכל עת.',
+      email: 'כתובת אימייל', consent: 'אני מסכים/ה לקבל מ-ToolScout באימייל עדכונים ודברי פרסומת, בערך פעם בחודש. אפשר להסיר את ההרשמה בכל עת.',
+      notice: 'מסירת הכתובת אינה חובה. היא תשמש רק לשליחת העדכונים, ותישמר אצל ספק הדיוור [להשלמה: שם הספק] עד שתסירו את ההרשמה.',
       submit: 'הרשמה לעדכונים', demo: 'בהדגמה', doubleOptIn: 'אחרי ההרשמה יישלח אימייל לאישור הכתובת. רק אחרי האישור תצטרפו לרשימה.',
       notConnected: 'ההרשמה עדיין לא מחוברת לשירות דיוור. הכתובת לא נשמרה.', errEmail: 'נא למלא כתובת אימייל תקינה.', errConsent: 'נא לסמן הסכמה לקבלת עדכונים.'
     },
@@ -172,7 +175,8 @@ export const S = {
     card: {
       details: 'Details', visit: 'Official site', newTab: '(opens in a new tab)',
       fav: 'Add to favorites', unfav: 'Remove from favorites', compare: 'Compare',
-      verified: 'Pricing verified', unverified: 'Pricing not verified', openSource: 'Open source', pick: "Editors' pick", by: 'by'
+      verified: 'Pricing verified', unverified: 'Pricing not verified', openSource: 'Open source', pick: "Editors' pick", by: 'by',
+      paidLink: 'Paid link: we may earn a commission if you buy through it', paidShort: 'Paid link', sponsored: 'Advertisement'
     },
     catalog: {
       title: 'Tool catalog | ToolScout', desc: 'Search and filter AI tools and software by category, use, price and platform.',
@@ -211,10 +215,11 @@ export const S = {
     },
     guides: { title: 'Guides | ToolScout', desc: 'Short guides to choosing AI tools and software, based on the catalog.', h1: 'Guides', lead: 'Short guides based on the information in the catalog.', read: 'Read', minutes: (m) => `${m} min read`, toolsIn: 'Tools in this guide', updated: 'Updated' },
     contact: {
-      title: 'Contact | ToolScout', desc: 'Contact ToolScout.', h1: 'Contact', lead: 'A question, a correction to the catalog or a tool suggestion.',
+      title: 'Contact | ToolScout', desc: 'Contact ToolScout with questions, catalog corrections or suggestions for new tools.', h1: 'Contact', lead: 'A question, a correction to the catalog or a tool suggestion.',
       demo: "Demo mode: this form isn't connected to a server yet. Your message won't be sent or saved.",
       name: 'Name', email: 'Email', topic: 'Topic', topics: ['General question', 'Catalog correction', 'Suggest a tool', 'Partnership', 'Accessibility'],
-      message: 'Message', consent: 'I agree that my details are used only to reply to this message.', privacy: 'Privacy policy',
+      message: 'Message', consent: 'I agree that my details are used only to reply to this message.',
+      notice: "Giving your details is optional, but without them we can't reply. They'll be used only to handle your request, and kept by [to be completed: form or support provider]. You can ask to access or correct them.", privacy: 'Privacy policy',
       send: 'Send message', required: 'Required',
       errName: 'Enter your name.', errEmail: 'Enter a valid email address.', errMessage: 'Write a message of at least 10 characters.', errConsent: 'Confirm how your details are used.',
       errSummary: 'Fix the highlighted fields.',
@@ -224,7 +229,8 @@ export const S = {
     },
     newsletter: {
       title: 'Updates from ToolScout', lead: 'A monthly round-up of new tools and pricing changes. No spam, and you can unsubscribe with one click.',
-      email: 'Email address', consent: 'I want to receive email updates from ToolScout. I can unsubscribe at any time.',
+      email: 'Email address', consent: 'I agree to receive updates and promotional emails from ToolScout, about once a month. I can unsubscribe at any time.',
+      notice: 'Giving your address is optional. It will be used only to send updates, and kept by the email provider [to be completed: provider name] until you unsubscribe.',
       submit: 'Subscribe to updates', demo: 'Demo', doubleOptIn: "After you subscribe, we'll send an email to confirm your address. You join the list only after you confirm.",
       notConnected: "Subscribing isn't connected to an email service yet. Your address was not saved.", errEmail: 'Enter a valid email address.', errConsent: 'Tick the box to agree to receive updates.'
     },

@@ -376,7 +376,7 @@
         row(R.pros, function (t) { return facts(t.pros, 'pros'); }) +
         row(R.cons, function (t) { return facts(t.cons, 'cons'); }) +
         row(R.checked, function (t) { return '<time datetime="' + t.checkedAt + '">' + escapeHtml(fmt(t.checkedAt)) + '</time>'; }) +
-        row(R.links, function (t) { return '<a class="ext-link" href="' + escapeHtml(t.url) + '" target="_blank" rel="noopener">' + escapeHtml(S.visit) + ICON(EXT) + ext + '</a><br><a class="ext-link" href="' + escapeHtml(t.pricingUrl) + '" target="_blank" rel="noopener">' + escapeHtml(K.pricingPage) + ICON(EXT) + ext + '</a>'; }) +
+        row(R.links, function (t) { return (t.paidLink ? '<span class="tag tag-paid">' + escapeHtml(S.paidShort) + '<span class="sr-only">: ' + escapeHtml(S.paidLink) + '</span></span> ' : '') + '<a class="ext-link" href="' + escapeHtml(t.url) + '" target="_blank" rel="' + (t.paidLink ? 'sponsored noopener' : 'noopener') + '">' + escapeHtml(S.visit) + ICON(EXT) + ext + '</a><br><a class="ext-link" href="' + escapeHtml(t.pricingUrl) + '" target="_blank" rel="noopener">' + escapeHtml(K.pricingPage) + ICON(EXT) + ext + '</a>'; }) +
         '</tbody></table></div>';
     }
     getCatalog().then(function (cat) {

@@ -729,3 +729,8 @@ body.has-tray .chat-fab { bottom: 92px; }
 @media (max-width: 720px) { .books-filters .filters-body { grid-template-columns: 1fr; } }
 .books-filters .filters-body { max-height: none; overflow: visible; }
 .typing b { position: absolute; }
+.ext-wrap { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.tag-paid { color: var(--warn); background: var(--warn-soft); border-color: transparent; position: relative; z-index: 1; }
+.paid-note { color: var(--warn); }
+.todo { display: block; padding: 10px 14px; margin: 0 0 16px; border-radius: var(--r-sm); background: var(--warn-soft); color: var(--warn); border-inline-start: 4px solid var(--signal); font-weight: 500; font-size: var(--fs-1); }
+code.key { font: 500 .9em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; padding: 1px 5px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); unicode-bidi: isolate; }

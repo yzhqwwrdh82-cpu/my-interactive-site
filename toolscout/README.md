@@ -18,7 +18,7 @@ The original `index.html` and `README.md` at the repository root are untouched. 
 | `scripts/vendor-logos.mjs` | Copies brand logos from a local Simple Icons package |
 | `scripts/lib/` | Templates, UI strings, editorial content (guides, legal pages, comparisons), emails, books |
 | `assets/` | CSS, JS, self-hosted Rubik font (OFL), logos, favicon, share image |
-| `docs/` | Data model, site map and user journeys, communications plan, business roadmap |
+| `docs/` | Data model, site map and user journeys, communications plan, business roadmap, **legal pre-launch audit** (`legal-audit.md`), **credits and licenses** (`licenses.md`) |
 | Generated output | `index.html`, `catalog.html`, `compare*.html`, `tools/`, `category/`, `guides/`, `books.html`, legal pages, `contact.html`, `account.html`, `service-preview.html`, `emails/`, `en/…` |
 
 ## Workflow

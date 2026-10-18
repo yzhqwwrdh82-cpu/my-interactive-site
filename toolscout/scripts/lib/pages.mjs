@@ -12,7 +12,17 @@ const platName = (data, id, lang) => data.platforms.find((p) => p.id === id)[lan
 const ext = (lang) => `<span class="sr-only"> ${esc(S[lang].card.newTab)}</span>`;
 
 function richText(blocks) {
-  return blocks.map(([tag, text]) => `<${tag}>${esc(text)}</${tag}>`).join('\n');
+  return blocks.map(([tag, text]) => tag === 'todo' ? `<p class="todo">${esc(text)}</p>` : `<${tag}>${esc(text).replace(/\b(ts-(?:theme|favs|compare))\b/g, '<code class="key" dir="ltr">$1</code>')}</${tag}>`).join('\n');
+}
+
+// Outbound link: approved affiliate URL only when affiliate.status === 'approved' (validator enforces).
+export function outLink(tool) {
+  const a = tool.affiliate || {};
+  const paid = a.status === 'approved' && !!a.url;
+  return { href: paid ? a.url : tool.url, rel: paid ? 'sponsored noopener' : 'noopener', paid };
+}
+function paidNote(tool, lang) {
+  return outLink(tool).paid ? `<span class="tag tag-paid" title="${esc(S[lang].card.paidLink)}">${esc(S[lang].card.paidShort)}<span class="sr-only">: ${esc(S[lang].card.paidLink)}</span></span>` : '';
 }
 
 export function priceBadge(tool, data, lang) {
@@ -49,7 +59,7 @@ export function card(tool, data, c, { headingLevel = 3 } = {}) {
     </div>
     <div class="card-actions">
       <label class="cmp js-only"><input type="checkbox" data-compare="${tool.id}"><span>${esc(s.compare)}</span></label>
-      <a class="ext-link" href="${esc(tool.url)}" target="_blank" rel="noopener">${esc(s.visit)}${icon('ext')}${ext(L)}<span class="sr-only"> – ${esc(tool.name)}</span></a>
+      <span class="ext-wrap">${paidNote(tool, L)}<a class="ext-link" href="${esc(outLink(tool).href)}" target="_blank" rel="${outLink(tool).rel}">${esc(s.visit)}${icon('ext')}${ext(L)}<span class="sr-only"> – ${esc(tool.name)}</span></a></span>
     </div>
   </article>
 </li>`;
@@ -180,6 +190,7 @@ export function newsletterBlock(c, headingId, { compact = false } = {}) {
     </div>
     <p class="field-err" id="${id}-consent-err" hidden></p>
     <p class="hint" id="${id}-dbl">${esc(s.doubleOptIn)}</p>
+    <p class="hint">${esc(s.notice)} <a href="${c.u('privacy.html')}">${esc(S[c.lang].contact.privacy)}</a></p>
     <button type="submit" class="btn btn-primary" disabled data-enable-js>${esc(s.submit)}</button>
     <p class="form-status" role="status" data-status data-not-connected="${esc(s.notConnected)}" hidden></p>
   </form>
@@ -323,7 +334,8 @@ export function toolPage(c, data, site, tool) {
   </div>
   <aside class="tool-aside">
     <div class="panel sticky">
-      <a class="btn btn-primary block" href="${esc(tool.url)}" target="_blank" rel="noopener">${esc(s.card.visit)}${icon('ext')}${ext(L)}</a>
+      <a class="btn btn-primary block" href="${esc(outLink(tool).href)}" target="_blank" rel="${outLink(tool).rel}">${esc(s.card.visit)}${icon('ext')}${ext(L)}</a>
+      ${outLink(tool).paid ? `<p class="fine paid-note">${esc(s.card.paidLink)}</p>` : ''}
       <a class="btn btn-ghost block" href="${esc(tool.pricingUrl)}" target="_blank" rel="noopener">${esc(k.pricingPage)}${icon('ext')}${ext(L)}</a>
       <div class="aside-actions js-only">
         <button type="button" class="btn btn-ghost sm" data-fav="${tool.id}" aria-pressed="false" data-l-add="${esc(s.card.fav)}" data-l-remove="${esc(s.card.unfav)}">${icon('heart')}<span data-fav-label>${esc(s.card.fav)}</span></button>
@@ -337,7 +349,7 @@ export function toolPage(c, data, site, tool) {
       </dl>
       <h3 class="aside-h">${esc(k.status)}</h3>
       <ul class="status-list"><li><span>${esc(k.fieldPricing)}</span>${status(tool.verification.pricing)}</li><li><span>${esc(k.fieldPlatforms)}</span>${status(tool.verification.platforms)}</li></ul>
-      <p class="fine">${esc(k.affiliateNone)}</p>
+      ${outLink(tool).paid ? '' : `<p class="fine">${esc(k.affiliateNone)}</p>`}
       <p class="fine">${esc(tool.logo ? k.logoCredit : k.noLogo)}</p>
     </div>
   </aside>
@@ -407,7 +419,7 @@ export function compareTable(tools, data, c) {
   ${row(r.pros, (x) => facts(x.pros, 'pros'))}
   ${row(r.cons, (x) => facts(x.cons, 'cons'))}
   ${row(r.checked, (x) => `<time datetime="${x.checkedAt}">${esc(fmtDate(x.checkedAt, L))}</time>`)}
-  ${row(r.links, (x) => `<a class="ext-link" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(s.card.visit)}${icon('ext')}${ext(L)}</a><br><a class="ext-link" href="${esc(x.pricingUrl)}" target="_blank" rel="noopener">${esc(k.pricingPage)}${icon('ext')}${ext(L)}</a>`)}
+  ${row(r.links, (x) => `${paidNote(x, L)}<a class="ext-link" href="${esc(outLink(x).href)}" target="_blank" rel="${outLink(x).rel}">${esc(s.card.visit)}${icon('ext')}${ext(L)}</a><br><a class="ext-link" href="${esc(x.pricingUrl)}" target="_blank" rel="noopener">${esc(k.pricingPage)}${icon('ext')}${ext(L)}</a>`)}
   </tbody></table></div>`;
 }
 
@@ -502,7 +514,7 @@ export function legalPage(c, data, site, key) {
   return page(c, data, site, { title: `${doc.title[L]} | ToolScout`, desc: doc.body[L].find((b) => b[0] === 'p')[1].slice(0, 155), page: 'legal' }, `
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[null, doc.title[L]]])}<h1>${esc(doc.title[L])}</h1>
   <p class="meta-line">${esc(s.guides.updated)} <time datetime="${doc.updated}">${esc(fmtDate(doc.updated, L))}</time></p>
-  ${key !== 'disclosure' ? `<p class="callout">${icon('info')}${esc(s.draft)}</p>` : ''}</div></section>
+</div></section>
 <article class="wrap narrow prose">${richText(doc.body[L])}</article>
 `);
 }
@@ -527,6 +539,7 @@ export function contactPage(c, data, site) {
     ${f('cf-msg', k.message, `<textarea id="cf-msg" name="message" rows="6" required minlength="10" maxlength="2000" aria-describedby="cf-msg-err" data-err="${esc(k.errMessage)}"></textarea>`)}
     <div class="check"><input id="cf-consent" name="consent" type="checkbox" required aria-describedby="cf-consent-err" data-err="${esc(k.errConsent)}"><label for="cf-consent">${esc(k.consent)} <a href="${c.u('privacy.html')}">${esc(k.privacy)}</a></label></div>
     <p class="field-err" id="cf-consent-err" hidden></p>
+    <p class="hint">${esc(k.notice)}</p>
     <button type="submit" class="btn btn-primary" disabled data-enable-js>${icon('send')}${esc(k.send)}</button>
     <p class="form-status" role="status" data-status data-not-connected="${esc(k.notSent)}" hidden></p>
   </form>
