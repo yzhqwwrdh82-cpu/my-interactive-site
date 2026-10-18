@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ToolScout | כלי AI ותוכנות במקום אחד</title>
+  <meta name="description" content="קטלוג נבדק של כלי AI ותוכנות: מה כל כלי עושה, האם יש גרסה חינמית וקישור לאתר הרשמי.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#EEF2F3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1B20" media="(prefers-color-scheme: dark)">
+  <link rel="alternate" hreflang="en" href="en/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ToolScout">
+  <meta property="og:title" content="ToolScout | כלי AI ותוכנות במקום אחד">
+  <meta property="og:description" content="קטלוג נבדק של כלי AI ותוכנות: מה כל כלי עושה, האם יש גרסה חינמית וקישור לאתר הרשמי.">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:image" content="assets/og-image.png">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/styles.css?v=0f5a1d22">
+  <script>
+    // Theme + JS flag before paint (no flash). Storage wrapped: it may be blocked.
+    (function () {
+      var d = document.documentElement; d.classList.add('js');
+      try { var th = localStorage.getItem('ts-theme'); if (th === 'light' || th === 'dark') d.dataset.theme = th; } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#results">דילוג לתוצאות</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="" aria-label="ToolScout">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="14" cy="14" r="9" fill="none" stroke="currentColor" stroke-width="3"/><path d="M14 9v10M9 14h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M21 21l7 7" stroke="var(--signal)" stroke-width="4" stroke-linecap="round"/></svg>
+        <span>ToolScout</span>
+      </a>
+      <nav class="header-actions" aria-label="הגדרות">
+        <button type="button" class="icon-btn js-only" id="theme-toggle" aria-label="ערכת צבעים: לפי המערכת"
+          data-l-system="לפי המערכת" data-l-light="בהירה" data-l-dark="כהה" data-l-label="ערכת צבעים">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>
+        </button>
+        <a class="lang-switch" href="en/" hreflang="en" lang="en" aria-label="Switch to English">English</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <h1 id="hero-title">כלי AI ותוכנות, במקום אחד.</h1>
+      <p class="lead">קטלוג קצר ונבדק של כלים אמיתיים: מה הם עושים, אם יש גרסה חינמית, וקישור ישיר לאתר הרשמי.</p>
+      <form class="search js-only" role="search" action="" onsubmit="return false">
+        <label class="sr-only" for="q">חיפוש כלי</label>
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5l5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="למשל: תרגום, וידאו, עורך קוד…" aria-describedby="result-count">
+        <kbd class="kbd-hint" aria-hidden="true">/</kbd>
+        <button type="button" class="clear" id="clear" aria-label="ניקוי החיפוש" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </form>
+    </section>
+
+    <section class="catalog wrap" aria-labelledby="catalog-title">
+      <h2 class="sr-only" id="catalog-title">קטלוג הכלים</h2>
+      <div class="filters js-only">
+        <div class="filter-group" role="group" aria-label="קטגוריה">
+          <button type="button" class="chip" data-filter="cat" data-value="all" aria-pressed="true">הכול <span class="chip-n">15</span></button>
+          <button type="button" class="chip" data-filter="cat" data-value="assistants" aria-pressed="false">עוזרי AI <span class="chip-n">4</span></button>
+          <button type="button" class="chip" data-filter="cat" data-value="design" aria-pressed="false">עיצוב ותמונות <span class="chip-n">3</span></button>
+          <button type="button" class="chip" data-filter="cat" data-value="code" aria-pressed="false">פיתוח וקוד <span class="chip-n">3</span></button>
+          <button type="button" class="chip" data-filter="cat" data-value="productivity" aria-pressed="false">כתיבה ופרודוקטיביות <span class="chip-n">3</span></button>
+          <button type="button" class="chip" data-filter="cat" data-value="media" aria-pressed="false">אודיו ווידאו <span class="chip-n">2</span></button>
+        </div>
+        <div class="filter-row">
+          <div class="segmented" role="group" aria-label="מחיר">
+          <button type="button" class="seg" data-filter="price" data-value="all" aria-pressed="true">כל המחירים</button>
+          <button type="button" class="seg" data-filter="price" data-value="free" aria-pressed="false">חינמי</button>
+          <button type="button" class="seg" data-filter="price" data-value="freemium" aria-pressed="false">חינמי + תוכניות בתשלום</button>
+          <button type="button" class="seg" data-filter="price" data-value="paid" aria-pressed="false">בתשלום בלבד</button>
+          </div>
+          <p class="result-count" id="result-count" aria-live="polite" data-tpl="{n} כלים" data-one="כלי אחד" data-zero="אין תוצאות">15 כלים</p>
+        </div>
+      </div>
+
+      <ul class="grid" id="results" tabindex="-1">
+      <li class="tool" data-cat="assistants" data-price="freemium" data-search="ChatGPT OpenAI עוזר ה-AI של OpenAI לשיחה, כתיבה, ניתוח מידע ומענה על שאלות. OpenAI&#39;s AI assistant for conversation, writing, analysis and answering questions. צ&#39;אט כתיבה ניתוח chat writing analysis עוזרי AI AI assistants">
+        <article aria-labelledby="n-chatgpt">
+          <div class="tool-head">
+            <span class="mono" data-cat="assistants" aria-hidden="true">CH</span>
+            <div>
+              <h3 class="tool-name" id="n-chatgpt" data-hl>ChatGPT</h3>
+              <p class="tool-meta">עוזרי AI</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>עוזר ה-AI של OpenAI לשיחה, כתיבה, ניתוח מידע ומענה על שאלות.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-chatgpt">
+            <dl>
+              <dt>מאת</dt><dd>OpenAI</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>צ&#39;אט</li><li>כתיבה</li><li>ניתוח</li></ul>
+            <a class="text-link" href="https://chatgpt.com/pricing" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-chatgpt">פרטים</button>
+            <a class="btn" href="https://chatgpt.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – ChatGPT (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="assistants" data-price="freemium" data-search="Claude Anthropic עוזר ה-AI של Anthropic לכתיבה, ניתוח, תכנות ועבודה עם מסמכים ארוכים. Anthropic&#39;s AI assistant for writing, analysis, coding and working with long documents. צ&#39;אט כתיבה קוד chat writing coding עוזרי AI AI assistants">
+        <article aria-labelledby="n-claude">
+          <div class="tool-head">
+            <span class="mono" data-cat="assistants" aria-hidden="true">CL</span>
+            <div>
+              <h3 class="tool-name" id="n-claude" data-hl>Claude</h3>
+              <p class="tool-meta">עוזרי AI</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>עוזר ה-AI של Anthropic לכתיבה, ניתוח, תכנות ועבודה עם מסמכים ארוכים.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-claude">
+            <dl>
+              <dt>מאת</dt><dd>Anthropic</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>צ&#39;אט</li><li>כתיבה</li><li>קוד</li></ul>
+            <a class="text-link" href="https://claude.com/pricing" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-claude">פרטים</button>
+            <a class="btn" href="https://claude.ai/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Claude (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="assistants" data-price="freemium" data-search="Gemini Google עוזר ה-AI של Google לכתיבה, תכנון וסיעור מוחות, עם כניסה בחשבון Google. Google&#39;s AI assistant for writing, planning and brainstorming, using your Google account. צ&#39;אט תכנון גוגל chat planning google עוזרי AI AI assistants">
+        <article aria-labelledby="n-gemini">
+          <div class="tool-head">
+            <span class="mono" data-cat="assistants" aria-hidden="true">GE</span>
+            <div>
+              <h3 class="tool-name" id="n-gemini" data-hl>Gemini</h3>
+              <p class="tool-meta">עוזרי AI</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>עוזר ה-AI של Google לכתיבה, תכנון וסיעור מוחות, עם כניסה בחשבון Google.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-gemini">
+            <dl>
+              <dt>מאת</dt><dd>Google</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>צ&#39;אט</li><li>תכנון</li><li>גוגל</li></ul>
+            <a class="text-link" href="https://gemini.google/subscriptions/" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-gemini">פרטים</button>
+            <a class="btn" href="https://gemini.google.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Gemini (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="assistants" data-price="freemium" data-search="Perplexity Perplexity מנוע תשובות מבוסס AI שמחפש ברשת ומציג את המקורות לכל תשובה. An AI answer engine that searches the web and shows the sources behind each answer. חיפוש מקורות מחקר search sources research עוזרי AI AI assistants">
+        <article aria-labelledby="n-perplexity">
+          <div class="tool-head">
+            <span class="mono" data-cat="assistants" aria-hidden="true">PE</span>
+            <div>
+              <h3 class="tool-name" id="n-perplexity" data-hl>Perplexity</h3>
+              <p class="tool-meta">עוזרי AI</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>מנוע תשובות מבוסס AI שמחפש ברשת ומציג את המקורות לכל תשובה.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-perplexity">
+            <dl>
+              <dt>מאת</dt><dd>Perplexity</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>חיפוש</li><li>מקורות</li><li>מחקר</li></ul>
+            <a class="text-link" href="https://www.perplexity.ai/hub/pricing" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-perplexity">פרטים</button>
+            <a class="btn" href="https://www.perplexity.ai/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Perplexity (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="design" data-price="paid" data-search="Midjourney Midjourney יצירת תמונות ואיורים מתיאור טקסט. כל התוכניות הן מנוי בתשלום. Creates images and illustrations from text prompts. All plans are paid subscriptions. תמונות אמנות יצירה images art generation עיצוב ותמונות Design &amp; images">
+        <article aria-labelledby="n-midjourney">
+          <div class="tool-head">
+            <span class="mono" data-cat="design" aria-hidden="true">MI</span>
+            <div>
+              <h3 class="tool-name" id="n-midjourney" data-hl>Midjourney</h3>
+              <p class="tool-meta">עיצוב ותמונות</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>יצירת תמונות ואיורים מתיאור טקסט. כל התוכניות הן מנוי בתשלום.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="paid">בתשלום בלבד</span>
+            
+          </div>
+          <div class="tool-details" id="d-midjourney">
+            <dl>
+              <dt>מאת</dt><dd>Midjourney</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>תמונות</li><li>אמנות</li><li>יצירה</li></ul>
+            <a class="text-link" href="https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-midjourney">פרטים</button>
+            <a class="btn" href="https://www.midjourney.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Midjourney (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="design" data-price="freemium" data-search="Canva Canva פלטפורמת עיצוב אונליין לגרפיקה, מצגות ופוסטים, עם כלי AI מובנים. An online design platform for graphics, presentations and social posts, with built-in AI tools. גרפיקה מצגות רשתות graphics presentations social עיצוב ותמונות Design &amp; images">
+        <article aria-labelledby="n-canva">
+          <div class="tool-head">
+            <span class="mono" data-cat="design" aria-hidden="true">CA</span>
+            <div>
+              <h3 class="tool-name" id="n-canva" data-hl>Canva</h3>
+              <p class="tool-meta">עיצוב ותמונות</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>פלטפורמת עיצוב אונליין לגרפיקה, מצגות ופוסטים, עם כלי AI מובנים.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-canva">
+            <dl>
+              <dt>מאת</dt><dd>Canva</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>גרפיקה</li><li>מצגות</li><li>רשתות</li></ul>
+            <a class="text-link" href="https://www.canva.com/pricing/" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-canva">פרטים</button>
+            <a class="btn" href="https://www.canva.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Canva (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="design" data-price="freemium" data-search="Figma Figma עיצוב ממשקים ואבות-טיפוס בדפדפן, עם עבודה משותפת בזמן אמת. Interface design and prototyping in the browser, with real-time collaboration. UI אב-טיפוס שיתוף ui prototyping collaboration עיצוב ותמונות Design &amp; images">
+        <article aria-labelledby="n-figma">
+          <div class="tool-head">
+            <span class="mono" data-cat="design" aria-hidden="true">FI</span>
+            <div>
+              <h3 class="tool-name" id="n-figma" data-hl>Figma</h3>
+              <p class="tool-meta">עיצוב ותמונות</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>עיצוב ממשקים ואבות-טיפוס בדפדפן, עם עבודה משותפת בזמן אמת.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-figma">
+            <dl>
+              <dt>מאת</dt><dd>Figma</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>UI</li><li>אב-טיפוס</li><li>שיתוף</li></ul>
+            <a class="text-link" href="https://www.figma.com/pricing/" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-figma">פרטים</button>
+            <a class="btn" href="https://www.figma.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Figma (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="code" data-price="freemium" data-search="GitHub Copilot GitHub עוזר AI לכתיבת קוד שעובד בתוך עורך הקוד וב-GitHub. An AI coding assistant that works inside your code editor and on GitHub. השלמת קוד עורך GitHub code completion editor github פיתוח וקוד Code &amp; development">
+        <article aria-labelledby="n-github-copilot">
+          <div class="tool-head">
+            <span class="mono" data-cat="code" aria-hidden="true">GC</span>
+            <div>
+              <h3 class="tool-name" id="n-github-copilot" data-hl>GitHub Copilot</h3>
+              <p class="tool-meta">פיתוח וקוד</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>עוזר AI לכתיבת קוד שעובד בתוך עורך הקוד וב-GitHub.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-github-copilot">
+            <dl>
+              <dt>מאת</dt><dd>GitHub</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>השלמת קוד</li><li>עורך</li><li>GitHub</li></ul>
+            <a class="text-link" href="https://github.com/features/copilot/plans" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-github-copilot">פרטים</button>
+            <a class="btn" href="https://github.com/features/copilot" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – GitHub Copilot (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="code" data-price="freemium" data-search="Cursor Anysphere עורך קוד שנבנה סביב AI, לכתיבה, עריכה והבנה של קוד. A code editor built around AI for writing, editing and understanding code. עורך קוד סוכן AI code editor agent ai פיתוח וקוד Code &amp; development">
+        <article aria-labelledby="n-cursor">
+          <div class="tool-head">
+            <span class="mono" data-cat="code" aria-hidden="true">CU</span>
+            <div>
+              <h3 class="tool-name" id="n-cursor" data-hl>Cursor</h3>
+              <p class="tool-meta">פיתוח וקוד</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>עורך קוד שנבנה סביב AI, לכתיבה, עריכה והבנה של קוד.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-cursor">
+            <dl>
+              <dt>מאת</dt><dd>Anysphere</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>עורך קוד</li><li>סוכן</li><li>AI</li></ul>
+            <a class="text-link" href="https://cursor.com/pricing" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-cursor">פרטים</button>
+            <a class="btn" href="https://cursor.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Cursor (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="code" data-price="free" data-search="Visual Studio Code Microsoft עורך קוד חינמי בקוד פתוח של Microsoft, עם ספריית תוספים גדולה. Microsoft&#39;s free, open-source code editor with a large extension library. עורך קוד קוד פתוח תוספים code editor open source extensions פיתוח וקוד Code &amp; development">
+        <article aria-labelledby="n-vscode">
+          <div class="tool-head">
+            <span class="mono" data-cat="code" aria-hidden="true">VS</span>
+            <div>
+              <h3 class="tool-name" id="n-vscode" data-hl>Visual Studio Code</h3>
+              <p class="tool-meta">פיתוח וקוד</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>עורך קוד חינמי בקוד פתוח של Microsoft, עם ספריית תוספים גדולה.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="free">חינמי</span>
+            
+          </div>
+          <div class="tool-details" id="d-vscode">
+            <dl>
+              <dt>מאת</dt><dd>Microsoft</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>עורך קוד</li><li>קוד פתוח</li><li>תוספים</li></ul>
+            <a class="text-link" href="https://code.visualstudio.com/" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-vscode">פרטים</button>
+            <a class="btn" href="https://code.visualstudio.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Visual Studio Code (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="productivity" data-price="freemium" data-search="Notion Notion Labs סביבת עבודה לפתקים, מסמכים, ויקי וניהול פרויקטים, עם AI מובנה. A workspace for notes, docs, wikis and project management, with built-in AI. פתקים ויקי פרויקטים notes wiki projects כתיבה ופרודוקטיביות Writing &amp; productivity">
+        <article aria-labelledby="n-notion">
+          <div class="tool-head">
+            <span class="mono" data-cat="productivity" aria-hidden="true">NO</span>
+            <div>
+              <h3 class="tool-name" id="n-notion" data-hl>Notion</h3>
+              <p class="tool-meta">כתיבה ופרודוקטיביות</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>סביבת עבודה לפתקים, מסמכים, ויקי וניהול פרויקטים, עם AI מובנה.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-notion">
+            <dl>
+              <dt>מאת</dt><dd>Notion Labs</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>פתקים</li><li>ויקי</li><li>פרויקטים</li></ul>
+            <a class="text-link" href="https://www.notion.com/pricing" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-notion">פרטים</button>
+            <a class="btn" href="https://www.notion.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Notion (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="productivity" data-price="freemium" data-search="Grammarly Grammarly עוזר כתיבה שבודק דקדוק, איות וסגנון בטקסטים באנגלית. A writing assistant that checks grammar, spelling and tone in English text. אנגלית דקדוק כתיבה english grammar writing כתיבה ופרודוקטיביות Writing &amp; productivity">
+        <article aria-labelledby="n-grammarly">
+          <div class="tool-head">
+            <span class="mono" data-cat="productivity" aria-hidden="true">GR</span>
+            <div>
+              <h3 class="tool-name" id="n-grammarly" data-hl>Grammarly</h3>
+              <p class="tool-meta">כתיבה ופרודוקטיביות</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>עוזר כתיבה שבודק דקדוק, איות וסגנון בטקסטים באנגלית.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-grammarly">
+            <dl>
+              <dt>מאת</dt><dd>Grammarly</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>אנגלית</li><li>דקדוק</li><li>כתיבה</li></ul>
+            <a class="text-link" href="https://www.grammarly.com/plans" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-grammarly">פרטים</button>
+            <a class="btn" href="https://www.grammarly.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Grammarly (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="productivity" data-price="freemium" data-search="DeepL DeepL תרגום מבוסס AI לטקסטים ולמסמכים שלמים. AI-powered translation for text and whole documents. תרגום מסמכים שפות translation documents languages כתיבה ופרודוקטיביות Writing &amp; productivity">
+        <article aria-labelledby="n-deepl">
+          <div class="tool-head">
+            <span class="mono" data-cat="productivity" aria-hidden="true">DE</span>
+            <div>
+              <h3 class="tool-name" id="n-deepl" data-hl>DeepL</h3>
+              <p class="tool-meta">כתיבה ופרודוקטיביות</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>תרגום מבוסס AI לטקסטים ולמסמכים שלמים.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-deepl">
+            <dl>
+              <dt>מאת</dt><dd>DeepL</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>תרגום</li><li>מסמכים</li><li>שפות</li></ul>
+            <a class="text-link" href="https://www.deepl.com/pro" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-deepl">פרטים</button>
+            <a class="btn" href="https://www.deepl.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – DeepL (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="media" data-price="freemium" data-search="ElevenLabs ElevenLabs יצירת קול ב-AI: הקראת טקסט, קולות ודיבוב. AI voice generation: text to speech, voices and dubbing. הקראה קול דיבוב text to speech voice dubbing אודיו ווידאו Audio &amp; video">
+        <article aria-labelledby="n-elevenlabs">
+          <div class="tool-head">
+            <span class="mono" data-cat="media" aria-hidden="true">EL</span>
+            <div>
+              <h3 class="tool-name" id="n-elevenlabs" data-hl>ElevenLabs</h3>
+              <p class="tool-meta">אודיו ווידאו</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>יצירת קול ב-AI: הקראת טקסט, קולות ודיבוב.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-elevenlabs">
+            <dl>
+              <dt>מאת</dt><dd>ElevenLabs</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>הקראה</li><li>קול</li><li>דיבוב</li></ul>
+            <a class="text-link" href="https://elevenlabs.io/pricing" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-elevenlabs">פרטים</button>
+            <a class="btn" href="https://elevenlabs.io/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – ElevenLabs (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      <li class="tool" data-cat="media" data-price="freemium" data-search="Runway Runway יצירה ועריכה של וידאו בעזרת AI. Create and edit video with AI. וידאו יצירה עריכה video generation editing אודיו ווידאו Audio &amp; video">
+        <article aria-labelledby="n-runway">
+          <div class="tool-head">
+            <span class="mono" data-cat="media" aria-hidden="true">RU</span>
+            <div>
+              <h3 class="tool-name" id="n-runway" data-hl>Runway</h3>
+              <p class="tool-meta">אודיו ווידאו</p>
+            </div>
+          </div>
+          <p class="tool-desc" data-hl>יצירה ועריכה של וידאו בעזרת AI.</p>
+          <div class="tool-foot">
+            <span class="price" data-price="freemium">חינמי + תוכניות בתשלום</span>
+            
+          </div>
+          <div class="tool-details" id="d-runway">
+            <dl>
+              <dt>מאת</dt><dd>Runway</dd>
+              <dt>נבדק</dt><dd>18 באוקטובר 2026</dd>
+            </dl>
+            <ul class="tags"><li>וידאו</li><li>יצירה</li><li>עריכה</li></ul>
+            <a class="text-link" href="https://runway.com/pricing" target="_blank" rel="noopener">עמוד התמחור הרשמי<span class="sr-only"> (נפתח בחלון חדש)</span></a>
+          </div>
+          <div class="tool-actions">
+            <button type="button" class="btn-ghost js-only" aria-expanded="false" aria-controls="d-runway">פרטים</button>
+            <a class="btn" href="https://runway.com/" target="_blank" rel="noopener">לאתר הרשמי<span class="sr-only"> – Runway (נפתח בחלון חדש)</span></a>
+          </div>
+        </article>
+      </li>
+      </ul>
+
+      <div class="empty" id="empty" hidden>
+        <p class="empty-title">לא נמצא כלי שמתאים לחיפוש.</p>
+        <p>נסו מילה אחרת או הסירו את הסינון.</p>
+        <button type="button" class="btn" id="reset">איפוס הסינון</button>
+      </div>
+
+      <p class="note">המידע נבדק מול האתרים הרשמיים ב-18 באוקטובר 2026. תוכניות ומחירים משתנים, לכן כדאי לבדוק באתר הכלי לפני רכישה.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p>ToolScout · קטלוג כלים עצמאי</p>
+      <a href="disclosure.html">גילוי נאות</a>
+    </div>
+  </footer>
+  <script src="assets/app.js?v=0f5a1d22" defer></script>
+</body>
+</html>

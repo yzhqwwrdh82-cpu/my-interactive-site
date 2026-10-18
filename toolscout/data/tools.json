@@ -1,0 +1,242 @@
+{
+  "checkedAt": "2026-10-18",
+  "categories": [
+    { "id": "assistants", "he": "עוזרי AI", "en": "AI assistants" },
+    { "id": "design", "he": "עיצוב ותמונות", "en": "Design & images" },
+    { "id": "code", "he": "פיתוח וקוד", "en": "Code & development" },
+    { "id": "productivity", "he": "כתיבה ופרודוקטיביות", "en": "Writing & productivity" },
+    { "id": "media", "he": "אודיו ווידאו", "en": "Audio & video" }
+  ],
+  "pricing": [
+    { "id": "free", "he": "חינמי", "en": "Free" },
+    { "id": "freemium", "he": "חינמי + תוכניות בתשלום", "en": "Free + paid plans" },
+    { "id": "paid", "he": "בתשלום בלבד", "en": "Paid only" }
+  ],
+  "tools": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "maker": "OpenAI",
+      "category": "assistants",
+      "pricing": "freemium",
+      "url": "https://chatgpt.com/",
+      "pricingUrl": "https://chatgpt.com/pricing",
+      "affiliateUrl": null,
+      "tags": { "he": ["צ'אט", "כתיבה", "ניתוח"], "en": ["chat", "writing", "analysis"] },
+      "description": {
+        "he": "עוזר ה-AI של OpenAI לשיחה, כתיבה, ניתוח מידע ומענה על שאלות.",
+        "en": "OpenAI's AI assistant for conversation, writing, analysis and answering questions."
+      }
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "maker": "Anthropic",
+      "category": "assistants",
+      "pricing": "freemium",
+      "url": "https://claude.ai/",
+      "pricingUrl": "https://claude.com/pricing",
+      "affiliateUrl": null,
+      "tags": { "he": ["צ'אט", "כתיבה", "קוד"], "en": ["chat", "writing", "coding"] },
+      "description": {
+        "he": "עוזר ה-AI של Anthropic לכתיבה, ניתוח, תכנות ועבודה עם מסמכים ארוכים.",
+        "en": "Anthropic's AI assistant for writing, analysis, coding and working with long documents."
+      }
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "maker": "Google",
+      "category": "assistants",
+      "pricing": "freemium",
+      "url": "https://gemini.google.com/",
+      "pricingUrl": "https://gemini.google/subscriptions/",
+      "affiliateUrl": null,
+      "tags": { "he": ["צ'אט", "תכנון", "גוגל"], "en": ["chat", "planning", "google"] },
+      "description": {
+        "he": "עוזר ה-AI של Google לכתיבה, תכנון וסיעור מוחות, עם כניסה בחשבון Google.",
+        "en": "Google's AI assistant for writing, planning and brainstorming, using your Google account."
+      }
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "maker": "Perplexity",
+      "category": "assistants",
+      "pricing": "freemium",
+      "url": "https://www.perplexity.ai/",
+      "pricingUrl": "https://www.perplexity.ai/hub/pricing",
+      "affiliateUrl": null,
+      "tags": { "he": ["חיפוש", "מקורות", "מחקר"], "en": ["search", "sources", "research"] },
+      "description": {
+        "he": "מנוע תשובות מבוסס AI שמחפש ברשת ומציג את המקורות לכל תשובה.",
+        "en": "An AI answer engine that searches the web and shows the sources behind each answer."
+      }
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "maker": "Midjourney",
+      "category": "design",
+      "pricing": "paid",
+      "url": "https://www.midjourney.com/",
+      "pricingUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+      "affiliateUrl": null,
+      "tags": { "he": ["תמונות", "אמנות", "יצירה"], "en": ["images", "art", "generation"] },
+      "description": {
+        "he": "יצירת תמונות ואיורים מתיאור טקסט. כל התוכניות הן מנוי בתשלום.",
+        "en": "Creates images and illustrations from text prompts. All plans are paid subscriptions."
+      }
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "maker": "Canva",
+      "category": "design",
+      "pricing": "freemium",
+      "url": "https://www.canva.com/",
+      "pricingUrl": "https://www.canva.com/pricing/",
+      "affiliateUrl": null,
+      "tags": { "he": ["גרפיקה", "מצגות", "רשתות"], "en": ["graphics", "presentations", "social"] },
+      "description": {
+        "he": "פלטפורמת עיצוב אונליין לגרפיקה, מצגות ופוסטים, עם כלי AI מובנים.",
+        "en": "An online design platform for graphics, presentations and social posts, with built-in AI tools."
+      }
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "maker": "Figma",
+      "category": "design",
+      "pricing": "freemium",
+      "url": "https://www.figma.com/",
+      "pricingUrl": "https://www.figma.com/pricing/",
+      "affiliateUrl": null,
+      "tags": { "he": ["UI", "אב-טיפוס", "שיתוף"], "en": ["ui", "prototyping", "collaboration"] },
+      "description": {
+        "he": "עיצוב ממשקים ואבות-טיפוס בדפדפן, עם עבודה משותפת בזמן אמת.",
+        "en": "Interface design and prototyping in the browser, with real-time collaboration."
+      }
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "maker": "GitHub",
+      "category": "code",
+      "pricing": "freemium",
+      "url": "https://github.com/features/copilot",
+      "pricingUrl": "https://github.com/features/copilot/plans",
+      "affiliateUrl": null,
+      "tags": { "he": ["השלמת קוד", "עורך", "GitHub"], "en": ["code completion", "editor", "github"] },
+      "description": {
+        "he": "עוזר AI לכתיבת קוד שעובד בתוך עורך הקוד וב-GitHub.",
+        "en": "An AI coding assistant that works inside your code editor and on GitHub."
+      }
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "maker": "Anysphere",
+      "category": "code",
+      "pricing": "freemium",
+      "url": "https://cursor.com/",
+      "pricingUrl": "https://cursor.com/pricing",
+      "affiliateUrl": null,
+      "tags": { "he": ["עורך קוד", "סוכן", "AI"], "en": ["code editor", "agent", "ai"] },
+      "description": {
+        "he": "עורך קוד שנבנה סביב AI, לכתיבה, עריכה והבנה של קוד.",
+        "en": "A code editor built around AI for writing, editing and understanding code."
+      }
+    },
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "maker": "Microsoft",
+      "category": "code",
+      "pricing": "free",
+      "url": "https://code.visualstudio.com/",
+      "pricingUrl": "https://code.visualstudio.com/",
+      "affiliateUrl": null,
+      "tags": { "he": ["עורך קוד", "קוד פתוח", "תוספים"], "en": ["code editor", "open source", "extensions"] },
+      "description": {
+        "he": "עורך קוד חינמי בקוד פתוח של Microsoft, עם ספריית תוספים גדולה.",
+        "en": "Microsoft's free, open-source code editor with a large extension library."
+      }
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "maker": "Notion Labs",
+      "category": "productivity",
+      "pricing": "freemium",
+      "url": "https://www.notion.com/",
+      "pricingUrl": "https://www.notion.com/pricing",
+      "affiliateUrl": null,
+      "tags": { "he": ["פתקים", "ויקי", "פרויקטים"], "en": ["notes", "wiki", "projects"] },
+      "description": {
+        "he": "סביבת עבודה לפתקים, מסמכים, ויקי וניהול פרויקטים, עם AI מובנה.",
+        "en": "A workspace for notes, docs, wikis and project management, with built-in AI."
+      }
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "maker": "Grammarly",
+      "category": "productivity",
+      "pricing": "freemium",
+      "url": "https://www.grammarly.com/",
+      "pricingUrl": "https://www.grammarly.com/plans",
+      "affiliateUrl": null,
+      "tags": { "he": ["אנגלית", "דקדוק", "כתיבה"], "en": ["english", "grammar", "writing"] },
+      "description": {
+        "he": "עוזר כתיבה שבודק דקדוק, איות וסגנון בטקסטים באנגלית.",
+        "en": "A writing assistant that checks grammar, spelling and tone in English text."
+      }
+    },
+    {
+      "id": "deepl",
+      "name": "DeepL",
+      "maker": "DeepL",
+      "category": "productivity",
+      "pricing": "freemium",
+      "url": "https://www.deepl.com/",
+      "pricingUrl": "https://www.deepl.com/pro",
+      "affiliateUrl": null,
+      "tags": { "he": ["תרגום", "מסמכים", "שפות"], "en": ["translation", "documents", "languages"] },
+      "description": {
+        "he": "תרגום מבוסס AI לטקסטים ולמסמכים שלמים.",
+        "en": "AI-powered translation for text and whole documents."
+      }
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "maker": "ElevenLabs",
+      "category": "media",
+      "pricing": "freemium",
+      "url": "https://elevenlabs.io/",
+      "pricingUrl": "https://elevenlabs.io/pricing",
+      "affiliateUrl": null,
+      "tags": { "he": ["הקראה", "קול", "דיבוב"], "en": ["text to speech", "voice", "dubbing"] },
+      "description": {
+        "he": "יצירת קול ב-AI: הקראת טקסט, קולות ודיבוב.",
+        "en": "AI voice generation: text to speech, voices and dubbing."
+      }
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "maker": "Runway",
+      "category": "media",
+      "pricing": "freemium",
+      "url": "https://runway.com/",
+      "pricingUrl": "https://runway.com/pricing",
+      "affiliateUrl": null,
+      "tags": { "he": ["וידאו", "יצירה", "עריכה"], "en": ["video", "generation", "editing"] },
+      "description": {
+        "he": "יצירה ועריכה של וידאו בעזרת AI.",
+        "en": "Create and edit video with AI."
+      }
+    }
+  ]
+}
