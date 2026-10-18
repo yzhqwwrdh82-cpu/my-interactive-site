@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "notes": "Non-tool offerings: books, physical products, digital products and courses. Empty on purpose: add only real items verified against the publisher/manufacturer page. Never add invented titles, prices, stock, reviews or affiliate links. See toolscout/docs/data-model.md.",
+  "types": [
+    { "id": "book", "he": "ספר", "en": "Book" },
+    { "id": "physical-product", "he": "מוצר פיזי", "en": "Physical product" },
+    { "id": "digital-product", "he": "מוצר דיגיטלי", "en": "Digital product" },
+    { "id": "course", "he": "קורס", "en": "Course" }
+  ],
+  "bookTopics": [
+    { "id": "ai", "he": "בינה מלאכותית", "en": "AI" },
+    { "id": "prompts", "he": "כתיבת פרומפטים", "en": "Prompting" },
+    { "id": "automation", "he": "אוטומציה", "en": "Automation" },
+    { "id": "programming", "he": "תכנות", "en": "Programming" },
+    { "id": "business", "he": "עסקים", "en": "Business" },
+    { "id": "marketing", "he": "שיווק", "en": "Marketing" },
+    { "id": "design", "he": "עיצוב", "en": "Design" },
+    { "id": "entrepreneurship", "he": "יזמות", "en": "Entrepreneurship" },
+    { "id": "technology", "he": "טכנולוגיה", "en": "Technology" }
+  ],
+  "languages": [
+    { "id": "he", "he": "עברית", "en": "Hebrew" },
+    { "id": "en", "he": "אנגלית", "en": "English" }
+  ],
+  "levels": [
+    { "id": "beginner", "he": "מתחילים", "en": "Beginner" },
+    { "id": "intermediate", "he": "בינוני", "en": "Intermediate" },
+    { "id": "advanced", "he": "מתקדמים", "en": "Advanced" }
+  ],
+  "formats": [
+    { "id": "print", "he": "מודפס", "en": "Print" },
+    { "id": "ebook", "he": "ספר אלקטרוני", "en": "E-book" },
+    { "id": "audiobook", "he": "ספר שמע", "en": "Audiobook" },
+    { "id": "guide", "he": "מדריך מעשי", "en": "Practical guide" }
+  ],
+  "priceBands": [
+    { "id": "free", "he": "חינם", "en": "Free" },
+    { "id": "paid", "he": "בתשלום", "en": "Paid" },
+    { "id": "unverified", "he": "מחיר לא אומת", "en": "Price not verified" }
+  ],
+  "collections": [],
+  "items": []
+}

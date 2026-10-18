@@ -1,242 +1,1950 @@
 {
-  "checkedAt": "2026-10-18",
+  "schemaVersion": 2,
+  "notes": "See toolscout/docs/data-model.md. 'facts' entries are verified against the official source on 'checkedAt'. 'description', 'audience' and 'uses' are editorial. Never add unverified prices, ratings, reviews or affiliate links.",
   "categories": [
-    { "id": "assistants", "he": "עוזרי AI", "en": "AI assistants" },
-    { "id": "design", "he": "עיצוב ותמונות", "en": "Design & images" },
-    { "id": "code", "he": "פיתוח וקוד", "en": "Code & development" },
-    { "id": "productivity", "he": "כתיבה ופרודוקטיביות", "en": "Writing & productivity" },
-    { "id": "media", "he": "אודיו ווידאו", "en": "Audio & video" }
+    {
+      "id": "assistants",
+      "icon": "chat",
+      "he": "עוזרי AI",
+      "en": "AI assistants",
+      "blurb": {
+        "he": "צ'אט, מחקר ועזרה כללית",
+        "en": "Chat, research and everyday help"
+      }
+    },
+    {
+      "id": "writing",
+      "icon": "pen",
+      "he": "כתיבה ושפה",
+      "en": "Writing & language",
+      "blurb": {
+        "he": "דקדוק, ניסוח ותרגום",
+        "en": "Grammar, rewriting and translation"
+      }
+    },
+    {
+      "id": "design",
+      "icon": "shapes",
+      "he": "עיצוב, תמונות ו-3D",
+      "en": "Design, images & 3D",
+      "blurb": {
+        "he": "גרפיקה, ממשקים ויצירת תמונות",
+        "en": "Graphics, interfaces and image generation"
+      }
+    },
+    {
+      "id": "media",
+      "icon": "wave",
+      "he": "וידאו, אודיו ומוזיקה",
+      "en": "Video, audio & music",
+      "blurb": {
+        "he": "עריכה, הקלטה, קול ושידור",
+        "en": "Editing, recording, voice and streaming"
+      }
+    },
+    {
+      "id": "code",
+      "icon": "brackets",
+      "he": "פיתוח וקוד",
+      "en": "Code & development",
+      "blurb": {
+        "he": "עורכי קוד ועוזרי תכנות",
+        "en": "Code editors and coding assistants"
+      }
+    },
+    {
+      "id": "productivity",
+      "icon": "check",
+      "he": "פרודוקטיביות",
+      "en": "Productivity",
+      "blurb": {
+        "he": "פתקים, ידע ופגישות",
+        "en": "Notes, knowledge and meetings"
+      }
+    }
   ],
   "pricing": [
-    { "id": "free", "he": "חינמי", "en": "Free" },
-    { "id": "freemium", "he": "חינמי + תוכניות בתשלום", "en": "Free + paid plans" },
-    { "id": "paid", "he": "בתשלום בלבד", "en": "Paid only" }
+    {
+      "id": "free",
+      "he": "חינמי",
+      "en": "Free"
+    },
+    {
+      "id": "freemium",
+      "he": "חינמי + בתשלום",
+      "en": "Free + paid"
+    },
+    {
+      "id": "paid",
+      "he": "בתשלום בלבד",
+      "en": "Paid only"
+    },
+    {
+      "id": "unverified",
+      "he": "תמחור לא אומת",
+      "en": "Pricing not verified"
+    }
+  ],
+  "uses": [
+    {
+      "id": "chat",
+      "he": "שיחה ושאלות",
+      "en": "Chat & questions"
+    },
+    {
+      "id": "writing",
+      "he": "כתיבה",
+      "en": "Writing"
+    },
+    {
+      "id": "research",
+      "he": "מחקר",
+      "en": "Research"
+    },
+    {
+      "id": "translation",
+      "he": "תרגום",
+      "en": "Translation"
+    },
+    {
+      "id": "images",
+      "he": "יצירת תמונות",
+      "en": "Image generation"
+    },
+    {
+      "id": "design",
+      "he": "עיצוב",
+      "en": "Design"
+    },
+    {
+      "id": "3d",
+      "he": "תלת-ממד",
+      "en": "3D"
+    },
+    {
+      "id": "video",
+      "he": "וידאו",
+      "en": "Video"
+    },
+    {
+      "id": "audio",
+      "he": "אודיו וקול",
+      "en": "Audio & voice"
+    },
+    {
+      "id": "music",
+      "he": "מוזיקה",
+      "en": "Music"
+    },
+    {
+      "id": "streaming",
+      "he": "שידור והקלטת מסך",
+      "en": "Streaming & screen recording"
+    },
+    {
+      "id": "code",
+      "he": "קוד",
+      "en": "Code"
+    },
+    {
+      "id": "notes",
+      "he": "פתקים וידע",
+      "en": "Notes & knowledge"
+    },
+    {
+      "id": "meetings",
+      "he": "פגישות ותמלול",
+      "en": "Meetings & transcription"
+    }
+  ],
+  "platforms": [
+    {
+      "id": "web",
+      "he": "דפדפן",
+      "en": "Web"
+    },
+    {
+      "id": "windows",
+      "he": "Windows",
+      "en": "Windows"
+    },
+    {
+      "id": "macos",
+      "he": "macOS",
+      "en": "macOS"
+    },
+    {
+      "id": "linux",
+      "he": "Linux",
+      "en": "Linux"
+    },
+    {
+      "id": "ios",
+      "he": "iOS",
+      "en": "iOS"
+    },
+    {
+      "id": "android",
+      "he": "Android",
+      "en": "Android"
+    },
+    {
+      "id": "extension",
+      "he": "תוסף דפדפן",
+      "en": "Browser extension"
+    }
   ],
   "tools": [
     {
       "id": "chatgpt",
       "name": "ChatGPT",
       "maker": "OpenAI",
+      "type": "ai-tool",
       "category": "assistants",
+      "uses": [
+        "chat",
+        "writing",
+        "research"
+      ],
       "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
       "url": "https://chatgpt.com/",
       "pricingUrl": "https://chatgpt.com/pricing",
-      "affiliateUrl": null,
-      "tags": { "he": ["צ'אט", "כתיבה", "ניתוח"], "en": ["chat", "writing", "analysis"] },
+      "logo": {
+        "source": "simple-icons",
+        "slug": "openai"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
       "description": {
         "he": "עוזר ה-AI של OpenAI לשיחה, כתיבה, ניתוח מידע ומענה על שאלות.",
         "en": "OpenAI's AI assistant for conversation, writing, analysis and answering questions."
+      },
+      "audience": {
+        "he": [
+          "משתמשים פרטיים",
+          "סטודנטים",
+          "צוותי עבודה"
+        ],
+        "en": [
+          "Individuals",
+          "Students",
+          "Teams"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "תוכניות לעסקים ולארגונים (Business, Enterprise)",
+          "en": "Plans for businesses and organizations (Business, Enterprise)",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות המתקדמות (Go, Plus, Pro) בתשלום",
+          "en": "Higher tiers (Go, Plus, Pro) are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
       "id": "claude",
       "name": "Claude",
       "maker": "Anthropic",
+      "type": "ai-tool",
       "category": "assistants",
+      "uses": [
+        "chat",
+        "writing",
+        "code"
+      ],
       "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
       "url": "https://claude.ai/",
       "pricingUrl": "https://claude.com/pricing",
-      "affiliateUrl": null,
-      "tags": { "he": ["צ'אט", "כתיבה", "קוד"], "en": ["chat", "writing", "coding"] },
+      "logo": {
+        "source": "simple-icons",
+        "slug": "claude"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
       "description": {
         "he": "עוזר ה-AI של Anthropic לכתיבה, ניתוח, תכנות ועבודה עם מסמכים ארוכים.",
         "en": "Anthropic's AI assistant for writing, analysis, coding and working with long documents."
+      },
+      "audience": {
+        "he": [
+          "כותבים",
+          "מפתחים",
+          "צוותי עבודה"
+        ],
+        "en": [
+          "Writers",
+          "Developers",
+          "Teams"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "תוכניות לצוותים ולארגונים (Team, Enterprise)",
+          "en": "Plans for teams and organizations (Team, Enterprise)",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Pro ו-Max בתשלום",
+          "en": "Pro and Max plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
       "id": "gemini",
       "name": "Gemini",
       "maker": "Google",
+      "type": "ai-tool",
       "category": "assistants",
+      "uses": [
+        "chat",
+        "writing",
+        "research"
+      ],
       "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
       "url": "https://gemini.google.com/",
       "pricingUrl": "https://gemini.google/subscriptions/",
-      "affiliateUrl": null,
-      "tags": { "he": ["צ'אט", "תכנון", "גוגל"], "en": ["chat", "planning", "google"] },
+      "logo": {
+        "source": "simple-icons",
+        "slug": "googlegemini"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-19",
+      "featured": false,
       "description": {
         "he": "עוזר ה-AI של Google לכתיבה, תכנון וסיעור מוחות, עם כניסה בחשבון Google.",
         "en": "Google's AI assistant for writing, planning and brainstorming, using your Google account."
+      },
+      "audience": {
+        "he": [
+          "משתמשי Google",
+          "סטודנטים",
+          "עסקים"
+        ],
+        "en": [
+          "Google users",
+          "Students",
+          "Businesses"
+        ]
+      },
+      "pros": [
+        {
+          "he": "תוכנית חינמית עם חשבון Google",
+          "en": "Free tier with a Google account",
+          "source": "pricing"
+        },
+        {
+          "he": "כמה דרגות מנוי (Google AI Plus, Pro, Ultra)",
+          "en": "Several subscription tiers (Google AI Plus, Pro, Ultra)",
+          "source": "pricing"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
       "id": "perplexity",
       "name": "Perplexity",
       "maker": "Perplexity",
+      "type": "ai-tool",
       "category": "assistants",
+      "uses": [
+        "research",
+        "chat"
+      ],
       "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
       "url": "https://www.perplexity.ai/",
       "pricingUrl": "https://www.perplexity.ai/hub/pricing",
-      "affiliateUrl": null,
-      "tags": { "he": ["חיפוש", "מקורות", "מחקר"], "en": ["search", "sources", "research"] },
+      "logo": {
+        "source": "simple-icons",
+        "slug": "perplexity"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": true,
       "description": {
         "he": "מנוע תשובות מבוסס AI שמחפש ברשת ומציג את המקורות לכל תשובה.",
         "en": "An AI answer engine that searches the web and shows the sources behind each answer."
+      },
+      "audience": {
+        "he": [
+          "חוקרים",
+          "סטודנטים",
+          "עיתונאים"
+        ],
+        "en": [
+          "Researchers",
+          "Students",
+          "Journalists"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Pro ו-Max בתשלום",
+          "en": "Pro and Max plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      }
+    },
+    {
+      "id": "microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "maker": "Microsoft",
+      "type": "ai-tool",
+      "category": "assistants",
+      "uses": [
+        "chat",
+        "writing",
+        "images"
+      ],
+      "pricing": "freemium",
+      "platforms": [
+        "web",
+        "windows",
+        "macos",
+        "ios",
+        "android"
+      ],
+      "openSource": null,
+      "url": "https://copilot.microsoft.com/",
+      "pricingUrl": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "עוזר ה-AI של Microsoft לשאלות, מחקר, כתיבה ויצירת תמונות.",
+        "en": "Microsoft's AI assistant for questions, research, writing and creating images."
+      },
+      "audience": {
+        "he": [
+          "משתמשי Windows",
+          "משתמשי Microsoft 365"
+        ],
+        "en": [
+          "Windows users",
+          "Microsoft 365 users"
+        ]
+      },
+      "pros": [
+        {
+          "he": "שימוש בסיסי חינמי",
+          "en": "Free baseline experience",
+          "source": "pricing"
+        },
+        {
+          "he": "זמין בדפדפן, ב-Windows, ב-Mac, ב-iOS וב-Android",
+          "en": "Available on web, Windows, Mac, iOS and Android",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "מגבלות שימוש גבוהות יותר דורשות מנוי Microsoft 365 Premium בתשלום",
+          "en": "Higher usage limits need a paid Microsoft 365 Premium subscription",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "verified"
+      },
+      "monogram": "MC"
+    },
+    {
+      "id": "le-chat",
+      "name": "Mistral Vibe",
+      "maker": "Mistral AI",
+      "type": "ai-tool",
+      "category": "assistants",
+      "uses": [
+        "chat",
+        "writing"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://chat.mistral.ai/",
+      "pricingUrl": "https://mistral.ai/pricing",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "עוזר ה-AI של Mistral AI האירופית לשיחה וכתיבה. נקרא בעבר Le Chat.",
+        "en": "The AI assistant from Europe-based Mistral AI, for chat and writing. Formerly called Le Chat."
+      },
+      "audience": {
+        "he": [
+          "משתמשים פרטיים",
+          "סטודנטים",
+          "צוותים"
+        ],
+        "en": [
+          "Individuals",
+          "Students",
+          "Teams"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "גרסת Pro לסטודנטים מאומתים (Education)",
+          "en": "Education version of Pro for verified students",
+          "source": "pricing"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      },
+      "monogram": "MV"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "maker": "DeepSeek",
+      "type": "ai-tool",
+      "category": "assistants",
+      "uses": [
+        "chat",
+        "code"
+      ],
+      "pricing": "unverified",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://www.deepseek.com/en",
+      "pricingUrl": "https://www.deepseek.com/en",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "חברת AI שמפתחת מודלי שפה ומציעה צ'אט, אפליקציה ו-API.",
+        "en": "An AI company that develops language models and offers a chat, an app and an API."
+      },
+      "audience": {
+        "he": [
+          "מפתחים",
+          "משתמשים טכניים"
+        ],
+        "en": [
+          "Developers",
+          "Technical users"
+        ]
+      },
+      "pros": [
+        {
+          "he": "מפרסמת את מודלי השפה שלה כקוד פתוח, לפי האתר הרשמי",
+          "en": "Open-sources its language models, per the official site",
+          "source": "official"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "unverified",
+        "platforms": "unverified",
+        "note": {
+          "he": "עמוד הבית הרשמי לא מציין את תמחור הצ'אט, ולכן התמחור לא אומת.",
+          "en": "The official homepage does not state chat pricing, so pricing is not verified."
+        }
+      },
+      "monogram": "DS"
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "maker": "Grammarly",
+      "type": "ai-tool",
+      "category": "writing",
+      "uses": [
+        "writing"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://www.grammarly.com/",
+      "pricingUrl": "https://www.grammarly.com/plans",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "grammarly"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
+      "description": {
+        "he": "עוזר כתיבה שבודק דקדוק, איות וסגנון בטקסטים באנגלית.",
+        "en": "A writing assistant that checks grammar, spelling and tone in English text."
+      },
+      "audience": {
+        "he": [
+          "כותבים באנגלית",
+          "סטודנטים",
+          "אנשי מקצוע"
+        ],
+        "en": [
+          "English writers",
+          "Students",
+          "Professionals"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Pro ו-Enterprise בתשלום",
+          "en": "Pro and Enterprise plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      }
+    },
+    {
+      "id": "quillbot",
+      "name": "QuillBot",
+      "maker": "QuillBot",
+      "type": "ai-tool",
+      "category": "writing",
+      "uses": [
+        "writing",
+        "translation"
+      ],
+      "pricing": "freemium",
+      "platforms": [
+        "extension",
+        "windows",
+        "macos",
+        "ios",
+        "android"
+      ],
+      "openSource": null,
+      "url": "https://quillbot.com/",
+      "pricingUrl": "https://quillbot.com/premium",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "ערכת כלי כתיבה: ניסוח מחדש, בדיקת דקדוק, סיכום, תרגום ובדיקת העתקות.",
+        "en": "A writing toolkit: paraphrasing, grammar checking, summarizing, translation and plagiarism checking."
+      },
+      "audience": {
+        "he": [
+          "סטודנטים",
+          "כותבי תוכן"
+        ],
+        "en": [
+          "Students",
+          "Content writers"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "תוספים ל-Chrome, Edge ו-Safari, אפליקציות ותוסף ל-Word",
+          "en": "Extensions for Chrome, Edge and Safari, apps and a Word add-in",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "בתוכנית החינמית הניסוח מחדש מוגבל ל-100 מילים",
+          "en": "On the free plan, paraphrasing is limited to 100 words",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "verified"
+      },
+      "monogram": "QB"
+    },
+    {
+      "id": "deepl",
+      "name": "DeepL",
+      "maker": "DeepL",
+      "type": "ai-tool",
+      "category": "writing",
+      "uses": [
+        "translation",
+        "writing"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://www.deepl.com/",
+      "pricingUrl": "https://www.deepl.com/pro",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "deepl"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": true,
+      "description": {
+        "he": "תרגום מבוסס AI לטקסטים ולמסמכים שלמים.",
+        "en": "AI-powered translation for text and whole documents."
+      },
+      "audience": {
+        "he": [
+          "מתרגמים",
+          "עסקים בינלאומיים",
+          "סטודנטים"
+        ],
+        "en": [
+          "Translators",
+          "International businesses",
+          "Students"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש גרסה חינמית",
+          "en": "Free version available",
+          "source": "pricing"
+        },
+        {
+          "he": "תוכניות ליחידים, לצוותים ולעסקים",
+          "en": "Plans for individuals, teams and businesses",
+          "source": "pricing"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
       "id": "midjourney",
       "name": "Midjourney",
       "maker": "Midjourney",
+      "type": "ai-tool",
       "category": "design",
+      "uses": [
+        "images"
+      ],
       "pricing": "paid",
+      "platforms": null,
+      "openSource": null,
       "url": "https://www.midjourney.com/",
       "pricingUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
-      "affiliateUrl": null,
-      "tags": { "he": ["תמונות", "אמנות", "יצירה"], "en": ["images", "art", "generation"] },
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
       "description": {
-        "he": "יצירת תמונות ואיורים מתיאור טקסט. כל התוכניות הן מנוי בתשלום.",
-        "en": "Creates images and illustrations from text prompts. All plans are paid subscriptions."
-      }
+        "he": "יצירת תמונות ואיורים מתיאור טקסט.",
+        "en": "Creates images and illustrations from text prompts."
+      },
+      "audience": {
+        "he": [
+          "מעצבים",
+          "אמנים",
+          "יוצרי תוכן"
+        ],
+        "en": [
+          "Designers",
+          "Artists",
+          "Content creators"
+        ]
+      },
+      "pros": [
+        {
+          "he": "ארבע דרגות מנוי (Basic, Standard, Pro, Mega)",
+          "en": "Four subscription tiers (Basic, Standard, Pro, Mega)",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "אין תוכנית חינמית: כל התוכניות הן מנוי בתשלום",
+          "en": "No free plan: all plans are paid subscriptions",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      },
+      "monogram": "MJ"
     },
     {
       "id": "canva",
       "name": "Canva",
       "maker": "Canva",
+      "type": "software",
       "category": "design",
+      "uses": [
+        "design",
+        "images"
+      ],
       "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
       "url": "https://www.canva.com/",
       "pricingUrl": "https://www.canva.com/pricing/",
-      "affiliateUrl": null,
-      "tags": { "he": ["גרפיקה", "מצגות", "רשתות"], "en": ["graphics", "presentations", "social"] },
+      "logo": {
+        "source": "simple-icons",
+        "slug": "canva"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": true,
       "description": {
         "he": "פלטפורמת עיצוב אונליין לגרפיקה, מצגות ופוסטים, עם כלי AI מובנים.",
         "en": "An online design platform for graphics, presentations and social posts, with built-in AI tools."
+      },
+      "audience": {
+        "he": [
+          "עסקים קטנים",
+          "משווקים",
+          "מורים"
+        ],
+        "en": [
+          "Small businesses",
+          "Marketers",
+          "Teachers"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "תוכניות לעסקים ולארגונים",
+          "en": "Plans for businesses and enterprises",
+          "source": "pricing"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
       "id": "figma",
       "name": "Figma",
       "maker": "Figma",
+      "type": "software",
       "category": "design",
+      "uses": [
+        "design"
+      ],
       "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
       "url": "https://www.figma.com/",
       "pricingUrl": "https://www.figma.com/pricing/",
-      "affiliateUrl": null,
-      "tags": { "he": ["UI", "אב-טיפוס", "שיתוף"], "en": ["ui", "prototyping", "collaboration"] },
+      "logo": {
+        "source": "simple-icons",
+        "slug": "figma"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
       "description": {
         "he": "עיצוב ממשקים ואבות-טיפוס בדפדפן, עם עבודה משותפת בזמן אמת.",
         "en": "Interface design and prototyping in the browser, with real-time collaboration."
+      },
+      "audience": {
+        "he": [
+          "מעצבי UI/UX",
+          "צוותי מוצר",
+          "מפתחים"
+        ],
+        "en": [
+          "UI/UX designers",
+          "Product teams",
+          "Developers"
+        ]
+      },
+      "pros": [
+        {
+          "he": "תוכנית חינמית ליחידים",
+          "en": "Free plan for individuals",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Professional ו-Organization בתשלום",
+          "en": "Professional and Organization plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
-      "id": "github-copilot",
-      "name": "GitHub Copilot",
-      "maker": "GitHub",
-      "category": "code",
+      "id": "adobe-firefly",
+      "name": "Adobe Firefly",
+      "maker": "Adobe",
+      "type": "ai-tool",
+      "category": "design",
+      "uses": [
+        "images",
+        "video",
+        "audio"
+      ],
       "pricing": "freemium",
-      "url": "https://github.com/features/copilot",
-      "pricingUrl": "https://github.com/features/copilot/plans",
-      "affiliateUrl": null,
-      "tags": { "he": ["השלמת קוד", "עורך", "GitHub"], "en": ["code completion", "editor", "github"] },
+      "platforms": null,
+      "openSource": null,
+      "url": "https://www.adobe.com/products/firefly.html",
+      "pricingUrl": "https://www.adobe.com/products/firefly/plans.html",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "adobe"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
       "description": {
-        "he": "עוזר AI לכתיבת קוד שעובד בתוך עורך הקוד וב-GitHub.",
-        "en": "An AI coding assistant that works inside your code editor and on GitHub."
+        "he": "יצירת תמונות, וידאו ואודיו בעזרת AI, מבית Adobe.",
+        "en": "AI generation of images, video and audio from Adobe."
+      },
+      "audience": {
+        "he": [
+          "מעצבים",
+          "יוצרי וידאו",
+          "משתמשי Adobe"
+        ],
+        "en": [
+          "Designers",
+          "Video creators",
+          "Adobe users"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יצירות חינמיות יומיות, שמתאפסות כל יום",
+          "en": "Free daily generations that reset every day",
+          "source": "pricing"
+        },
+        {
+          "he": "יוצר תמונות, וידאו ואודיו",
+          "en": "Generates images, video and audio",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "השימוש החינמי מוגבל למכסה יומית",
+          "en": "Free use is limited to a daily allowance",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
-      "id": "cursor",
-      "name": "Cursor",
-      "maker": "Anysphere",
-      "category": "code",
-      "pricing": "freemium",
-      "url": "https://cursor.com/",
-      "pricingUrl": "https://cursor.com/pricing",
-      "affiliateUrl": null,
-      "tags": { "he": ["עורך קוד", "סוכן", "AI"], "en": ["code editor", "agent", "ai"] },
-      "description": {
-        "he": "עורך קוד שנבנה סביב AI, לכתיבה, עריכה והבנה של קוד.",
-        "en": "A code editor built around AI for writing, editing and understanding code."
-      }
-    },
-    {
-      "id": "vscode",
-      "name": "Visual Studio Code",
-      "maker": "Microsoft",
-      "category": "code",
+      "id": "blender",
+      "name": "Blender",
+      "maker": "Blender Foundation",
+      "type": "software",
+      "category": "design",
+      "uses": [
+        "3d",
+        "video"
+      ],
       "pricing": "free",
-      "url": "https://code.visualstudio.com/",
-      "pricingUrl": "https://code.visualstudio.com/",
-      "affiliateUrl": null,
-      "tags": { "he": ["עורך קוד", "קוד פתוח", "תוספים"], "en": ["code editor", "open source", "extensions"] },
+      "platforms": null,
+      "openSource": true,
+      "url": "https://www.blender.org/",
+      "pricingUrl": "https://www.blender.org/about/",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "blender"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
       "description": {
-        "he": "עורך קוד חינמי בקוד פתוח של Microsoft, עם ספריית תוספים גדולה.",
-        "en": "Microsoft's free, open-source code editor with a large extension library."
-      }
-    },
-    {
-      "id": "notion",
-      "name": "Notion",
-      "maker": "Notion Labs",
-      "category": "productivity",
-      "pricing": "freemium",
-      "url": "https://www.notion.com/",
-      "pricingUrl": "https://www.notion.com/pricing",
-      "affiliateUrl": null,
-      "tags": { "he": ["פתקים", "ויקי", "פרויקטים"], "en": ["notes", "wiki", "projects"] },
-      "description": {
-        "he": "סביבת עבודה לפתקים, מסמכים, ויקי וניהול פרויקטים, עם AI מובנה.",
-        "en": "A workspace for notes, docs, wikis and project management, with built-in AI."
-      }
-    },
-    {
-      "id": "grammarly",
-      "name": "Grammarly",
-      "maker": "Grammarly",
-      "category": "productivity",
-      "pricing": "freemium",
-      "url": "https://www.grammarly.com/",
-      "pricingUrl": "https://www.grammarly.com/plans",
-      "affiliateUrl": null,
-      "tags": { "he": ["אנגלית", "דקדוק", "כתיבה"], "en": ["english", "grammar", "writing"] },
-      "description": {
-        "he": "עוזר כתיבה שבודק דקדוק, איות וסגנון בטקסטים באנגלית.",
-        "en": "A writing assistant that checks grammar, spelling and tone in English text."
-      }
-    },
-    {
-      "id": "deepl",
-      "name": "DeepL",
-      "maker": "DeepL",
-      "category": "productivity",
-      "pricing": "freemium",
-      "url": "https://www.deepl.com/",
-      "pricingUrl": "https://www.deepl.com/pro",
-      "affiliateUrl": null,
-      "tags": { "he": ["תרגום", "מסמכים", "שפות"], "en": ["translation", "documents", "languages"] },
-      "description": {
-        "he": "תרגום מבוסס AI לטקסטים ולמסמכים שלמים.",
-        "en": "AI-powered translation for text and whole documents."
+        "he": "תוכנת יצירה בתלת-ממד: מידול, אנימציה ורינדור.",
+        "en": "3D creation software for modeling, animation and rendering."
+      },
+      "audience": {
+        "he": [
+          "אמני תלת-ממד",
+          "אנימטורים",
+          "סטודנטים"
+        ],
+        "en": [
+          "3D artists",
+          "Animators",
+          "Students"
+        ]
+      },
+      "pros": [
+        {
+          "he": "חינמית וקוד פתוח (GPL)",
+          "en": "Free and open source (GPL)",
+          "source": "official"
+        },
+        {
+          "he": "מותרת לכל שימוש, כולל עבודה מסחרית",
+          "en": "Can be used for any purpose, including commercial work",
+          "source": "official"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
       "id": "elevenlabs",
       "name": "ElevenLabs",
       "maker": "ElevenLabs",
+      "type": "ai-tool",
       "category": "media",
+      "uses": [
+        "audio"
+      ],
       "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
       "url": "https://elevenlabs.io/",
       "pricingUrl": "https://elevenlabs.io/pricing",
-      "affiliateUrl": null,
-      "tags": { "he": ["הקראה", "קול", "דיבוב"], "en": ["text to speech", "voice", "dubbing"] },
+      "logo": {
+        "source": "simple-icons",
+        "slug": "elevenlabs"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
       "description": {
         "he": "יצירת קול ב-AI: הקראת טקסט, קולות ודיבוב.",
         "en": "AI voice generation: text to speech, voices and dubbing."
+      },
+      "audience": {
+        "he": [
+          "יוצרי וידאו",
+          "פודקאסטרים",
+          "מפתחים"
+        ],
+        "en": [
+          "Video creators",
+          "Podcasters",
+          "Developers"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "מגוון רחב של תוכניות, מיחידים ועד ארגונים",
+          "en": "Wide range of plans, from individuals to enterprise",
+          "source": "pricing"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
     },
     {
       "id": "runway",
       "name": "Runway",
       "maker": "Runway",
+      "type": "ai-tool",
       "category": "media",
+      "uses": [
+        "video",
+        "images"
+      ],
       "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
       "url": "https://runway.com/",
       "pricingUrl": "https://runway.com/pricing",
-      "affiliateUrl": null,
-      "tags": { "he": ["וידאו", "יצירה", "עריכה"], "en": ["video", "generation", "editing"] },
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
       "description": {
         "he": "יצירה ועריכה של וידאו בעזרת AI.",
         "en": "Create and edit video with AI."
+      },
+      "audience": {
+        "he": [
+          "יוצרי וידאו",
+          "מעצבים",
+          "סטודיו"
+        ],
+        "en": [
+          "Video creators",
+          "Designers",
+          "Studios"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Standard, Pro ו-Max בתשלום",
+          "en": "Standard, Pro and Max plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      },
+      "monogram": "RW"
+    },
+    {
+      "id": "descript",
+      "name": "Descript",
+      "maker": "Descript",
+      "type": "ai-tool",
+      "category": "media",
+      "uses": [
+        "video",
+        "audio"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://www.descript.com/",
+      "pricingUrl": "https://www.descript.com/pricing",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": true,
+      "description": {
+        "he": "עריכת וידאו ואודיו דרך התמלול: עורכים את הטקסט, והמדיה מתעדכנת.",
+        "en": "Video and audio editing through the transcript: edit the text and the media follows."
+      },
+      "audience": {
+        "he": [
+          "פודקאסטרים",
+          "יוצרי וידאו",
+          "צוותי שיווק"
+        ],
+        "en": [
+          "Podcasters",
+          "Video creators",
+          "Marketing teams"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "כלי AI לניקוי אודיו, הסרת מילות מילוי, כתוביות ותרגום",
+          "en": "AI tools for audio cleanup, filler-word removal, captions and translation",
+          "source": "pricing"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      },
+      "monogram": "DE"
+    },
+    {
+      "id": "heygen",
+      "name": "HeyGen",
+      "maker": "HeyGen",
+      "type": "ai-tool",
+      "category": "media",
+      "uses": [
+        "video"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://www.heygen.com/",
+      "pricingUrl": "https://www.heygen.com/pricing",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "יצירת סרטוני וידאו בעזרת AI, בלי מצלמה וצוות צילום, כולל התאמה לשפות.",
+        "en": "AI video creation without a camera or crew, including localization into other languages."
+      },
+      "audience": {
+        "he": [
+          "צוותי שיווק",
+          "הדרכה",
+          "עסקים"
+        ],
+        "en": [
+          "Marketing teams",
+          "Training teams",
+          "Businesses"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Creator, Pro ו-Business בתשלום",
+          "en": "Creator, Pro and Business plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      },
+      "monogram": "HG"
+    },
+    {
+      "id": "suno",
+      "name": "Suno",
+      "maker": "Suno",
+      "type": "ai-tool",
+      "category": "media",
+      "uses": [
+        "music",
+        "audio"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://suno.com/",
+      "pricingUrl": "https://suno.com/pricing",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "suno"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "יצירת שירים ומוזיקה בעזרת AI.",
+        "en": "Create songs and music with AI."
+      },
+      "audience": {
+        "he": [
+          "יוצרי תוכן",
+          "מוזיקאים חובבים"
+        ],
+        "en": [
+          "Content creators",
+          "Hobby musicians"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "התוכניות Pro ו-Premier כוללות זכויות שימוש מסחרי",
+          "en": "Pro and Premier plans include commercial use rights",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכנית החינמית לא כוללת זכויות שימוש מסחרי",
+          "en": "The free plan has no commercial use rights",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
       }
+    },
+    {
+      "id": "davinci-resolve",
+      "name": "DaVinci Resolve",
+      "maker": "Blackmagic Design",
+      "type": "software",
+      "category": "media",
+      "uses": [
+        "video",
+        "audio"
+      ],
+      "pricing": "freemium",
+      "platforms": [
+        "windows",
+        "macos",
+        "linux"
+      ],
+      "openSource": false,
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "pricingUrl": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "davinciresolve"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "תוכנה מקצועית לעריכת וידאו, תיקון צבע ואודיו.",
+        "en": "Professional software for video editing, color correction and audio."
+      },
+      "audience": {
+        "he": [
+          "עורכי וידאו",
+          "יוצרי YouTube",
+          "סטודנטים לקולנוע"
+        ],
+        "en": [
+          "Video editors",
+          "YouTube creators",
+          "Film students"
+        ]
+      },
+      "pros": [
+        {
+          "he": "גרסה חינמית ל-Windows, ל-Mac ול-Linux",
+          "en": "Free version for Windows, Mac and Linux",
+          "source": "official"
+        }
+      ],
+      "cons": [
+        {
+          "he": "גרסת Studio בתשלום",
+          "en": "The Studio edition is paid",
+          "source": "official"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "verified"
+      }
+    },
+    {
+      "id": "obs-studio",
+      "name": "OBS Studio",
+      "maker": "OBS Project",
+      "type": "software",
+      "category": "media",
+      "uses": [
+        "streaming",
+        "video"
+      ],
+      "pricing": "free",
+      "platforms": [
+        "windows",
+        "macos",
+        "linux"
+      ],
+      "openSource": true,
+      "url": "https://obsproject.com/",
+      "pricingUrl": "https://obsproject.com/",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "obsstudio"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": true,
+      "description": {
+        "he": "תוכנה להקלטת וידאו ולשידור חי, למשל ל-Twitch ול-YouTube.",
+        "en": "Software for video recording and live streaming, for example to Twitch and YouTube."
+      },
+      "audience": {
+        "he": [
+          "סטרימרים",
+          "מורים",
+          "יוצרי הדרכות"
+        ],
+        "en": [
+          "Streamers",
+          "Teachers",
+          "Tutorial creators"
+        ]
+      },
+      "pros": [
+        {
+          "he": "חינמית וקוד פתוח",
+          "en": "Free and open source",
+          "source": "official"
+        },
+        {
+          "he": "פועלת ב-Windows, ב-macOS וב-Linux",
+          "en": "Runs on Windows, macOS and Linux",
+          "source": "official"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "verified"
+      }
+    },
+    {
+      "id": "audacity",
+      "name": "Audacity",
+      "maker": "Audacity Team",
+      "type": "software",
+      "category": "media",
+      "uses": [
+        "audio"
+      ],
+      "pricing": "free",
+      "platforms": [
+        "windows",
+        "macos",
+        "linux"
+      ],
+      "openSource": true,
+      "url": "https://www.audacityteam.org/",
+      "pricingUrl": "https://www.audacityteam.org/",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "audacity"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "הקלטה ועריכה של אודיו: מוזיקה, פודקאסטים והמרת פורמטים.",
+        "en": "Audio recording and editing: music, podcasts and format conversion."
+      },
+      "audience": {
+        "he": [
+          "פודקאסטרים",
+          "מוזיקאים",
+          "מתחילים"
+        ],
+        "en": [
+          "Podcasters",
+          "Musicians",
+          "Beginners"
+        ]
+      },
+      "pros": [
+        {
+          "he": "חינמית וקוד פתוח",
+          "en": "Free and open source",
+          "source": "official"
+        },
+        {
+          "he": "פועלת ב-Windows, ב-macOS וב-Linux",
+          "en": "Runs on Windows, macOS and Linux",
+          "source": "official"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "verified"
+      }
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "maker": "GitHub",
+      "type": "ai-tool",
+      "category": "code",
+      "uses": [
+        "code"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://github.com/features/copilot",
+      "pricingUrl": "https://github.com/features/copilot/plans",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "githubcopilot"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
+      "description": {
+        "he": "עוזר AI לכתיבת קוד שעובד בתוך עורך הקוד וב-GitHub.",
+        "en": "An AI coding assistant that works inside your code editor and on GitHub."
+      },
+      "audience": {
+        "he": [
+          "מפתחים",
+          "צוותי פיתוח"
+        ],
+        "en": [
+          "Developers",
+          "Engineering teams"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Pro, Pro+ ו-Max בתשלום",
+          "en": "Pro, Pro+ and Max plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      }
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "maker": "Anysphere",
+      "type": "software",
+      "category": "code",
+      "uses": [
+        "code"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://cursor.com/",
+      "pricingUrl": "https://cursor.com/pricing",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
+      "description": {
+        "he": "עורך קוד שנבנה סביב AI, לכתיבה, עריכה והבנה של קוד.",
+        "en": "A code editor built around AI for writing, editing and understanding code."
+      },
+      "audience": {
+        "he": [
+          "מפתחים",
+          "סטארט-אפים"
+        ],
+        "en": [
+          "Developers",
+          "Startups"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        },
+        {
+          "he": "תוכניות לצוותים ולארגונים",
+          "en": "Plans for teams and enterprises",
+          "source": "pricing"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      },
+      "monogram": "CU"
+    },
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "maker": "Microsoft",
+      "type": "software",
+      "category": "code",
+      "uses": [
+        "code"
+      ],
+      "pricing": "free",
+      "platforms": null,
+      "openSource": true,
+      "url": "https://code.visualstudio.com/",
+      "pricingUrl": "https://code.visualstudio.com/",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
+      "description": {
+        "he": "עורך קוד חינמי בקוד פתוח של Microsoft, עם ספריית תוספים גדולה.",
+        "en": "Microsoft's free, open-source code editor with a large extension library."
+      },
+      "audience": {
+        "he": [
+          "מפתחים",
+          "סטודנטים למדעי המחשב"
+        ],
+        "en": [
+          "Developers",
+          "Computer science students"
+        ]
+      },
+      "pros": [
+        {
+          "he": "חינמי וקוד פתוח",
+          "en": "Free and open source",
+          "source": "official"
+        }
+      ],
+      "cons": [],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      },
+      "monogram": "VS"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "maker": "Notion Labs",
+      "type": "software",
+      "category": "productivity",
+      "uses": [
+        "notes",
+        "writing"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://www.notion.com/",
+      "pricingUrl": "https://www.notion.com/pricing",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "notion"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-18",
+      "checkedAt": "2026-10-18",
+      "featured": false,
+      "description": {
+        "he": "סביבת עבודה לפתקים, מסמכים, ויקי וניהול פרויקטים, עם AI מובנה.",
+        "en": "A workspace for notes, docs, wikis and project management, with built-in AI."
+      },
+      "audience": {
+        "he": [
+          "צוותי עבודה",
+          "סטודנטים",
+          "פרילנסרים"
+        ],
+        "en": [
+          "Teams",
+          "Students",
+          "Freelancers"
+        ]
+      },
+      "pros": [
+        {
+          "he": "יש תוכנית חינמית",
+          "en": "Free plan available",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Plus, Business ו-Enterprise בתשלום",
+          "en": "Plus, Business and Enterprise plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      }
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "maker": "Obsidian",
+      "type": "software",
+      "category": "productivity",
+      "uses": [
+        "notes",
+        "writing"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://obsidian.md/",
+      "pricingUrl": "https://obsidian.md/pricing",
+      "logo": {
+        "source": "simple-icons",
+        "slug": "obsidian"
+      },
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": true,
+      "description": {
+        "he": "אפליקציית פתקים וניהול ידע שעובדת עם קבצים מקומיים.",
+        "en": "A notes and knowledge-management app that works with local files."
+      },
+      "audience": {
+        "he": [
+          "כותבים",
+          "חוקרים",
+          "סטודנטים"
+        ],
+        "en": [
+          "Writers",
+          "Researchers",
+          "Students"
+        ]
+      },
+      "pros": [
+        {
+          "he": "הפתקים נשמרים באופן פרטי במכשיר שלכם, וזמינים גם בלי חיבור לרשת",
+          "en": "Notes are stored privately on your device and available offline",
+          "source": "official"
+        },
+        {
+          "he": "חינמית ללא הגבלה, בלי צורך בהרשמה",
+          "en": "Free without limits, no sign-up required",
+          "source": "pricing"
+        },
+        {
+          "he": "שימוש מסחרי חינמי (רישיון מסחרי הוא אופציונלי)",
+          "en": "Free for commercial use (the commercial license is optional)",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "סנכרון בין מכשירים (Sync) ופרסום לרשת (Publish) הם תוספות בתשלום",
+          "en": "Sync and Publish are paid add-ons",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      }
+    },
+    {
+      "id": "otter",
+      "name": "Otter.ai",
+      "maker": "Otter.ai",
+      "type": "ai-tool",
+      "category": "productivity",
+      "uses": [
+        "meetings",
+        "notes"
+      ],
+      "pricing": "freemium",
+      "platforms": null,
+      "openSource": null,
+      "url": "https://otter.ai/",
+      "pricingUrl": "https://otter.ai/pricing",
+      "logo": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "featured": false,
+      "description": {
+        "he": "רושם פגישות מבוסס AI: תמלול חי, סיכומים וצ'אט על תוכן הפגישה.",
+        "en": "An AI meeting notetaker: live transcription, summaries and chat about the meeting."
+      },
+      "audience": {
+        "he": [
+          "צוותי מכירות",
+          "מרצים",
+          "עיתונאים"
+        ],
+        "en": [
+          "Sales teams",
+          "Educators",
+          "Journalists"
+        ]
+      },
+      "pros": [
+        {
+          "he": "תוכנית Basic חינמית",
+          "en": "Free Basic plan",
+          "source": "pricing"
+        },
+        {
+          "he": "עובד עם Zoom, ‏Microsoft Teams ו-Google Meet",
+          "en": "Works with Zoom, Microsoft Teams and Google Meet",
+          "source": "pricing"
+        }
+      ],
+      "cons": [
+        {
+          "he": "התוכניות Pro, Business ו-Enterprise בתשלום",
+          "en": "Pro, Business and Enterprise plans are paid",
+          "source": "pricing"
+        }
+      ],
+      "verification": {
+        "pricing": "verified",
+        "platforms": "unverified"
+      },
+      "monogram": "OT"
     }
   ]
 }

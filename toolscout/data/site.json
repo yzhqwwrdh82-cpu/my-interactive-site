@@ -1,0 +1,17 @@
+{
+  "siteUrl": "https://benevolent-mooncake-e8a513.netlify.app/toolscout",
+  "siteUrlNote": "Production base URL used for canonical, hreflang, Open Graph and sitemap. Change when a custom domain is chosen, then rebuild.",
+  "features": {
+    "affiliateLinks": false,
+    "ads": false,
+    "sponsoredContent": false,
+    "newsletter": false,
+    "contactForm": false,
+    "liveAgentChat": false,
+    "aiAssistant": false,
+    "voiceCall": false,
+    "accounts": false,
+    "payments": false
+  },
+  "featuresNote": "All monetization and communication services are OFF. Turning one on requires a real provider, updated privacy policy and explicit owner approval. The build does not yet read these flags to enable anything; they document state."
+}

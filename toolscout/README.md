@@ -1,39 +1,57 @@
-# ToolScout — v1 (branch `toolscout-redesign`)
+# ToolScout
 
-Bilingual (Hebrew / English) static catalog of AI tools and software. No server, no database, no paid services.
+A bilingual (Hebrew RTL / English LTR) catalog for choosing AI tools and software, with information verified against official sources. It's a static site with no server, database, external services, cookies or analytics.
 
-The original `index.html` and `README.md` at the repo root are untouched. The new site lives entirely in this folder:
+The original `index.html` and `README.md` at the repository root are untouched. Everything lives in `toolscout/`.
 
-| Path | What it is |
+## Structure
+
+| Path | Purpose |
 |---|---|
-| `index.html` | Hebrew catalog (RTL) — generated |
-| `en/index.html` | English catalog (LTR) — generated |
-| `disclosure.html`, `en/disclosure.html` | Affiliate disclosure, ready for future use — generated |
-| `data/tools.json` | **Single source of truth** for tools, categories and pricing models |
-| `scripts/build.mjs` | Generates the HTML pages from the JSON (Node, zero dependencies) |
-| `assets/styles.css` | Design tokens, light/dark themes, layout |
-| `assets/app.js` | Search, filters, highlighting, details toggle, theme toggle |
-| `assets/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `og-image.png` | Icons and social share image |
+| `data/tools.json` | 29 tools plus taxonomies. The single source of truth for tools |
+| `data/products.json` | Books, physical and digital products, courses. Structure only, no items yet |
+| `data/site.json` | Base URL, plus feature flags that are all off (affiliate, ads, newsletter, chat, voice, accounts, payments) |
+| `data/logo-credits.json` | Logo sources and licenses (Simple Icons) |
+| `scripts/build.mjs` | Validates the data, then generates every page in both languages, the emails, `assets/catalog.json`, the sitemap and robots |
+| `scripts/validate.mjs` | Data rules: no invented prices, ratings or stock; affiliate URLs only when approved; licensed assets only |
+| `scripts/check-links.mjs` | Internal link check. Add `--external` to check official URLs on a normal network |
+| `scripts/vendor-logos.mjs` | Copies brand logos from a local Simple Icons package |
+| `scripts/lib/` | Templates, UI strings, editorial content (guides, legal pages, comparisons), emails, books |
+| `assets/` | CSS, JS, self-hosted Rubik font (OFL), logos, favicon, share image |
+| `docs/` | Data model, site map and user journeys, communications plan, business roadmap |
+| Generated output | `index.html`, `catalog.html`, `compare*.html`, `tools/`, `category/`, `guides/`, `books.html`, legal pages, `contact.html`, `account.html`, `service-preview.html`, `emails/`, `en/…` |
 
-## Editing the catalog
+## Workflow
 
-1. Edit `data/tools.json`.
-2. Run `node toolscout/scripts/build.mjs`.
-3. Commit the JSON **and** the regenerated HTML (the HTML is committed so no build step is needed on the host).
-
-Each tool has: `name`, `maker`, `category`, `pricing` (`free` / `freemium` / `paid`), official `url`, `pricingUrl`, `affiliateUrl` (currently `null` everywhere), `tags` and `description` in both languages. Exact prices are deliberately not stored: they change often. When an `affiliateUrl` is added, the card links to it with `rel="sponsored"` and shows an "Affiliate link" label automatically.
-
-## Domain / SEO
-
-Once the production URL is known, build with it to add canonical + hreflang URLs and `sitemap.xml`:
-
-```
-SITE_URL=https://your-domain.example/toolscout node toolscout/scripts/build.mjs
+```bash
+node toolscout/scripts/build.mjs          # validate and generate
+node toolscout/scripts/check-links.mjs    # check internal links
 ```
 
-## Design decisions
+Commit the data and the generated output together, so the host needs no build step. To change the production URL, edit `siteUrl` in `data/site.json`, or run with `SITE_URL=… node toolscout/scripts/build.mjs`.
 
-- All cards are pre-rendered in HTML, so content is fully visible if JavaScript fails (fixes the old `opacity: 0` problem). JS only enhances.
-- Filters are reflected in the URL (`?q=&cat=&price=`) so filtered views can be shared.
-- `/` focuses search, `Esc` clears it. Motion is limited to one card "settle" on filtering and is disabled under `prefers-reduced-motion`.
-- Font: Rubik (Google Fonts, covers Hebrew and Latin), with system fallback.
+## What works vs what's demo
+
+- **Works now:**
+  - Search, filters, sorting and URL state
+  - Compare (up to 3 tools)
+  - Favorites, saved in the browser only
+  - Light and dark theme
+  - Local chat search helper, which runs in the browser and sends nothing
+  - Form validation
+- **Demo, not connected:**
+  - Contact form and newsletter (no data sent or stored)
+  - Email templates
+  - Live agent and AI chat
+  - Voice call (design specimens only, never requests the microphone)
+  - Accounts
+  - Books catalog (no items yet)
+
+See `docs/communications-plan.md` for what each one needs before it can be connected.
+
+## Security and privacy
+
+- A strict Content-Security-Policy, with no inline scripts and no third-party requests.
+- External links use `rel="noopener"`.
+- Browser storage access is wrapped in try/catch.
+- The chat never sends what you type.

@@ -1,0 +1,90 @@
+// Validates data/tools.json against the ToolScout data rules. Exits non-zero on errors.
+// Usage: node toolscout/scripts/validate.mjs
+import { readFileSync, existsSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const data = JSON.parse(readFileSync(join(root, 'data/tools.json'), 'utf8'));
+const errors = [];
+const warn = [];
+const ids = new Set();
+const set = (arr) => new Set(arr.map((x) => x.id));
+const cats = set(data.categories), prices = set(data.pricing), uses = set(data.uses), plats = set(data.platforms);
+const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s || '');
+const isHttps = (s) => /^https:\/\/[^\s]+$/.test(s || '');
+const bi = (o) => o && typeof o.he === 'string' && o.he.trim() && typeof o.en === 'string' && o.en.trim();
+
+for (const t of data.tools) {
+  const at = `tool "${t.id}"`;
+  if (!/^[a-z0-9-]+$/.test(t.id)) errors.push(`${at}: id must be kebab-case`);
+  if (ids.has(t.id)) errors.push(`${at}: duplicate id`);
+  ids.add(t.id);
+  for (const k of ['name', 'maker']) if (!t[k]) errors.push(`${at}: missing ${k}`);
+  if (!['ai-tool', 'software', 'digital-product', 'physical-product'].includes(t.type)) errors.push(`${at}: bad type`);
+  if (!cats.has(t.category)) errors.push(`${at}: unknown category ${t.category}`);
+  if (!prices.has(t.pricing)) errors.push(`${at}: unknown pricing ${t.pricing}`);
+  if (!Array.isArray(t.uses) || !t.uses.length || t.uses.some((u) => !uses.has(u))) errors.push(`${at}: bad uses`);
+  if (t.platforms !== null && (!Array.isArray(t.platforms) || t.platforms.some((p) => !plats.has(p)))) errors.push(`${at}: bad platforms`);
+  if (!isHttps(t.url) || !isHttps(t.pricingUrl)) errors.push(`${at}: url and pricingUrl must be https`);
+  if (!isDate(t.addedAt) || !isDate(t.checkedAt)) errors.push(`${at}: addedAt/checkedAt must be YYYY-MM-DD`);
+  if (!bi(t.description)) errors.push(`${at}: description needs he + en`);
+  if (!t.audience || !Array.isArray(t.audience.he) || !Array.isArray(t.audience.en)) errors.push(`${at}: audience needs he + en arrays`);
+  for (const kind of ['pros', 'cons']) {
+    if (!Array.isArray(t[kind])) { errors.push(`${at}: ${kind} must be an array`); continue; }
+    t[kind].forEach((f, i) => {
+      if (!bi(f)) errors.push(`${at}: ${kind}[${i}] needs he + en`);
+      if (!['pricing', 'official'].includes(f.source)) errors.push(`${at}: ${kind}[${i}] needs source pricing|official`);
+    });
+  }
+  const v = t.verification || {};
+  if (!['verified', 'unverified'].includes(v.pricing)) errors.push(`${at}: verification.pricing required`);
+  if (!['verified', 'unverified'].includes(v.platforms)) errors.push(`${at}: verification.platforms required`);
+  if (v.pricing === 'unverified' && t.pricing !== 'unverified') errors.push(`${at}: unverified pricing must use pricing "unverified"`);
+  if (v.platforms === 'verified' && !t.platforms) errors.push(`${at}: platforms verified but empty`);
+  if (v.platforms === 'unverified' && t.platforms) errors.push(`${at}: platforms listed but not verified`);
+  // Affiliate safety: never an affiliate URL unless the program is approved by the owner.
+  const a = t.affiliate || {};
+  if (!['none', 'applied', 'approved'].includes(a.status)) errors.push(`${at}: affiliate.status must be none|applied|approved`);
+  if (a.url && a.status !== 'approved') errors.push(`${at}: affiliate.url only allowed when status is approved`);
+  if (a.status === 'approved' && !isHttps(a.url)) errors.push(`${at}: approved affiliate needs https url`);
+  // Logos must come from a licensed source and exist on disk.
+  if (t.logo) {
+    if (t.logo.source !== 'simple-icons') errors.push(`${at}: logo.source must be a licensed source`);
+    else if (!existsSync(join(root, 'assets/logos', t.logo.slug + '.svg'))) errors.push(`${at}: logo file missing (run vendor-logos)`);
+  }
+  // Physical / digital products: price only with a dated, sourced value.
+  if ('price' in t && (!t.price || !isDate(t.price.checkedAt) || !isHttps(t.price.sourceUrl))) errors.push(`${at}: price needs value, currency, checkedAt and sourceUrl`);
+  if (t.monogram && !/^[A-Z0-9]{1,3}$/.test(t.monogram)) errors.push(`${at}: monogram must be 1-3 uppercase letters`);
+  if (!t.pros.length && !t.cons.length) warn.push(`${at}: no verified pros or cons`);
+}
+
+// Products (books, physical, digital, courses)
+const products = JSON.parse(readFileSync(join(root, 'data/products.json'), 'utf8'));
+const pset = (k) => new Set((products[k] || []).map((x) => x.id));
+const ptypes = pset('types'), topics = pset('bookTopics'), plangs = pset('languages'), levels = pset('levels'), formats = pset('formats');
+for (const it of products.items) {
+  const at = `product "${it.id}"`;
+  if (!/^[a-z0-9-]+$/.test(it.id || '')) errors.push(`${at}: id must be kebab-case`);
+  if (ids.has(it.id)) errors.push(`${at}: duplicate id`); ids.add(it.id);
+  if (!ptypes.has(it.type)) errors.push(`${at}: unknown type`);
+  if (!it.title) errors.push(`${at}: missing title`);
+  if (!isHttps(it.officialUrl)) errors.push(`${at}: officialUrl (publisher/manufacturer page) must be https`);
+  if (!isDate(it.checkedAt) || !isDate(it.addedAt)) errors.push(`${at}: checkedAt/addedAt required`);
+  if (it.type === 'book') {
+    if (!Array.isArray(it.authors) || !it.authors.length) errors.push(`${at}: authors required`);
+    if ((it.topics || []).some((x) => !topics.has(x))) errors.push(`${at}: unknown topic`);
+    if ((it.languages || []).some((x) => !plangs.has(x))) errors.push(`${at}: unknown language`);
+    if (it.level && !levels.has(it.level)) errors.push(`${at}: unknown level`);
+    if ((it.formats || []).some((x) => !formats.has(x))) errors.push(`${at}: unknown format`);
+  }
+  if (it.cover && (!it.cover.file || !it.cover.license || !it.cover.permissionSource)) errors.push(`${at}: cover needs file, license and permissionSource`);
+  if (it.price && (typeof it.price.amount !== 'number' || !it.price.currency || !isDate(it.price.checkedAt) || !isHttps(it.price.sourceUrl))) errors.push(`${at}: price needs amount, currency, checkedAt, sourceUrl`);
+  if ('stock' in it || 'rating' in it || 'reviews' in it) errors.push(`${at}: stock/rating/reviews are not allowed without a verified data source`);
+  const a = it.affiliate || { status: 'none' };
+  if (a.url && a.status !== 'approved') errors.push(`${at}: affiliate.url only when approved`);
+}
+
+for (const w of warn) console.warn('warn:', w);
+if (errors.length) { for (const e of errors) console.error('error:', e); console.error(`\n${errors.length} error(s)`); process.exit(1); }
+console.log(`data ok: ${data.tools.length} tools, ${data.categories.length} categories, ${products.items.length} products`);
