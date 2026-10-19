@@ -52,7 +52,7 @@ export const S = {
       ['code', 'לכתוב קוד'], ['meetings', 'לתמלל פגישות'], ['translation', 'לתרגם']
     ],
     card: {
-      details: 'פרטים', visit: 'לאתר הרשמי', newTab: '(נפתח בחלון חדש)',
+      details: 'פרטים', visit: 'לאתר הרשמי', newTab: '(נפתח בחלון חדש)', sponsoredBy: 'תוכן ממומן על ידי',
       fav: 'הוספה למועדפים', unfav: 'הסרה מהמועדפים', compare: 'השוואה',
       verified: 'תמחור אומת', unverified: 'תמחור לא אומת', openSource: 'קוד פתוח', pick: 'בחירת העורכים', by: 'מאת',
       paidLink: 'קישור בתשלום: ייתכן שנקבל עמלה על רכישה דרכו', paidShort: 'קישור בתשלום', sponsored: 'פרסומת'
@@ -139,7 +139,7 @@ export const S = {
       unavailable: 'האפשרות הזו עדיין לא מחוברת. כשהיא תחובר, נציין זאת כאן במפורש.',
       privacy: 'אל תשתפו כאן מידע אישי.'
     },
-    footer: {
+    footer: { partners: 'שיתופי פעולה',
       tagline: 'קטלוג עצמאי של כלי AI ותוכנות, עם מידע שנבדק מול המקורות הרשמיים.',
       explore: 'גילוי', support: 'שירות', legal: 'מידע משפטי', language: 'שפה',
       contact: 'יצירת קשר', account: 'אזור אישי', preview: 'ממשקי שירות (הדגמה)',
@@ -203,7 +203,7 @@ export const S = {
       ['code', 'Write code'], ['meetings', 'Transcribe meetings'], ['translation', 'Translate']
     ],
     card: {
-      details: 'Details', visit: 'Official site', newTab: '(opens in a new tab)',
+      details: 'Details', visit: 'Official site', newTab: '(opens in a new tab)', sponsoredBy: 'Sponsored by',
       fav: 'Add to favorites', unfav: 'Remove from favorites', compare: 'Compare',
       verified: 'Pricing verified', unverified: 'Pricing not verified', openSource: 'Open source', pick: "Editors' pick", by: 'by',
       paidLink: 'Paid link: we may earn a commission if you buy through it', paidShort: 'Paid link', sponsored: 'Advertisement'
@@ -290,7 +290,7 @@ export const S = {
       unavailable: "This option isn't connected yet. When it is, we'll say so clearly here.",
       privacy: "Don't share personal information here."
     },
-    footer: {
+    footer: { partners: 'Partnerships',
       tagline: 'An independent catalog of AI tools and software, checked against official sources.',
       explore: 'Explore', support: 'Service', legal: 'Legal', language: 'Language',
       contact: 'Contact', account: 'Your area', preview: 'Service interfaces (demo)',

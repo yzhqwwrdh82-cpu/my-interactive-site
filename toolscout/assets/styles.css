@@ -1110,3 +1110,4 @@ input[type="text"], input[type="email"], textarea, select, .search input { backg
 @media (max-width: 720px) { .hero-copy { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 1024px) { .search-link { display: none; } }
 @media (max-width: 900px) and (min-width: 721px) { .nav-primary { margin-inline-start: 0; gap: 0; } .nav-primary a { padding-inline: 9px; } .header-row { gap: 12px; } }
+.tag-sponsored { color: var(--warn); background: var(--warn-soft); border-color: transparent; font-weight: 600; }

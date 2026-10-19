@@ -58,6 +58,16 @@ function richText(blocks, site = null, L = 'he') {
   }).join('\n');
 }
 
+// Sponsored placement: shown only when approved, in date, and the site-wide switch is on (validator enforces).
+export function isSponsored(tool) {
+  const sp = tool.sponsored;
+  if (!sp || sp.status !== 'active' || !(SITE_FEATURES && SITE_FEATURES.sponsoredContent)) return false;
+  const today = new Date().toISOString().slice(0, 10);
+  return sp.start <= today && today <= sp.end;
+}
+let SITE_FEATURES = null;
+export function setFeatures(f) { SITE_FEATURES = f; }
+
 // Outbound link: approved affiliate URL only when affiliate.status === 'approved' (validator enforces).
 export function outLink(tool) {
   const a = tool.affiliate || {};
@@ -97,6 +107,7 @@ export function card(tool, data, c, { headingLevel = 3 } = {}) {
     </div>
     <p class="card-desc" data-hl>${esc(tool.description[L])}</p>
     <div class="card-badges">
+      ${isSponsored(tool) ? `<span class="tag tag-sponsored" title="${esc(s.sponsoredBy)} ${esc(tool.sponsored.sponsor)}">${esc(s.sponsored)}</span>` : ''}
       ${priceBadge(tool, data, L)}
       ${tool.openSource ? `<span class="tag tag-open">${esc(s.openSource)}</span>` : ''}
       ${tool.featured ? `<span class="tag tag-pick">${esc(s.pick)}</span>` : ''}
@@ -393,7 +404,7 @@ export function toolPage(c, data, site, tool) {
       <div>
         <h1>${esc(tool.name)}</h1>
         <p class="tool-sub">${esc(s.card.by)} ${esc(tool.maker)} · <a href="${c.u('category/' + category.id + '.html')}">${esc(category[L])}</a></p>
-        <div class="card-badges">${priceBadge(tool, data, L)}${tool.openSource ? `<span class="tag tag-open">${esc(s.card.openSource)}</span>` : ''}${tool.featured ? `<span class="tag tag-pick">${esc(s.card.pick)}</span>` : ''}</div>
+        <div class="card-badges">${isSponsored(tool) ? `<span class="tag tag-sponsored">${esc(s.card.sponsoredBy)} ${esc(tool.sponsored.sponsor)}</span>` : ''}${priceBadge(tool, data, L)}${tool.openSource ? `<span class="tag tag-open">${esc(s.card.openSource)}</span>` : ''}${tool.featured ? `<span class="tag tag-pick">${esc(s.card.pick)}</span>` : ''}</div>
       </div>
     </div>
   </div>

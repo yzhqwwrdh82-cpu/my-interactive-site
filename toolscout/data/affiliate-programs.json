@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notes": "Research only. Nothing here has been applied for or joined. 'joinStatus' is ToolScout's own status (not-applied | applied | approved | rejected | closed | not-eligible). 'verification' is how well the terms were confirmed on the official page (verified | partial | unverified). Commission text is copied in substance from the source page and is not a promise of income. A tool's affiliate.status may become 'approved' only when its program here has joinStatus 'approved'.",
+  "notes": "Research only. Nothing here has been applied for or joined. 'joinStatus' is ToolScout's own status (not-applied | applied | approved | rejected | closed | not-eligible). 'verification' is how well the terms were confirmed on the official page (verified | partial | unverified). Commission text is copied in substance from the source page and is not a promise of income. A tool's affiliate.status may become 'approved' only when its program here has joinStatus 'approved'. 'category' groups programs for the monetization roadmap. 'joinFree' is true only when the official page says so.",
   "programs": [
     {
       "id": "make",
@@ -30,7 +30,8 @@
       "linkedTools": [
         "make"
       ],
-      "notes": "30-day sign-up window after click."
+      "notes": "30-day sign-up window after click.",
+      "category": "software-automation"
     },
     {
       "id": "elevenlabs",
@@ -60,7 +61,8 @@
       "linkedTools": [
         "elevenlabs"
       ],
-      "notes": "\"Qualifying subscription\" is not defined on the page."
+      "notes": "\"Qualifying subscription\" is not defined on the page.",
+      "category": "software-ai"
     },
     {
       "id": "descript",
@@ -90,7 +92,8 @@
       "linkedTools": [
         "descript"
       ],
-      "notes": "Approval in about a week; program migrating, existing affiliates must re-apply."
+      "notes": "Approval in about a week; program migrating, existing affiliates must re-apply.",
+      "category": "software-ai"
     },
     {
       "id": "synthesia",
@@ -120,7 +123,8 @@
       "linkedTools": [
         "synthesia"
       ],
-      "notes": "No self-referrals."
+      "notes": "No self-referrals.",
+      "category": "software-ai"
     },
     {
       "id": "clickup",
@@ -150,7 +154,8 @@
       "linkedTools": [
         "clickup"
       ],
-      "notes": ""
+      "notes": "",
+      "category": "software-business"
     },
     {
       "id": "1password",
@@ -180,7 +185,8 @@
       "linkedTools": [
         "1password"
       ],
-      "notes": "Aimed at tech, security and productivity publishers. Cookie length not stated."
+      "notes": "Aimed at tech, security and productivity publishers. Cookie length not stated.",
+      "category": "software-security"
     },
     {
       "id": "proton",
@@ -211,7 +217,8 @@
         "proton-pass",
         "proton-vpn"
       ],
-      "notes": "Bloggers and publishers listed as eligible. Payout by bank transfer above $100. Disclosure required; no brand bidding in PPC."
+      "notes": "Bloggers and publishers listed as eligible. Payout by bank transfer above $100. Disclosure required; no brand bidding in PPC.",
+      "category": "software-security"
     },
     {
       "id": "monday",
@@ -241,7 +248,8 @@
       "linkedTools": [
         "monday"
       ],
-      "notes": "Seen on the PartnerStack marketplace listing, not on monday.com itself; full terms at monday.com/partners/referraltos were not read."
+      "notes": "Seen on the PartnerStack marketplace listing, not on monday.com itself; full terms at monday.com/partners/referraltos were not read.",
+      "category": "software-business"
     },
     {
       "id": "notion",
@@ -271,7 +279,8 @@
       "linkedTools": [
         "notion"
       ],
-      "notes": "Closed to new applicants at check time."
+      "notes": "Closed to new applicants at check time.",
+      "category": "software-business"
     },
     {
       "id": "canva",
@@ -301,7 +310,8 @@
       "linkedTools": [
         "canva"
       ],
-      "notes": "Only for accepted tutorial creators."
+      "notes": "Only for accepted tutorial creators.",
+      "category": "software-design"
     },
     {
       "id": "heygen",
@@ -331,7 +341,8 @@
       "linkedTools": [
         "heygen"
       ],
-      "notes": "Requires 5K+ followers and original video content; SEO/blog-only promotion is excluded, so ToolScout as a website does not qualify."
+      "notes": "Requires 5K+ followers and original video content; SEO/blog-only promotion is excluded, so ToolScout as a website does not qualify.",
+      "category": "software-ai"
     },
     {
       "id": "bitwarden",
@@ -361,7 +372,8 @@
       "linkedTools": [
         "bitwarden"
       ],
-      "notes": ""
+      "notes": "",
+      "category": "software-security"
     },
     {
       "id": "amazon",
@@ -389,7 +401,188 @@
         "en": "Paid link"
       },
       "linkedTools": [],
-      "notes": "For books. Prices, availability, ratings and reviews may only be shown via the official API. Availability for applicants in Israel not checked; each Amazon store is a separate program."
+      "notes": "For books. Prices, availability, ratings and reviews may only be shown via the official API. Availability for applicants in Israel not checked; each Amazon store is a separate program.",
+      "category": "retail-books-hardware"
+    },
+    {
+      "id": "hostinger",
+      "name": "Hostinger Affiliate Program",
+      "programUrl": "https://www.hostinger.com/affiliates",
+      "network": "Hostinger (own platform)",
+      "category": "hosting",
+      "verification": "verified",
+      "joinStatus": "not-applied",
+      "programOpen": true,
+      "fitForToolScout": "good",
+      "joinFree": true,
+      "countries": {
+        "allowed": null,
+        "note": "Not stated on the official page; confirm in full terms before applying."
+      },
+      "commission": {
+        "type": "percent",
+        "text": "Commissions \"start at 40% and grow depending on sales volume\" (per eligible sale).",
+        "verified": true
+      },
+      "cookieDays": null,
+      "checkedAt": "2026-10-19",
+      "source": "https://www.hostinger.com/affiliates",
+      "disclosureLabel": {
+        "he": "קישור בתשלום",
+        "en": "Paid link"
+      },
+      "linkedTools": [],
+      "notes": "Free to join (\"completely free of charge\"); verification required for dashboard. Cookie and payout minimum not stated on the page."
+    },
+    {
+      "id": "namecheap",
+      "name": "Namecheap Affiliate Program",
+      "programUrl": "https://www.namecheap.com/affiliates/",
+      "network": "Impact (also CJ)",
+      "category": "domains",
+      "verification": "partial",
+      "joinStatus": "not-applied",
+      "programOpen": null,
+      "fitForToolScout": "good",
+      "joinFree": null,
+      "countries": {
+        "allowed": null,
+        "note": "Not stated on the official page; confirm in full terms before applying."
+      },
+      "commission": {
+        "type": "unknown",
+        "text": "Commission on a new customer's first purchase; rates on a separate page that was not read.",
+        "verified": false
+      },
+      "cookieDays": null,
+      "checkedAt": "2026-10-19",
+      "source": "https://www.namecheap.com/affiliates/",
+      "disclosureLabel": {
+        "he": "קישור בתשלום",
+        "en": "Paid link"
+      },
+      "linkedTools": [],
+      "notes": "No fee mentioned."
+    },
+    {
+      "id": "cloudways",
+      "name": "Cloudways Affiliate Program",
+      "programUrl": "https://www.cloudways.com/en/web-hosting-affiliate-program",
+      "network": "Cloudways (own)",
+      "category": "hosting",
+      "verification": "verified",
+      "joinStatus": "not-applied",
+      "programOpen": true,
+      "fitForToolScout": "fair",
+      "joinFree": null,
+      "countries": {
+        "allowed": null,
+        "note": "Not stated on the official page; confirm in full terms before applying."
+      },
+      "commission": {
+        "type": "hybrid",
+        "text": "Slab: up to $125 per sale by monthly volume; or Hybrid: $30 per sale + 7% lifetime.",
+        "verified": true
+      },
+      "cookieDays": 90,
+      "checkedAt": "2026-10-19",
+      "source": "https://www.cloudways.com/en/web-hosting-affiliate-program",
+      "disclosureLabel": {
+        "he": "קישור בתשלום",
+        "en": "Paid link"
+      },
+      "linkedTools": [],
+      "notes": "\"Anyone can join\". PayPal payout minimum $250 approved commission."
+    },
+    {
+      "id": "semrush",
+      "name": "Semrush Affiliate Program",
+      "programUrl": "https://www.semrush.com/kb/97-affiliate-program",
+      "network": "Impact",
+      "category": "software-marketing",
+      "verification": "partial",
+      "joinStatus": "not-applied",
+      "programOpen": null,
+      "fitForToolScout": "good",
+      "joinFree": null,
+      "countries": {
+        "allowed": null,
+        "note": "Not stated on the official page; confirm in full terms before applying."
+      },
+      "commission": {
+        "type": "flat",
+        "text": "\"Fixed commissions\" per sale or trial activation; amounts not stated in text.",
+        "verified": false
+      },
+      "cookieDays": 120,
+      "checkedAt": "2026-10-19",
+      "source": "https://www.semrush.com/kb/97-affiliate-program",
+      "disclosureLabel": {
+        "he": "קישור בתשלום",
+        "en": "Paid link"
+      },
+      "linkedTools": [],
+      "notes": "Applications reviewed in about two working days. Semrush is not yet in the catalog."
+    },
+    {
+      "id": "nordvpn",
+      "name": "NordVPN Affiliate Program",
+      "programUrl": "https://nordvpn.com/affiliate/",
+      "network": "Not named (own portal)",
+      "category": "software-security",
+      "verification": "verified",
+      "joinStatus": "not-applied",
+      "programOpen": true,
+      "fitForToolScout": "fair",
+      "joinFree": null,
+      "countries": {
+        "allowed": null,
+        "note": "Not stated on the official page; confirm in full terms before applying."
+      },
+      "commission": {
+        "type": "percent",
+        "text": "1-month plan: 100% new, 30% renewals; 1- and 2-year plans: 40% new, 30% renewals.",
+        "verified": true
+      },
+      "cookieDays": 30,
+      "checkedAt": "2026-10-19",
+      "source": "https://nordvpn.com/affiliate/",
+      "disclosureLabel": {
+        "he": "קישור בתשלום",
+        "en": "Paid link"
+      },
+      "linkedTools": [],
+      "notes": "No website required per FAQ. NordVPN is not in the catalog (Proton VPN is)."
+    },
+    {
+      "id": "coursera",
+      "name": "Coursera Affiliate Program",
+      "programUrl": "https://coursera.org/about/affiliates",
+      "network": "Impact",
+      "category": "courses",
+      "verification": "verified",
+      "joinStatus": "not-applied",
+      "programOpen": true,
+      "fitForToolScout": "good",
+      "joinFree": true,
+      "countries": {
+        "allowed": null,
+        "note": "Not stated on the official page; confirm in full terms before applying."
+      },
+      "commission": {
+        "type": "percent",
+        "text": "Baseline 15%–45% on eligible purchases; monthly subscriptions pay first month only; degrees excluded.",
+        "verified": true
+      },
+      "cookieDays": 30,
+      "checkedAt": "2026-10-19",
+      "source": "https://coursera.org/about/affiliates",
+      "disclosureLabel": {
+        "he": "קישור בתשלום",
+        "en": "Paid link"
+      },
+      "linkedTools": [],
+      "notes": "\"Joining is fast, easy, and free.\" Courses are not yet a catalog section."
     }
   ]
 }

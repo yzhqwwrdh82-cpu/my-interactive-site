@@ -153,6 +153,7 @@ export function footer(c, data, site) {
     </ul></nav>
     <nav aria-label="${esc(f.support)}"><h2>${esc(f.support)}</h2><ul>
       <li><a href="${c.u('contact.html')}">${esc(f.contact)}</a></li>
+      <li><a href="${c.u('partners.html')}">${esc(f.partners)}</a></li>
       <li><a href="${c.u('account.html')}">${esc(f.account)}</a></li>
       <li><a href="${c.u('service-preview.html')}">${esc(f.preview)}</a></li>
     </ul></nav>

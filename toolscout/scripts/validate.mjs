@@ -139,6 +139,47 @@ if (feat.analytics && !g.ga4MeasurementId) errors.push('site.json: features.anal
 if (feat.ads && !g.adsensePublisherId) errors.push('site.json: features.ads is on but google.adsensePublisherId is missing');
 if (feat.affiliateLinks && !programs.programs.some((x) => x.joinStatus === 'approved')) errors.push('site.json: features.affiliateLinks is on but no program is approved');
 
+
+// Affiliate program categories
+const PCATS = ['software-ai', 'software-automation', 'software-business', 'software-design', 'software-security', 'software-marketing', 'hosting', 'domains', 'courses', 'retail-books-hardware'];
+for (const pr of programs.programs) if (!PCATS.includes(pr.category)) errors.push(`affiliate program "${pr.id}": category must be one of ${PCATS.join('|')}`);
+
+// Sponsorship on tools: off unless explicitly approved and labeled
+for (const t of data.tools) {
+  const sp = t.sponsored;
+  if (!sp) continue;
+  const at = `tool "${t.id}": sponsored`;
+  if (!['none', 'active'].includes(sp.status)) errors.push(`${at}.status must be none|active`);
+  if (sp.status === 'active') {
+    if (!feat.sponsoredContent) errors.push(`${at} is active but site.json features.sponsoredContent is off`);
+    if (!sp.sponsor || !isDate(sp.start) || !isDate(sp.end) || sp.end < sp.start) errors.push(`${at} needs sponsor, start and end dates`);
+    if (!sp.approvedBy) errors.push(`${at} needs approvedBy (owner approval record)`);
+  }
+}
+
+// Digital products: never for sale without approval and a real checkout
+for (const it of products.items.filter((x) => x.type === 'digital-product')) {
+  const at = `product "${it.id}"`;
+  if (!['not-for-sale', 'waitlist', 'for-sale'].includes(it.availability)) errors.push(`${at}: availability must be not-for-sale|waitlist|for-sale`);
+  if (it.availability === 'for-sale' && (!feat.payments || !isHttps(it.checkoutUrl) || !isHttps(it.termsUrl))) errors.push(`${at}: for-sale needs features.payments, https checkoutUrl and termsUrl`);
+  if (it.availability === 'waitlist' && !feat.newsletter) errors.push(`${at}: waitlist needs a connected newsletter (features.newsletter)`);
+}
+
+// Monetization channel registry
+const money = JSON.parse(readFileSync(join(root, 'data/monetization.json'), 'utf8'));
+const CH = ['affiliate', 'ads', 'sponsorship', 'digital-product', 'newsletter', 'subscription', 'leads', 'software', 'licensing', 'partnership'];
+const progIds = new Set(programs.programs.map((x) => x.id));
+for (const c of money.channels) {
+  const at = `monetization "${c.id}"`;
+  if (!CH.includes(c.channel)) errors.push(`${at}: unknown channel`);
+  if (!['idea', 'prepared', 'active'].includes(c.status)) errors.push(`${at}: status must be idea|prepared|active`);
+  if (!['now', 'phase2', 'future'].includes(c.priority)) errors.push(`${at}: priority must be now|phase2|future`);
+  if (c.status === 'active') errors.push(`${at}: 'active' must be set by hand only after owner approval (remove this check when approved)`);
+  for (const pv of c.providers || []) if (!isHttps(pv.url) || typeof pv.verified !== 'boolean') errors.push(`${at}: provider needs https url and verified flag`);
+  for (const id of c.affiliatePrograms || []) if (!progIds.has(id)) errors.push(`${at}: unknown affiliate program ${id}`);
+  if (!isDate(c.checkedAt)) errors.push(`${at}: checkedAt required`);
+}
+
 for (const w of warn) console.warn('warn:', w);
 if (errors.length) { for (const e of errors) console.error('error:', e); console.error(`\n${errors.length} error(s)`); process.exit(1); }
-console.log(`data ok: ${data.tools.length} tools, ${data.categories.length} categories, ${products.items.length} products, ${programs.programs.length} affiliate programs`);
+console.log(`data ok: ${data.tools.length} tools, ${data.categories.length} categories, ${products.items.length} products, ${programs.programs.length} affiliate programs, ${money.channels.length} revenue channels`);

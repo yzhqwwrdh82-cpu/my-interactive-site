@@ -93,3 +93,68 @@ export function notFoundPage(site, basePath) {
 </html>
 `;
 }
+
+// ---------- Partnerships / advertise (B2B entry point; email only, nothing is collected on the site) ----------
+const PARTNER = {
+  he: {
+    title: 'שיתופי פעולה ופרסום', desc: 'איך יצרני כלים, הוצאות ספרים וספקי קורסים יכולים לעבוד עם ToolScout, ואילו כללי עריכה חלים תמיד.',
+    lead: 'ToolScout עוזר לאנשים לבחור כלי AI, תוכנות וספרים לפי מידע שנבדק מול המקור. אלה הדרכים לעבוד איתנו בלי לפגוע באמון של הקוראים.',
+    now: 'כרגע אין באתר תוכן ממומן, פרסומות או קישורי שותפים.',
+    waysH: 'דרכים לשיתוף פעולה',
+    ways: [
+      ['הצעת כלי לקטלוג', 'חינם. כלי נכנס לקטלוג רק אחרי בדיקה מול האתר הרשמי, ואי אפשר לשלם על הכנסה לקטלוג או על מיקום בדירוג.'],
+      ['תוכן ממומן מסומן', 'כרטיס, מדריך או השוואה בחסות, עם תווית "פרסומת" ושם נותן החסות ליד התוכן עצמו.'],
+      ['חסות בניוזלטר', 'אזכור מסומן בעדכון החודשי, אחרי שהניוזלטר יושק.'],
+      ['תוכנית שותפים', 'אם יש לכם תוכנית שותפים, אפשר לשלוח פרטים. קישורים בתשלום מסומנים "קישור בתשלום".'],
+      ['תוכן בעברית', 'מדריכים והסברים בעברית למוצר שנכנס לשוק הישראלי, עם סימון ברור כשיש תשלום.']
+    ],
+    rulesH: 'כללים שלא משתנים',
+    rules: ['לא מוכרים ביקורות, דירוגים או "בחירת העורכים".', 'כל תוכן ממומן וכל קישור בתשלום מסומנים ליד התוכן.', 'מחירים ופרטים נבדקים מול המקור גם בתוכן ממומן.', 'אנחנו יכולים לסרב לכל הצעה.'],
+    audienceH: 'נתוני קהל',
+    audience: 'האתר חדש. נתוני תנועה יפורסמו רק כשיהיה כלי מדידה מחובר, ולא נמסור הערכות.',
+    contactH: 'פנייה', contactTodo: 'להשלמה: אימייל ליצירת קשר.', contactText: 'כתבו לנו באימייל, וציינו את שם המוצר, סוג שיתוף הפעולה והקישור לאתר הרשמי:', subject: 'שיתוף פעולה עם ToolScout',
+    more: 'גילוי נאות'
+  },
+  en: {
+    title: 'Partnerships and advertising', desc: 'How tool makers, publishers and course providers can work with ToolScout, and the editorial rules that always apply.',
+    lead: 'ToolScout helps people choose AI tools, software and books based on information checked against the source. These are the ways to work with us without hurting readers\' trust.',
+    now: 'There is currently no sponsored content, advertising or affiliate links on the site.',
+    waysH: 'Ways to work together',
+    ways: [
+      ['Suggest a tool', 'Free. A tool is added only after we check it against the official site, and nobody can pay to be included or ranked.'],
+      ['Labeled sponsored content', 'A sponsored card, guide or comparison, labeled "Advertisement" with the sponsor\'s name next to the content itself.'],
+      ['Newsletter sponsorship', 'A labeled mention in the monthly update, once the newsletter launches.'],
+      ['Affiliate program', 'If you run an affiliate program, send us the details. Paid links are labeled "Paid link".'],
+      ['Hebrew content', 'Guides and explainers in Hebrew for products entering the Israeli market, clearly labeled when paid.']
+    ],
+    rulesH: 'Rules that never change',
+    rules: ['We do not sell reviews, rankings or "Editors\' picks".', 'Every sponsored item and paid link is labeled next to the content.', 'Prices and details are checked against the source, sponsored content included.', 'We can decline any offer.'],
+    audienceH: 'Audience data',
+    audience: 'The site is new. Traffic figures will be published only once a measurement tool is connected; we will not give estimates.',
+    contactH: 'Contact', contactTodo: 'To be completed: a contact email.', contactText: 'Email us with the product name, the type of partnership and a link to the official site:', subject: 'Partnership with ToolScout',
+    more: 'Disclosure'
+  }
+};
+export function partnersPage(c, data, site) {
+  const L = c.lang;
+  const a = PARTNER[L];
+  const o = site.owner || {};
+  const contact = o.email
+    ? `<p>${esc(a.contactText)} <a href="mailto:${esc(o.email)}?subject=${encodeURIComponent(a.subject)}" dir="ltr">${esc(o.email)}</a></p>`
+    : `<p class="todo">${esc(a.contactTodo)}</p>`;
+  return page(c, data, site, { title: `${a.title} | ToolScout`, desc: a.desc, page: 'partners' }, `
+<section class="page-head"><div class="wrap narrow">${crumbs(c, [[null, a.title]])}<h1>${esc(a.title)}</h1><p class="lead">${esc(a.lead)}</p></div></section>
+<article class="wrap narrow prose">
+<p class="callout">${esc(a.now)}</p>
+<h2>${esc(a.waysH)}</h2>
+<ul>${a.ways.map(([h, t]) => `<li><strong>${esc(h)}:</strong> ${esc(t)}</li>`).join('')}</ul>
+<h2>${esc(a.rulesH)}</h2>
+<ul>${a.rules.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
+<h2>${esc(a.audienceH)}</h2>
+<p>${esc(a.audience)}</p>
+<h2>${esc(a.contactH)}</h2>
+${contact}
+<p><a href="${c.u('disclosure.html')}">${esc(a.more)}</a></p>
+</article>
+`);
+}

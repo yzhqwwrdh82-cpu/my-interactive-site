@@ -10,10 +10,10 @@ import { execFileSync } from 'node:child_process';
 import { LANGS, ctx, absUrl } from './lib/util.mjs';
 import { setSite } from './lib/layout.mjs';
 import { methodPage } from './lib/method.mjs';
-import { homePage, catalogPage, toolPage, categoryPage, comparePage, comparePresetPage, guidesIndex, guidePage, legalPage, contactPage, accountPage } from './lib/pages.mjs';
+import { setFeatures, isSponsored, homePage, catalogPage, toolPage, categoryPage, comparePage, comparePresetPage, guidesIndex, guidePage, legalPage, contactPage, accountPage } from './lib/pages.mjs';
 import { previewPage } from './lib/preview.mjs';
 import { booksPage } from './lib/books.mjs';
-import { notFoundPage, aboutPage } from './lib/extra.mjs';
+import { notFoundPage, aboutPage, partnersPage } from './lib/extra.mjs';
 import { emailHtml, EMAILS } from './lib/emails.mjs';
 import { guides, comparePresets, legal, chatHelp } from './lib/content.mjs';
 
@@ -36,6 +36,7 @@ const site = {
 site.analyticsOn = !!(site.features.analytics && site.google.ga4MeasurementId);
 
 setSite(site);
+setFeatures(site.features);
 
 // Clean generated output (only generated folders/files, never data or assets).
 for (const d of ['en', 'tools', 'category', 'compare', 'guides', 'emails']) rmSync(join(root, d), { recursive: true, force: true });
@@ -58,6 +59,7 @@ for (const L of LANGS) {
   for (const t of data.tools) { const c = ctx(L, `tools/${t.id}.html`); out(c, toolPage(c, data, site, t)); }
   for (const k of data.categories) { const c = ctx(L, `category/${k.id}.html`); out(c, categoryPage(c, data, site, k)); }
   out(ctx(L, 'about.html'), aboutPage(ctx(L, 'about.html'), data, site, products));
+  out(ctx(L, 'partners.html'), partnersPage(ctx(L, 'partners.html'), data, site));
   out(ctx(L, 'books.html'), booksPage(ctx(L, 'books.html'), data, site, products));
   out(ctx(L, 'guides/index.html'), guidesIndex(ctx(L, 'guides/index.html'), data, site));
   for (const g of guides) { const c = ctx(L, `guides/${g.slug}.html`); out(c, guidePage(c, data, site, g)); }
@@ -87,6 +89,7 @@ const catalog = {
     platforms: t.platforms, openSource: t.openSource, pricingUrl: t.pricingUrl,
     url: (t.affiliate && t.affiliate.status === 'approved' && t.affiliate.url) ? t.affiliate.url : t.url,
     paidLink: !!(t.affiliate && t.affiliate.status === 'approved' && t.affiliate.url),
+    sponsored: isSponsored(t),
     logo: t.logo ? t.logo.slug : null, monogram: t.monogram || null, checkedAt: t.checkedAt, addedAt: t.addedAt,
     description: pick(t.description), audience: t.audience,
     pros: t.pros.map(pick), cons: t.cons.map(pick), verification: { pricing: t.verification.pricing, platforms: t.verification.platforms }

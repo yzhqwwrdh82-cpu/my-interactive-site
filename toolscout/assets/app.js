@@ -366,7 +366,7 @@
       '<div class="card-title"><h3 class="card-name"><a class="card-link" href="' + LANG_ROOT + 'tools/' + t.id + '.html">' + escapeHtml(t.name) + '</a></h3>' +
       '<p class="card-meta">' + escapeHtml(nameOf(cat.categories, t.category)) + '</p></div>' +
       '<button type="button" class="fav-btn" data-fav="' + t.id + '" aria-pressed="true" data-l-add="' + escapeHtml(s.fav + ': ' + t.name) + '" data-l-remove="' + escapeHtml(s.unfav + ': ' + t.name) + '" aria-label="' + escapeHtml(s.unfav + ': ' + t.name) + '"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.4-7.5-10.1A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7.5 2.9C19.5 15.6 12 20 12 20z"/></svg></button></div>' +
-      '<p class="card-desc">' + escapeHtml(t.description[lang]) + '</p><div class="card-badges">' + priceHtml(t, cat) + '</div></article></li>';
+      '<p class="card-desc">' + escapeHtml(t.description[lang]) + '</p><div class="card-badges">' + (t.sponsored ? '<span class="tag tag-sponsored">' + escapeHtml(s.sponsored || '') + '</span>' : '') + priceHtml(t, cat) + '</div></article></li>';
   }
 
   // ---------- Account: favorites ----------
