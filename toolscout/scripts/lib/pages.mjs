@@ -627,7 +627,7 @@ export function contactPage(c, data, site) {
     <p class="form-status" role="status" data-status data-not-connected="${esc(k.notSent)}" hidden></p>
   </form>
   <aside class="contact-aside">
-    <div class="panel"><h2>${esc(k.channels)}</h2><p>${esc(k.channelsNote)}</p><p class="fine">${esc(k.a11y)}</p></div>
+    <div class="panel"><h2>${esc(k.channels)}</h2>${(site.owner && site.owner.email) ? `<p>${esc(k.emailUs)} <a href="mailto:${esc(site.owner.email)}" dir="ltr">${esc(site.owner.email)}</a></p>` : `<p class="todo">${esc(k.channelsNote)}</p>`}<p class="fine">${esc((site.owner && site.owner.email) ? k.a11yLive : k.a11y)}</p></div>
     ${newsletterBlock(c, 'nl-c', { compact: true })}
   </aside>
 </div>

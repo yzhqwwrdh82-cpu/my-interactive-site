@@ -12,7 +12,7 @@
 | הפניה מהשורש | 🟡 | `_redirects`: ‏`/` ו־`/index.html` ← `/toolscout/` (301). **הקובץ המקורי `index.html` נשאר במאגר בלי שינוי, אבל לא יהיה נגיש בכתובת השורש אחרי ההשקה.** |
 | כתובות עמודים | ✅ | `tools/<id>.html`, `category/<id>.html`, `compare/<slug>.html`, `guides/<slug>.html`, ועמודים קבועים. אותו נתיב בשתי השפות, ההבדל הוא רק `en/` |
 | עמוד 404 | 🟡 | `404.html` בשורש, דו־לשוני, עם קישורים מוחלטים |
-| שם תת־דומיין | 👤 | אפשר לשנות את `benevolent-mooncake-e8a513` לשם ברור (למשל `toolscout`) בחינם: Netlify ← Site configuration ← Change site name. אחרי השינוי צריך לעדכן את `siteUrl` ב־`data/site.json` ולבנות מחדש. עדיף לעשות את זה **לפני** Search Console |
+| שם תת־דומיין | 👤 | השם המוצע: `toolscout-app`, והחלופה: `gettoolscout`. בבדיקה ב־19.10.2026 לא נמצא אתר פעיל בשני השמות, אבל רק Netlify תאשר שהשם פנוי בזמן ההחלפה. השמות `toolscout`, ‏`toolscout-ai` ו־`toolscout-hub` תפוסים, ו־toolscout-hub הוא אתר ביקורות AI אחר שמשתמש בשם ToolScout. ההחלפה חינמית: Netlify ← Project configuration ← Change project name. הכתובת הישנה תפסיק לעבוד. אחר כך צריך לעדכן את `siteUrl` ולבנות מחדש. |
 | דומיין משלך | 👤 | לא נרכש. לא חובה להשקה. אם תרצה דומיין, נציג מחיר לאישור לפני רכישה |
 
 ## 2. Netlify (מסלול חינם)

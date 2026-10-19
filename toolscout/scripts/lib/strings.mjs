@@ -104,7 +104,8 @@ export const S = {
       errSummary: 'יש לתקן את השדות המסומנים.',
       notSent: 'הטופס תקין, אבל הוא עדיין לא מחובר לשרת. ההודעה לא נשלחה ולא נשמרה.',
       channels: 'ערוצי פנייה', channelsNote: 'עדיין אין ערוץ פנייה פעיל. כשהשירות יחובר, תופיע כאן כתובת למענה.',
-      a11y: 'פניות בנושא נגישות יטופלו בעדיפות כשהשירות יחובר.'
+      a11y: 'פניות בנושא נגישות יטופלו בעדיפות כשהשירות יחובר.',
+      emailUs: 'אפשר לכתוב לנו באימייל:', a11yLive: 'בפנייה בנושא נגישות, ציינו את העמוד ואת הדפדפן או הטכנולוגיה המסייעת.'
     },
     newsletter: {
       title: 'עדכונים מ-ToolScout', lead: 'סיכום חודשי של כלים חדשים ושינויים בתמחור. בלי ספאם, וההסרה בלחיצה אחת.',
@@ -254,7 +255,8 @@ export const S = {
       errSummary: 'Fix the highlighted fields.',
       notSent: "The form is valid, but it isn't connected to a server yet. Your message was not sent or saved.",
       channels: 'Contact channels', channelsNote: "There's no live contact channel yet. When the service is connected, a reply address will appear here.",
-      a11y: 'Accessibility requests will be handled first once the service is connected.'
+      a11y: 'Accessibility requests will be handled first once the service is connected.',
+      emailUs: 'You can email us at:', a11yLive: 'For accessibility issues, please mention the page and the browser or assistive technology you use.'
     },
     newsletter: {
       title: 'Updates from ToolScout', lead: 'A monthly round-up of new tools and pricing changes. No spam, and you can unsubscribe with one click.',
