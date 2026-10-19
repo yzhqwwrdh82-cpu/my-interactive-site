@@ -29,6 +29,7 @@ All content lives in three JSON files. The build (`node toolscout/scripts/build.
   "uses": ["video", "audio"],          // → uses[].id (drives "find by task" filters)
   "pricing": "freemium",               // free | freemium | paid | unverified
   "platforms": null,                   // null unless verified → platforms[].id
+  "platformsUrl": "https://…",         // optional: official download page the platforms were verified against
   "openSource": null,                  // true | false | null (unknown)
   "url": "https://…", "pricingUrl": "https://…",
   "logo": { "source": "simple-icons", "slug": "…" } | null,

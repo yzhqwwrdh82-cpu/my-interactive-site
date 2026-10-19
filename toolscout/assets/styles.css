@@ -734,3 +734,41 @@ body.has-tray .chat-fab { bottom: 92px; }
 .paid-note { color: var(--warn); }
 .todo { display: block; padding: 10px 14px; margin: 0 0 16px; border-radius: var(--r-sm); background: var(--warn-soft); color: var(--warn); border-inline-start: 4px solid var(--signal); font-weight: 500; font-size: var(--fs-1); }
 code.key { font: 500 .9em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: nowrap; padding: 1px 5px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); unicode-bidi: isolate; }
+
+/* ---------- v3 additions ---------- */
+:root { --c-automation: #6B4FBB; }
+:root[data-theme="dark"] { --c-automation: #B9A6F2; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --c-automation: #B9A6F2; } }
+[data-cat="automation"] { --cc: var(--c-automation); }
+.cat-intro { margin-top: 16px; max-width: 72ch; color: var(--ink-2); font-size: var(--fs-3); }
+.finder-wrap { padding-block: 0 clamp(24px, 4vw, 40px); }
+.finder { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 2fr) auto; gap: 24px; align-items: end; border-width: 2px; border-color: var(--ink); }
+.finder-copy h2 { font-size: var(--fs-4); }
+.finder-copy p { color: var(--muted); margin-top: 6px; font-size: var(--fs-1); }
+.finder-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.finder fieldset.field { gap: 2px; }
+.finder .field > span, .finder legend { display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: var(--fs-1); margin-bottom: 6px; }
+.step { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--signal); color: #10242B; font-size: .78rem; font-weight: 700; }
+.who { margin-top: 20px; }
+.who-list { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+.who-list li { display: flex; gap: 12px; align-items: flex-start; }
+.who-list h3 { font-size: var(--fs-2); }
+.who-list p { color: var(--ink-2); font-size: var(--fs-1); margin-top: 2px; }
+.method-stats { margin: 18px 0 0; }
+.method-steps { display: grid; gap: 12px; margin-bottom: 16px; }
+.method-steps li { display: flex; gap: 16px; align-items: flex-start; }
+.method-ic { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); }
+.method-steps h2 { font-size: var(--fs-3); }
+.method-steps p { color: var(--ink-2); margin-top: 4px; }
+.method-not { margin-bottom: 8px; }
+.method-not h2 { margin-bottom: 12px; }
+.method-prose { padding-top: 8px; padding-bottom: 48px; }
+.book-desc { color: var(--ink-2); font-size: var(--fs-1); }
+.book-note { margin-bottom: 14px; }
+@media (max-width: 900px) { .finder { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .finder-steps { grid-template-columns: 1fr; } }
+/* v3 fixes: generated covers keep Latin titles inside the cover; lighter logo overlap */
+.book-cover { position: relative; }
+.book-cover-gen { direction: ltr; text-align: left; overflow: hidden; font-size: .9rem; line-height: 1.2; overflow-wrap: anywhere; hyphens: auto; padding: 10px 9px; }
+.book-cover-gen .bc-title { display: block; max-width: 100%; }
+.preset-logos .logo + .logo { margin-inline-start: -3px; }

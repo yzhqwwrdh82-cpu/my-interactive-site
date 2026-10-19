@@ -129,6 +129,76 @@
       "license": "CC0-1.0 (project default; not confirmed per icon)",
       "source": "https://obsidian.md",
       "guidelines": null
+    },
+    "zapier": {
+      "title": "Zapier",
+      "hex": "FF4F00",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.figma.com/file/NQFxTCE5pGR3dHZt0DkOyy/Zapier-Brand-Guidelines-%5BExternal%5D?type=design&node-id=101-9701&mode=design",
+      "guidelines": "https://www.figma.com/file/NQFxTCE5pGR3dHZt0DkOyy/Zapier-Brand-Guidelines-%5BExternal%5D?type=design&node-id=101-9701&mode=design"
+    },
+    "make": {
+      "title": "Make",
+      "hex": "6D00CC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.make.com/en/press",
+      "guidelines": "https://www.make.com/en/press"
+    },
+    "n8n": {
+      "title": "n8n",
+      "hex": "EA4B71",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://n8n.io/press",
+      "guidelines": null
+    },
+    "gimp": {
+      "title": "GIMP",
+      "hex": "5C5543",
+      "license": "CC-BY-SA-3.0",
+      "source": "https://www.gimp.org/about/linking.html#wilber-the-gimp-mascot",
+      "guidelines": null
+    },
+    "inkscape": {
+      "title": "Inkscape",
+      "hex": "000000",
+      "license": "CC-BY-SA-3.0",
+      "source": "https://inkscape.org/gallery/=inkscape-branding/inkscape-brand-assets/",
+      "guidelines": null
+    },
+    "krita": {
+      "title": "Krita",
+      "hex": "3BABFF",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://krita.org/en/about/press/",
+      "guidelines": null
+    },
+    "replit": {
+      "title": "Replit",
+      "hex": "F26207",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://repl.it",
+      "guidelines": null
+    },
+    "todoist": {
+      "title": "Todoist",
+      "hex": "E44332",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://doist.com/press",
+      "guidelines": null
+    },
+    "miro": {
+      "title": "Miro",
+      "hex": "050038",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://miro.com",
+      "guidelines": null
+    },
+    "kdenlive": {
+      "title": "Kdenlive",
+      "hex": "527EB2",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://kdenlive.org/en/trademark-logo/",
+      "guidelines": "https://kdenlive.org/en/trademark-logo/"
     }
   }
 }

@@ -6,9 +6,9 @@ import { icon, page, crumbs } from './layout.mjs';
 const T = {
   he: {
     title: 'ספרים על AI, תכנות ועסקים | ToolScout', desc: 'ספרים, מדריכים ורשימות קריאה על AI, תכנות, עסקים, שיווק ועיצוב. בהכנה: יתווספו רק ספרים שפרטיהם אומתו.',
-    h1: 'ספרים ומדריכים', lead: 'ספרים על AI, תכנות, עסקים, שיווק, עיצוב ויזמות, כהשלמה לכלים שבקטלוג. נוסיף רק ספרים שאת פרטיהם בדקנו מול עמוד ההוצאה לאור.',
-    status: 'בהכנה', empty: 'עדיין אין ספרים בקטלוג. כשנוסיף ספרים, הם יופיעו כאן עם הפרטים שאומתו.',
-    sectionsTitle: 'מה יהיה כאן', soon: 'עוד לא זמין',
+    h1: 'ספרים ומדריכים', lead: 'ספרים על AI, תכנות ועסקים, כהשלמה לכלים שבקטלוג. מופיעים כאן רק ספרים שאת פרטיהם בדקנו מול עמוד ההוצאה לאור.',
+    status: 'מתעדכן', levelNote: 'רמת הידע והתיאור הם הערכה עריכתית. כותרת, מחברים, הוצאה, שנה, ISBN ופורמטים נבדקו מול עמוד ההוצאה.', empty: 'עדיין אין ספרים בקטלוג. כשנוסיף ספרים, הם יופיעו כאן עם הפרטים שאומתו.',
+    sectionsTitle: 'מה יש כאן ומה בהכנה', soon: 'עוד לא זמין', live: 'זמין',
     sections: [
       ['book', 'ספרים מודפסים', 'ספרי AI, תכנות, עסקים, שיווק, עיצוב, יזמות וטכנולוגיה, עם פרטי ההוצאה לאור.'],
       ['ebook', 'ספרים דיגיטליים', 'ספרים אלקטרוניים ומדריכים מקצועיים, רק כשזכויות ההפצה מאפשרות זאת.'],
@@ -28,13 +28,13 @@ const T = {
     ],
     specimenTitle: 'דוגמת עיצוב לכרטיס ספר', specimenNote: 'זו דוגמה לעיצוב בלבד, לא ספר אמיתי.',
     specTitle: 'שם הספר', specAuthor: 'שם המחבר/ת', specMeta: 'הוצאה · שנה',
-    by: 'מאת', checked: 'נבדק', publisher: 'עמוד ההוצאה', priceNone: 'מחיר לא אומת', related: 'כלים קשורים בקטלוג', toCatalog: 'לקטלוג הכלים'
+    by: 'מאת', checked: 'נבדק', publisher: 'עמוד ההוצאה', priceNone: 'מחיר: בעמוד ההוצאה', related: 'כלים קשורים בקטלוג', toCatalog: 'לקטלוג הכלים'
   },
   en: {
     title: 'Books on AI, programming and business | ToolScout', desc: 'Books, guides and reading lists on AI, programming, business, marketing and design. Coming soon: only books with verified details.',
-    h1: 'Books and guides', lead: "Books on AI, programming, business, marketing, design and entrepreneurship, to go with the tools in the catalog. We'll add only books whose details we checked against the publisher's page.",
-    status: 'Coming soon', empty: "There are no books in the catalog yet. When we add them, they'll appear here with their verified details.",
-    sectionsTitle: "What's coming", soon: 'Not available yet',
+    h1: 'Books and guides', lead: "Books on AI, programming and business, to go with the tools in the catalog. Only books whose details we checked against the publisher's page are listed.",
+    status: 'Growing', levelNote: 'Level and description are editorial. Title, authors, publisher, year, ISBN and formats were checked against the publisher page.', empty: "There are no books in the catalog yet. When we add them, they'll appear here with their verified details.",
+    sectionsTitle: "What's here and what's coming", soon: 'Not available yet', live: 'Available',
     sections: [
       ['book', 'Print books', 'Books on AI, programming, business, marketing, design, entrepreneurship and technology, with publisher details.'],
       ['ebook', 'Digital books', 'E-books and professional guides, only where distribution rights allow.'],
@@ -54,7 +54,7 @@ const T = {
     ],
     specimenTitle: 'Book card design specimen', specimenNote: 'This is a design example only, not a real book.',
     specTitle: 'Book title', specAuthor: 'Author name', specMeta: 'Publisher · year',
-    by: 'by', checked: 'Checked', publisher: "Publisher's page", priceNone: 'Price not verified', related: 'Related tools in the catalog', toCatalog: 'Go to the tool catalog'
+    by: 'by', checked: 'Checked', publisher: "Publisher's page", priceNone: "Price: see publisher's page", related: 'Related tools in the catalog', toCatalog: 'Go to the tool catalog'
   }
 };
 
@@ -85,7 +85,8 @@ export function bookCard(item, products, c, { specimen = false } = {}) {
     <div class="book-body">
       <h3 class="book-title">${esc(item.title)}</h3>
       <p class="book-author">${esc(k.by)} ${esc((item.authors || []).join(', '))}</p>
-      <p class="book-meta">${esc(item.meta || [item.publisher, item.year].filter(Boolean).join(' · '))}</p>
+      <p class="book-meta">${esc(item.meta || [item.publisher, item.year].filter(Boolean).join(' · '))}${item.isbn13 ? ` · ISBN ${esc(item.isbn13)}` : ''}</p>
+      ${item.description ? `<p class="book-desc">${esc(item.description[L])}</p>` : ''}
       <div class="card-badges">${fmts}${item.level ? `<span class="tag">${esc(name(products.levels, item.level, L))}</span>` : ''}</div>
       <div class="card-badges">${price}</div>
       ${item.officialUrl ? `<a class="ext-link" href="${esc(item.officialUrl)}" target="_blank" rel="noopener">${esc(k.publisher)}${icon('ext')}</a>` : ''}
@@ -127,10 +128,10 @@ export function booksPage(c, data, site, products) {
     </div>
   </aside>
   <div class="results">
-    ${has ? `<ul class="book-grid" data-books>${books.map((b) => bookCard(b, products, c)).join('')}</ul>` : `<div class="empty">${ic('book').replace('class="ic"', 'class="ic empty-ic"')}<p class="empty-title">${esc(k.empty)}</p><a class="btn btn-primary" href="${c.u('catalog.html')}">${esc(k.toCatalog)}</a></div>`}
+    ${has ? `<p class="fine book-note">${esc(k.levelNote)}</p><ul class="book-grid" data-books>${books.map((b) => bookCard(b, products, c)).join('')}</ul>` : `<div class="empty">${ic('book').replace('class="ic"', 'class="ic empty-ic"')}<p class="empty-title">${esc(k.empty)}</p><a class="btn btn-primary" href="${c.u('catalog.html')}">${esc(k.toCatalog)}</a></div>`}
 
     <h2 class="sub-h">${esc(k.sectionsTitle)}</h2>
-    <ul class="plan-grid">${k.sections.map(([i, h, p]) => `<li class="plan-card"><span class="roadmap-icon">${ic(i)}</span><h3>${esc(h)}</h3><p>${esc(p)}</p><span class="tag tag-soon">${esc(k.soon)}</span></li>`).join('')}</ul>
+    <ul class="plan-grid">${k.sections.map(([i, h, p]) => `<li class="plan-card"><span class="roadmap-icon">${ic(i)}</span><h3>${esc(h)}</h3><p>${esc(p)}</p>${['book', 'ebook'].includes(i) && has ? `<span class="tag tag-open">${esc(k.live)}</span>` : `<span class="tag tag-soon">${esc(k.soon)}</span>`}</li>`).join('')}</ul>
 
     <div class="two-col books-bottom">
       <section class="panel" aria-labelledby="rules-h"><h2 id="rules-h">${icon('ok', 'h-ic')}${esc(k.rulesTitle)}</h2>

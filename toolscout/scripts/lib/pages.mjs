@@ -38,7 +38,8 @@ export function card(tool, data, c, { headingLevel = 3 } = {}) {
   const L = c.lang;
   const h = `h${headingLevel}`;
   const search = [tool.name, tool.maker, tool.description.he, tool.description.en, cat(data, tool.category).he, cat(data, tool.category).en,
-    ...tool.uses.flatMap((u) => [useName(data, u, 'he'), useName(data, u, 'en')]), ...tool.audience.he, ...tool.audience.en,
+    ...tool.uses.flatMap((u) => { const x = data.uses.find((y) => y.id === u); return [x.he, x.en, ...((x.syn && x.syn.he) || []), ...((x.syn && x.syn.en) || [])]; }), ...tool.audience.he, ...tool.audience.en,
+    tool.pricing === 'free' || tool.pricing === 'freemium' ? 'free חינם חינמי' : '',
     tool.openSource ? 'open source קוד פתוח' : ''].join(' ');
   return `
 <li class="tool" data-id="${tool.id}" data-cat="${tool.category}" data-price="${tool.pricing}" data-uses="${tool.uses.join(' ')}" data-platforms="${(tool.platforms || []).join(' ')}" data-open="${tool.openSource ? 1 : 0}" data-added="${tool.addedAt}" data-name="${esc(tool.name.toLowerCase())}" data-search="${esc(search)}">
@@ -117,6 +118,25 @@ export function homePage(c, data, site) {
   <div class="wrap">
     <div class="section-head"><h2 id="cats-h">${esc(s.home.catsTitle)}</h2><p>${esc(s.home.catsLead)}</p></div>
     <ul class="cat-grid">${catTiles}</ul>
+  </div>
+</section>
+
+<section class="section finder-wrap" aria-labelledby="finder-h">
+  <div class="wrap">
+    <form class="finder panel" action="${c.u('catalog.html')}" method="get" aria-labelledby="finder-h">
+      <div class="finder-copy"><h2 id="finder-h">${esc(s.home.finderTitle)}</h2><p>${esc(s.home.finderLead)}</p></div>
+      <div class="finder-steps">
+        <label class="field"><span><b class="step">1</b>${esc(s.home.finderTask)}</span>
+          <select name="use">${data.uses.map((u) => `<option value="${u.id}">${esc(u[L])}</option>`).join('')}</select></label>
+        <fieldset class="field"><legend><b class="step">2</b>${esc(s.home.finderBudget)}</legend>
+          <label class="opt"><input type="radio" name="price" value="" checked><span>${esc(s.home.finderAny)}</span></label>
+          <label class="opt"><input type="radio" name="price" value="free,freemium"><span>${esc(s.home.finderFree)}</span></label></fieldset>
+        <label class="field"><span><b class="step">3</b>${esc(s.home.finderPlatform)}</span>
+          <select name="platform" aria-describedby="finder-pnote"><option value="">${esc(s.home.finderPlatformAny)}</option>${data.platforms.map((x) => `<option value="${x.id}">${esc(x[L])}</option>`).join('')}</select>
+          <small class="hint" id="finder-pnote">${esc(s.home.finderPlatformNote)}</small></label>
+      </div>
+      <button type="submit" class="btn btn-primary">${icon('search')}${esc(s.home.finderGo)}</button>
+    </form>
   </div>
 </section>
 
@@ -343,7 +363,7 @@ export function toolPage(c, data, site, tool) {
       </div>
       <dl class="spec">
         <dt>${esc(k.pricing)}</dt><dd>${esc(priceName(data, tool.pricing, L))}</dd>
-        <dt>${esc(k.platforms)}</dt><dd>${esc(platforms)}</dd>
+        <dt>${esc(k.platforms)}</dt><dd>${esc(platforms)}${tool.platformsUrl ? ` <a class="src" href="${esc(tool.platformsUrl)}" target="_blank" rel="noopener">${esc(k.sourceOfficial)}${ext(L)}</a>` : ''}</dd>
         <dt>${esc(k.openSource)}</dt><dd>${esc(tool.openSource === true ? k.yes : tool.openSource === false ? k.no : k.unknown)}</dd>
         <dt>${esc(k.checked)}</dt><dd><time datetime="${tool.checkedAt}">${esc(fmtDate(tool.checkedAt, L))}</time></dd>
       </dl>
@@ -369,12 +389,13 @@ export function categoryPage(c, data, site, category) {
   const s = S[c.lang];
   const L = c.lang;
   const tools = data.tools.filter((x) => x.category === category.id);
-  return page(c, data, site, { title: `${category[L]} | ToolScout`, desc: `${category.blurb[L]}. ${tools.map((x) => x.name).join(', ')}.`, page: 'category' }, `
+  return page(c, data, site, { title: `${category[L]} | ToolScout`, desc: `${category.intro ? category.intro[L] : category.blurb[L]}`.slice(0, 158), page: 'category' }, `
 <section class="page-head">
   <div class="wrap">
     ${crumbs(c, [[c.u('catalog.html'), s.nav.catalog], [null, category[L]]])}
     <div class="cat-hero" data-cat="${category.id}"><span class="cat-icon lg">${icon(category.icon)}</span>
       <div><h1>${esc(category[L])}</h1><p class="lead">${esc(category.blurb[L])} · ${esc(s.catalog.countTpl.replace('{n}', tools.length))}</p></div></div>
+    ${category.intro ? `<p class="cat-intro">${esc(category.intro[L])}</p>` : ''}
   </div>
 </section>
 <section class="section tight" aria-label="${esc(category[L])}">
@@ -472,6 +493,8 @@ export function comparePresetPage(c, data, site, preset) {
 </section>
 <section class="wrap" aria-label="${esc(preset.title[L])}">
   ${compareTable(tools, data, c)}
+  ${preset.who ? `<section class="panel who" aria-labelledby="who-h"><div class="panel-head"><h2 id="who-h">${esc(s.tool.whoTitle)}</h2><p>${esc(s.tool.whoNote)}</p></div>
+    <ul class="who-list">${preset.ids.map((id) => preset.who[id] ? `<li>${logoTile(bt[id], c, 'sm')}<div><h3>${esc(bt[id].name)}</h3><p>${esc(preset.who[id][L])}</p></div></li>` : '').join('')}</ul></section>` : ''}
   <p class="note">${esc(s.catalog.note(fmtDate(site.updated, L)))}</p>
   <p><a class="btn btn-ghost" href="${c.u('compare.html')}?ids=${preset.ids.join(',')}">${icon('compare')}${esc(s.home.discoverCta)}</a></p>
 </section>

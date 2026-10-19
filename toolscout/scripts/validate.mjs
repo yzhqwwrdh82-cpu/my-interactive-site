@@ -26,6 +26,7 @@ for (const t of data.tools) {
   if (!prices.has(t.pricing)) errors.push(`${at}: unknown pricing ${t.pricing}`);
   if (!Array.isArray(t.uses) || !t.uses.length || t.uses.some((u) => !uses.has(u))) errors.push(`${at}: bad uses`);
   if (t.platforms !== null && (!Array.isArray(t.platforms) || t.platforms.some((p) => !plats.has(p)))) errors.push(`${at}: bad platforms`);
+  if (t.platformsUrl && !isHttps(t.platformsUrl)) errors.push(`${at}: platformsUrl must be https`);
   if (!isHttps(t.url) || !isHttps(t.pricingUrl)) errors.push(`${at}: url and pricingUrl must be https`);
   if (!isDate(t.addedAt) || !isDate(t.checkedAt)) errors.push(`${at}: addedAt/checkedAt must be YYYY-MM-DD`);
   if (!bi(t.description)) errors.push(`${at}: description needs he + en`);
