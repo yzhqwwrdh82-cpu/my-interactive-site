@@ -173,7 +173,11 @@
       var p = new URLSearchParams(location.search);
       state.q = p.get('q') || '';
       state.cat = p.get('cat') || 'all';
-      ['use', 'price', 'platform'].forEach(function (k) { var v = p.get(k); state[k] = v ? v.split(',').filter(Boolean) : []; });
+      ['use', 'price', 'platform'].forEach(function (k) {
+        var vals = [];
+        p.getAll(k).forEach(function (v) { v.split(',').forEach(function (x) { if (x && vals.indexOf(x) === -1) vals.push(x); }); });
+        state[k] = vals;
+      });
       state.open = p.get('open') === '1';
       state.fav = p.get('fav') === '1';
       state.sort = p.get('sort') || 'rel';
@@ -511,7 +515,7 @@
       var terms = norm(q).split(' ').filter(function (t) { return t.length > 1; });
       if (!terms.length) return [];
       var useNames = {};
-      cat.uses.forEach(function (u) { useNames[u.id] = norm(u.he + ' ' + u.en); });
+      cat.uses.forEach(function (u) { useNames[u.id] = norm(u.he + ' ' + u.en + ' ' + ((u.syn && u.syn.he) || []).join(' ') + ' ' + ((u.syn && u.syn.en) || []).join(' ')); });
       var catNames = {};
       cat.categories.forEach(function (c) { catNames[c.id] = norm(c.he + ' ' + c.en); });
       return cat.tools.map(function (t) {

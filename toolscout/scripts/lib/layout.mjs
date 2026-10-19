@@ -28,6 +28,8 @@ const P = {
   filter: '<path d="M4 6h16M7 12h10M10 18h4"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   box: '<path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/>',
+  flow: '<circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="18" r="2.5"/><rect x="15" y="3.5" width="6" height="5" rx="1.5"/><path d="M8 6h7M18 8.5v7M5.5 8.5V15a3 3 0 0 0 3 3H16"/>',
+  flow: '<circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="18" r="2.5"/><path d="M8 6h5a3 3 0 0 1 3 3v6.5"/><path d="M13.5 13l2.5 2.5 2.5-2.5"/>',
   lock: '<rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>'
 };
 export function icon(name, cls = '') {
@@ -132,6 +134,7 @@ export function footer(c, data, site) {
       <li><a href="${c.u('compare.html')}">${esc(s.nav.compare)}</a></li>
       <li><a href="${c.u('guides/index.html')}">${esc(s.nav.guides)}</a></li>
       <li><a href="${c.u('books.html')}">${esc(s.nav.books)}</a></li>
+      <li><a href="${c.u('how-we-verify.html')}">${esc(s.nav.method)}</a></li>
     </ul></nav>
     <nav aria-label="${esc(f.support)}"><h2>${esc(f.support)}</h2><ul>
       <li><a href="${c.u('contact.html')}">${esc(f.contact)}</a></li>
@@ -204,9 +207,19 @@ ${chatWidget(c)}
 `;
 }
 
+let SITE = null;
+export function setSite(site) { SITE = site; }
+
 export function crumbs(c, items) {
   const s = S[c.lang];
   const all = [[c.u('index.html'), s.tool.crumbsHome], ...items];
+  let ld = '';
+  if (SITE) {
+    const here = absUrl(SITE.siteUrl, c.lang, c.path);
+    const list = all.map(([href, label], i) => ({ '@type': 'ListItem', position: i + 1, name: label,
+      item: i === all.length - 1 ? here : new URL(href || '', here).href }));
+    ld = `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: list }).replace(/</g, '\\u003c')}</script>`;
+  }
   return `<nav class="crumbs" aria-label="breadcrumb"><ol>${all.map(([href, label], i) =>
-    i === all.length - 1 ? `<li aria-current="page">${esc(label)}</li>` : `<li><a href="${href}">${esc(label)}</a></li>`).join('')}</ol></nav>`;
+    i === all.length - 1 ? `<li aria-current="page">${esc(label)}</li>` : `<li><a href="${href}">${esc(label)}</a></li>`).join('')}</ol></nav>${ld}`;
 }

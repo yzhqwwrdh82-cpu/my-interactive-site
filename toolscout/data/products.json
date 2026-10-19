@@ -1,43 +1,328 @@
 {
   "schemaVersion": 1,
-  "notes": "Non-tool offerings: books, physical products, digital products and courses. Empty on purpose: add only real items verified against the publisher/manufacturer page. Never add invented titles, prices, stock, reviews or affiliate links. See toolscout/docs/data-model.md.",
+  "notes": "Non-tool offerings: books, physical products, digital products and courses. Add only real items verified against the publisher/manufacturer page; level and description are editorial. Never add invented titles, prices, stock, reviews or affiliate links. See toolscout/docs/data-model.md.",
   "types": [
-    { "id": "book", "he": "ספר", "en": "Book" },
-    { "id": "physical-product", "he": "מוצר פיזי", "en": "Physical product" },
-    { "id": "digital-product", "he": "מוצר דיגיטלי", "en": "Digital product" },
-    { "id": "course", "he": "קורס", "en": "Course" }
+    {
+      "id": "book",
+      "he": "ספר",
+      "en": "Book"
+    },
+    {
+      "id": "physical-product",
+      "he": "מוצר פיזי",
+      "en": "Physical product"
+    },
+    {
+      "id": "digital-product",
+      "he": "מוצר דיגיטלי",
+      "en": "Digital product"
+    },
+    {
+      "id": "course",
+      "he": "קורס",
+      "en": "Course"
+    }
   ],
   "bookTopics": [
-    { "id": "ai", "he": "בינה מלאכותית", "en": "AI" },
-    { "id": "prompts", "he": "כתיבת פרומפטים", "en": "Prompting" },
-    { "id": "automation", "he": "אוטומציה", "en": "Automation" },
-    { "id": "programming", "he": "תכנות", "en": "Programming" },
-    { "id": "business", "he": "עסקים", "en": "Business" },
-    { "id": "marketing", "he": "שיווק", "en": "Marketing" },
-    { "id": "design", "he": "עיצוב", "en": "Design" },
-    { "id": "entrepreneurship", "he": "יזמות", "en": "Entrepreneurship" },
-    { "id": "technology", "he": "טכנולוגיה", "en": "Technology" }
+    {
+      "id": "ai",
+      "he": "בינה מלאכותית",
+      "en": "AI"
+    },
+    {
+      "id": "prompts",
+      "he": "כתיבת פרומפטים",
+      "en": "Prompting"
+    },
+    {
+      "id": "automation",
+      "he": "אוטומציה",
+      "en": "Automation"
+    },
+    {
+      "id": "programming",
+      "he": "תכנות",
+      "en": "Programming"
+    },
+    {
+      "id": "business",
+      "he": "עסקים",
+      "en": "Business"
+    },
+    {
+      "id": "marketing",
+      "he": "שיווק",
+      "en": "Marketing"
+    },
+    {
+      "id": "design",
+      "he": "עיצוב",
+      "en": "Design"
+    },
+    {
+      "id": "entrepreneurship",
+      "he": "יזמות",
+      "en": "Entrepreneurship"
+    },
+    {
+      "id": "technology",
+      "he": "טכנולוגיה",
+      "en": "Technology"
+    }
   ],
   "languages": [
-    { "id": "he", "he": "עברית", "en": "Hebrew" },
-    { "id": "en", "he": "אנגלית", "en": "English" }
+    {
+      "id": "he",
+      "he": "עברית",
+      "en": "Hebrew"
+    },
+    {
+      "id": "en",
+      "he": "אנגלית",
+      "en": "English"
+    }
   ],
   "levels": [
-    { "id": "beginner", "he": "מתחילים", "en": "Beginner" },
-    { "id": "intermediate", "he": "בינוני", "en": "Intermediate" },
-    { "id": "advanced", "he": "מתקדמים", "en": "Advanced" }
+    {
+      "id": "beginner",
+      "he": "מתחילים",
+      "en": "Beginner"
+    },
+    {
+      "id": "intermediate",
+      "he": "בינוני",
+      "en": "Intermediate"
+    },
+    {
+      "id": "advanced",
+      "he": "מתקדמים",
+      "en": "Advanced"
+    }
   ],
   "formats": [
-    { "id": "print", "he": "מודפס", "en": "Print" },
-    { "id": "ebook", "he": "ספר אלקטרוני", "en": "E-book" },
-    { "id": "audiobook", "he": "ספר שמע", "en": "Audiobook" },
-    { "id": "guide", "he": "מדריך מעשי", "en": "Practical guide" }
+    {
+      "id": "print",
+      "he": "מודפס",
+      "en": "Print"
+    },
+    {
+      "id": "ebook",
+      "he": "ספר אלקטרוני",
+      "en": "E-book"
+    },
+    {
+      "id": "audiobook",
+      "he": "ספר שמע",
+      "en": "Audiobook"
+    },
+    {
+      "id": "guide",
+      "he": "מדריך מעשי",
+      "en": "Practical guide"
+    }
   ],
   "priceBands": [
-    { "id": "free", "he": "חינם", "en": "Free" },
-    { "id": "paid", "he": "בתשלום", "en": "Paid" },
-    { "id": "unverified", "he": "מחיר לא אומת", "en": "Price not verified" }
+    {
+      "id": "free",
+      "he": "חינם",
+      "en": "Free"
+    },
+    {
+      "id": "paid",
+      "he": "בתשלום",
+      "en": "Paid"
+    },
+    {
+      "id": "unverified",
+      "he": "מחיר לא אומת",
+      "en": "Price not verified"
+    }
   ],
   "collections": [],
-  "items": []
+  "items": [
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "co-intelligence",
+      "title": "Co-Intelligence: Living and Working with AI",
+      "titleShort": "Co-Intelligence",
+      "authors": [
+        "Ethan Mollick"
+      ],
+      "publisher": "Portfolio",
+      "year": 2024,
+      "isbn13": "9780593716717",
+      "topics": [
+        "ai",
+        "business"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguinrandomhouse.com/books/741805/co-intelligence-by-ethan-mollick/",
+      "description": {
+        "he": "איך לעבוד, ללמוד ולחיות לצד AI גנרטיבי: כעמית לעבודה, כמורה וכמאמן.",
+        "en": "How to work, learn and live alongside generative AI as a co-worker, co-teacher and coach."
+      }
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "prompt-engineering-generative-ai",
+      "title": "Prompt Engineering for Generative AI",
+      "titleShort": "Prompt Engineering",
+      "authors": [
+        "James Phoenix",
+        "Mike Taylor"
+      ],
+      "publisher": "O'Reilly Media",
+      "year": 2024,
+      "isbn13": "9781098153427",
+      "topics": [
+        "prompts",
+        "ai"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [],
+      "officialUrl": "https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/",
+      "description": {
+        "he": "עקרונות לכתיבת פרומפטים, כדי לקבל תוצאות אמינות ממודלי שפה וממודלים ליצירת תמונות.",
+        "en": "Prompting principles for reliable results from language models and image models."
+      }
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "hands-on-llms",
+      "title": "Hands-On Large Language Models",
+      "titleShort": "Hands-On LLMs",
+      "authors": [
+        "Jay Alammar",
+        "Maarten Grootendorst"
+      ],
+      "publisher": "O'Reilly Media",
+      "year": 2024,
+      "isbn13": "9781098150952",
+      "topics": [
+        "ai",
+        "programming"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [],
+      "officialUrl": "https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/",
+      "description": {
+        "he": "מדריך מעשי לשימוש במודלי שפה גדולים, לבנייה שלהם ולהתאמה שלהם למשימות כמו סיווג וחיפוש סמנטי.",
+        "en": "A practical guide to using, building and fine-tuning large language models for tasks such as classification and semantic search."
+      }
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "ai-engineering",
+      "title": "AI Engineering",
+      "titleShort": "AI Engineering",
+      "authors": [
+        "Chip Huyen"
+      ],
+      "publisher": "O'Reilly Media",
+      "year": 2024,
+      "isbn13": "9781098166298",
+      "topics": [
+        "ai",
+        "programming"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "advanced",
+      "formats": [],
+      "officialUrl": "https://www.oreilly.com/library/view/ai-engineering/9781098166298/",
+      "description": {
+        "he": "בניית אפליקציות AI על בסיס מודלים קיימים: התאמת מודלים, הערכה ופריסה יעילה.",
+        "en": "Building AI applications on existing foundation models: adaptation, evaluation and efficient deployment."
+      }
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "pragmatic-programmer",
+      "title": "The Pragmatic Programmer: Your Journey to Mastery (20th Anniversary Edition)",
+      "titleShort": "Pragmatic Programmer",
+      "authors": [
+        "David Thomas",
+        "Andrew Hunt"
+      ],
+      "publisher": "Addison-Wesley Professional",
+      "year": 2019,
+      "isbn13": "9780135957059",
+      "topics": [
+        "programming"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.pearson.com/en-us/subject-catalog/p/pragmatic-programmer-the-your-journey-to-mastery-20th-anniversary-edition/P200000000337/9780135956915",
+      "description": {
+        "he": "מהדורה מעודכנת של ספר קלאסי על פיתוח תוכנה מעשי: קוד גמיש, בדיקות, מקביליות ועבודה בצוות.",
+        "en": "An updated edition of a classic on practical software development: flexible code, testing, concurrency and teamwork."
+      }
+    }
+  ]
 }
