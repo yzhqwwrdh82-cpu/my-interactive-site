@@ -11,8 +11,43 @@ const useName = (data, id, lang) => data.uses.find((u) => u.id === id)[lang];
 const platName = (data, id, lang) => data.platforms.find((p) => p.id === id)[lang];
 const ext = (lang) => `<span class="sr-only"> ${esc(S[lang].card.newTab)}</span>`;
 
-function richText(blocks) {
-  return blocks.map(([tag, text]) => tag === 'todo' ? `<p class="todo">${esc(text)}</p>` : `<${tag}>${esc(text).replace(/\b(ts-(?:theme|favs|compare))\b/g, '<code class="key" dir="ltr">$1</code>')}</${tag}>`).join('\n');
+const OWNER_TODO = {
+  he: 'להשלמה: שם בעל האתר או העסק, כתובת למשלוח דואר ואימייל ליצירת קשר.',
+  en: 'To be completed: site owner or business name, postal address and a contact email.'
+};
+const A11Y_TODO = {
+  he: 'להשלמה: שם רכז/ת הנגישות, טלפון ואימייל. עד שיתווספו הפרטים, אין ערוץ פנייה פעיל.',
+  en: 'To be completed: accessibility coordinator name, phone and email. Until these are added, there is no live contact channel.'
+};
+function ownerBlock(site, L) {
+  const o = (site && site.owner) || {};
+  if (!o.name || !o.email) return `<p class="todo">${esc(OWNER_TODO[L])}</p>`;
+  const parts = [esc(o.name), `<a href="mailto:${esc(o.email)}">${esc(o.email)}</a>`];
+  if (o.postalAddress) parts.push(esc(o.postalAddress));
+  if (o.businessId) parts.push(esc((L === 'he' ? 'מספר עוסק: ' : 'Business ID: ') + o.businessId));
+  return `<p class="owner">${parts.join(' · ')}</p>`;
+}
+function a11yBlock(site, L) {
+  const a = (site && site.owner && site.owner.accessibilityCoordinator) || {};
+  if (!a.name || !(a.email || a.phone)) return `<p class="todo">${esc(A11Y_TODO[L])}</p>`;
+  const parts = [esc(a.name)];
+  if (a.email) parts.push(`<a href="mailto:${esc(a.email)}">${esc(a.email)}</a>`);
+  if (a.phone) parts.push(`<a href="tel:${esc(a.phone.replace(/[^+\d]/g, ''))}">${esc(a.phone)}</a>`);
+  return `<p class="owner">${parts.join(' · ')}</p>`;
+}
+// Blocks: [tag, text, condition?]. Special tags: 'todo', 'owner', 'a11yContact'.
+// condition 'analytics' / 'ads' renders the block only when that feature is enabled AND configured.
+function richText(blocks, site = null, L = 'he') {
+  const on = {
+    analytics: !!(site && site.analyticsOn),
+    ads: !!(site && site.features && site.features.ads && site.google && site.google.adsensePublisherId)
+  };
+  return blocks.filter((b) => !b[2] || on[b[2]]).map(([tag, text]) => {
+    if (tag === 'owner') return ownerBlock(site, L);
+    if (tag === 'a11yContact') return a11yBlock(site, L);
+    if (tag === 'todo') return `<p class="todo">${esc(text)}</p>`;
+    return `<${tag}>${esc(text).replace(/\b(ts-(?:theme|favs|compare|consent))\b/g, '<code class="key" dir="ltr">$1</code>')}</${tag}>`;
+  }).join('\n');
 }
 
 // Outbound link: approved affiliate URL only when affiliate.status === 'approved' (validator enforces).
@@ -538,7 +573,7 @@ export function legalPage(c, data, site, key) {
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[null, doc.title[L]]])}<h1>${esc(doc.title[L])}</h1>
   <p class="meta-line">${esc(s.guides.updated)} <time datetime="${doc.updated}">${esc(fmtDate(doc.updated, L))}</time></p>
 </div></section>
-<article class="wrap narrow prose">${richText(doc.body[L])}</article>
+<article class="wrap narrow prose">${richText(doc.body[L], site, L)}</article>
 `);
 }
 

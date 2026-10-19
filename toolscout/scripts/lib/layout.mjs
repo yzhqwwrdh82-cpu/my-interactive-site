@@ -50,7 +50,10 @@ export function head(c, site, { title, desc, noindex = false, jsonld = null, ogI
   const s = S[c.lang];
   const canon = absUrl(site.siteUrl, c.lang, c.path);
   const alt = absUrl(site.siteUrl, c.o, c.path);
-  const csp = "default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'self'; frame-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'";
+  // Google Analytics hosts are allowed only when analytics is enabled AND configured (data/site.json).
+  const ga = site.analyticsOn ? ' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com' : '';
+  const csp = `default-src 'self'; img-src 'self' data:${ga}; style-src 'self'; font-src 'self'; script-src 'self'${site.analyticsOn ? ' https://www.googletagmanager.com' : ''}; connect-src 'self'${ga}; frame-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'`;
+  const g = site.google || {};
   return `<!doctype html>
 <html lang="${c.lang}" dir="${dirOf(c.lang)}">
 <head>
@@ -82,6 +85,9 @@ ${noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="icon" href="${c.a('assets/favicon-32.png')}" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="${c.a('assets/apple-touch-icon.png')}">
 <link rel="preload" href="${c.a(c.lang === 'he' ? 'assets/fonts/rubik-hebrew-wght-normal.woff2' : 'assets/fonts/rubik-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>
+${g.searchConsoleVerification ? `<meta name="google-site-verification" content="${esc(g.searchConsoleVerification)}">` : ''}
+${g.adsensePublisherId ? `<meta name="google-adsense-account" content="ca-${esc(g.adsensePublisherId)}">` : ''}
+${site.analyticsOn ? `<meta name="ts-analytics" content="${esc(g.ga4MeasurementId)}">\n<script src="${c.a('assets/consent.js')}?v=${site.version}" defer></script>` : ''}
 <link rel="stylesheet" href="${c.a('assets/styles.css')}?v=${site.version}">
 <script src="${c.a('assets/theme-init.js')}?v=${site.version}"></script>
 <script src="${c.a('assets/app.js')}?v=${site.version}" defer></script>
@@ -136,6 +142,7 @@ export function footer(c, data, site) {
       <li><a href="${c.u('guides/index.html')}">${esc(s.nav.guides)}</a></li>
       <li><a href="${c.u('books.html')}">${esc(s.nav.books)}</a></li>
       <li><a href="${c.u('how-we-verify.html')}">${esc(s.nav.method)}</a></li>
+      <li><a href="${c.u('about.html')}">${esc(s.nav.about)}</a></li>
     </ul></nav>
     <nav aria-label="${esc(f.support)}"><h2>${esc(f.support)}</h2><ul>
       <li><a href="${c.u('contact.html')}">${esc(f.contact)}</a></li>
@@ -144,6 +151,7 @@ export function footer(c, data, site) {
     </ul></nav>
     <nav aria-label="${esc(f.legal)}"><h2>${esc(f.legal)}</h2><ul>
       <li><a href="${c.u('privacy.html')}">${esc(f.privacy)}</a></li>
+      ${site.analyticsOn ? `<li><button type="button" class="linklike" data-consent-open>${esc(f.privacySettings)}</button></li>` : ''}
       <li><a href="${c.u('terms.html')}">${esc(f.terms)}</a></li>
       <li><a href="${c.u('accessibility.html')}">${esc(f.accessibility)}</a></li>
       <li><a href="${c.u('disclosure.html')}">${esc(f.disclosure)}</a></li>
@@ -193,6 +201,15 @@ export function chatWidget(c) {
 <template id="chat-i18n">${esc(JSON.stringify({ ...s, foundOne: s.found(1), foundMany: s.found(7).replace('7', '{n}') }, (k, v) => typeof v === 'function' ? undefined : v))}</template>`;
 }
 
+function consentBanner(c) {
+  const k = S[c.lang].consent;
+  return `<section class="consent" id="consent-banner" role="dialog" aria-labelledby="consent-h" hidden>
+  <h2 id="consent-h" class="sr-only">${esc(k.title)}</h2>
+  <p>${esc(k.body)} <a href="${c.u('privacy.html')}">${esc(S[c.lang].footer.privacy)}</a></p>
+  <div class="consent-actions"><button type="button" class="btn btn-primary sm" data-consent="accept">${esc(k.accept)}</button><button type="button" class="btn btn-ghost sm" data-consent="reject">${esc(k.reject)}</button></div>
+</section>`;
+}
+
 export function page(c, data, site, opts, body) {
   return `${head(c, site, opts)}
 <body data-page="${opts.page || ''}" data-lang="${c.lang}">
@@ -202,6 +219,7 @@ ${body}
 </main>
 ${footer(c, data, site)}
 ${chatWidget(c)}
+${site.analyticsOn ? consentBanner(c) : ''}
 <template id="ui-i18n">${esc(JSON.stringify({ card: S[c.lang].card, compare: S[c.lang].compare, tool: S[c.lang].tool, catalog: { countTpl: S[c.lang].catalog.countTpl } }, (k, v) => typeof v === 'function' ? undefined : v))}</template>
 </body>
 </html>

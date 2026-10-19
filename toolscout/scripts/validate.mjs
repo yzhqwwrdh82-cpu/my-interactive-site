@@ -60,6 +60,17 @@ for (const t of data.tools) {
   if (!t.pros.length && !t.cons.length) warn.push(`${at}: no verified pros or cons`);
 }
 
+const toolIds = new Set(data.tools.map((t) => t.id));
+const programs = JSON.parse(readFileSync(join(root, 'data/affiliate-programs.json'), 'utf8'));
+const JOIN = ['not-applied', 'applied', 'approved', 'rejected', 'closed', 'not-eligible'];
+const approvedPrograms = new Set(programs.programs.filter((x) => x.joinStatus === 'approved').map((x) => x.id));
+const siteCfg = JSON.parse(readFileSync(join(root, 'data/site.json'), 'utf8'));
+function isbn13ok(v) {
+  if (!/^97[89]\d{10}$/.test(v)) return false;
+  const sum = [...v.slice(0, 12)].reduce((s, d, i) => s + Number(d) * (i % 2 ? 3 : 1), 0);
+  return (10 - (sum % 10)) % 10 === Number(v[12]);
+}
+
 // Products (books, physical, digital, courses)
 const products = JSON.parse(readFileSync(join(root, 'data/products.json'), 'utf8'));
 const pset = (k) => new Set((products[k] || []).map((x) => x.id));
@@ -84,8 +95,50 @@ for (const it of products.items) {
   if ('stock' in it || 'rating' in it || 'reviews' in it) errors.push(`${at}: stock/rating/reviews are not allowed without a verified data source`);
   const a = it.affiliate || { status: 'none' };
   if (a.url && a.status !== 'approved') errors.push(`${at}: affiliate.url only when approved`);
+  if (it.isbn13 && !isbn13ok(it.isbn13)) errors.push(`${at}: isbn13 checksum is invalid`);
+  if (it.type === 'book' && !it.isbn13) warn.push(`${at}: book without isbn13`);
+  for (const [i, r] of (it.retailers || []).entries()) {
+    const rat = `${at}: retailers[${i}]`;
+    if (!r.name || !isHttps(r.url)) errors.push(`${rat}: needs name and https url`);
+    if (!['publisher', 'store', 'ebook-store', 'audiobook-store', 'library'].includes(r.type)) errors.push(`${rat}: bad type`);
+    if (!isDate(r.checkedAt)) errors.push(`${rat}: checkedAt required`);
+    const ra = r.affiliate || { status: 'none' };
+    if (!['none', 'applied', 'approved'].includes(ra.status)) errors.push(`${rat}: affiliate.status must be none|applied|approved`);
+    if (ra.status === 'approved' && (!ra.programId || !approvedPrograms.has(ra.programId))) errors.push(`${rat}: approved affiliate needs a programId whose joinStatus is approved`);
+    if ('price' in r) errors.push(`${rat}: store prices are not stored (they change; show only via an official API)`);
+  }
 }
+
+// Central affiliate programs (data/affiliate-programs.json)
+for (const [i, pr] of programs.programs.entries()) {
+  const at = `affiliate program "${pr.id || i}"`;
+  if (!/^[a-z0-9-]+$/.test(pr.id || '')) errors.push(`${at}: id must be kebab-case`);
+  if (!pr.name || !isHttps(pr.programUrl) || !isHttps(pr.source)) errors.push(`${at}: needs name, https programUrl and source`);
+  if (!['verified', 'partial', 'unverified'].includes(pr.verification)) errors.push(`${at}: verification must be verified|partial|unverified`);
+  if (!JOIN.includes(pr.joinStatus)) errors.push(`${at}: joinStatus must be ${JOIN.join('|')}`);
+  if (!isDate(pr.checkedAt)) errors.push(`${at}: checkedAt required`);
+  if (!pr.commission || typeof pr.commission.text !== 'string' || typeof pr.commission.verified !== 'boolean') errors.push(`${at}: commission {type, text, verified} required`);
+  if (pr.commission && pr.commission.verified && pr.verification === 'unverified') errors.push(`${at}: commission cannot be verified when the program is unverified`);
+  if (!pr.disclosureLabel || !pr.disclosureLabel.he || !pr.disclosureLabel.en) errors.push(`${at}: disclosureLabel needs he + en`);
+  for (const id of pr.linkedTools || []) if (!toolIds.has(id)) errors.push(`${at}: linked tool "${id}" not in catalog`);
+}
+for (const t of data.tools) {
+  const a = t.affiliate || { status: 'none' };
+  if (a.status === 'approved') {
+    const pr = programs.programs.find((x) => (x.linkedTools || []).includes(t.id));
+    if (!pr || pr.joinStatus !== 'approved') errors.push(`tool "${t.id}": affiliate approved but its program in affiliate-programs.json is not joinStatus "approved"`);
+  }
+}
+
+// Site config: Google IDs (all optional; nothing loads when null)
+const g = siteCfg.google || {}, feat = siteCfg.features || {};
+if (g.ga4MeasurementId != null && !/^G-[A-Z0-9]{4,}$/.test(g.ga4MeasurementId)) errors.push('site.json: google.ga4MeasurementId must look like G-XXXXXXX');
+if (g.adsensePublisherId != null && !/^pub-\d{16}$/.test(g.adsensePublisherId)) errors.push('site.json: google.adsensePublisherId must look like pub-0000000000000000');
+if (g.searchConsoleVerification != null && !/^[A-Za-z0-9_-]{20,100}$/.test(g.searchConsoleVerification)) errors.push('site.json: google.searchConsoleVerification must be the content value of the meta tag only');
+if (feat.analytics && !g.ga4MeasurementId) errors.push('site.json: features.analytics is on but google.ga4MeasurementId is missing');
+if (feat.ads && !g.adsensePublisherId) errors.push('site.json: features.ads is on but google.adsensePublisherId is missing');
+if (feat.affiliateLinks && !programs.programs.some((x) => x.joinStatus === 'approved')) errors.push('site.json: features.affiliateLinks is on but no program is approved');
 
 for (const w of warn) console.warn('warn:', w);
 if (errors.length) { for (const e of errors) console.error('error:', e); console.error(`\n${errors.length} error(s)`); process.exit(1); }
-console.log(`data ok: ${data.tools.length} tools, ${data.categories.length} categories, ${products.items.length} products`);
+console.log(`data ok: ${data.tools.length} tools, ${data.categories.length} categories, ${products.items.length} products, ${programs.programs.length} affiliate programs`);

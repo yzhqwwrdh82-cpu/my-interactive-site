@@ -3,7 +3,7 @@ export const S = {
   he: {
     langName: 'עברית', otherLangName: 'English', switchLang: 'Switch to English', locale: 'he_IL',
     skip: 'דילוג לתוכן',
-    nav: { books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
+    nav: { about: 'אודות', books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
     theme: { label: 'ערכת צבעים', system: 'לפי המערכת', light: 'בהירה', dark: 'כהה' },
     home: {
       title: 'ToolScout | מוצאים את הכלי הנכון, עם מידע שנבדק',
@@ -132,17 +132,18 @@ export const S = {
       tagline: 'קטלוג עצמאי של כלי AI ותוכנות, עם מידע שנבדק מול המקורות הרשמיים.',
       explore: 'גילוי', support: 'שירות', legal: 'מידע משפטי', language: 'שפה',
       contact: 'יצירת קשר', account: 'אזור אישי', preview: 'ממשקי שירות (הדגמה)',
-      privacy: 'מדיניות פרטיות', terms: 'תנאי שימוש', accessibility: 'הצהרת נגישות', disclosure: 'גילוי נאות',
+      privacySettings: 'הגדרות פרטיות', privacy: 'מדיניות פרטיות', terms: 'תנאי שימוש', accessibility: 'הצהרת נגישות', disclosure: 'גילוי נאות',
       credits: 'הלוגואים הם סימנים מסחריים של בעליהם, ומגיעים מ-Simple Icons (CC0; הלוגו של GitHub Copilot ברישיון MIT). הגופן: Rubik (OFL).',
       rights: 'ToolScout'
     },
+    consent: { title: 'הסכמה למדידה', body: 'נשמח למדוד שימוש אנונימי באתר בעזרת Google Analytics, כדי לשפר אותו. שום נתון לא נשלח לפני שתאשרו. אפשר לשנות את הבחירה בכל עת בקישור "הגדרות פרטיות" בתחתית העמוד.', accept: 'אישור מדידה', reject: 'בלי מדידה' },
     draft: 'טיוטה לפני בדיקה משפטית. הנוסח עשוי להשתנות לפני הפרסום.',
     preview: { title: 'ממשקי שירות (הדגמה) | ToolScout', h1: 'ממשקי שירות: הדגמה', lead: 'כאן אפשר לראות את ממשקי האימייל, הניוזלטר, הצ\'אט, השיחה הקולית והאזור האישי. שום שירות חיצוני לא מחובר.' }
   },
   en: {
     langName: 'English', otherLangName: 'עברית', switchLang: 'החלפה לעברית', locale: 'en_US',
     skip: 'Skip to content',
-    nav: { books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
+    nav: { about: 'About', books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
     theme: { label: 'Color theme', system: 'System', light: 'Light', dark: 'Dark' },
     home: {
       title: 'ToolScout | Find the right tool, with checked information',
@@ -271,10 +272,11 @@ export const S = {
       tagline: 'An independent catalog of AI tools and software, checked against official sources.',
       explore: 'Explore', support: 'Service', legal: 'Legal', language: 'Language',
       contact: 'Contact', account: 'Your area', preview: 'Service interfaces (demo)',
-      privacy: 'Privacy policy', terms: 'Terms of use', accessibility: 'Accessibility statement', disclosure: 'Disclosure',
+      privacySettings: 'Privacy settings', privacy: 'Privacy policy', terms: 'Terms of use', accessibility: 'Accessibility statement', disclosure: 'Disclosure',
       credits: 'Logos are trademarks of their owners, via Simple Icons (CC0; GitHub Copilot icon under MIT). Typeface: Rubik (OFL).',
       rights: 'ToolScout'
     },
+    consent: { title: 'Measurement consent', body: "We'd like to measure anonymous site usage with Google Analytics to improve the site. Nothing is sent until you agree. You can change your choice at any time from the \"Privacy settings\" link in the footer.", accept: 'Allow measurement', reject: 'No measurement' },
     draft: 'Draft pending legal review. Wording may change before launch.',
     preview: { title: 'Service interfaces (demo) | ToolScout', h1: 'Service interfaces: demo', lead: 'Preview the email, newsletter, chat, voice call and personal-area interfaces. No external service is connected.' }
   }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notes": "Non-tool offerings: books, physical products, digital products and courses. Add only real items verified against the publisher/manufacturer page; level and description are editorial. Never add invented titles, prices, stock, reviews or affiliate links. See toolscout/docs/data-model.md.",
+  "notes": "Non-tool offerings: books, physical products, digital products and courses. Add only real items verified against the publisher/manufacturer page; level and description are editorial. Never add invented titles, prices, stock, reviews or affiliate links. See toolscout/docs/data-model.md. retailers: where to buy, [{name, type: publisher|store|ebook-store|audiobook-store|library, url, checkedAt, affiliate: {status, programId}}]. No store prices are stored; a store link becomes paid only when its programId is approved in affiliate-programs.json.",
   "types": [
     {
       "id": "book",
@@ -177,7 +177,18 @@
       "description": {
         "he": "איך לעבוד, ללמוד ולחיות לצד AI גנרטיבי: כעמית לעבודה, כמורה וכמאמן.",
         "en": "How to work, learn and live alongside generative AI as a co-worker, co-teacher and coach."
-      }
+      },
+      "retailers": [
+        {
+          "name": "Portfolio",
+          "type": "publisher",
+          "url": "https://www.penguinrandomhouse.com/books/741805/co-intelligence-by-ethan-mollick/",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
     },
     {
       "type": "book",
@@ -213,7 +224,18 @@
       "description": {
         "he": "עקרונות לכתיבת פרומפטים, כדי לקבל תוצאות אמינות ממודלי שפה וממודלים ליצירת תמונות.",
         "en": "Prompting principles for reliable results from language models and image models."
-      }
+      },
+      "retailers": [
+        {
+          "name": "O'Reilly Media",
+          "type": "publisher",
+          "url": "https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
     },
     {
       "type": "book",
@@ -249,7 +271,18 @@
       "description": {
         "he": "מדריך מעשי לשימוש במודלי שפה גדולים, לבנייה שלהם ולהתאמה שלהם למשימות כמו סיווג וחיפוש סמנטי.",
         "en": "A practical guide to using, building and fine-tuning large language models for tasks such as classification and semantic search."
-      }
+      },
+      "retailers": [
+        {
+          "name": "O'Reilly Media",
+          "type": "publisher",
+          "url": "https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
     },
     {
       "type": "book",
@@ -284,7 +317,18 @@
       "description": {
         "he": "בניית אפליקציות AI על בסיס מודלים קיימים: התאמת מודלים, הערכה ופריסה יעילה.",
         "en": "Building AI applications on existing foundation models: adaptation, evaluation and efficient deployment."
-      }
+      },
+      "retailers": [
+        {
+          "name": "O'Reilly Media",
+          "type": "publisher",
+          "url": "https://www.oreilly.com/library/view/ai-engineering/9781098166298/",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
     },
     {
       "type": "book",
@@ -322,7 +366,18 @@
       "description": {
         "he": "מהדורה מעודכנת של ספר קלאסי על פיתוח תוכנה מעשי: קוד גמיש, בדיקות, מקביליות ועבודה בצוות.",
         "en": "An updated edition of a classic on practical software development: flexible code, testing, concurrency and teamwork."
-      }
+      },
+      "retailers": [
+        {
+          "name": "Addison-Wesley Professional",
+          "type": "publisher",
+          "url": "https://www.pearson.com/en-us/subject-catalog/p/pragmatic-programmer-the-your-journey-to-mastery-20th-anniversary-edition/P200000000337/9780135956915",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
     }
   ]
 }

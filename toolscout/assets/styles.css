@@ -791,3 +791,9 @@ code.key { font: 500 .9em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monos
 .book-body { min-width: 0; } .book-title, .book-meta { overflow-wrap: anywhere; }
 .book-body { grid-template-columns: minmax(0, 1fr); }
 .book-card .price, .book-card .tag { white-space: normal; max-width: 100%; }
+/* Consent banner (rendered only when analytics is enabled) */
+.consent { position: fixed; inset-inline: 16px; bottom: 16px; z-index: 70; max-width: 560px; margin-inline: auto; padding: 18px; display: grid; gap: 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-3); }
+.consent p { font-size: var(--fs-1); }
+.consent-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.linklike { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; cursor: pointer; font-size: inherit; }

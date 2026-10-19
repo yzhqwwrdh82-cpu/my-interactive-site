@@ -1045,6 +1045,18 @@
     <lastmod>2026-10-19</lastmod>
   </url>
   <url>
+    <loc>https://benevolent-mooncake-e8a513.netlify.app/toolscout/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/about.html"/>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
+    <loc>https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/about.html"/>
+    <lastmod>2026-10-19</lastmod>
+  </url>
+  <url>
     <loc>https://benevolent-mooncake-e8a513.netlify.app/toolscout/books.html</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/books.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/books.html"/>

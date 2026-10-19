@@ -1,8 +1,10 @@
 # תוכניות שותפים: מחקר בלבד
 
-**נבדק:** 19 באוקטובר 2026 מול העמודים הרשמיים. **לא בוצעה שום הרשמה.** תנאים משתנים, ולכן צריך לבדוק שוב לפני הגשה. אין כאן הבטחה להכנסה.
+**נבדק:** 19 באוקטובר 2026 (סבב שני: Proton, ‏monday, ‏HeyGen, ‏Bitwarden) מול העמודים הרשמיים. **לא בוצעה שום הרשמה.** תנאים משתנים, ולכן צריך לבדוק שוב לפני הגשה. אין כאן הבטחה להכנסה.
 
 הסטטוס של כל התוכניות בקוד הוא `affiliate.status: "none"`. ההרשמה ועדכון הסטטוס דורשים אישור מפורש שלך.
+
+**מקור הנתונים המרכזי:** `data/affiliate-programs.json`. בכל תוכנית יש קישור רשמי, רמת אימות, סטטוס הצטרפות, מדינות, סוג עמלה, תאריך בדיקה ותווית גילוי. הבודק האוטומטי לא מאפשר `affiliate.status: "approved"` בכלי, אם התוכנית שלו לא מסומנת `joinStatus: "approved"`.
 
 | תוכנית | האם פתוחה | עמלה, כפי שמופיעה בעמוד הרשמי | פלטפורמה ותשלום | תנאים בולטים | מקור |
 |---|---|---|---|---|---|
@@ -12,10 +14,12 @@
 | **Synthesia** | פתוחה | 25% מהתשלום נטו על תוכניות Starter ו-Creator | מעקב ב-Rewardful | עוגייה ל-60 יום, ובלי הפניה עצמית | [synthesia.io/partners/affiliates](https://www.synthesia.io/partners/affiliates) |
 | **Notion** | **סגורה** למצטרפים חדשים | עד 50$ לכל הרשמה מופעלת, ועוד 20% מהכנסות השנה הראשונה | PartnerStack | Last-click, שדרוג בתוך 180 יום, ואפשרות לקיזוז בהחזר כספי. דורשת גילוי לפי FTC | [notion.com/affiliates](https://www.notion.com/affiliates) |
 | **Canva** | **סגורה** (תוכנית Canvassador) | לא מופיעה | — | רק ליוצרי הדרכות שהתקבלו | [Canva Help](https://www.canva.com/en_in/help/canva-affiliate-marketing-program/) |
-| **HeyGen** | יש עמוד תוכנית (בגרמנית). לא נבדק לעומק | — | — | לבדוק | [heygen.com/de-de/affiliate-program](https://www.heygen.com/de-de/affiliate-program) |
+| **HeyGen** | **לא מתאימה לנו**: רק ליוצרי וידאו עם 5,000 עוקבים לפחות. קידום דרך אתר או SEO לא מותר | ‏35% חוזר ל־3 חודשים | PayPal, מינימום 100$ | חלון מעקב של 30 יום | [heygen.com/affiliate-program](https://www.heygen.com/affiliate-program) |
 | **1Password** | פתוחה, דרך Commission Junction (CJ) | "$2 לכל הרשמה שהושלמה ו-25% מהתשלום הראשון, שנתי או חודשי (מינימום $2)" | CJ | מיועדת למפרסמים ולמשפיענים בתחומי טכנולוגיה, אבטחה ופרודוקטיביות. משך העוגייה לא מצוין | [1password.com/affiliate](https://1password.com/affiliate) |
 | **ClickUp** | פתוחה, בלי תנאי סף בעמוד | "עד $25 לכל הפניה לסביבת עבודה חינמית חדשה" (זו תקרה, לא סכום קבוע) | PartnerStack | עוגייה ל-30 יום | [clickup.com/partners/affiliates](https://clickup.com/partners/affiliates) |
-| **Bitwarden, ‏monday.com, ‏Proton** | לא אומת: העמודים לא נטענו בבדיקה | — | — | לבדוק שוב | — |
+| **Proton** (Pass, VPN) | פתוחה. בלוגרים ומפרסמים ברשימת המתאימים | ‏Pass: ‏30%. VPN: ‏100% על מנוי חדש לשנה או שנתיים, 40% על כל מנוי חדש, 30% על חידושים (המיפוי לפי סדר העמוד, לאמת) | לוח שותפים של Proton. העברה בנקאית מעל 100$ | גילוי חובה. אסור להציע על שם המותג בפרסום ממומן | [proton.me/partners/affiliates](https://proton.me/partners/affiliates) |
+| **monday.com** | אומת חלקית, דרך עמוד ב־PartnerStack ולא באתר monday | שותפי אתר: "CPL deal per sign-up" (הסכום לא מצוין) | PartnerStack | עוגייה ל־90 יום. התנאים המלאים לא נקראו | [PartnerStack](https://market.partnerstack.com/page/mondaycom) |
+| **Bitwarden** | לא נמצאה תוכנית שותפים רשמית. יש רק תוכנית משווקים | — | — | — | — |
 | **Amazon Associates** (ספרים) | יש תוכנית. לא בדקתי זמינות למגישים מישראל | — | — | מחירים, זמינות, ביקורות ודירוגים מותר להציג **רק** דרך ה-API הרשמי (Creators API או PA API). התוכן חייב להיות מקורי, ונדרש גילוי לפי הדין | [Participation Requirements](https://affiliate-program.amazon.com/help/operating/participation/) |
 
 ## לפני הגשה
