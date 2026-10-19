@@ -4,13 +4,52 @@
 export const comparePresets = [
   { slug: 'ai-assistants', ids: ['chatgpt', 'claude', 'gemini'],
     title: { he: 'ChatGPT מול Claude מול Gemini', en: 'ChatGPT vs Claude vs Gemini' },
-    lead: { he: 'שלושה עוזרי AI כלליים, כולם עם תוכנית חינמית ותוכניות בתשלום.', en: 'Three general AI assistants, each with a free plan and paid tiers.' } },
+    lead: { he: 'שלושה עוזרי AI כלליים, כולם עם תוכנית חינמית ותוכניות בתשלום.', en: 'Three general AI assistants, each with a free plan and paid tiers.' },
+    who: {
+      chatgpt: { he: 'למי שרוצה מבחר רחב של דרגות מנוי (Go, Plus, Pro) ותוכניות לעסקים.', en: 'For people who want a wide choice of subscription tiers (Go, Plus, Pro) and business plans.' },
+      claude: { he: 'למי שמחפש עוזר לכתיבה, ניתוח ותכנות, עם תוכניות Team ו-Enterprise לצוותים.', en: 'For writing, analysis and coding help, with Team and Enterprise plans for groups.' },
+      gemini: { he: 'למי שכבר עובד עם חשבון Google: התוכנית החינמית פועלת עם החשבון הקיים.', en: 'For people already using a Google account: the free tier works with it.' } } },
   { slug: 'video-editing', ids: ['descript', 'davinci-resolve', 'runway'],
     title: { he: 'עריכת וידאו: Descript, ‏DaVinci Resolve ו-Runway', en: 'Video editing: Descript, DaVinci Resolve and Runway' },
-    lead: { he: 'שלוש גישות: עריכה דרך תמלול, תוכנת עריכה מקצועית ויצירת וידאו ב-AI.', en: 'Three approaches: transcript-based editing, a professional editor and AI video generation.' } },
+    lead: { he: 'שלוש גישות: עריכה דרך תמלול, תוכנת עריכה מקצועית ויצירת וידאו ב-AI.', en: 'Three approaches: transcript-based editing, a professional editor and AI video generation.' },
+    who: {
+      descript: { he: 'לפודקאסטים ולסרטוני דיבור: עורכים את התמלול, ויש כלים להסרת מילות מילוי ולכתוביות.', en: 'For podcasts and talking videos: edit the transcript, with tools for filler words and captions.' },
+      'davinci-resolve': { he: 'לעריכה מקצועית בחינם, ב-Windows, ב-Mac וב-Linux. גרסת Studio בתשלום.', en: 'For professional editing for free on Windows, Mac and Linux; Studio is paid.' },
+      runway: { he: 'ליצירה ולעריכה של וידאו בעזרת AI, ולא לעריכה קלאסית של צילומים.', en: 'For creating and editing video with AI rather than classic footage editing.' } } },
   { slug: 'notes', ids: ['notion', 'obsidian', 'otter'],
     title: { he: 'פתקים וידע: Notion, ‏Obsidian ו-Otter.ai', en: 'Notes and knowledge: Notion, Obsidian and Otter.ai' },
-    lead: { he: 'סביבת עבודה משותפת, פתקים בקבצים מקומיים ותמלול פגישות.', en: 'A shared workspace, local-file notes and meeting transcription.' } }
+    lead: { he: 'סביבת עבודה משותפת, פתקים בקבצים מקומיים ותמלול פגישות.', en: 'A shared workspace, local-file notes and meeting transcription.' },
+    who: {
+      notion: { he: 'לעבודת צוות על מסמכים, ויקי ופרויקטים במקום אחד.', en: 'For team work on docs, wikis and projects in one place.' },
+      obsidian: { he: 'למי שרוצה שהפתקים יישארו במכשיר שלו ויעבדו גם בלי רשת. חינמית, גם לשימוש מסחרי.', en: 'For notes that stay on your device and work offline; free, including commercial use.' },
+      otter: { he: 'לתמלול ולסיכום פגישות ב-Zoom, ב-Teams וב-Google Meet.', en: 'For transcribing and summarizing Zoom, Teams and Google Meet meetings.' } } },
+  { slug: 'automation', ids: ['zapier', 'make', 'n8n'],
+    title: { he: 'אוטומציה: Zapier, ‏Make ו-n8n', en: 'Automation: Zapier, Make and n8n' },
+    lead: { he: 'שלוש פלטפורמות לחיבור אפליקציות. ההבדלים העיקריים: מגבלות התוכנית החינמית, ואפשרות התקנה עצמית.', en: 'Three platforms for connecting apps. The main differences: free-plan limits and self-hosting.' },
+    who: {
+      zapier: { he: 'למתחילים שרוצים להתחיל בחינם. התוכנית החינמית כוללת 100 משימות בחודש.', en: 'For beginners starting free; the free plan includes 100 tasks a month.' },
+      make: { he: 'למי שרוצה בונה ויזואלי, עם 1,000 קרדיטים בחודש בתוכנית החינמית.', en: 'For a visual builder, with 1,000 credits a month on the free plan.' },
+      n8n: { he: 'למשתמשים טכניים שרוצים להתקין על שרת משלהם. גרסה להתקנה עצמית זמינה ב-GitHub.', en: 'For technical users who want to self-host; a self-hosted version is on GitHub.' } } },
+  { slug: 'free-image-editors', ids: ['gimp', 'inkscape', 'krita'],
+    title: { he: 'עריכת תמונות ואיור בחינם: GIMP, ‏Inkscape ו-Krita', en: 'Free image editing and illustration: GIMP, Inkscape and Krita' },
+    lead: { he: 'שלוש תוכנות חינמיות בקוד פתוח, וכל אחת מתאימה לסוג עבודה אחר.', en: 'Three free, open-source programs, each suited to a different kind of work.' },
+    who: {
+      gimp: { he: 'לעריכה ולריטוש של תמונות (גרפיקת פיקסלים).', en: 'For editing and retouching photos (raster graphics).' },
+      inkscape: { he: 'לגרפיקה וקטורית: לוגואים, איורים ותרשימים.', en: 'For vector graphics: logos, illustrations and diagrams.' },
+      krita: { he: 'לציור דיגיטלי ולאיור ביד חופשית.', en: 'For digital painting and freehand illustration.' } } },
+  { slug: 'meeting-notes', ids: ['otter', 'fireflies'],
+    title: { he: 'תמלול פגישות: Otter.ai מול Fireflies.ai', en: 'Meeting notes: Otter.ai vs Fireflies.ai' },
+    lead: { he: 'שני רושמי פגישות מבוססי AI. לשניהם תוכנית חינמית, ושניהם עובדים עם Zoom, ‏Teams ו-Google Meet.', en: 'Two AI meeting notetakers; both have a free plan and work with Zoom, Teams and Google Meet.' },
+    who: {
+      otter: { he: 'לתמלול חי, לסיכומים ולצ\'אט על תוכן הפגישה, עם תוכנית Basic חינמית.', en: 'For live transcription, summaries and chat about the meeting, with a free Basic plan.' },
+      fireflies: { he: 'להקלטה ולתמלול בכמה פלטפורמות פגישה, עם תוכנית חינמית לתמיד.', en: 'For recording and transcription across meeting platforms, with a free-forever plan.' } } },
+  { slug: 'ai-video', ids: ['heygen', 'synthesia', 'runway'],
+    title: { he: 'וידאו ב-AI: HeyGen, ‏Synthesia ו-Runway', en: 'AI video: HeyGen, Synthesia and Runway' },
+    lead: { he: 'יצירת וידאו בלי מצלמה: אווטארים להדרכה ולשיווק, או יצירה ועריכה ב-AI.', en: 'Video without a camera: avatars for training and marketing, or AI generation and editing.' },
+    who: {
+      heygen: { he: 'לסרטוני שיווק והדרכה, כולל התאמה לשפות נוספות.', en: 'For marketing and training videos, including localization.' },
+      synthesia: { he: 'להדרכה ולתקשורת בארגון, עם תוכנית Basic חינמית (עם מגבלת דקות).', en: 'For training and internal communication, with a free Basic plan (minute-limited).' },
+      runway: { he: 'ליצירה ולעריכה קריאטיבית של וידאו בעזרת AI.', en: 'For creative AI video generation and editing.' } } }
 ];
 
 export const guides = [
@@ -67,6 +106,56 @@ export const guides = [
         ['p', 'For occasional use, the free plans are usually enough. For daily use, compare the paid tiers on the official pricing pages, because they change.'],
         ['h2', '4. Working as a team?'],
         ['p', "ChatGPT and Claude offer plans for teams and organizations, and Mistral Vibe (formerly Le Chat) also has a version for verified students. See the differences in the ready-made comparison in the catalog."]
+      ]
+    }
+  },
+  {
+    slug: 'no-code-automation', minutes: 3, updated: '2026-10-19',
+    tools: ['zapier', 'make', 'n8n'],
+    title: { he: 'אוטומציה בלי קוד: מאיפה מתחילים', en: 'No-code automation: where to start' },
+    summary: { he: 'מה עושות פלטפורמות כמו Zapier, ‏Make ו-n8n, ומה ההבדלים בתוכניות החינמיות.', en: 'What platforms like Zapier, Make and n8n do, and how their free plans differ.' },
+    body: {
+      he: [
+        ['p', 'פלטפורמות אוטומציה מחברות בין אפליקציות: כשמשהו קורה באחת, פעולה מתבצעת בשנייה. למשל, טופס חדש נשמר בגיליון ונשלחת התראה לצוות.'],
+        ['h2', 'להתחיל בחינם'],
+        ['p', 'ל-Zapier יש תוכנית חינמית לתמיד עם 100 משימות בחודש. ל-Make יש תוכנית חינמית עם 1,000 קרדיטים בחודש. הנתונים האלה מופיעים בעמודי התמחור הרשמיים, ונבדקו בתאריך שמופיע בעמוד של כל כלי.'],
+        ['h2', 'התקנה עצמית'],
+        ['p', 'n8n מציעה גרסה סטנדרטית להתקנה עצמית, שזמינה ב-GitHub, ותוכניות ענן בתשלום עם תקופת ניסיון. התקנה עצמית מתאימה למשתמשים טכניים, ודורשת לנהל שרת בעצמכם.'],
+        ['h2', 'איך לבחור'],
+        ['p', 'התחילו מתהליך אחד קטן, ובדקו כמה משימות או קרדיטים הוא צורך בחודש. כך תדעו אם התוכנית החינמית מספיקה לכם. את ההבדלים אפשר לראות בהשוואה המוכנה.']
+      ],
+      en: [
+        ['p', 'Automation platforms connect apps: when something happens in one, an action runs in another. For example, a new form entry is saved to a sheet and the team gets a notification.'],
+        ['h2', 'Starting free'],
+        ['p', "Zapier has a free-forever plan with 100 tasks a month. Make has a free plan with 1,000 credits a month. These figures come from the official pricing pages and were checked on the date shown on each tool's page."],
+        ['h2', 'Self-hosting'],
+        ['p', 'n8n offers a standard self-hosted version on GitHub, plus paid cloud plans with a trial. Self-hosting suits technical users and means running your own server.'],
+        ['h2', 'How to choose'],
+        ['p', 'Start with one small workflow and see how many tasks or credits it uses each month. That tells you whether the free plan is enough. See the differences in the ready-made comparison.']
+      ]
+    }
+  },
+  {
+    slug: 'free-design-tools', minutes: 3, updated: '2026-10-19',
+    tools: ['gimp', 'inkscape', 'krita', 'blender', 'canva', 'figma'],
+    title: { he: 'עיצוב בחינם: תוכנות קוד פתוח ותוכניות חינמיות', en: 'Design for free: open-source software and free plans' },
+    summary: { he: 'עריכת תמונות, גרפיקה וקטורית, ציור, תלת-ממד ועיצוב ממשקים, בלי לשלם.', en: 'Photo editing, vector graphics, painting, 3D and interface design without paying.' },
+    body: {
+      he: [
+        ['h2', 'תוכנות חינמיות בקוד פתוח'],
+        ['p', 'GIMP היא עורך תמונות, Inkscape היא עורך גרפיקה וקטורית, Krita היא תוכנת ציור דיגיטלי ו-Blender היא תוכנת תלת-ממד. כולן חינמיות ובקוד פתוח. GIMP ו-Inkscape פועלות ב-Windows, ב-macOS וב-Linux.'],
+        ['h2', 'תוכניות חינמיות בשירותי ענן'],
+        ['p', 'ל-Canva יש תוכנית חינמית לעיצוב גרפיקה ומצגות. ל-Figma יש תוכנית חינמית ליחידים לעיצוב ממשקים. התוכניות בתשלום מוסיפות יכולות לצוותים ולעסקים.'],
+        ['h2', 'מה לבחור'],
+        ['p', 'לתמונות, בחרו ב-GIMP. ללוגו או לאיור שצריך להגדיל בלי לאבד איכות, בחרו ב-Inkscape. לציור, Krita. לעבודה מהירה עם תבניות, Canva. לעיצוב אפליקציות ואתרים, Figma.']
+      ],
+      en: [
+        ['h2', 'Free, open-source software'],
+        ['p', 'GIMP is an image editor, Inkscape a vector graphics editor, Krita a digital painting program and Blender a 3D suite. All are free and open source. GIMP and Inkscape run on Windows, macOS and Linux.'],
+        ['h2', 'Free plans in cloud tools'],
+        ['p', 'Canva has a free plan for graphics and presentations. Figma has a free plan for individuals for interface design. Paid plans add team and business features.'],
+        ['h2', 'Which to pick'],
+        ['p', 'For photos, choose GIMP. For a logo or illustration that must scale without losing quality, choose Inkscape. For painting, Krita. For fast work with templates, Canva. For app and website design, Figma.']
       ]
     }
   },

@@ -3,7 +3,7 @@ export const S = {
   he: {
     langName: 'עברית', otherLangName: 'English', switchLang: 'Switch to English', locale: 'he_IL',
     skip: 'דילוג לתוכן',
-    nav: { books: 'ספרים (בהכנה)', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
+    nav: { books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
     theme: { label: 'ערכת צבעים', system: 'לפי המערכת', light: 'בהירה', dark: 'כהה' },
     home: {
       title: 'ToolScout | מוצאים את הכלי הנכון, עם מידע שנבדק',
@@ -26,12 +26,16 @@ export const S = {
       newLead: 'הכלים האחרונים שנוספו לקטלוג, לפי תאריך ההוספה.',
       guidesTitle: 'מדריכים',
       guidesLead: 'מדריכים קצרים שמבוססים על המידע שבקטלוג.',
+      finderTitle: 'מצאו כלי בשלושה צעדים',
+      finderLead: 'בחרו מה אתם צריכים, וקבלו את הכלים המתאימים מהקטלוג.',
+      finderTask: 'מה תרצו לעשות?', finderBudget: 'תקציב', finderAny: 'כל המחירים', finderFree: 'רק כלים שיש להם גרסה חינמית',
+      finderPlatform: 'על איזו מערכת?', finderPlatformAny: 'לא משנה', finderPlatformNote: 'סינון לפי מערכת מציג רק כלים שהפלטפורמות שלהם אומתו.', finderGo: 'הצגת כלים מתאימים',
       allTools: 'לכל הכלים',
       allGuides: 'לכל המדריכים',
-      roadmapTitle: 'בהכנה: ספרים, ציוד ומשאבים דיגיטליים',
-      roadmapBody: 'ספרים על AI ותכנות, ציוד טכנולוגי ומדריכים מעשיים. כל אחד מהם יעלה רק כשיהיו בו מוצרים אמיתיים עם מידע מאומת.',
-      roadmapLink: 'מה מתוכנן לספרים',
-      roadmapTag: 'עוד לא זמין'
+      roadmapTitle: 'ספרים, ועוד בהכנה',
+      roadmapBody: 'כבר יש בקטלוג ספרים על AI ותכנות, שהפרטים שלהם נבדקו מול ההוצאות לאור. ציוד טכנולוגי ומשאבים דיגיטליים יעלו רק כשיהיו בהם מוצרים אמיתיים עם מידע מאומת.',
+      roadmapLink: 'לספרים',
+      roadmapTag: 'חדש'
     },
     intents: [
       ['writing', 'לכתוב'], ['images', 'ליצור תמונות'], ['video', 'לערוך וידאו'],
@@ -65,7 +69,7 @@ export const S = {
       pricing: 'מודל תמחור', platforms: 'פלטפורמות', platformsUnverified: 'לא אומת', openSource: 'קוד פתוח', yes: 'כן', no: 'לא', unknown: 'לא אומת',
       checked: 'נבדק', status: 'סטטוס אימות', fieldPricing: 'תמחור', fieldPlatforms: 'פלטפורמות',
       sVerified: 'אומת', sUnverified: 'לא אומת',
-      pricingPage: 'עמוד התמחור הרשמי', similar: 'כלים דומים', compareWith: 'השוואה לכלים דומים',
+      pricingPage: 'עמוד התמחור הרשמי', similar: 'כלים דומים', whoTitle: 'למי מתאים כל כלי', whoNote: 'סיכום עריכתי שמבוסס על העובדות המאומתות בטבלה.', compareWith: 'השוואה לכלים דומים',
       affiliateNone: 'הקישורים בעמוד הזה הם קישורים רגילים, לא קישורי שותפים.',
       logoCredit: 'הלוגו הוא סימן מסחרי של בעליו. מקור: Simple Icons.', noLogo: 'אין לוגו ממקור מורשה, ולכן מוצגים ראשי תיבות.'
     },
@@ -138,7 +142,7 @@ export const S = {
   en: {
     langName: 'English', otherLangName: 'עברית', switchLang: 'החלפה לעברית', locale: 'en_US',
     skip: 'Skip to content',
-    nav: { books: 'Books (coming soon)', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
+    nav: { books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
     theme: { label: 'Color theme', system: 'System', light: 'Light', dark: 'Dark' },
     home: {
       title: 'ToolScout | Find the right tool, with checked information',
@@ -161,12 +165,16 @@ export const S = {
       newLead: 'The newest tools in the catalog, by date added.',
       guidesTitle: 'Guides',
       guidesLead: 'Short guides based on the information in the catalog.',
+      finderTitle: 'Find a tool in three steps',
+      finderLead: 'Choose what you need and get the matching tools from the catalog.',
+      finderTask: 'What do you want to do?', finderBudget: 'Budget', finderAny: 'Any price', finderFree: 'Only tools with a free version',
+      finderPlatform: 'Which system?', finderPlatformAny: "Doesn't matter", finderPlatformNote: 'Filtering by system shows only tools whose platforms are verified.', finderGo: 'Show matching tools',
       allTools: 'All tools',
       allGuides: 'All guides',
-      roadmapTitle: 'Coming later: books, gear and digital resources',
-      roadmapBody: 'Books on AI and programming, tech gear and practical guides. Each goes live only when it has real products with verified information.',
-      roadmapLink: "What's planned for books",
-      roadmapTag: 'Not available yet'
+      roadmapTitle: 'Books, and more on the way',
+      roadmapBody: 'The catalog now includes books on AI and programming, with details checked against the publishers. Tech gear and digital resources will go live only when they have real products with verified information.',
+      roadmapLink: 'Go to books',
+      roadmapTag: 'New'
     },
     intents: [
       ['writing', 'Write'], ['images', 'Create images'], ['video', 'Edit video'],
@@ -200,7 +208,7 @@ export const S = {
       pricing: 'Pricing model', platforms: 'Platforms', platformsUnverified: 'Not verified', openSource: 'Open source', yes: 'Yes', no: 'No', unknown: 'Not verified',
       checked: 'Checked', status: 'Verification status', fieldPricing: 'Pricing', fieldPlatforms: 'Platforms',
       sVerified: 'Verified', sUnverified: 'Not verified',
-      pricingPage: 'Official pricing page', similar: 'Similar tools', compareWith: 'Compare with similar tools',
+      pricingPage: 'Official pricing page', similar: 'Similar tools', whoTitle: 'Who each tool suits', whoNote: 'Editorial summary based on the verified facts in the table.', compareWith: 'Compare with similar tools',
       affiliateNone: 'Links on this page are regular links, not affiliate links.',
       logoCredit: 'The logo is a trademark of its owner. Source: Simple Icons.', noLogo: 'No logo from a licensed source, so initials are shown.'
     },

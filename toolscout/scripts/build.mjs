@@ -8,6 +8,8 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { LANGS, ctx, absUrl } from './lib/util.mjs';
+import { setSite } from './lib/layout.mjs';
+import { methodPage } from './lib/method.mjs';
 import { homePage, catalogPage, toolPage, categoryPage, comparePage, comparePresetPage, guidesIndex, guidePage, legalPage, contactPage, accountPage } from './lib/pages.mjs';
 import { previewPage } from './lib/preview.mjs';
 import { booksPage } from './lib/books.mjs';
@@ -27,6 +29,8 @@ const site = {
   updated: data.tools.reduce((m, x) => (x.checkedAt > m ? x.checkedAt : m), '0000-00-00'),
   version: hash.digest('hex').slice(0, 8)
 };
+
+setSite(site);
 
 // Clean generated output (only generated folders/files, never data or assets).
 for (const d of ['en', 'tools', 'category', 'compare', 'guides', 'emails']) rmSync(join(root, d), { recursive: true, force: true });
@@ -52,6 +56,7 @@ for (const L of LANGS) {
   out(ctx(L, 'guides/index.html'), guidesIndex(ctx(L, 'guides/index.html'), data, site));
   for (const g of guides) { const c = ctx(L, `guides/${g.slug}.html`); out(c, guidePage(c, data, site, g)); }
   for (const key of Object.keys(legal)) { const c = ctx(L, `${key}.html`); out(c, legalPage(c, data, site, key)); }
+  out(ctx(L, 'how-we-verify.html'), methodPage(ctx(L, 'how-we-verify.html'), data, site, products));
   out(ctx(L, 'contact.html'), contactPage(ctx(L, 'contact.html'), data, site));
   out(ctx(L, 'account.html'), accountPage(ctx(L, 'account.html'), data, site), { index: false });
   out(ctx(L, 'service-preview.html'), previewPage(ctx(L, 'service-preview.html'), data, site), { index: false });
@@ -69,7 +74,7 @@ const catalog = {
   updated: site.updated,
   categories: data.categories.map((k) => ({ id: k.id, he: k.he, en: k.en })),
   pricing: data.pricing.map((p) => ({ id: p.id, he: p.he, en: p.en })),
-  uses: data.uses.map((u) => ({ id: u.id, he: u.he, en: u.en })),
+  uses: data.uses.map((u) => ({ id: u.id, he: u.he, en: u.en, syn: u.syn || null })),
   platforms: data.platforms.map((p) => ({ id: p.id, he: p.he, en: p.en })),
   tools: data.tools.map((t) => ({
     id: t.id, name: t.name, maker: t.maker, category: t.category, pricing: t.pricing, uses: t.uses,
