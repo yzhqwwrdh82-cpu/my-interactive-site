@@ -43,6 +43,33 @@ export const comparePresets = [
     who: {
       otter: { he: 'לתמלול חי, לסיכומים ולצ\'אט על תוכן הפגישה, עם תוכנית Basic חינמית.', en: 'For live transcription, summaries and chat about the meeting, with a free Basic plan.' },
       fireflies: { he: 'להקלטה ולתמלול בכמה פלטפורמות פגישה, עם תוכנית חינמית לתמיד.', en: 'For recording and transcription across meeting platforms, with a free-forever plan.' } } },
+  { slug: 'password-managers', ids: ['bitwarden', '1password', 'proton-pass'],
+    title: { he: 'מנהלי סיסמאות: Bitwarden, ‏1Password ו-Proton Pass', en: 'Password managers: Bitwarden, 1Password and Proton Pass' },
+    lead: { he: 'שלושה מנהלי סיסמאות. ההבדל המרכזי: לשניים יש תוכנית חינמית, ולאחד יש רק תקופת ניסיון.', en: 'Three password managers. The main difference: two have a free plan, one only a trial.' },
+    who: {
+      bitwarden: { he: 'למי שרוצה חשבון אישי חינמי ותוכנה בקוד פתוח, עם אפליקציות לדפדפן, לנייד ולמחשב.', en: 'For a free personal account and open-source software, with browser, mobile and desktop apps.' },
+      '1password': { he: 'למשפחות ולעסקים שמוכנים לשלם. אפשר לנסות 14 יום בחינם לפני שמחליטים.', en: 'For families and businesses ready to pay; there is a 14-day free trial to decide.' },
+      'proton-pass': { he: 'למי שכבר משתמש בשירותי Proton, או רוצה תוכנית חינמית בלי כרטיס אשראי.', en: 'For people already using Proton services, or who want a free plan with no credit card.' } } },
+  { slug: 'social-media', ids: ['buffer', 'hootsuite'],
+    title: { he: 'ניהול רשתות חברתיות: Buffer מול Hootsuite', en: 'Social media management: Buffer vs Hootsuite' },
+    lead: { he: 'שני כלים לתזמון ולניהול פוסטים. ל-Buffer יש תוכנית חינמית, ול-Hootsuite רק תקופת ניסיון.', en: 'Two tools for scheduling and managing posts. Buffer has a free plan; Hootsuite only a trial.' },
+    who: {
+      buffer: { he: 'לעסקים קטנים וליוצרים שמתחילים בחינם, עם עד 3 ערוצים.', en: 'For small businesses and creators starting free, with up to 3 channels.' },
+      hootsuite: { he: 'לצוותי שיווק וסוכנויות שמוכנים לשלם. אפשר לנסות 14 יום בחינם.', en: 'For marketing teams and agencies ready to pay; there is a 14-day free trial.' } } },
+  { slug: 'project-management', ids: ['asana', 'trello', 'clickup'],
+    title: { he: 'ניהול פרויקטים: Asana, ‏Trello ו-ClickUp', en: 'Project management: Asana, Trello and ClickUp' },
+    lead: { he: 'לשלושתם יש תוכנית חינמית, אבל המגבלות שונות: מספר משתמשים, מספר לוחות ותכונות.', en: 'All three have a free plan, but the limits differ: users, boards and features.' },
+    who: {
+      asana: { he: 'לזוג שעובד יחד: התוכנית החינמית מיועדת ל-2 משתמשים.', en: 'For two people working together: the free plan is for 2 users.' },
+      trello: { he: 'למי שרוצה לוחות קנבן פשוטים: עד 10 לוחות ו-10 משתתפים בתוכנית החינמית.', en: 'For simple kanban boards: up to 10 boards and 10 collaborators on the free plan.' },
+      clickup: { he: 'למי שרוצה משימות, מסמכים ופרויקטים במקום אחד, עם תוכנית Free Forever.', en: 'For tasks, docs and projects in one place, with a Free Forever plan.' } } },
+  { slug: 'ai-images', ids: ['midjourney', 'ideogram', 'leonardo'],
+    title: { he: 'יצירת תמונות ב-AI: Midjourney, ‏Ideogram ו-Leonardo.ai', en: 'AI image generation: Midjourney, Ideogram and Leonardo.ai' },
+    lead: { he: 'שלושה כלים ליצירת תמונות מטקסט. ההבדל העיקרי הוא אם אפשר להשתמש בחינם, ובאילו תנאים.', en: 'Three text-to-image tools. The main difference is whether you can use them for free, and on what terms.' },
+    who: {
+      midjourney: { he: 'למי שמוכן לשלם: כל התוכניות הן מנוי.', en: 'For people ready to pay: all plans are subscriptions.' },
+      ideogram: { he: 'לניסוי בחינם: משתמשים רשומים מקבלים קרדיטים שבועיים, בכמות שעשויה להשתנות.', en: 'For trying it free: signed-in accounts get weekly credits, in amounts that may vary.' },
+      leonardo: { he: 'לשימוש יומי חינמי עם 150 טוקנים מהירים ביום. בתוכנית החינמית התוצרים ציבוריים.', en: 'For daily free use with 150 fast tokens a day; free-plan creations are public.' } } },
   { slug: 'ai-video', ids: ['heygen', 'synthesia', 'runway'],
     title: { he: 'וידאו ב-AI: HeyGen, ‏Synthesia ו-Runway', en: 'AI video: HeyGen, Synthesia and Runway' },
     lead: { he: 'יצירת וידאו בלי מצלמה: אווטארים להדרכה ולשיווק, או יצירה ועריכה ב-AI.', en: 'Video without a camera: avatars for training and marketing, or AI generation and editing.' },
@@ -53,6 +80,72 @@ export const comparePresets = [
 ];
 
 export const guides = [
+  {
+    slug: 'choose-password-manager', minutes: 3, updated: '2026-10-19',
+    tools: ['bitwarden', '1password', 'proton-pass', 'proton-vpn'],
+    title: { he: 'איך לבחור מנהל סיסמאות', en: 'How to choose a password manager' },
+    summary: { he: 'מה בודקים לפני שבוחרים: תוכנית חינמית או ניסיון, קוד פתוח, פלטפורמות ושיתוף במשפחה.', en: 'What to check before choosing: free plan or trial, open source, platforms and family sharing.' },
+    body: {
+      he: [
+        ['p', 'מנהל סיסמאות שומר את כל הסיסמאות בכספת מוצפנת, כך שצריך לזכור רק סיסמה ראשית אחת. במדריך הזה ריכזנו ארבע שאלות שכדאי לשאול לפני שבוחרים, על סמך המידע שבדקנו בעמודים הרשמיים.'],
+        ['h2', '1. צריך תוכנית חינמית?'],
+        ['p', 'ל-Bitwarden יש חשבון אישי חינמי. ל-Proton Pass יש תוכנית Proton Free, שאין צורך בכרטיס אשראי כדי להירשם אליה. ב-1Password עמוד התמחור מציג ניסיון חינם של 14 יום, ואחריו נדרש מנוי.'],
+        ['h2', '2. חשוב לכם קוד פתוח?'],
+        ['p', 'Bitwarden מציינת בעמוד התמחור שהיא בקוד פתוח. ב-Proton Pass עמוד התמחור עצמו לא מציין זאת, ולכן בקטלוג זה מסומן "לא אומת".'],
+        ['h2', '3. משפחה או עסק?'],
+        ['p', 'לכל השלושה יש תוכניות למשפחות או לעסקים: Families ו-Teams ב-Bitwarden, ‏Pass Family ב-Proton, ותוכניות Personal ו-Business ב-1Password.'],
+        ['h2', '4. ומה עם VPN?'],
+        ['p', 'מנהל סיסמאות ו-VPN הם כלים שונים. VPN מצפין את התעבורה ברשת. ל-Proton VPN יש תוכנית חינמית בלי הגבלת נתונים, לפי עמוד התמחור שלה.'],
+        ['p', 'שימו לב: לא בדקנו בעצמנו את רמת האבטחה של הכלים. ההשוואה מתבססת על המידע הרשמי בלבד.']
+      ],
+      en: [
+        ['p', 'A password manager keeps all your passwords in an encrypted vault, so you only need to remember one master password. This guide covers four questions to ask before choosing, based on what we checked on the official pages.'],
+        ['h2', '1. Do you need a free plan?'],
+        ['p', "Bitwarden has a free personal account. Proton Pass has a Proton Free plan, and signing up needs no credit card. 1Password's pricing page shows a 14-day free trial, after which a subscription is needed."],
+        ['h2', '2. Does open source matter to you?'],
+        ['p', "Bitwarden's pricing page says it is open source. Proton Pass's pricing page doesn't state this itself, so the catalog marks it as not verified."],
+        ['h2', '3. Family or business?'],
+        ['p', 'All three have family or business options: Families and Teams at Bitwarden, Pass Family at Proton, and Personal and Business plans at 1Password.'],
+        ['h2', '4. What about a VPN?'],
+        ['p', 'A password manager and a VPN are different tools. A VPN encrypts your network traffic. Proton VPN has a free plan with no data limits, according to its pricing page.'],
+        ['p', 'Note: we have not independently audited the security of these tools. The comparison is based on official information only.']
+      ]
+    }
+  },
+  {
+    slug: 'small-business-free-stack', minutes: 4, updated: '2026-10-19',
+    tools: ['trello', 'asana', 'airtable', 'calendly', 'mailchimp', 'buffer'],
+    title: { he: 'כלים חינמיים לניהול עסק קטן', en: 'Free tools for running a small business' },
+    summary: { he: 'משימות, טבלאות, תיאום פגישות, דיוור ורשתות חברתיות: מה מקבלים בתוכניות החינמיות, ואיפה עובר הגבול.', en: 'Tasks, databases, scheduling, email and social media: what the free plans include and where they stop.' },
+    body: {
+      he: [
+        ['p', 'עסק קטן יכול להתחיל עם כלים חינמיים, בתנאי שמכירים את המגבלות. כל הנתונים במדריך מופיעים בעמודי התמחור הרשמיים, ונבדקו בתאריך שמופיע בעמוד של כל כלי.'],
+        ['h2', 'משימות ופרויקטים'],
+        ['p', 'Trello מאפשרת בתוכנית החינמית עד 10 לוחות ו-10 משתתפים בכל סביבת עבודה. התוכנית החינמית של Asana מיועדת ל-2 משתמשים. אם הצוות גדול יותר, כדאי לבדוק את ההשוואה המוכנה לניהול פרויקטים.'],
+        ['h2', 'טבלאות ונתונים'],
+        ['p', 'ל-Airtable יש תוכנית חינמית ליחידים ולצוותים קטנים מאוד, ותוכניות מיוחדות לעמותות ולחינוך.'],
+        ['h2', 'תיאום פגישות'],
+        ['p', 'התוכנית החינמית של Calendly כוללת סוג פגישה אחד וחיבור ליומן אחד. זה מספיק לפגישת היכרות אחת עם לקוחות.'],
+        ['h2', 'דיוור ורשתות חברתיות'],
+        ['p', 'התוכנית החינמית של Mailchimp מוגבלת ל-250 אנשי קשר ו-500 שליחות בחודש. Buffer מאפשרת בחינם לחבר עד 3 ערוצים. לפני דיוור שיווקי, ודאו שיש לכם הסכמה מראש של הנמענים ושבכל הודעה יש דרך להסיר את עצמם מהרשימה, כפי שהחוק מחייב.'],
+        ['h2', 'מתי לשדרג'],
+        ['p', 'כדאי לשדרג כשמגיעים לאחת המגבלות, ולא לפני. התוכניות והמגבלות משתנים, לכן בדקו את העמוד הרשמי לפני רכישה.']
+      ],
+      en: [
+        ['p', 'A small business can start with free tools, as long as it knows the limits. Every figure in this guide comes from the official pricing pages and was checked on the date shown on each tool page.'],
+        ['h2', 'Tasks and projects'],
+        ['p', "Trello's free plan allows up to 10 boards and 10 collaborators per workspace. Asana's free plan is for 2 users. For a bigger team, see the ready-made project management comparison."],
+        ['h2', 'Databases'],
+        ['p', 'Airtable has a free plan for individuals and very small teams, plus special nonprofit and education plans.'],
+        ['h2', 'Scheduling'],
+        ['p', "Calendly's free plan includes one event type and one calendar connection. That's enough for a single client intro call."],
+        ['h2', 'Email and social media'],
+        ['p', "Mailchimp's free plan is limited to 250 contacts and 500 sends a month. Buffer lets you connect up to 3 channels for free. Before sending marketing email, make sure recipients gave prior consent and every message includes a way to unsubscribe, as the law requires."],
+        ['h2', 'When to upgrade'],
+        ['p', 'Upgrade when you hit one of the limits, not before. Plans and limits change, so check the official page before buying.']
+      ]
+    }
+  },
   {
     slug: 'free-tools', minutes: 3, updated: '2026-10-19',
     tools: ['vscode', 'blender', 'obs-studio', 'audacity', 'obsidian', 'davinci-resolve'],

@@ -494,7 +494,7 @@ body.has-tray .chat-fab { bottom: 92px; }
 [dir="rtl"] .cmp-pill { padding: 4px 12px 4px 6px; }
 .cmp-pill button { width: 28px; height: 28px; border-radius: 50%; border: 0; background: var(--surface-2); display: grid; place-items: center; cursor: pointer; }
 .cmp-pill button .ic { width: 14px; height: 14px; }
-.table-wrap { overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--surface); }
+.table-wrap { position: relative; overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--surface); }
 .cmp-table, .status-table { width: 100%; border-collapse: collapse; min-width: 640px; }
 .cmp-table th, .cmp-table td, .status-table th, .status-table td { padding: 14px 16px; text-align: start; vertical-align: top; border-bottom: 1px solid var(--line); }
 .cmp-table tbody tr:last-child > *, .status-table tbody tr:last-child > * { border-bottom: 0; }
@@ -772,3 +772,22 @@ code.key { font: 500 .9em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monos
 .book-cover-gen { direction: ltr; text-align: left; overflow: hidden; font-size: .9rem; line-height: 1.2; overflow-wrap: anywhere; hyphens: auto; padding: 10px 9px; }
 .book-cover-gen .bc-title { display: block; max-width: 100%; }
 .preset-logos .logo + .logo { margin-inline-start: -3px; }
+/* v3.2 categories */
+[data-cat="work"] { --cc: #1F6F8B; }
+[data-cat="marketing"] { --cc: #B4451F; }
+[data-cat="security"] { --cc: #2F6B3A; }
+:root[data-theme="dark"] [data-cat="work"] { --cc: #7CC4DE; }
+:root[data-theme="dark"] [data-cat="marketing"] { --cc: #F0A07F; }
+:root[data-theme="dark"] [data-cat="security"] { --cc: #8FD19E; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-cat="work"] { --cc: #7CC4DE; }
+  :root:not([data-theme="light"]) [data-cat="marketing"] { --cc: #F0A07F; }
+  :root:not([data-theme="light"]) [data-cat="security"] { --cc: #8FD19E; }
+}
+/* Scroll containers must contain absolutely positioned descendants (e.g. .sr-only text) */
+.cat-chips, .chat-modes, .filter-group { position: relative; }
+.brand-mark { flex: none; }
+@media (max-width: 720px) { .header-row { gap: 10px; } .header-actions { gap: 6px; } .brand { gap: 8px; } }
+.book-body { min-width: 0; } .book-title, .book-meta { overflow-wrap: anywhere; }
+.book-body { grid-template-columns: minmax(0, 1fr); }
+.book-card .price, .book-card .tag { white-space: normal; max-width: 100%; }

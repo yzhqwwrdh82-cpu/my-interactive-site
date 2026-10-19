@@ -199,6 +199,104 @@
       "license": "CC0-1.0 (project default; not confirmed per icon)",
       "source": "https://kdenlive.org/en/trademark-logo/",
       "guidelines": "https://kdenlive.org/en/trademark-logo/"
+    },
+    "bitwarden": {
+      "title": "Bitwarden",
+      "hex": "175DDC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://github.com/bitwarden/brand/blob/6182cd64321d810c6f6255db08c2a17804d2b724/icons/icon.svg",
+      "guidelines": null
+    },
+    "1password": {
+      "title": "1Password",
+      "hex": "3B66BC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://1password.com/press",
+      "guidelines": "https://1password.com/press"
+    },
+    "protonvpn": {
+      "title": "Proton VPN",
+      "hex": "66DEB1",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://proton.me/media/kit",
+      "guidelines": null
+    },
+    "buffer": {
+      "title": "Buffer",
+      "hex": "231F20",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://buffer.com",
+      "guidelines": null
+    },
+    "hootsuite": {
+      "title": "Hootsuite",
+      "hex": "FF4C46",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://hootsuite.widencollective.com/portals/bafpk5oo/bafpk5oo/MediaKitAssets/c/b9e3a7bb-aca7-48d7-90ed-cff5898aafd0",
+      "guidelines": "https://hootsuite.widencollective.com/portals/bafpk5oo/MediaKitAssets"
+    },
+    "mailchimp": {
+      "title": "MailChimp",
+      "hex": "241C15",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://mailchimp.com/about/brand-assets",
+      "guidelines": "https://mailchimp.com/about/brand-assets"
+    },
+    "airtable": {
+      "title": "Airtable",
+      "hex": "18BFFF",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://airtable.com/press",
+      "guidelines": null
+    },
+    "clickup": {
+      "title": "ClickUp",
+      "hex": "7B68EE",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://clickup.com/brand",
+      "guidelines": null
+    },
+    "calendly": {
+      "title": "Calendly",
+      "hex": "006BFF",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://calendly.com/newsroom",
+      "guidelines": "https://calendly.com/newsroom"
+    },
+    "trello": {
+      "title": "Trello",
+      "hex": "0052CC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://atlassian.design/resources/logo-library",
+      "guidelines": "https://atlassian.design/foundations/logos"
+    },
+    "asana": {
+      "title": "Asana",
+      "hex": "F06A6A",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://asana.com/brand",
+      "guidelines": "https://asana.com/brand"
+    },
+    "postman": {
+      "title": "Postman",
+      "hex": "FF6C37",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.getpostman.com/resources/media-assets/",
+      "guidelines": null
+    },
+    "github": {
+      "title": "GitHub",
+      "hex": "181717",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://github.com/logos",
+      "guidelines": "https://github.com/logos"
+    },
+    "loom": {
+      "title": "Loom",
+      "hex": "625DF5",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.loom.com/press",
+      "guidelines": null
     }
   }
 }

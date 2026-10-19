@@ -29,6 +29,8 @@ const P = {
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   box: '<path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/>',
   flow: '<circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="18" r="2.5"/><rect x="15" y="3.5" width="6" height="5" rx="1.5"/><path d="M8 6h7M18 8.5v7M5.5 8.5V15a3 3 0 0 0 3 3H16"/>',
+  kanban: '<rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M9.5 4v16M15 4v16M5.5 8h2M11.5 8h2M17 8h1.5M11.5 11h2"/>',
+  megaphone: '<path d="M4 10v4a1 1 0 0 0 1 1h2l6 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16.5 9a4 4 0 0 1 0 6M7 15l1 4"/>',
   lock: '<rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>'
 };
 export function icon(name, cls = '') {

@@ -23,7 +23,7 @@ const data = JSON.parse(readFileSync(join(root, 'data/tools.json'), 'utf8'));
 const outDir = join(root, 'assets/logos');
 mkdirSync(outDir, { recursive: true });
 // Brand-guideline overrides: some brands forbid recoloring their mark (e.g. OpenAI: no added colors).
-const COLOR_OVERRIDE = { openai: '000000' };
+const COLOR_OVERRIDE = { openai: '000000', mailchimp: '241C15' };  // Mailchimp: dark mark for contrast on white (brand assets offer a dark version)
 const credits = { source: 'Simple Icons', version: pkg.version, url: 'https://simpleicons.org/', projectLicense: 'CC0-1.0', icons: {} };
 
 for (const tool of data.tools) {
