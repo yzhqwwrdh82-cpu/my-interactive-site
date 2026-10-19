@@ -16,20 +16,26 @@ const OWNER_TODO = {
   en: 'To be completed: site owner or business name, postal address and a contact email.'
 };
 const A11Y_TODO = {
-  he: 'להשלמה: שם רכז/ת הנגישות, טלפון ואימייל. עד שיתווספו הפרטים, אין ערוץ פנייה פעיל.',
-  en: 'To be completed: accessibility coordinator name, phone and email. Until these are added, there is no live contact channel.'
+  he: 'להשלמה: פרטי רכז/ת הנגישות (שם, טלפון ואימייל). עד שיתווספו, אפשר לפנות בנושא נגישות לאימייל של מפעיל האתר.',
+  en: 'To be completed: accessibility coordinator details (name, phone and email). Until then, accessibility requests can be sent to the site operator\'s email.'
 };
+export function ownerLine(o, L) {
+  const parts = [`<span lang="he">${esc(o.name)}</span>`, `<a href="mailto:${esc(o.email)}" dir="ltr">${esc(o.email)}</a>`];
+  if (o.postalAddress) parts.push(esc(o.postalAddress));
+  if (o.businessId) parts.push(esc((L === 'he' ? 'מספר עוסק: ' : 'Business ID: ') + o.businessId));
+  return `<p class="owner"><strong>${L === 'he' ? 'מפעיל האתר:' : 'Site operator:'}</strong> ${parts.join(' · ')}</p>`;
+}
 function ownerBlock(site, L) {
   const o = (site && site.owner) || {};
   if (!o.name || !o.email) return `<p class="todo">${esc(OWNER_TODO[L])}</p>`;
-  const parts = [esc(o.name), `<a href="mailto:${esc(o.email)}">${esc(o.email)}</a>`];
-  if (o.postalAddress) parts.push(esc(o.postalAddress));
-  if (o.businessId) parts.push(esc((L === 'he' ? 'מספר עוסק: ' : 'Business ID: ') + o.businessId));
-  return `<p class="owner">${parts.join(' · ')}</p>`;
+  return ownerLine(o, L);
 }
 function a11yBlock(site, L) {
   const a = (site && site.owner && site.owner.accessibilityCoordinator) || {};
-  if (!a.name || !(a.email || a.phone)) return `<p class="todo">${esc(A11Y_TODO[L])}</p>`;
+  if (!a.name || !(a.email || a.phone)) {
+    const o = (site && site.owner) || {};
+    return `<p class="todo">${esc(A11Y_TODO[L])}</p>` + (o.email ? `<p>${L === 'he' ? 'פניות בנושא נגישות בינתיים:' : 'Accessibility requests for now:'} <a href="mailto:${esc(o.email)}?subject=${encodeURIComponent(L === 'he' ? 'נגישות' : 'Accessibility')}" dir="ltr">${esc(o.email)}</a></p>` : '');
+  }
   const parts = [esc(a.name)];
   if (a.email) parts.push(`<a href="mailto:${esc(a.email)}">${esc(a.email)}</a>`);
   if (a.phone) parts.push(`<a href="tel:${esc(a.phone.replace(/[^+\d]/g, ''))}">${esc(a.phone)}</a>`);
@@ -40,8 +46,10 @@ function a11yBlock(site, L) {
 function richText(blocks, site = null, L = 'he') {
   const on = {
     analytics: !!(site && site.analyticsOn),
-    ads: !!(site && site.features && site.features.ads && site.google && site.google.adsensePublisherId)
+    ads: !!(site && site.features && site.features.ads && site.google && site.google.adsensePublisherId),
+    hasOwner: !!(site && site.owner && site.owner.name && site.owner.email)
   };
+  on.noOwner = !on.hasOwner;
   return blocks.filter((b) => !b[2] || on[b[2]]).map(([tag, text]) => {
     if (tag === 'owner') return ownerBlock(site, L);
     if (tag === 'a11yContact') return a11yBlock(site, L);

@@ -22,8 +22,8 @@
     "note": "All null = nothing from Google is loaded. searchConsoleVerification: the content value of Google's HTML meta tag (not secret). ga4MeasurementId: G-XXXXXXX, used only when features.analytics is true, and loaded only after the visitor consents. adsensePublisherId: pub-XXXXXXXXXXXXXXXX, adds the AdSense verification meta tag and a root ads.txt. Ad scripts are NOT added automatically."
   },
   "owner": {
-    "name": null,
-    "email": null,
+    "name": "יצחק",
+    "email": "yzhqwwrdh82@gmail.com",
     "postalAddress": null,
     "businessId": null,
     "accessibilityCoordinator": {

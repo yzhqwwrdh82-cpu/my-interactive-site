@@ -290,7 +290,8 @@ export const legal = {
     updated: '2026-10-19',
     body: {
       he: [
-        ['todo', 'טיוטה לפני בדיקת עורך דין. פרטי בעל האתר עדיין חסרים ומסומנים "להשלמה".'],
+        ['todo', 'טיוטה לפני בדיקת עורך דין. פרטי בעל האתר עדיין חסרים ומסומנים "להשלמה".', 'noOwner'],
+        ['todo', 'טיוטה לפני בדיקת עורך דין.', 'hasOwner'],
         ['p', 'המדיניות הזו מתארת איזה מידע נאסף כשמשתמשים ב-ToolScout ואיך הוא משמש. היא משקפת את האתר כפי שהוא היום.'],
         ['h2', 'מי אחראי על האתר'],
         ['owner'],
@@ -312,12 +313,13 @@ export const legal = {
         ['h2', 'קישורים חיצוניים'],
         ['p', 'קישורים לאתרי הכלים מובילים לאתרים של צד שלישי, שחלות עליהם מדיניות הפרטיות שלהם.'],
         ['h2', 'הזכויות שלכם'],
-        ['p', 'לפי חוק הגנת הפרטיות, ובמקרים מסוימים לפי דיני הגנת מידע של מדינות אחרות, יש לכם זכות לעיין במידע עליכם ולבקש לתקן אותו. מאחר שהאתר לא שומר מידע אישי מעבר ליומני האחסון, ברוב המקרים לא יהיה מידע לעיין בו. פניות אפשר לשלוח לכתובת שתופיע בסעיף "מי אחראי על האתר".'],
+        ['p', 'לפי חוק הגנת הפרטיות, ובמקרים מסוימים לפי דיני הגנת מידע של מדינות אחרות, יש לכם זכות לעיין במידע עליכם ולבקש לתקן אותו. מאחר שהאתר לא שומר מידע אישי מעבר ליומני האחסון, ברוב המקרים לא יהיה מידע לעיין בו. פניות אפשר לשלוח לכתובת האימייל שבסעיף "מי אחראי על האתר".'],
         ['h2', 'לפני חיבור שירותים בעתיד'],
         ['p', 'לפני שנחבר שירות שאוסף מידע, כמו דיוור, טופס פנייה פעיל, צ\'אט עם נציג או שיחה קולית, נעדכן את המדיניות. נציג בנקודת האיסוף מה נאסף, למה, האם מסירת המידע היא חובה, למי הוא יועבר ומה הזכויות שלכם, ונבקש הסכמה כשהדין מחייב זאת.']
       ],
       en: [
-        ['todo', 'Draft pending legal review. Site owner details are still missing and marked "to be completed".'],
+        ['todo', 'Draft pending legal review. Site owner details are still missing and marked "to be completed".', 'noOwner'],
+        ['todo', 'Draft pending legal review.', 'hasOwner'],
         ['p', 'This policy describes what information is collected when you use ToolScout and how it is used. It reflects the site as it is today.'],
         ['h2', 'Who is responsible for the site'],
         ['owner'],
@@ -339,7 +341,7 @@ export const legal = {
         ['h2', 'External links'],
         ['p', 'Links to tool websites lead to third-party sites, which have their own privacy policies.'],
         ['h2', 'Your rights'],
-        ['p', 'Under Israel\'s Privacy Protection Law, and in some cases under other countries\' data protection laws, you have the right to access information about you and to ask for it to be corrected. Because the site keeps no personal data beyond hosting logs, in most cases there will be nothing to access. You can send requests to the address that will appear under "Who is responsible for the site".'],
+        ['p', 'Under Israel\'s Privacy Protection Law, and in some cases under other countries\' data protection laws, you have the right to access information about you and to ask for it to be corrected. Because the site keeps no personal data beyond hosting logs, in most cases there will be nothing to access. You can send requests to the email address under "Who is responsible for the site".'],
         ['h2', 'Before connecting services later'],
         ['p', 'Before connecting any service that collects information, such as email updates, a live contact form, live chat or voice calls, we\'ll update this policy. At the point of collection we\'ll explain what is collected, why, whether providing it is required, who receives it and what your rights are, and we\'ll ask for consent where the law requires it.']
       ]
@@ -350,7 +352,8 @@ export const legal = {
     updated: '2026-10-19',
     body: {
       he: [
-        ['todo', 'טיוטה לפני בדיקת עורך דין. פרטי המפעיל, הדין החל וסמכות השיפוט עדיין חסרים.'],
+        ['todo', 'טיוטה לפני בדיקת עורך דין. פרטי המפעיל, הדין החל וסמכות השיפוט עדיין חסרים.', 'noOwner'],
+        ['todo', 'טיוטה לפני בדיקת עורך דין. הדין החל וסמכות השיפוט עדיין חסרים.', 'hasOwner'],
         ['h2', 'מי מפעיל את האתר'],
         ['owner'],
         ['h2', 'מטרת האתר'],
@@ -375,7 +378,8 @@ export const legal = {
         ['todo', 'להשלמה על ידי עורך דין: הדין החל וסמכות השיפוט.']
       ],
       en: [
-        ['todo', 'Draft pending legal review. Operator details, governing law and jurisdiction are still missing.'],
+        ['todo', 'Draft pending legal review. Operator details, governing law and jurisdiction are still missing.', 'noOwner'],
+        ['todo', 'Draft pending legal review. Governing law and jurisdiction are still missing.', 'hasOwner'],
         ['h2', 'Who operates the site'],
         ['owner'],
         ['h2', 'What the site is'],

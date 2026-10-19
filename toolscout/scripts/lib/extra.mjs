@@ -1,6 +1,7 @@
 // About page and the standalone root 404 page.
 import { esc } from './util.mjs';
 import { page, crumbs, brandMark, wordmark } from './layout.mjs';
+import { ownerLine } from './pages.mjs';
 
 const ABOUT = {
   he: {
@@ -43,7 +44,7 @@ export function aboutPage(c, data, site, products = null) {
   const o = site.owner || {};
   const n = data.tools.length, k = data.categories.length, b = products ? products.items.length : 5;
   const owner = (o.name && o.email)
-    ? `<p class="owner">${esc(o.name)} · <a href="mailto:${esc(o.email)}">${esc(o.email)}</a>${o.postalAddress ? ' · ' + esc(o.postalAddress) : ''}</p>`
+    ? ownerLine(o, L)
     : `<p class="todo">${esc(L === 'he' ? 'להשלמה: שם בעל האתר או העסק ואימייל ליצירת קשר.' : 'To be completed: site owner or business name and a contact email.')}</p>`;
   const jsonld = { '@context': 'https://schema.org', '@type': 'AboutPage', name: a.title, inLanguage: L, isPartOf: { '@type': 'WebSite', name: 'ToolScout', url: site.siteUrl + '/' } };
   return page(c, data, site, { title: `${a.title} | ToolScout`, desc: a.desc, page: 'about', jsonld }, `
