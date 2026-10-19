@@ -1,0 +1,36 @@
+{
+  "siteUrl": "https://benevolent-mooncake-e8a513.netlify.app/toolscout",
+  "siteUrlNote": "Production base URL used for canonical, hreflang, Open Graph and sitemap. Change when a custom domain is chosen, then rebuild.",
+  "features": {
+    "analytics": false,
+    "affiliateLinks": false,
+    "ads": false,
+    "sponsoredContent": false,
+    "newsletter": false,
+    "contactForm": false,
+    "liveAgentChat": false,
+    "aiAssistant": false,
+    "voiceCall": false,
+    "accounts": false,
+    "payments": false
+  },
+  "featuresNote": "All monetization and communication services are OFF. 'analytics' and 'ads' are read by the build (Google tags are added only when enabled AND configured); the rest document state. Turning anything on requires a real provider, an updated privacy policy and explicit owner approval.",
+  "google": {
+    "searchConsoleVerification": null,
+    "ga4MeasurementId": null,
+    "adsensePublisherId": null,
+    "note": "All null = nothing from Google is loaded. searchConsoleVerification: the content value of Google's HTML meta tag (not secret). ga4MeasurementId: G-XXXXXXX, used only when features.analytics is true, and loaded only after the visitor consents. adsensePublisherId: pub-XXXXXXXXXXXXXXXX, adds the AdSense verification meta tag and a root ads.txt. Ad scripts are NOT added automatically."
+  },
+  "owner": {
+    "name": "יצחק",
+    "email": "yzhqwwrdh82@gmail.com",
+    "postalAddress": null,
+    "businessId": null,
+    "accessibilityCoordinator": {
+      "name": null,
+      "email": null,
+      "phone": null
+    },
+    "note": "Fill these in to replace the 'to be completed' boxes on the legal and contact pages. Never invent values."
+  }
+}
