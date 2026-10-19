@@ -3085,11 +3085,11 @@
       "checkedAt": "2026-10-19",
       "featured": false,
       "verification": {
-        "pricing": "unverified",
+        "pricing": "verified",
         "platforms": "unverified",
         "note": {
-          "he": "עמוד התמחור הרשמי מציין \"Start free\" ומגבלות \"Free Mode\" בתוך התוכניות, אבל לא מציג תוכנית חינמית מפורשת. לכן התמחור מסומן \"לא אומת\".",
-          "en": "The official pricing page says \"Start free\" and mentions \"Free Mode\" limits inside plans, but shows no explicit free plan. Pricing is therefore marked not verified."
+          "he": "התוכנית החינמית Starter מופיעה בתיעוד הרשמי של Replit (docs.replit.com/billing/plans). עמוד התמחור מציג את Core ו־Pro בתשלום.",
+          "en": "The free Starter plan is listed in Replit's official docs (docs.replit.com/billing/plans). The pricing page shows the paid Core and Pro plans."
         }
       },
       "id": "replit",
@@ -3099,7 +3099,7 @@
       "uses": [
         "code"
       ],
-      "pricing": "unverified",
+      "pricing": "freemium",
       "url": "https://replit.com/",
       "pricingUrl": "https://replit.com/pricing",
       "description": {
@@ -3120,9 +3120,9 @@
       },
       "pros": [
         {
-          "he": "אפשר להתחיל בחינם",
-          "en": "You can start for free",
-          "source": "pricing"
+          "he": "תוכנית Starter חינמית ליצירת אפליקציות ולפרסום הפרויקט הראשון",
+          "en": "Free Starter plan to create apps and publish your first project",
+          "source": "official"
         }
       ],
       "cons": [
