@@ -1,6 +1,6 @@
 // About page and the standalone root 404 page.
 import { esc } from './util.mjs';
-import { page, crumbs } from './layout.mjs';
+import { page, crumbs, brandMark, wordmark } from './layout.mjs';
 
 const ABOUT = {
   he: {
@@ -76,7 +76,7 @@ export function notFoundPage(site, basePath) {
 <body>
 <main id="main" class="section">
   <div class="wrap narrow prose">
-    <p><a class="brand" href="${b}/"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="9" fill="var(--ink)"/><circle cx="14.5" cy="14.5" r="7" fill="none" stroke="var(--accent-bright)" stroke-width="2.8"/><path d="M14.5 11v7M11 14.5h7" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/><path d="M20 20l5.5 5.5" stroke="var(--signal)" stroke-width="3.4" stroke-linecap="round"/></svg><span>ToolScout</span></a></p>
+    <p><a class="brand" href="${b}/">${brandMark()}${wordmark()}</a></p>
     <h1>הדף לא נמצא</h1>
     <p>ייתכן שהקישור שגוי או שהדף הועבר. אפשר לחזור לדף הבית או לחפש בקטלוג.</p>
     <p><a class="btn btn-primary" href="${b}/">לדף הבית</a> <a class="btn" href="${b}/catalog.html">לקטלוג הכלים</a></p>

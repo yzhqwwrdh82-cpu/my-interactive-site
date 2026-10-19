@@ -102,7 +102,7 @@ export function card(tool, data, c, { headingLevel = 3 } = {}) {
 }
 
 // ---------- Home ----------
-export function homePage(c, data, site) {
+export function homePage(c, data, site, products = null) {
   const s = S[c.lang];
   const L = c.lang;
   const tools = data.tools;
@@ -128,10 +128,11 @@ export function homePage(c, data, site) {
 
   return page(c, data, site, { title: s.home.title, desc: s.home.desc, page: 'home', jsonld }, `
 <section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="hero-stats">${esc(s.home.stats(tools.length, data.categories.length, fmtDate(site.updated, L)))}</p>
-      <h1>${esc(s.home.h1)}</h1>
+      <p class="kicker" lang="en" dir="ltr">${esc(s.home.kicker)}</p>
+      <h1><span class="h1-brand" lang="en" dir="ltr">Tool<span>Scout</span></span><span class="h1-sub">${esc(s.home.slogan)}</span></h1>
       <p class="lead">${esc(s.home.lead)}</p>
       <form class="search search-hero" role="search" action="${c.u('catalog.html')}" method="get">
         <label class="sr-only" for="hero-q">${esc(s.catalog.searchLabel)}</label>
@@ -142,17 +143,31 @@ export function homePage(c, data, site) {
       <div class="intents"><span class="intents-label">${esc(s.home.intentsLabel)}:</span>
         <ul>${s.intents.map(([u, label]) => `<li><a class="chip" href="${c.u('catalog.html')}?use=${u}">${esc(label)}</a></li>`).join('')}</ul>
       </div>
+      <p class="hero-stats">${esc(s.home.stats(tools.length, data.categories.length, fmtDate(site.updated, L)))}</p>
     </div>
-    <div class="board" role="group" aria-label="${esc(s.home.boardLabel)}">
-      <div class="board-grid">${tiles}<a class="board-tile board-more" href="${c.u('catalog.html')}" aria-label="${esc(s.home.allTools)}">${icon('arrow', 'flip')}</a></div>
+    <div class="hero-3d" aria-hidden="true">
+      <div class="scene">
+        <div class="halo"></div>
+        <div class="orbit"></div>
+        <div class="spin">
+          <div class="cube c-outer"><i class="f f1"></i><i class="f f2"></i><i class="f f3"></i><i class="f f4"></i><i class="f f5"></i><i class="f f6"></i></div>
+          <div class="cube c-inner"><i class="f f1"></i><i class="f f2"></i><i class="f f3"></i><i class="f f4"></i><i class="f f5"></i><i class="f f6"></i></div>
+        </div>
+        <span class="shard s1"></span><span class="shard s2"></span><span class="shard s3"></span><span class="shard s4"></span>
+        <div class="pedestal"></div>
+      </div>
     </div>
   </div>
 </section>
 
+<section class="features" aria-label="${esc(s.home.boardLabel)}">
+  <ul class="wrap feat-grid" data-reveal-grid>${s.home.features.map(([href, ic, title, sub], i) => `<li><a class="feat fx" href="${c.u(href)}"><span class="feat-ic">${icon(ic)}</span><span class="feat-t">${esc(title)}</span><span class="feat-s">${esc(sub([tools.length, comparePresets.length, guides.length, products ? products.items.length : 0][i]))}</span></a></li>`).join('')}</ul>
+</section>
+
 <section class="section" aria-labelledby="cats-h">
   <div class="wrap">
-    <div class="section-head"><h2 id="cats-h">${esc(s.home.catsTitle)}</h2><p>${esc(s.home.catsLead)}</p></div>
-    <ul class="cat-grid">${catTiles}</ul>
+    <div class="section-head" data-reveal><h2 id="cats-h">${esc(s.home.catsTitle)}</h2><p>${esc(s.home.catsLead)}</p></div>
+    <ul class="cat-grid" data-reveal-grid>${catTiles}</ul>
   </div>
 </section>
 
@@ -177,9 +192,19 @@ export function homePage(c, data, site) {
 
 <section class="section" aria-labelledby="picks-h">
   <div class="wrap">
-    <div class="section-head"><h2 id="picks-h">${esc(s.home.picksTitle)}</h2><p>${esc(s.home.picksLead)}</p>
+    <div class="section-head" data-reveal><h2 id="picks-h">${esc(s.home.picksTitle)}</h2><p>${esc(s.home.picksLead)}</p>
       <a class="text-link" href="${c.u('catalog.html')}">${esc(s.home.allTools)}${icon('arrow', 'flip')}</a></div>
-    <ul class="grid">${picks.map((x) => card(x, data, c)).join('')}</ul>
+    <ul class="grid" data-reveal-grid>${picks.map((x) => card(x, data, c)).join('')}</ul>
+  </div>
+</section>
+
+<section class="section wall-wrap" aria-labelledby="wall-h">
+  <div class="wrap">
+    <div class="section-head" data-reveal><h2 id="wall-h">${esc(s.home.wallTitle)}</h2><p>${esc(s.home.wallLead)}</p>
+      <a class="text-link" href="${c.u('catalog.html')}">${esc(s.home.allTools)}${icon('arrow', 'flip')}</a></div>
+    <div class="board" role="group" aria-label="${esc(s.home.boardLabel)}">
+      <div class="board-grid">${tiles}<a class="board-tile board-more" href="${c.u('catalog.html')}" aria-label="${esc(s.home.allTools)}">${icon('arrow', 'flip')}</a></div>
+    </div>
   </div>
 </section>
 
@@ -187,14 +212,14 @@ export function homePage(c, data, site) {
   <div class="wrap band-grid">
     <div><h2 id="disc-h">${esc(s.home.discoverTitle)}</h2><p>${esc(s.home.discoverLead)}</p>
       <a class="btn btn-light" href="${c.u('compare.html')}">${icon('compare')}${esc(s.home.discoverCta)}</a></div>
-    <ul class="presets">${presets}</ul>
+    <ul class="presets" data-reveal-grid>${presets}</ul>
   </div>
 </section>
 
 <section class="section" aria-labelledby="new-h">
   <div class="wrap two-col">
     <div>
-      <div class="section-head"><h2 id="new-h">${esc(s.home.newTitle)}</h2><p>${esc(s.home.newLead)}</p></div>
+      <div class="section-head" data-reveal><h2 id="new-h">${esc(s.home.newTitle)}</h2><p>${esc(s.home.newLead)}</p></div>
       <ul class="rows">${newest.map((x) => `<li><a class="row" href="${c.u('tools/' + x.id + '.html')}">${logoTile(x, c, 'sm')}
         <span class="row-main"><span class="row-name">${esc(x.name)}</span><span class="row-desc">${esc(x.description[L])}</span></span>
         <span class="row-side"><span class="price" data-price="${x.pricing}">${esc(priceName(data, x.pricing, L))}</span><time datetime="${x.addedAt}">${esc(fmtDate(x.addedAt, L))}</time></span></a></li>`).join('')}</ul>
@@ -211,9 +236,9 @@ export function homePage(c, data, site) {
 
 <section class="section" aria-labelledby="guides-h">
   <div class="wrap">
-    <div class="section-head"><h2 id="guides-h">${esc(s.home.guidesTitle)}</h2><p>${esc(s.home.guidesLead)}</p>
+    <div class="section-head" data-reveal><h2 id="guides-h">${esc(s.home.guidesTitle)}</h2><p>${esc(s.home.guidesLead)}</p>
       <a class="text-link" href="${c.u('guides/index.html')}">${esc(s.home.allGuides)}${icon('arrow', 'flip')}</a></div>
-    <ul class="guide-grid">${guideCards}</ul>
+    <ul class="guide-grid" data-reveal-grid>${guideCards}</ul>
   </div>
 </section>
 

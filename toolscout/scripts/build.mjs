@@ -51,7 +51,7 @@ function out(c, html, { index = true } = {}) {
 }
 
 for (const L of LANGS) {
-  out(ctx(L, 'index.html'), homePage(ctx(L, 'index.html'), data, site));
+  out(ctx(L, 'index.html'), homePage(ctx(L, 'index.html'), data, site, products));
   out(ctx(L, 'catalog.html'), catalogPage(ctx(L, 'catalog.html'), data, site));
   out(ctx(L, 'compare.html'), comparePage(ctx(L, 'compare.html'), data, site));
   for (const p of comparePresets) { const c = ctx(L, `compare/${p.slug}.html`); out(c, comparePresetPage(c, data, site, p)); }

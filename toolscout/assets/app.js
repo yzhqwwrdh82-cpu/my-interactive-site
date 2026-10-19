@@ -46,7 +46,7 @@
 
   // ---------- Theme ----------
   var themeBtn = $('[data-theme-toggle]');
-  function themeNow() { return root.getAttribute('data-theme') || 'system'; }
+  function themeNow() { return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; }
   function labelTheme() {
     if (!themeBtn) return;
     var t = themeNow();
@@ -57,12 +57,58 @@
   if (themeBtn) {
     labelTheme();
     themeBtn.addEventListener('click', function () {
-      var next = { system: 'light', light: 'dark', dark: 'system' }[themeNow()];
-      if (next === 'system') { root.removeAttribute('data-theme'); try { localStorage.removeItem('ts-theme'); } catch (e) {} }
-      else { root.setAttribute('data-theme', next); try { localStorage.setItem('ts-theme', next); } catch (e) {} }
+      var next = themeNow() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next); try { localStorage.setItem('ts-theme', next); } catch (e) {}
       labelTheme();
     });
   }
+
+
+  // ---------- Motion (progressive enhancement; nothing is hidden without JS) ----------
+  (function motion() {
+    var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    // Reveal sections as they enter the viewport.
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      var targets = $$('[data-reveal] > *, [data-reveal-grid] > li, [data-reveal-grid] > *:not(li)');
+      if (targets.length) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+        }, { rootMargin: '0px 0px -6% 0px', threshold: 0.01 });
+        targets.forEach(function (el, i) {
+          var r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight) return;            // already visible: never hide it
+          el.classList.add('rv');
+          el.style.setProperty('--d', (Array.prototype.indexOf.call(el.parentNode.children, el) % 6) * 60 + 'ms');
+          io.observe(el);
+        });
+      }
+    }
+    // Pause the hero object when it is off-screen (saves battery).
+    var scene = $('.hero-3d');
+    if (scene && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { scene.classList.toggle('is-paused', !en[0].isIntersecting); }).observe(scene);
+    }
+    if (!finePointer || reduceMotion) return;
+    // Hero tilt follows the pointer, at most every animation frame.
+    var hero = $('.hero');
+    if (hero && scene) {
+      var raf = 0, px = 0, py = 0;
+      hero.addEventListener('pointermove', function (e) {
+        var r = hero.getBoundingClientRect();
+        px = (e.clientX - r.left) / r.width - 0.5; py = (e.clientY - r.top) / r.height - 0.5;
+        if (!raf) raf = requestAnimationFrame(function () { raf = 0; scene.style.setProperty('--tx', (px * 14).toFixed(2) + 'deg'); scene.style.setProperty('--ty', (-py * 10).toFixed(2) + 'deg'); });
+      });
+      hero.addEventListener('pointerleave', function () { scene.style.setProperty('--tx', '0deg'); scene.style.setProperty('--ty', '0deg'); });
+    }
+    // Card spotlight: light follows the pointer across cards.
+    doc.addEventListener('pointermove', function (e) {
+      var el = e.target.closest && e.target.closest('.fx, .card, .cat-tile, .guide-card, .preset, .book-card');
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+  })();
 
   // Close the mobile menu on outside click / Escape.
   var menu = $('details.menu');

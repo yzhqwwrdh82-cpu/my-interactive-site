@@ -31,6 +31,11 @@ const P = {
   flow: '<circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="18" r="2.5"/><rect x="15" y="3.5" width="6" height="5" rx="1.5"/><path d="M8 6h7M18 8.5v7M5.5 8.5V15a3 3 0 0 0 3 3H16"/>',
   kanban: '<rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M9.5 4v16M15 4v16M5.5 8h2M11.5 8h2M17 8h1.5M11.5 11h2"/>',
   megaphone: '<path d="M4 10v4a1 1 0 0 0 1 1h2l6 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16.5 9a4 4 0 0 1 0 6M7 15l1 4"/>',
+  home: '<path d="M4 11l8-6.5 8 6.5"/><path d="M6 9.5V20h12V9.5M10 20v-5.5h4V20"/>',
+  grid: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
+  book: '<path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v13"/>',
+  guide: '<path d="M4 5.5l5-1.5 6 2 5-1.5v14l-5 1.5-6-2-5 1.5z"/><path d="M9 4v14M15 6v14"/>',
+  bolt: '<path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/>',
   lock: '<rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>'
 };
 export function icon(name, cls = '') {
@@ -65,8 +70,7 @@ export function head(c, site, { title, desc, noindex = false, jsonld = null, ogI
 <meta name="description" content="${esc(desc)}">
 ${noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#F4F6F5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0C1A1F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#050A16">
 <link rel="canonical" href="${canon}">
 <link rel="alternate" hreflang="${c.lang}" href="${canon}">
 <link rel="alternate" hreflang="${c.o}" href="${alt}">
@@ -95,21 +99,24 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(
 </head>`;
 }
 
+export const brandMark = () => '<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 2l12.1 7L16 16 3.9 9z" fill="#3FD5FF"/><path d="M3.9 9L16 16v14L3.9 23z" fill="#2F6BFF"/><path d="M16 16l12.1-7v14L16 30z" fill="#6B4DFF"/><path d="M16 9.7l5.45 3.15v6.3L16 22.3l-5.45-3.15v-6.3z" fill="#071026"/><path d="M16 9.7v6.3l-5.45 3.15v-6.3z" fill="#0F2560"/><path d="M16 9.7l5.45 3.15v6.3L16 16z" fill="#1B1A63"/><path d="M16 16l5.45 3.15L16 22.3l-5.45-3.15z" fill="#2B63F5"/><path d="M16 2l12.1 7v14L16 30 3.9 23V9z" fill="none" stroke="#9FEFFF" stroke-opacity=".55" stroke-width=".8" stroke-linejoin="round"/></svg>';
+export const wordmark = () => '<span class="wordmark">Tool<span>Scout</span></span>';
+
 // ---------- Header ----------
 export function header(c, active = '') {
   const s = S[c.lang];
   const link = (href, key, label) => `<a href="${c.u(href)}"${active === key ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
-  const nav = `${link('catalog.html', 'catalog', s.nav.catalog)}${link('compare.html', 'compare', s.nav.compare)}${link('guides/index.html', 'guides', s.nav.guides)}`;
+  const nav = `${link('catalog.html', 'catalog', s.nav.catalog)}${link('compare.html', 'compare', s.nav.compare)}${link('guides/index.html', 'guides', s.nav.guides)}${link('books.html', 'books', s.nav.books)}`;
   return `
 <a class="skip-link" href="#main">${esc(s.skip)}</a>
 <header class="site-header">
   <div class="wrap header-row">
     <a class="brand" href="${c.u('index.html')}">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="9" fill="var(--ink)"/><circle cx="14.5" cy="14.5" r="7" fill="none" stroke="var(--accent-bright)" stroke-width="2.8"/><path d="M14.5 11v7M11 14.5h7" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/><path d="M20 20l5.5 5.5" stroke="var(--signal)" stroke-width="3.4" stroke-linecap="round"/></svg>
-      <span>ToolScout</span>
+      ${brandMark()}${wordmark()}
     </a>
     <nav class="nav-primary" aria-label="${esc(s.nav.primary)}">${nav}</nav>
     <div class="header-actions">
+      <a class="icon-btn search-link" href="${c.u('catalog.html')}#q" aria-label="${esc(s.catalog.searchLabel)}" title="${esc(s.catalog.searchLabel)}">${icon('search')}</a>
       <a class="icon-btn fav-link" href="${c.u('account.html')}" aria-label="${esc(s.nav.favorites)}" title="${esc(s.nav.favorites)}">${icon('heart')}<span class="fav-count js-only" data-fav-count hidden>0</span></a>
       <button type="button" class="icon-btn js-only" data-theme-toggle data-l-label="${esc(s.theme.label)}" data-l-system="${esc(s.theme.system)}" data-l-light="${esc(s.theme.light)}" data-l-dark="${esc(s.theme.dark)}" aria-label="${esc(s.theme.label)}">${icon('theme')}</button>
       <a class="lang-btn" href="${c.alt()}" hreflang="${c.o}" lang="${c.o}" aria-label="${esc(s.switchLang)}">${esc(s.otherLangName)}</a>
@@ -131,7 +138,7 @@ export function footer(c, data, site) {
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="${c.u('index.html')}"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="9" fill="var(--ink)"/><circle cx="14.5" cy="14.5" r="7" fill="none" stroke="var(--accent-bright)" stroke-width="2.8"/><path d="M14.5 11v7M11 14.5h7" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/><path d="M20 20l5.5 5.5" stroke="var(--signal)" stroke-width="3.4" stroke-linecap="round"/></svg><span>ToolScout</span></a>
+      <a class="brand" href="${c.u('index.html')}">${brandMark()}${wordmark()}</a>
       <p>${esc(f.tagline)}</p>
       <p class="footer-lang"><span>${esc(f.language)}:</span> <strong>${esc(s.langName)}</strong> · <a href="${c.alt()}" hreflang="${c.o}" lang="${c.o}">${esc(s.otherLangName)}</a></p>
     </div>
@@ -210,6 +217,14 @@ function consentBanner(c) {
 </section>`;
 }
 
+// ---------- Mobile tab bar (phones only; the header menu still holds every link) ----------
+export function tabbar(c, active = '', pg = '') {
+  const s = S[c.lang];
+  const cur = active || (pg === 'home' ? 'home' : '');
+  const item = (href, key, ic, label) => `<a href="${c.u(href)}"${cur === key ? ' aria-current="page"' : ''}>${icon(ic)}<span>${esc(label)}</span></a>`;
+  return `<nav class="tabbar" aria-label="${esc(s.nav.quick)}">${item('index.html', 'home', 'home', s.nav.home)}${item('catalog.html', 'catalog', 'grid', s.nav.catalog)}${item('compare.html', 'compare', 'compare', s.nav.compare)}${item('guides/index.html', 'guides', 'guide', s.nav.guides)}${item('account.html', 'account', 'heart', s.nav.favorites)}</nav>`;
+}
+
 export function page(c, data, site, opts, body) {
   return `${head(c, site, opts)}
 <body data-page="${opts.page || ''}" data-lang="${c.lang}">
@@ -218,6 +233,7 @@ ${header(c, opts.active)}
 ${body}
 </main>
 ${footer(c, data, site)}
+${tabbar(c, opts.active, opts.page)}
 ${chatWidget(c)}
 ${site.analyticsOn ? consentBanner(c) : ''}
 <template id="ui-i18n">${esc(JSON.stringify({ card: S[c.lang].card, compare: S[c.lang].compare, tool: S[c.lang].tool, catalog: { countTpl: S[c.lang].catalog.countTpl } }, (k, v) => typeof v === 'function' ? undefined : v))}</template>

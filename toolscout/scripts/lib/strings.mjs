@@ -3,7 +3,7 @@ export const S = {
   he: {
     langName: 'עברית', otherLangName: 'English', switchLang: 'Switch to English', locale: 'he_IL',
     skip: 'דילוג לתוכן',
-    nav: { about: 'אודות', books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
+    nav: { home: 'בית', quick: 'ניווט מהיר', about: 'אודות', books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
     theme: { label: 'ערכת צבעים', system: 'לפי המערכת', light: 'בהירה', dark: 'כהה' },
     home: {
       title: 'ToolScout | מוצאים את הכלי הנכון, עם מידע שנבדק',
@@ -14,6 +14,16 @@ export const S = {
       searchBtn: 'חיפוש',
       intentsLabel: 'חיפושים נפוצים',
       boardLabel: 'הכלים בקטלוג',
+      kicker: 'Discover. Compare. Create.',
+      slogan: 'מגלים כלים. משווים חכם. יוצרים יותר.',
+      wallTitle: 'כל הכלים במבט אחד',
+      wallLead: 'לחצו על לוגו כדי לעבור לעמוד הכלי.',
+      features: [
+        ['catalog.html', 'bolt', 'קטלוג כלים', (n) => `${n} כלים עם מחיר ופלטפורמות שנבדקו`],
+        ['compare.html', 'compare', 'השוואות', (n) => `${n} השוואות מוכנות בין כלים דומים`],
+        ['guides/index.html', 'guide', 'מדריכים', (n) => `${n} מדריכים מעשיים וקצרים`],
+        ['books.html', 'book', 'ספרים', (n) => `${n} ספרים על AI ותכנות`]
+      ],
       stats: (n, c, d) => `${n} כלים · ${c} קטגוריות · עודכן ${d}`,
       catsTitle: 'קטגוריות',
       catsLead: 'בחרו תחום כדי לראות את הכלים שבו.',
@@ -143,7 +153,7 @@ export const S = {
   en: {
     langName: 'English', otherLangName: 'עברית', switchLang: 'החלפה לעברית', locale: 'en_US',
     skip: 'Skip to content',
-    nav: { about: 'About', books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
+    nav: { home: 'Home', quick: 'Quick navigation', about: 'About', books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
     theme: { label: 'Color theme', system: 'System', light: 'Light', dark: 'Dark' },
     home: {
       title: 'ToolScout | Find the right tool, with checked information',
@@ -154,6 +164,16 @@ export const S = {
       searchBtn: 'Search',
       intentsLabel: 'Popular searches',
       boardLabel: 'Tools in the catalog',
+      kicker: 'Discover. Compare. Create.',
+      slogan: 'Find the right tool, with checked information.',
+      wallTitle: 'Every tool at a glance',
+      wallLead: 'Select a logo to open that tool’s page.',
+      features: [
+        ['catalog.html', 'bolt', 'Tool catalog', (n) => `${n} tools with checked pricing and platforms`],
+        ['compare.html', 'compare', 'Comparisons', (n) => `${n} ready-made comparisons of similar tools`],
+        ['guides/index.html', 'guide', 'Guides', (n) => `${n} short, practical guides`],
+        ['books.html', 'book', 'Books', (n) => `${n} books on AI and programming`]
+      ],
       stats: (n, c, d) => `${n} tools · ${c} categories · updated ${d}`,
       catsTitle: 'Categories',
       catsLead: 'Pick an area to see its tools.',
