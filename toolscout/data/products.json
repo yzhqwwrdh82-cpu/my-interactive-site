@@ -78,6 +78,26 @@
       "id": "society",
       "he": "חברה ועתיד",
       "en": "Society and the future"
+    },
+    {
+      "id": "philosophy",
+      "he": "פילוסופיה",
+      "en": "Philosophy"
+    },
+    {
+      "id": "history",
+      "he": "היסטוריה",
+      "en": "History"
+    },
+    {
+      "id": "psychology",
+      "he": "פסיכולוגיה",
+      "en": "Psychology"
+    },
+    {
+      "id": "israel",
+      "he": "ישראל",
+      "en": "Israel"
     }
   ],
   "languages": [
@@ -285,6 +305,77 @@
           "Organizing ideas and digital information."
         ]
       ]
+    },
+    {
+      "id": "big-ideas",
+      "title": {
+        "he": "ספרים על רעיונות גדולים",
+        "en": "Books about big ideas"
+      },
+      "description": {
+        "he": "היסטוריה, פסיכולוגיה ופילוסופיה: ספרים שמשנים את הדרך שבה מסתכלים על העולם.",
+        "en": "History, psychology and philosophy: books that change how you see the world."
+      },
+      "items": [
+        [
+          "sapiens",
+          "מבט רחב על ההיסטוריה האנושית.",
+          "A wide view of human history."
+        ],
+        [
+          "thinking-fast-and-slow",
+          "איך אנחנו חושבים ומחליטים.",
+          "How we think and decide."
+        ],
+        [
+          "guns-germs-and-steel",
+          "למה חברות התפתחו בצורה שונה.",
+          "Why societies developed differently."
+        ],
+        [
+          "mans-search-for-meaning",
+          "משמעות גם בתנאים קשים.",
+          "Meaning even in hard conditions."
+        ],
+        [
+          "meditations",
+          "פילוסופיה מעשית מלפני 1,800 שנה.",
+          "Practical philosophy from 1,800 years ago."
+        ]
+      ]
+    },
+    {
+      "id": "israeli-authors-and-stories",
+      "title": {
+        "he": "מחברים ישראלים וסיפורים מישראל",
+        "en": "Israeli authors and stories from Israel"
+      },
+      "description": {
+        "he": "ספרים של מחברים ישראלים וספרים על החדשנות הישראלית, שנקראים בכל העולם.",
+        "en": "Books by Israeli authors and about Israeli innovation, read around the world."
+      },
+      "items": [
+        [
+          "sapiens",
+          "ההיסטוריון יובל נח הררי על סיפור האנושות.",
+          "Historian Yuval Noah Harari on the story of humankind."
+        ],
+        [
+          "nexus",
+          "הררי על רשתות מידע ועל AI.",
+          "Harari on information networks and AI."
+        ],
+        [
+          "thinking-fast-and-slow",
+          "דניאל כהנמן על חשיבה והחלטות.",
+          "Daniel Kahneman on thinking and decisions."
+        ],
+        [
+          "start-up-nation",
+          "איך ישראל הפכה למרכז של סטארטאפים.",
+          "How Israel became a startup hub."
+        ]
+      ]
     }
   ],
   "items": [
@@ -336,6 +427,13 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למי שרוצה להתחיל לעבוד עם AI בעבודה ובלימודים, בלי רקע טכני.",
+        "en": "Anyone who wants to start using AI at work or school, no technical background needed."
+      },
+      "goals": [
+        "understand-ai"
       ]
     },
     {
@@ -383,6 +481,13 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למי שכבר משתמש בכלי AI ורוצה תוצאות עקביות ומקצועיות.",
+        "en": "People already using AI tools who want consistent, professional results."
+      },
+      "goals": [
+        "understand-ai"
       ]
     },
     {
@@ -430,6 +535,14 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למפתחים ולאנשי נתונים שרוצים לבנות עם מודלי שפה.",
+        "en": "Developers and data people who want to build with language models."
+      },
+      "goals": [
+        "understand-ai",
+        "code"
       ]
     },
     {
@@ -476,6 +589,14 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למפתחים ולמנהלי מוצר שבונים מוצרים על מודלי AI קיימים.",
+        "en": "Engineers and product managers building products on existing AI models."
+      },
+      "goals": [
+        "understand-ai",
+        "code"
       ]
     },
     {
@@ -525,6 +646,13 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למפתחים בתחילת הדרך ובאמצעה שרוצים לעבוד מקצועי יותר.",
+        "en": "Early- and mid-career developers who want to work more professionally."
+      },
+      "goals": [
+        "code"
       ]
     },
     {
@@ -574,6 +702,13 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "לכל מי שרוצה לשנות הרגל או לבנות שגרה חדשה.",
+        "en": "Anyone who wants to change a habit or build a new routine."
+      },
+      "goals": [
+        "focus"
       ]
     },
     {
@@ -621,6 +756,13 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "לעובדי ידע, סטודנטים ויוצרים שמתקשים להתרכז.",
+        "en": "Knowledge workers, students and creators who struggle to focus."
+      },
+      "goals": [
+        "focus"
       ]
     },
     {
@@ -671,6 +813,13 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "ליזמים ולצוותי מוצר שרוצים לבדוק רעיון לפני שמשקיעים בו הרבה.",
+        "en": "Founders and product teams who want to test an idea before investing heavily."
+      },
+      "goals": [
+        "build-business"
       ]
     },
     {
@@ -722,6 +871,14 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "ליזמים ולמי שחושב על בניית מוצר או חברה חדשה.",
+        "en": "Founders and anyone thinking about building a new product or company."
+      },
+      "goals": [
+        "build-business",
+        "think"
       ]
     },
     {
@@ -771,6 +928,13 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למי שמרגיש שהמידע, הרשימות והרעיונות שלו מפוזרים.",
+        "en": "Anyone whose information, notes and ideas feel scattered."
+      },
+      "goals": [
+        "focus"
       ]
     },
     {
@@ -822,6 +986,14 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למי שרוצה להבין את ההשלכות הגדולות של AI על החברה.",
+        "en": "Anyone who wants to understand the big societal impact of AI."
+      },
+      "goals": [
+        "understand-ai",
+        "big-picture"
       ]
     },
     {
@@ -872,6 +1044,14 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למי שמתעניין בשאלות של בטיחות ושליטה במערכות AI.",
+        "en": "Readers interested in AI safety and control."
+      },
+      "goals": [
+        "understand-ai",
+        "big-picture"
       ]
     },
     {
@@ -920,7 +1100,14 @@
           }
         }
       ],
-      "edition": "2nd Edition"
+      "edition": "2nd Edition",
+      "audience": {
+        "he": "למפתחים מנוסים שבונים מערכות גדולות.",
+        "en": "Experienced engineers building large systems."
+      },
+      "goals": [
+        "code"
+      ]
     },
     {
       "type": "book",
@@ -969,6 +1156,14 @@
             "status": "none"
           }
         }
+      ],
+      "audience": {
+        "he": "למעצבים, מפתחים ומנהלי מוצר, ולכל מי שבונה משהו לאנשים.",
+        "en": "Designers, developers, product managers and anyone building for people."
+      },
+      "goals": [
+        "design",
+        "build-business"
       ]
     },
     {
@@ -1019,7 +1214,14 @@
           }
         }
       ],
-      "edition": "3rd Edition"
+      "edition": "3rd Edition",
+      "audience": {
+        "he": "למתחילים לגמרי שרוצים ש־Python יחסוך להם עבודה.",
+        "en": "Complete beginners who want Python to save them work."
+      },
+      "goals": [
+        "code"
+      ]
     },
     {
       "type": "course",
@@ -1132,6 +1334,411 @@
         "he": "מבוא מעשי ומהיר ללמידת מכונה: רגרסיה, סיווג, רשתות נוירונים, embeddings, מודלי שפה ומערכות ייצור.",
         "en": "A fast, practical intro to machine learning: regression, classification, neural networks, embeddings, LLMs and production systems."
       }
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "sapiens",
+      "title": "Sapiens: A Brief History of Humankind",
+      "titleShort": "Sapiens",
+      "authors": [
+        "Yuval Noah Harari"
+      ],
+      "publisher": "Vintage (Penguin)",
+      "year": 2015,
+      "isbn13": "9780099590088",
+      "topics": [
+        "history",
+        "society",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/419795/sapiens-by-harari-yuval-noah/9781448190690",
+      "description": {
+        "he": "סיפור האנושות מהציידים־לקטים ועד ימינו: איך סיפורים משותפים, כסף ואימפריות עיצבו את העולם.",
+        "en": "The story of humankind from hunter-gatherers to today: how shared stories, money and empires shaped the world."
+      },
+      "retailers": [
+        {
+          "name": "Vintage (Penguin)",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/419795/sapiens-by-harari-yuval-noah/9781448190690",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שרוצה מבט רחב ומעורר מחשבה על ההיסטוריה האנושית.",
+        "en": "Anyone who wants a broad, thought-provoking look at human history."
+      },
+      "goals": [
+        "big-picture",
+        "think"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "nexus",
+      "title": "Nexus: A Brief History of Information Networks from the Stone Age to AI",
+      "titleShort": "Nexus",
+      "authors": [
+        "Yuval Noah Harari"
+      ],
+      "publisher": "Vintage (Penguin)",
+      "year": 2025,
+      "isbn13": "9781529933611",
+      "topics": [
+        "history",
+        "ai",
+        "society",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://penguin.co.uk/books/451878/nexus-by-harari-yuval-noah/9781529919240",
+      "description": {
+        "he": "איך רשתות מידע עיצבו את ההיסטוריה, מהעולם העתיק ועד עידן הבינה המלאכותית.",
+        "en": "How information networks shaped history, from the ancient world to the age of AI."
+      },
+      "retailers": [
+        {
+          "name": "Vintage (Penguin)",
+          "type": "publisher",
+          "url": "https://penguin.co.uk/books/451878/nexus-by-harari-yuval-noah/9781529919240",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שרוצה להבין את AI דרך ההיסטוריה של המידע.",
+        "en": "Anyone who wants to understand AI through the history of information."
+      },
+      "goals": [
+        "big-picture",
+        "understand-ai"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "thinking-fast-and-slow",
+      "title": "Thinking, Fast and Slow",
+      "titleShort": "Thinking, Fast and Slow",
+      "authors": [
+        "Daniel Kahneman"
+      ],
+      "publisher": "Penguin",
+      "year": 2024,
+      "isbn13": "9780141033570",
+      "topics": [
+        "psychology",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/56314/thinking--fast-and-slow/9780141033570.html",
+      "description": {
+        "he": "שתי מערכות החשיבה, המהירה והאיטית, וההטיות שמשפיעות על ההחלטות שלנו.",
+        "en": "The two systems of thinking, fast and slow, and the biases that shape our decisions."
+      },
+      "retailers": [
+        {
+          "name": "Penguin",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/56314/thinking--fast-and-slow/9780141033570.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שרוצה להבין איך אנחנו מקבלים החלטות, ולמה אנחנו טועים.",
+        "en": "Anyone who wants to understand how we make decisions, and why we get them wrong."
+      },
+      "goals": [
+        "think"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "start-up-nation",
+      "title": "Start-up Nation: The Story of Israel's Economic Miracle",
+      "titleShort": "Start-up Nation",
+      "authors": [
+        "Dan Senor",
+        "Saul Singer"
+      ],
+      "publisher": "Twelve (Hachette)",
+      "year": 2011,
+      "isbn13": "9780446541473",
+      "topics": [
+        "israel",
+        "business",
+        "entrepreneurship"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/dan-senor/start-up-nation/9780446541473/",
+      "description": {
+        "he": "למה ישראל הפכה למרכז של חדשנות וסטארטאפים, ומה אפשר ללמוד מזה.",
+        "en": "Why Israel became a hub of innovation and startups, and what others can learn from it."
+      },
+      "retailers": [
+        {
+          "name": "Twelve (Hachette)",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/dan-senor/start-up-nation/9780446541473/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "ליזמים, ולמי שרוצה להבין את סיפור החדשנות הישראלית.",
+        "en": "Founders, and anyone curious about the story of Israeli innovation."
+      },
+      "goals": [
+        "build-business",
+        "big-picture"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "mans-search-for-meaning",
+      "title": "Man's Search For Meaning",
+      "titleShort": "Man's Search For Meaning",
+      "authors": [
+        "Viktor E. Frankl"
+      ],
+      "publisher": "Rider (Penguin)",
+      "year": 2021,
+      "isbn13": "9781846046384",
+      "topics": [
+        "psychology",
+        "philosophy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/347571/mans-search-for-meaning-by-viktor-e-frankl/9781846046384",
+      "description": {
+        "he": "פסיכיאטר ששרד את מחנות הריכוז כותב על החיפוש אחר משמעות גם בתנאים הקשים ביותר.",
+        "en": "A psychiatrist who survived the concentration camps writes about finding meaning even in the hardest conditions."
+      },
+      "retailers": [
+        {
+          "name": "Rider (Penguin)",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/347571/mans-search-for-meaning-by-viktor-e-frankl/9781846046384",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "לכל מי שמחפש משמעות, חוסן ונקודת מבט בתקופות קשות.",
+        "en": "Anyone looking for meaning, resilience and perspective in hard times."
+      },
+      "goals": [
+        "meaning"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "guns-germs-and-steel",
+      "title": "Guns, Germs and Steel: A short history of everybody for the last 13,000 years",
+      "titleShort": "Guns, Germs and Steel",
+      "authors": [
+        "Jared Diamond"
+      ],
+      "publisher": "Vintage (Penguin)",
+      "year": 2017,
+      "isbn13": "9780099302780",
+      "topics": [
+        "history",
+        "society"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/355771/guns-germs-and-steel-by-jared-diamond/9780099302780",
+      "description": {
+        "he": "למה חברות אנושיות התפתחו בקצב שונה: גאוגרפיה, חקלאות, מחלות וטכנולוגיה.",
+        "en": "Why human societies developed at different speeds: geography, farming, disease and technology."
+      },
+      "retailers": [
+        {
+          "name": "Vintage (Penguin)",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/355771/guns-germs-and-steel-by-jared-diamond/9780099302780",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שאוהב היסטוריה גדולה ושאלות של \"למה זה קרה ככה\".",
+        "en": "Readers who love big history and \"why did it happen this way\" questions."
+      },
+      "goals": [
+        "big-picture"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "meditations",
+      "title": "Meditations",
+      "titleShort": "Meditations",
+      "authors": [
+        "Marcus Aurelius"
+      ],
+      "publisher": "Penguin Classics",
+      "year": 2006,
+      "isbn13": "9780140449334",
+      "topics": [
+        "philosophy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/35489/meditations-by-aurelius-marcus/9780241429662",
+      "description": {
+        "he": "רשימות אישיות של קיסר רומי ופילוסוף סטואי על שליטה עצמית, אחריות ושלוות נפש. בתרגום מרטין המונד.",
+        "en": "Personal notes of a Roman emperor and Stoic philosopher on self-control, duty and calm. Translated by Martin Hammond."
+      },
+      "retailers": [
+        {
+          "name": "Penguin Classics",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/35489/meditations-by-aurelius-marcus/9780241429662",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "translator": "Martin Hammond",
+      "audience": {
+        "he": "למי שמחפש פילוסופיה מעשית לחיי היום־יום.",
+        "en": "Anyone looking for practical philosophy for daily life."
+      },
+      "goals": [
+        "meaning",
+        "think"
+      ]
     }
   ],
   "courseCosts": [
@@ -1149,6 +1756,48 @@
       "id": "unverified",
       "he": "עלות לא אומתה",
       "en": "Cost not verified"
+    }
+  ],
+  "readingGoals": [
+    {
+      "id": "understand-ai",
+      "he": "להבין AI",
+      "en": "Understand AI"
+    },
+    {
+      "id": "code",
+      "he": "ללמוד לתכנת",
+      "en": "Learn to code"
+    },
+    {
+      "id": "build-business",
+      "he": "לבנות עסק",
+      "en": "Build a business"
+    },
+    {
+      "id": "focus",
+      "he": "לעבוד טוב יותר",
+      "en": "Work better"
+    },
+    {
+      "id": "think",
+      "he": "לחשוב טוב יותר",
+      "en": "Think better"
+    },
+    {
+      "id": "big-picture",
+      "he": "להבין את התמונה הגדולה",
+      "en": "See the big picture"
+    },
+    {
+      "id": "meaning",
+      "he": "משמעות והשראה",
+      "en": "Meaning and inspiration"
+    },
+    {
+      "id": "design",
+      "he": "לעצב מוצרים",
+      "en": "Design products"
     }
   ]
 }

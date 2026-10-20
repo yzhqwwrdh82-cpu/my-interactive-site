@@ -90,6 +90,7 @@ ${noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="icon" href="${c.a('assets/favicon-32.png')}" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="${c.a('assets/apple-touch-icon.png')}">
 <link rel="preload" href="${c.a(c.lang === 'he' ? 'assets/fonts/rubik-hebrew-wght-normal.woff2' : 'assets/fonts/rubik-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${c.a(c.lang === 'he' ? 'assets/fonts/frank-ruhl-libre-hebrew-wght-normal.woff2' : 'assets/fonts/frank-ruhl-libre-latin-wght-normal.woff2')}" as="font" type="font/woff2" crossorigin>
 ${g.searchConsoleVerification ? `<meta name="google-site-verification" content="${esc(g.searchConsoleVerification)}">` : ''}
 ${g.adsensePublisherId ? `<meta name="google-adsense-account" content="ca-${esc(g.adsensePublisherId)}">` : ''}
 ${site.analyticsOn ? `<meta name="ts-analytics" content="${esc(g.ga4MeasurementId)}">\n<script src="${c.a('assets/consent.js')}?v=${site.version}" defer></script>` : ''}

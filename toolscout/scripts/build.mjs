@@ -15,7 +15,7 @@ import { previewPage } from './lib/preview.mjs';
 import { booksPage } from './lib/books.mjs';
 import { notFoundPage, aboutPage, partnersPage } from './lib/extra.mjs';
 import { emailHtml, EMAILS } from './lib/emails.mjs';
-import { topicPage, TOPICS, bookPage, coursesPage, coursePage, pathsIndex, pathPage, listPage, searchPage, searchIndex } from './lib/knowledge.mjs';
+import { authorsOf, authorPage, topicPage, TOPICS, bookPage, coursesPage, coursePage, pathsIndex, pathPage, listPage, searchPage, searchIndex } from './lib/knowledge.mjs';
 import { guides, comparePresets, legal, chatHelp } from './lib/content.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -41,7 +41,7 @@ setSite(site);
 setFeatures(site.features);
 
 // Clean generated output (only generated folders/files, never data or assets).
-for (const d of ['en', 'tools', 'category', 'compare', 'guides', 'emails', 'books', 'courses', 'paths', 'lists', 'community']) rmSync(join(root, d), { recursive: true, force: true });
+for (const d of ['en', 'tools', 'category', 'compare', 'guides', 'emails', 'books', 'courses', 'paths', 'lists', 'community', 'authors']) rmSync(join(root, d), { recursive: true, force: true });
 
 const written = [];
 const indexable = [];
@@ -64,6 +64,7 @@ for (const L of LANGS) {
   out(ctx(L, 'partners.html'), partnersPage(ctx(L, 'partners.html'), data, site));
   out(ctx(L, 'books.html'), booksPage(ctx(L, 'books.html'), data, site, products));
   for (const b of products.items.filter((x) => x.type === 'book')) { const c = ctx(L, `books/${b.id}.html`); out(c, bookPage(c, data, site, products, paths, b)); }
+  for (const au of authorsOf(products)) { const c = ctx(L, `authors/${au.slug}.html`); out(c, authorPage(c, data, site, products, au)); }
   for (const tp of TOPICS) { const c = ctx(L, `books/topic-${tp.id}.html`); out(c, topicPage(c, data, site, products, paths, tp)); }
   out(ctx(L, 'courses.html'), coursesPage(ctx(L, 'courses.html'), data, site, products));
   for (const co of products.items.filter((x) => x.type === 'course')) { const c = ctx(L, `courses/${co.id}.html`); out(c, coursePage(c, data, site, products, paths, co)); }

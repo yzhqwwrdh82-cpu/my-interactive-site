@@ -444,7 +444,8 @@
   // ---------- Books filters (active only when real books exist) ----------
   var booksGrid = $('[data-books]');
   if (booksGrid) {
-    var bmap = { topic: 'data-topics', lang: 'data-langs', level: 'data-level', format: 'data-formats', price: 'data-price' };
+    var bmap = { author: 'data-authors', goal: 'data-goals', topic: 'data-topics', lang: 'data-langs', level: 'data-level', format: 'data-formats', price: 'data-price' };
+    var bcount = $('[data-bcount]'), bempty = $('[data-bempty]');
     var applyBooks = function () {
       var sel = {};
       $$('input[data-bf]:checked').forEach(function (cb) { (sel[cb.getAttribute('data-bf')] = sel[cb.getAttribute('data-bf')] || []).push(cb.value); });
@@ -454,7 +455,16 @@
           return sel[k].some(function (v) { return vals.indexOf(v) !== -1; });
         });
       });
+      var shown = $$('.book', booksGrid).filter(function (b) { return !b.hidden; }).length;
+      if (bcount) bcount.textContent = bcount.getAttribute('data-tpl').replace('{n}', shown);
+      if (bempty) bempty.hidden = shown !== 0;
     };
+    try {
+      var bp = new URLSearchParams(location.search);
+      ['goal', 'topic', 'author'].forEach(function (k) { var v = bp.get(k); if (v) $$('input[data-bf="' + k + '"]').forEach(function (cb) { if (cb.value === v) cb.checked = true; }); });
+    } catch (e) { /* ignore */ }
+    applyBooks();
+    $$('[data-bview]').forEach(function (btn) { btn.addEventListener('click', function () { booksGrid.setAttribute('data-view', btn.getAttribute('data-bview')); $$('[data-bview]').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); }); }); });
     $$('input[data-bf]').forEach(function (cb) { cb.addEventListener('change', applyBooks); });
   }
 

@@ -6,8 +6,8 @@ import { K, listCard, coverHtml, TOPICS } from './knowledge.mjs';
 
 const T = {
   he: {
-    title: 'ספרים על AI, תכנות, עסקים ופרודוקטיביות | ToolScout', desc: 'ספרים ורשימות קריאה על AI, תכנות, עסקים, פרודוקטיביות ועיצוב, עם פרטי הוצאה, ISBN ופורמטים שנבדקו מול עמוד ההוצאה.',
-    h1: 'ספרים', lead: 'ספרים על AI, תכנות, עסקים, פרודוקטיביות ועיצוב. מופיעים כאן רק ספרים שאת פרטיהם בדקנו מול עמוד ההוצאה לאור.',
+    title: 'ספרים מומלצים: היסטוריה, פסיכולוגיה, עסקים, טכנולוגיה ו־AI | ToolScout', desc: 'ספרים ורשימות קריאה לפי נושא ומטרה: היסטוריה, פסיכולוגיה, פילוסופיה, עסקים, טכנולוגיה, AI ופרודוקטיביות, עם פרטי הוצאה ו־ISBN שנבדקו מול המקור.',
+    h1: 'ספרים', lead: 'ספרים מודפסים שאפשר לקנות בחנות או לשאול בספרייה: היסטוריה, פסיכולוגיה, פילוסופיה, עסקים, טכנולוגיה, AI ופרודוקטיביות. מופיעים כאן רק ספרים שאת פרטיהם בדקנו מול עמוד ההוצאה לאור.',
     status: 'מתעדכן', levelNote: 'רמת הידע והתיאור הם הערכה עריכתית. כותרת, מחברים, הוצאה, שנה, ISBN ופורמטים נבדקו מול עמוד ההוצאה.', empty: 'עדיין אין ספרים בקטלוג. כשנוסיף ספרים, הם יופיעו כאן עם הפרטים שאומתו.',
     sectionsTitle: 'מה יש כאן ומה בהכנה', soon: 'עוד לא זמין', live: 'זמין',
     sections: [
@@ -32,8 +32,8 @@ const T = {
     by: 'מאת', checked: 'נבדק', publisher: 'עמוד ההוצאה', priceNone: 'מחיר: בעמוד ההוצאה', related: 'כלים קשורים בקטלוג', toCatalog: 'לקטלוג הכלים'
   },
   en: {
-    title: 'Books on AI, programming, business and productivity | ToolScout', desc: "Books and reading lists on AI, programming, business, productivity and design, with publisher, ISBN and formats checked against the publisher's page.",
-    h1: 'Books', lead: "Books on AI, programming, business, productivity and design. Only books whose details we checked against the publisher's page are listed.",
+    title: 'Recommended books: history, psychology, business, technology and AI | ToolScout', desc: 'Books and reading lists by topic and goal: history, psychology, philosophy, business, technology, AI and productivity, with publisher and ISBN checked against the source.',
+    h1: 'Books', lead: "Print books you can buy in a store or borrow from a library: history, psychology, philosophy, business, technology, AI and productivity. Only books whose details we checked against the publisher's page are listed.",
     status: 'Growing', levelNote: 'Level and description are editorial. Title, authors, publisher, year, ISBN and formats were checked against the publisher page.', empty: "There are no books in the catalog yet. When we add them, they'll appear here with their verified details.",
     sectionsTitle: "What's here and what's coming", soon: 'Not available yet', live: 'Available',
     sections: [
@@ -78,20 +78,17 @@ function cover(item, x) {
 export function bookCard(item, products, c, { specimen = false } = {}) {
   const L = c.lang;
   const k = T[L];
-  const fmts = (item.formats || []).map((f) => `<span class="tag">${esc(name(products.formats, f, L))}</span>`).join('');
-  const price = item.price ? `<span class="price" data-price="paid">${esc(item.price.amount + ' ' + item.price.currency)}</span>` : `<span class="price" data-price="unverified">${esc(k.priceNone)}</span>`;
-  return `<li class="book${specimen ? ' is-specimen' : ''}" data-topics="${(item.topics || []).join(' ')}" data-langs="${(item.languages || []).join(' ')}" data-level="${item.level || ''}" data-formats="${(item.formats || []).join(' ')}" data-price="${item.price ? 'paid' : 'unverified'}">
+  const slugA = (a) => a.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const href = c.u('books/' + item.id + '.html');
+  return `<li class="book${specimen ? ' is-specimen' : ''}" data-goals="${(item.goals || []).join(' ')}" data-authors="${(item.authors || []).map(slugA).join(' ')}" data-topics="${(item.topics || []).join(' ')}" data-langs="${(item.languages || []).join(' ')}" data-level="${item.level || ''}" data-formats="${(item.formats || []).join(' ')}" data-price="${item.price ? 'paid' : 'unverified'}">
   <article class="book-card">
-    <div class="book-cover">${specimen ? cover(item, c) : coverHtml(item, c)}</div>
+    <a class="book-cover" href="${href}" tabindex="-1" aria-hidden="true">${specimen ? cover(item, c) : coverHtml(item, c)}</a>
     <div class="book-body">
-      <h3 class="book-title">${specimen ? esc(item.title) : `<a class="card-link" href="${c.u('books/' + item.id + '.html')}" lang="en" dir="ltr">${esc(item.title)}</a>`}</h3>
-      <p class="book-author">${esc(k.by)} ${esc((item.authors || []).join(', '))}</p>
-      <p class="book-meta">${esc(item.meta || [item.publisher, item.year].filter(Boolean).join(' · '))}${item.isbn13 ? ` · ISBN ${esc(item.isbn13)}` : ''}</p>
+      <h3 class="book-title"><a class="card-link" href="${href}" lang="en" dir="ltr">${esc(item.titleShort || item.title)}</a></h3>
+      <p class="book-author">${esc(k.by)} <span lang="en" dir="ltr">${esc((item.authors || []).join(', '))}</span></p>
       ${item.description ? `<p class="book-desc">${esc(item.description[L])}</p>` : ''}
-      <div class="card-badges">${fmts}${item.level ? `<span class="tag">${esc(name(products.levels, item.level, L))}</span>` : ''}</div>
-      <div class="card-badges">${price}</div>
-      ${item.officialUrl ? `<a class="ext-link book-ext" href="${esc(item.officialUrl)}" target="_blank" rel="noopener">${esc(k.publisher)}${icon('ext')}</a>` : ''}
-      ${item.checkedAt ? `<p class="fine">${esc(k.checked)} ${esc(fmtDate(item.checkedAt, L))}</p>` : ''}
+      <div class="card-badges">${(item.topics || []).slice(0, 1).map((t) => `<span class="tag">${esc(name(products.bookTopics, t, L))}</span>`).join('')}${item.level ? `<span class="tag">${esc(name(products.levels, item.level, L))}</span>` : ''}${(item.formats || [])[0] === 'print' ? `<span class="tag">${esc(name(products.formats, 'print', L))}</span>` : ''}</div>
+      <p class="book-meta">${esc([item.publisher, item.year].filter(Boolean).join(' · '))}</p>
     </div>
   </article>
 </li>`;
@@ -102,7 +99,7 @@ export function booksPage(c, data, site, products) {
   const k = T[L];
   const books = products.items.filter((x) => x.type === 'book');
   const has = books.length > 0;
-  const facet = (legend, list, key) => `<fieldset${has ? '' : ' disabled'}><legend>${esc(legend)}</legend>${list.map((x) =>
+  const facet = (legend, list, key) => `<fieldset${has ? '' : ' disabled'}${key === 'author' ? ' class="facet-scroll"' : ''}><legend>${esc(legend)}</legend>${list.map((x) =>
     `<label class="opt"><input type="checkbox" data-bf="${key}" value="${x.id}"><span>${esc(x[L])}</span></label>`).join('')}</fieldset>`;
   const specimen = { title: k.specTitle, authors: [k.specAuthor], meta: k.specMeta, formats: ['print', 'ebook'], level: 'beginner', topics: ['ai'], titleShort: 'AI' };
   return page(c, data, site, { title: k.title, desc: k.desc, page: 'books', active: 'books' }, `
@@ -121,7 +118,9 @@ export function booksPage(c, data, site, products) {
     <div class="filters-toggle"><span id="bf-h">${icon('filter')}${esc(k.filtersTitle)}</span></div>
     <div class="filters-body">
       ${has ? '' : `<p class="hint">${esc(k.filtersNote)}</p>`}
-      ${facet(k.topic, products.bookTopics, 'topic')}
+      ${facet(L === 'he' ? 'מטרת קריאה' : 'Reading goal', products.readingGoals || [], 'goal')}
+      ${facet(k.topic, products.bookTopics.filter((t) => books.some((b) => b.topics.includes(t.id))), 'topic')}
+      ${facet(L === 'he' ? 'מחבר' : 'Author', [...new Set(books.flatMap((b) => b.authors))].sort().map((a) => ({ id: a.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), he: a, en: a })), 'author')}
       ${facet(k.language, products.languages, 'lang')}
       ${facet(k.level, products.levels, 'level')}
       ${facet(k.format, products.formats, 'format')}
@@ -130,7 +129,7 @@ export function booksPage(c, data, site, products) {
   </aside>
   <div class="results">
     <nav class="topic-chips" aria-label="${esc(L === 'he' ? 'ספרים לפי נושא' : 'Books by topic')}">${TOPICS.map((tp) => `<a class="chip" href="${c.u('books/topic-' + tp.id + '.html')}">${esc(tp[L][0])}</a>`).join('')}</nav>
-    ${has ? `<p class="fine book-note">${esc(k.levelNote)}</p><ul class="book-grid" data-books>${books.map((b) => bookCard(b, products, c)).join('')}</ul>` : `<div class="empty">${ic('book').replace('class="ic"', 'class="ic empty-ic"')}<p class="empty-title">${esc(k.empty)}</p><a class="btn btn-primary" href="${c.u('catalog.html')}">${esc(k.toCatalog)}</a></div>`}
+    ${has ? `<p class="results-count" role="status" data-bcount data-tpl="${esc(L === 'he' ? '{n} ספרים' : '{n} books')}">${esc(L === 'he' ? `${books.length} ספרים` : `${books.length} books`)}</p><p class="empty" data-bempty hidden>${esc(L === 'he' ? 'אין ספרים שמתאימים לכל המסננים. נסו להסיר מסנן.' : 'No books match all filters. Try removing one.')}</p><p class="fine book-note">${esc(k.levelNote)}</p><div class="view-toggle js-only" role="group" aria-label="${esc(L === 'he' ? 'תצוגה' : 'View')}"><button type="button" class="chip sm" data-bview="grid" aria-pressed="true">${esc(L === 'he' ? 'עטיפות' : 'Covers')}</button><button type="button" class="chip sm" data-bview="compact" aria-pressed="false">${esc(L === 'he' ? 'רשימה' : 'List')}</button></div><ul class="book-grid" data-books data-view="grid">${books.map((b) => bookCard(b, products, c)).join('')}</ul>` : `<div class="empty">${ic('book').replace('class="ic"', 'class="ic empty-ic"')}<p class="empty-title">${esc(k.empty)}</p><a class="btn btn-primary" href="${c.u('catalog.html')}">${esc(k.toCatalog)}</a></div>`}
 
     <section class="books-bottom" aria-labelledby="lists-h"><h2 id="lists-h" class="sub-h">${esc(K[L].listsTitle)}</h2><p class="muted">${esc(K[L].listsLead)}</p>
       <ul class="list-grid">${products.collections.map((col) => listCard(col, { c, data, products })).join('')}</ul></section>

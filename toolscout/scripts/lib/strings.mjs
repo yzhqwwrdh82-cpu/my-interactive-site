@@ -6,8 +6,8 @@ export const S = {
     nav: { tools: 'כלי AI', courses: 'קורסים', paths: 'מסלולים', search: 'חיפוש', home: 'בית', quick: 'ניווט מהיר', about: 'אודות', books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
     theme: { label: 'ערכת צבעים', system: 'לפי המערכת', light: 'בהירה', dark: 'כהה' },
     home: {
-      title: 'ToolScout | ספרים, קורסים וכלי AI, עם מידע שנבדק',
-      desc: 'ספרים, רשימות קריאה, קורסים, מסלולי למידה וכלי AI בעברית ובאנגלית, עם פרטים שנבדקו מול המקור הרשמי.',
+      title: 'ToolScout | ספרים מומלצים, קורסים וכלים, עם מידע שנבדק',
+      desc: 'ספרים מומלצים לפי נושא ומטרה, רשימות קריאה, קורסים, מסלולי למידה וכלי AI, בעברית ובאנגלית, עם פרטים שנבדקו מול המקור הרשמי.',
       h1: 'מוצאים את הכלי הנכון, עם מידע שנבדק.',
       lead: 'ספרים, קורסים, מסלולי למידה וכלי AI לעבודה, ליצירה וללימודים. כל פרט נבדק מול המקור הרשמי, ומה שלא אומת מסומן.',
       searchPh: 'חיפוש ספר, קורס או כלי. למשל: הרגלים',
@@ -158,7 +158,7 @@ export const S = {
     nav: { tools: 'AI tools', courses: 'Courses', paths: 'Paths', search: 'Search', home: 'Home', quick: 'Quick navigation', about: 'About', books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
     theme: { label: 'Color theme', system: 'System', light: 'Light', dark: 'Dark' },
     home: {
-      title: 'ToolScout | Books, courses and AI tools, with checked information',
+      title: 'ToolScout | Recommended books, courses and tools, with checked information',
       desc: 'Books, reading lists, courses, learning paths and AI tools in English and Hebrew, with details checked against the official source.',
       h1: 'Find the right tool, with checked information.',
       lead: 'Books, courses, learning paths and AI tools for work, creative projects and study. Every detail is checked against the official source, and anything unverified is marked.',

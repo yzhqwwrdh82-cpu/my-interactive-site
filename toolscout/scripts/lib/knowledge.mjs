@@ -18,7 +18,7 @@ export const K = {
     pathsTitle: 'מסלולי למידה', pathsLead: 'מסלולים שמחברים ספר, קורס, כלי ומדריך לסדר הגיוני, כדי להתקדם בנושא אחד צעד אחר צעד.',
     listsTitle: 'רשימות קריאה', listsLead: 'אוספים קצרים של ספרים לפי נושא, עם הסבר למה כל ספר נמצא ברשימה.',
     steps: 'שלבים', step: 'שלב', why: 'למה בשלב הזה', forWho: 'למי זה מתאים', open: 'לפתיחה',
-    type: { book: 'ספר', course: 'קורס', tool: 'כלי', guide: 'מדריך', list: 'רשימה', path: 'מסלול' },
+    type: { book: 'ספר', author: 'מחבר', course: 'קורס', tool: 'כלי', guide: 'מדריך', list: 'רשימה', path: 'מסלול' },
     searchTitle: 'חיפוש בכל האתר', searchLead: 'ספרים, קורסים, מסלולי למידה, רשימות קריאה, מדריכים וכלי AI.', searchLabel: 'מה לחפש?', searchPh: 'למשל: הרגלים, Python, יזמות',
     results: (n) => `${n} תוצאות`, noResults: 'לא נמצאו תוצאות. נסו מילה אחרת או עיינו בקטגוריות.', all: 'הכול', noJs: 'החיפוש פועל עם JavaScript. בינתיים אפשר לעיין לפי קטגוריה:',
     items: (n) => `${n} פריטים`, booksN: (n) => `${n} ספרים`, stepsN: (n) => `${n} שלבים`,
@@ -38,7 +38,7 @@ export const K = {
     pathsTitle: 'Learning paths', pathsLead: 'Paths that put a book, a course, a tool and a guide in a sensible order, so you can progress in one topic step by step.',
     listsTitle: 'Reading lists', listsLead: 'Short collections of books by topic, with a note on why each book is on the list.',
     steps: 'Steps', step: 'Step', why: 'Why at this step', forWho: 'Who it is for', open: 'Open',
-    type: { book: 'Book', course: 'Course', tool: 'Tool', guide: 'Guide', list: 'List', path: 'Path' },
+    type: { book: 'Book', author: 'Author', course: 'Course', tool: 'Tool', guide: 'Guide', list: 'List', path: 'Path' },
     searchTitle: 'Search the whole site', searchLead: 'Books, courses, learning paths, reading lists, guides and AI tools.', searchLabel: 'What are you looking for?', searchPh: 'e.g. habits, Python, startups',
     results: (n) => `${n} results`, noResults: 'No results. Try another word or browse the categories.', all: 'All', noJs: 'Search needs JavaScript. Meanwhile, browse by category:',
     items: (n) => `${n} items`, booksN: (n) => `${n} books`, stepsN: (n) => `${n} steps`,
@@ -67,7 +67,7 @@ export function coverHtml(item, c, size = '') {
   if (item.cover && item.cover.file && item.cover.license) return `<img class="book-cover-img" src="${c.a('assets/covers/' + item.cover.file)}" alt="" loading="lazy">`;
   const t = item.titleShort || item.title || '';
   const label = size === 'sm' ? t.split(/[\s:-]+/).filter((w) => /^[A-Za-z0-9]/.test(w)).slice(0, 3).map((w) => w[0].toUpperCase()).join('') : t;
-  return `<span class="book-cover-gen${size ? ' ' + size : ''}" data-topic="${esc((item.topics || ['ai'])[0])}" aria-hidden="true"><span class="bc-title">${esc(label)}</span><span class="bc-author">${esc((item.authors || [item.provider || '']).join(', '))}</span></span>`;
+  return `<span class="book-cover-gen${size ? ' ' + size : ''}" lang="en" data-topic="${esc((item.topics || ['ai'])[0])}" aria-hidden="true"><span class="bc-title">${esc(label)}</span><span class="bc-author">${esc((item.authors || [item.provider || '']).join(', '))}</span></span>`;
 }
 
 export function shelfCard(item, c, products) {
@@ -118,7 +118,9 @@ export function listCard(col, ctx) {
     <span class="list-meta">${esc(k.booksN(books.length))}</span></a></li>`;
 }
 
-const TOPIC_TOOLS = { ai: 'assistants', prompts: 'assistants', programming: 'code', automation: 'automation', productivity: 'productivity', design: 'design', business: 'work', entrepreneurship: 'work', marketing: 'marketing', technology: 'code', society: 'assistants' };
+// Only topics with a genuinely related tool category; history, philosophy, psychology, society and Israel get no tool suggestions.
+const TOPIC_TOOLS = { ai: 'assistants', prompts: 'assistants', programming: 'code', automation: 'automation', productivity: 'productivity', design: 'design', business: 'work', entrepreneurship: 'work', marketing: 'marketing', technology: 'code' };
+export const slug = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 // ---------- Book page ----------
 export function bookPage(c, data, site, products, paths, b) {
@@ -126,7 +128,9 @@ export function bookPage(c, data, site, products, paths, b) {
   const lists = products.collections.filter((x) => x.items.some(([id]) => id === b.id));
   const inPaths = paths.paths.filter((p) => p.steps.some(([t, id]) => t === 'book' && id === b.id));
   const related = products.items.filter((x) => x.type === 'book' && x.id !== b.id && x.topics.some((t) => b.topics.includes(t))).slice(0, 4);
-  const tools = data.tools.filter((t) => t.category === TOPIC_TOOLS[b.topics[0]]).slice(0, 4);
+  const tcat = b.topics.map((t) => TOPIC_TOOLS[t]).find(Boolean);
+  const tools = tcat ? data.tools.filter((t) => t.category === tcat).slice(0, 4) : [];
+  const goals = (b.goals || []).map((g) => (products.readingGoals || []).find((x) => x.id === g)).filter(Boolean);
   const jsonld = { '@context': 'https://schema.org', '@type': 'Book', name: b.title, author: b.authors.map((a) => ({ '@type': 'Person', name: a })), isbn: b.isbn13, publisher: { '@type': 'Organization', name: b.publisher }, datePublished: String(b.year), inLanguage: 'en', url: b.officialUrl, ...(b.edition ? { bookEdition: b.edition } : {}) };
   const row = (label, val) => val ? `<div><dt>${esc(label)}</dt><dd>${val}</dd></div>` : '';
   return page(c, data, site, { title: `${b.titleShort || b.title} – ${b.authors[0]} | ToolScout`, desc: `${b.description[L]} ${k.by} ${b.authors.join(', ')}.`.slice(0, 158), page: 'book', active: 'books', jsonld }, `
@@ -137,7 +141,7 @@ export function bookPage(c, data, site, products, paths, b) {
     <div class="item-hero-body">
       <p class="item-type">${kicon('book')}${topicOf(b) ? `<a href="${c.u('books/topic-' + topicOf(b).id + '.html')}">${esc(name(products.bookTopics, b.topics[0], L))}</a>` : esc(name(products.bookTopics, b.topics[0], L))}</p>
       <h1 lang="en" dir="ltr">${esc(b.title)}</h1>
-      <p class="lead">${esc(k.by)} <span lang="en" dir="ltr">${esc(b.authors.join(', '))}</span></p>
+      <p class="lead">${esc(k.by)} ${b.authors.map((a) => `<a href="${c.u('authors/' + slug(a) + '.html')}" lang="en" dir="ltr">${esc(a)}</a>`).join(', ')}${b.translator ? ` · ${esc(L === 'he' ? 'תרגום' : 'Translated by')} <span lang="en" dir="ltr">${esc(b.translator)}</span>` : ''}</p>
       <div class="card-badges">${(b.formats || []).map((f) => `<span class="tag">${esc(name(products.formats, f, L))}</span>`).join('')}<span class="tag">${esc(k.lvl[b.level])}</span></div>
       <a class="btn btn-primary" href="${esc(b.officialUrl)}" target="_blank" rel="noopener">${esc(k.pubPage)}${icon('ext')}</a>
     </div>
@@ -145,20 +149,25 @@ export function bookPage(c, data, site, products, paths, b) {
 </div></section>
 <div class="wrap item-layout">
   <article class="item-main">
-    <section class="panel"><h2>${esc(k.about)}</h2><p class="item-desc">${esc(b.description[L])}</p><p class="fine">${esc(k.editorial)}</p></section>
+    <section class="panel editorial-panel"><p class="panel-label">${esc(k.editorialH)}</p><h2>${esc(k.about)}</h2><p class="item-desc">${esc(b.description[L])}</p>
+      ${b.audience ? `<h3 class="for-whom-h">${esc(L === 'he' ? 'למי הספר מתאים' : 'Who it is for')}</h3><p class="for-whom">${esc(b.audience[L])}</p>` : ''}
+      ${goals.length ? `<ul class="goal-chips">${goals.map((g) => `<li><a class="chip sm" href="${c.u('books.html')}?goal=${g.id}">${esc(g[L])}</a></li>`).join('')}</ul>` : ''}
+      <p class="fine">${esc(k.editorial)}</p></section>
     ${lists.length || inPaths.length ? `<section class="panel"><h2>${esc(inPaths.length ? k.inPaths : k.inLists)}</h2><ul class="mini-links">
       ${inPaths.map((p) => `<li><a href="${urls.path(c, p.id)}">${kicon('path')}${esc(p.title[L])}</a></li>`).join('')}
       ${lists.map((x) => `<li><a href="${urls.list(c, x.id)}">${kicon('book')}${esc(x.title[L])}</a></li>`).join('')}</ul></section>` : ''}
     ${related.length ? `<section><h2 class="sub-h">${esc(k.related)}</h2><ul class="shelf">${related.map((x) => shelfCard(x, c, products)).join('')}</ul></section>` : ''}
   </article>
   <aside class="item-side">
-    <div class="panel"><dl class="facts">
+    <div class="panel verified-panel"><p class="panel-label">${icon('ok')}${esc(k.verifiedH)}</p><dl class="facts">
       ${row(k.publisher, esc(b.publisher))}${row(k.year, esc(String(b.year)))}${row(k.edition, b.edition ? esc(b.edition) : '')}
       ${row(k.isbn, `<span dir="ltr">${esc(b.isbn13)}</span>`)}${row(k.language, L === 'he' ? 'אנגלית' : 'English')}
       ${row(k.topics, b.topics.map((t) => esc(name(products.bookTopics, t, L))).join(', '))}
+      ${row(k.formats, (b.formats || []).length ? b.formats.map((f) => esc(name(products.formats, f, L))).join(', ') : esc(L === 'he' ? 'לא צוין בעמוד ההוצאה' : 'Not stated on the publisher page'))}
     </dl><p class="fine">${esc(k.checked)}${esc(fmtDate(b.checkedAt, L))}</p></div>
     <div class="panel"><h2>${esc(k.where)}</h2>
-      <ul class="retailers">${(b.retailers || []).map((r) => `<li><a class="ext-link" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.name)}${icon('ext')}</a></li>`).join('')}</ul>
+      <ul class="retailers">${(b.retailers || []).map((r) => `<li><a class="ext-link" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.name)}${icon('ext')}</a></li>`).join('')}
+        <li><a class="ext-link" href="https://search.worldcat.org/search?q=bn%3A${esc(b.isbn13)}" target="_blank" rel="noopener">${esc(L === 'he' ? 'חיפוש בספריות לפי ISBN (WorldCat)' : 'Find in libraries by ISBN (WorldCat)')}${icon('ext')}</a></li></ul>
       <p class="fine">${esc(k.whereNote)} ${esc(k.priceNote)}</p></div>
     ${tools.length ? `<div class="panel"><h2>${esc(k.relatedTools)}</h2><ul class="mini-tools">${tools.map((t) => `<li><a href="${urls.tool(c, t.id)}">${logoTile(t, c, 'xs')}<span>${esc(t.name)}</span></a></li>`).join('')}</ul></div>` : ''}
   </aside>
@@ -255,9 +264,12 @@ export function listPage(c, data, site, products, col) {
 
 // ---------- Topic hubs (books + courses + paths + tools per topic) ----------
 export const TOPICS = [
-  { id: 'ai', match: ['ai', 'society', 'prompts'], cat: 'assistants', he: ['ספרים על בינה מלאכותית', 'מה AI יכול לעשות היום, איך עובדים איתו נכון, ואילו שאלות הוא מעורר. מספרי מבוא בלי רקע טכני ועד ספרים מעשיים למי שבונה עם מודלי שפה.'], en: ['Books on artificial intelligence', 'What AI can do today, how to work with it well, and the questions it raises. From non-technical introductions to hands-on books for people building with language models.'] },
+  { id: 'ai', match: ['ai', 'prompts'], cat: 'assistants', he: ['ספרים על בינה מלאכותית', 'מה AI יכול לעשות היום, איך עובדים איתו נכון, ואילו שאלות הוא מעורר. מספרי מבוא בלי רקע טכני ועד ספרים מעשיים למי שבונה עם מודלי שפה.'], en: ['Books on artificial intelligence', 'What AI can do today, how to work with it well, and the questions it raises. From non-technical introductions to hands-on books for people building with language models.'] },
   { id: 'programming', match: ['programming', 'technology', 'automation'], cat: 'code', he: ['ספרים על תכנות ופיתוח', 'מהצעדים הראשונים ב־Python, דרך הרגלי עבודה של מפתחים מקצועיים, ועד תכנון מערכות נתונים גדולות.'], en: ['Books on programming and software', 'From first steps in Python, through the habits of professional developers, to designing large data systems.'] },
   { id: 'business', match: ['business', 'entrepreneurship', 'marketing', 'design'], cat: 'work', he: ['ספרים על עסקים, יזמות ומוצר', 'איך בודקים רעיון, בונים מוצר שאנשים מבינים, וחושבים על מה שהופך עסק לייחודי.'], en: ['Books on business, startups and product', 'How to test an idea, build a product people understand, and think about what makes a business unique.'] },
+  { id: 'history', match: ['history', 'society'], cat: null, he: ['ספרי היסטוריה וחברה', 'ספרים שמסבירים איך הגענו לכאן: התפתחות החברה האנושית, טכנולוגיה, כוח ומידע לאורך אלפי שנים.'], en: ['History and society books', 'Books that explain how we got here: the development of human society, technology, power and information across millennia.'] },
+  { id: 'mind', match: ['psychology', 'philosophy'], cat: null, he: ['ספרי פסיכולוגיה ופילוסופיה', 'איך אנחנו חושבים, מחליטים ומוצאים משמעות. ספרים קלאסיים ומודרניים שאפשר ליישם בחיים.'], en: ['Psychology and philosophy books', 'How we think, decide and find meaning. Classic and modern books you can apply to life.'] },
+  { id: 'israel', match: ['israel'], cat: null, he: ['מחברים ישראלים וסיפורים מישראל', 'ספרים של מחברים ישראלים וספרים על החדשנות הישראלית, שנקראים בכל העולם.'], en: ['Israeli authors and stories from Israel', 'Books by Israeli authors and about Israeli innovation, read around the world.'] },
   { id: 'productivity', match: ['productivity'], cat: 'productivity', he: ['ספרים על פרודוקטיביות והרגלים', 'הרגלים קטנים, עבודה מרוכזת וארגון מידע. ספרים שעוזרים לעבוד טוב יותר עם פחות לחץ.'], en: ['Books on productivity and habits', 'Small habits, focused work and organizing information. Books that help you work better with less stress.'] }
 ];
 export function topicPage(c, data, site, products, paths, tp) {
@@ -268,7 +280,7 @@ export function topicPage(c, data, site, products, paths, tp) {
   const ids = new Set(books.map((b) => b.id).concat(courses.map((x) => x.id)));
   const ps = paths.paths.filter((p) => p.steps.some(([, id]) => ids.has(id)));
   const lists = products.collections.filter((col) => col.items.some(([id]) => ids.has(id)));
-  const tools = data.tools.filter((t) => t.category === tp.cat).slice(0, 6);
+  const tools = tp.cat ? data.tools.filter((t) => t.category === tp.cat).slice(0, 6) : [];
   const ctx = { c, data, products };
   const jsonld = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, inLanguage: L,
     mainEntity: { '@type': 'ItemList', numberOfItems: books.length, itemListElement: books.map((b, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Book', name: b.title, isbn: b.isbn13 } })) } };
@@ -284,6 +296,27 @@ ${tools.length ? `<section class="section tight"><div class="wrap"><h2 class="su
 `);
 }
 export const topicOf = (b) => TOPICS.find((tp) => b.topics.some((t) => tp.match.includes(t)));
+
+
+// ---------- Author pages ----------
+export function authorsOf(products) {
+  const m = new Map();
+  for (const b of products.items.filter((x) => x.type === 'book')) for (const a of b.authors) { if (!m.has(a)) m.set(a, []); m.get(a).push(b); }
+  return [...m.entries()].map(([name, books]) => ({ name, slug: slug(name), books }));
+}
+export function authorPage(c, data, site, products, au) {
+  const L = c.lang, k = K[L];
+  const topics = [...new Set(au.books.flatMap((b) => b.topics))];
+  const more = products.items.filter((x) => x.type === 'book' && !au.books.includes(x) && x.topics.some((t) => topics.includes(t))).slice(0, 6);
+  const title = L === 'he' ? `ספרים של ${au.name}` : `Books by ${au.name}`;
+  const jsonld = { '@context': 'https://schema.org', '@type': 'ProfilePage', mainEntity: { '@type': 'Person', name: au.name } };
+  return page(c, data, site, { title: `${title} | ToolScout`, desc: (L === 'he' ? `ספרים של ${au.name} בקטלוג ToolScout, עם פרטי הוצאה שנבדקו.` : `Books by ${au.name} in the ToolScout catalog, with checked publisher details.`), page: 'author', active: 'books', jsonld }, `
+<section class="page-head"><div class="wrap">${crumbs(c, [[c.u('books.html'), k.books], [null, au.name]])}<h1 lang="en" dir="ltr">${esc(au.name)}</h1>
+  <p class="lead">${esc(k.booksN(au.books.length))} · ${esc(topics.map((t) => name(products.bookTopics, t, L)).join(', '))}</p></div></section>
+<section class="section tight"><div class="wrap"><ul class="shelf">${au.books.map((b) => shelfCard(b, c, products)).join('')}</ul></div></section>
+${more.length ? `<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.related)}</h2><ul class="shelf">${more.map((b) => shelfCard(b, c, products)).join('')}</ul></div></section>` : ''}
+`);
+}
 
 // ---------- Search ----------
 export function searchPage(c, data, site) {
@@ -317,6 +350,7 @@ export function searchIndex(L, data, products, paths) {
   }
   for (const p of paths.paths) out.push({ t: 'path', u: `${prefix}paths/${p.id}.html`, n: p.title[L], s: '', d: p.audience[L], k: p.steps.map((x) => x[1]).join(' ') });
   for (const col of products.collections) out.push({ t: 'list', u: `${prefix}lists/${col.id}.html`, n: col.title[L], s: '', d: col.description[L], k: col.items.map((x) => x[0]).join(' ') });
+  for (const au of authorsOf(products)) out.push({ t: 'author', u: `${prefix}authors/${au.slug}.html`, n: au.name, s: au.books.map((b) => b.titleShort || b.title).join(', '), d: '', k: au.books.map((b) => b.title).join(' ') });
   for (const tp of TOPICS) out.push({ t: 'list', u: `${prefix}books/topic-${tp.id}.html`, n: tp[L][0], s: '', d: tp[L][1], k: tp.match.join(' ') });
   for (const g of guides) out.push({ t: 'guide', u: `${prefix}guides/${g.slug}.html`, n: g.title[L], s: '', d: g.summary[L], k: g.tools.join(' ') });
   for (const t of data.tools) out.push({ t: 'tool', u: `${prefix}tools/${t.id}.html`, n: t.name, s: t.maker, d: t.description[L], k: [t.category, ...t.uses].join(' ') });

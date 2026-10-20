@@ -5,6 +5,7 @@ This file lists every third-party asset in the site, with its source and license
 ## Typeface
 | Asset | File | License | Notes |
 |---|---|---|---|
+| Frank Ruhl Libre (variable, Hebrew + Latin subsets) | `assets/fonts/frank-ruhl-libre-*.woff2` | SIL Open Font License 1.1 | License text included: `assets/fonts/FrankRuhlLibre-OFL.txt`. Taken from the npm package `@fontsource-variable/frank-ruhl-libre@5.3.0` |
 | Rubik (variable, Hebrew + Latin subsets) | `assets/fonts/rubik-*.woff2` | SIL Open Font License 1.1 | License text included: `assets/fonts/OFL-LICENSE.txt`. Taken from the npm package `@fontsource-variable/rubik@5.3.0` |
 
 ## Brand logos (Simple Icons 13.21.0)

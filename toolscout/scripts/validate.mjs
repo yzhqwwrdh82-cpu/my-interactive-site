@@ -206,6 +206,15 @@ for (const p of pathsData.paths) {
   }
 }
 
+
+// Books: audience and reading goals (editorial, but must be present and valid)
+const goalIds = new Set((products.readingGoals || []).map((g) => g.id));
+for (const b of products.items.filter((x) => x.type === 'book')) {
+  if (!bi(b.audience)) errors.push(`book "${b.id}": audience (who it is for) needs he + en`);
+  if (!Array.isArray(b.goals) || !b.goals.length || b.goals.some((g) => !goalIds.has(g))) errors.push(`book "${b.id}": goals must be valid readingGoals ids`);
+  if (b.formats && b.formats.length && b.formats[0] !== 'print' && b.formats.includes('print')) errors.push(`book "${b.id}": list print first`);
+}
+
 for (const w of warn) console.warn('warn:', w);
 if (errors.length) { for (const e of errors) console.error('error:', e); console.error(`\n${errors.length} error(s)`); process.exit(1); }
 console.log(`data ok: ${data.tools.length} tools, ${data.categories.length} categories, ${products.items.length} products, ${programs.programs.length} affiliate programs, ${money.channels.length} revenue channels`);
