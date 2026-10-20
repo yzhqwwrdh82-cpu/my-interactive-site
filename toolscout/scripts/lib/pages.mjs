@@ -3,6 +3,7 @@ import { esc, fmtDate, t } from './util.mjs';
 import { S } from './strings.mjs';
 import { icon, logoTile, page, crumbs } from './layout.mjs';
 import { guides, comparePresets, legal } from './content.mjs';
+import { K, shelfCard, courseCard, pathCard, listCard } from './knowledge.mjs';
 
 const byId = (data) => Object.fromEntries(data.tools.map((x) => [x.id, x]));
 const cat = (data, id) => data.categories.find((c) => c.id === id);
@@ -121,11 +122,15 @@ export function card(tool, data, c, { headingLevel = 3 } = {}) {
 }
 
 // ---------- Home ----------
-export function homePage(c, data, site, products = null) {
+export function homePage(c, data, site, products = null, paths = null) {
   const s = S[c.lang];
   const L = c.lang;
   const tools = data.tools;
   const picks = tools.filter((x) => x.featured);
+  const books = products ? products.items.filter((x) => x.type === 'book') : [];
+  const courses = products ? products.items.filter((x) => x.type === 'course') : [];
+  const kctx = { c, data, products };
+  const k = K[L];
   const newest = [...tools].sort((a, b) => b.addedAt.localeCompare(a.addedAt) || a.name.localeCompare(b.name)).slice(0, 6);
   const tiles = tools.map((x) => `<a class="board-tile" href="${c.u('tools/' + x.id + '.html')}" aria-label="${esc(x.name)}" title="${esc(x.name)}">${logoTile(x, c, 'sm')}</a>`).join('');
   const catTiles = data.categories.map((k) => {
@@ -153,8 +158,8 @@ export function homePage(c, data, site, products = null) {
       <p class="kicker" lang="en" dir="ltr">${esc(s.home.kicker)}</p>
       <h1><span class="h1-brand" lang="en" dir="ltr">Tool<span>Scout</span></span><span class="h1-sub">${esc(s.home.slogan)}</span></h1>
       <p class="lead">${esc(s.home.lead)}</p>
-      <form class="search search-hero" role="search" action="${c.u('catalog.html')}" method="get">
-        <label class="sr-only" for="hero-q">${esc(s.catalog.searchLabel)}</label>
+      <form class="search search-hero" role="search" action="${c.u('search.html')}" method="get">
+        <label class="sr-only" for="hero-q">${esc(K[L].searchLabel)}</label>
         ${icon('search', 'search-ic')}
         <input id="hero-q" name="q" type="search" autocomplete="off" placeholder="${esc(s.home.searchPh)}">
         <button type="submit" class="btn btn-primary">${esc(s.home.searchBtn)}</button>
@@ -180,7 +185,39 @@ export function homePage(c, data, site, products = null) {
 </section>
 
 <section class="features" aria-label="${esc(s.home.boardLabel)}">
-  <ul class="wrap feat-grid" data-reveal-grid>${s.home.features.map(([href, ic, title, sub], i) => `<li><a class="feat fx" href="${c.u(href)}"><span class="feat-ic">${icon(ic)}</span><span class="feat-t">${esc(title)}</span><span class="feat-s">${esc(sub([tools.length, comparePresets.length, guides.length, products ? products.items.length : 0][i]))}</span></a></li>`).join('')}</ul>
+  <ul class="wrap feat-grid" data-reveal-grid>${s.home.features.map(([href, ic, title, sub], i) => `<li><a class="feat fx" href="${c.u(href)}"><span class="feat-ic">${icon(ic)}</span><span class="feat-t">${esc(title)}</span><span class="feat-s">${esc(sub([books.length, paths ? paths.paths.length : 0, courses.length, tools.length][i]))}</span></a></li>`).join('')}</ul>
+</section>
+
+<section class="section" aria-labelledby="lists-h">
+  <div class="wrap">
+    <div class="section-head" data-reveal><h2 id="lists-h">${esc(k.listsTitle)}</h2><p>${esc(k.listsLead)}</p>
+      <a class="text-link" href="${c.u('books.html')}">${esc(k.books)}${icon('arrow', 'flip')}</a></div>
+    <ul class="list-grid" data-reveal-grid>${products.collections.map((col) => listCard(col, kctx)).join('')}</ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="shelf-h">
+  <div class="wrap">
+    <div class="section-head" data-reveal><h2 id="shelf-h">${esc(k.books)}</h2><p>${esc(L === 'he' ? 'ספרים על AI, תכנות, עסקים, פרודוקטיביות ועיצוב.' : 'Books on AI, programming, business, productivity and design.')}</p>
+      <a class="text-link" href="${c.u('books.html')}">${esc(L === 'he' ? 'לכל הספרים' : 'All books')}${icon('arrow', 'flip')}</a></div>
+    <ul class="shelf" data-reveal-grid>${books.slice(0, 10).map((b) => shelfCard(b, c, products)).join('')}</ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="paths-h">
+  <div class="wrap">
+    <div class="section-head" data-reveal><h2 id="paths-h">${esc(k.pathsTitle)}</h2><p>${esc(k.pathsLead)}</p>
+      <a class="text-link" href="${c.u('paths/index.html')}">${esc(L === 'he' ? 'לכל המסלולים' : 'All paths')}${icon('arrow', 'flip')}</a></div>
+    <ul class="path-grid" data-reveal-grid>${paths.paths.map((p) => pathCard(p, kctx)).join('')}</ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="courses-h">
+  <div class="wrap">
+    <div class="section-head" data-reveal><h2 id="courses-h">${esc(k.coursesTitle)}</h2><p>${esc(k.coursesLead)}</p>
+      <a class="text-link" href="${c.u('courses.html')}">${esc(L === 'he' ? 'לכל הקורסים' : 'All courses')}${icon('arrow', 'flip')}</a></div>
+    <ul class="course-grid" data-reveal-grid>${courses.map((x) => courseCard(x, c)).join('')}</ul>
+  </div>
 </section>
 
 <section class="section" aria-labelledby="cats-h">

@@ -15,6 +15,7 @@ import { previewPage } from './lib/preview.mjs';
 import { booksPage } from './lib/books.mjs';
 import { notFoundPage, aboutPage, partnersPage } from './lib/extra.mjs';
 import { emailHtml, EMAILS } from './lib/emails.mjs';
+import { bookPage, coursesPage, coursePage, pathsIndex, pathPage, listPage, searchPage, searchIndex } from './lib/knowledge.mjs';
 import { guides, comparePresets, legal, chatHelp } from './lib/content.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -23,8 +24,9 @@ execFileSync(process.execPath, [join(root, 'scripts/validate.mjs')], { stdio: 'i
 const data = JSON.parse(readFileSync(join(root, 'data/tools.json'), 'utf8'));
 const products = JSON.parse(readFileSync(join(root, 'data/products.json'), 'utf8'));
 const siteCfg = JSON.parse(readFileSync(join(root, 'data/site.json'), 'utf8'));
+const paths = JSON.parse(readFileSync(join(root, 'data/paths.json'), 'utf8'));
 const hash = createHash('sha1');
-for (const f of ['assets/styles.css', 'assets/app.js', 'assets/theme-init.js', 'assets/consent.js']) hash.update(readFileSync(join(root, f)));
+for (const f of ['assets/styles.css', 'assets/app.js', 'assets/theme-init.js', 'assets/consent.js', 'assets/search.js']) hash.update(readFileSync(join(root, f)));
 const site = {
   siteUrl: (process.env.SITE_URL || siteCfg.siteUrl).replace(/\/$/, ''),
   updated: data.tools.reduce((m, x) => (x.checkedAt > m ? x.checkedAt : m), '0000-00-00'),
@@ -39,7 +41,7 @@ setSite(site);
 setFeatures(site.features);
 
 // Clean generated output (only generated folders/files, never data or assets).
-for (const d of ['en', 'tools', 'category', 'compare', 'guides', 'emails']) rmSync(join(root, d), { recursive: true, force: true });
+for (const d of ['en', 'tools', 'category', 'compare', 'guides', 'emails', 'books', 'courses', 'paths', 'lists', 'community']) rmSync(join(root, d), { recursive: true, force: true });
 
 const written = [];
 const indexable = [];
@@ -52,7 +54,7 @@ function out(c, html, { index = true } = {}) {
 }
 
 for (const L of LANGS) {
-  out(ctx(L, 'index.html'), homePage(ctx(L, 'index.html'), data, site, products));
+  out(ctx(L, 'index.html'), homePage(ctx(L, 'index.html'), data, site, products, paths));
   out(ctx(L, 'catalog.html'), catalogPage(ctx(L, 'catalog.html'), data, site));
   out(ctx(L, 'compare.html'), comparePage(ctx(L, 'compare.html'), data, site));
   for (const p of comparePresets) { const c = ctx(L, `compare/${p.slug}.html`); out(c, comparePresetPage(c, data, site, p)); }
@@ -61,6 +63,14 @@ for (const L of LANGS) {
   out(ctx(L, 'about.html'), aboutPage(ctx(L, 'about.html'), data, site, products));
   out(ctx(L, 'partners.html'), partnersPage(ctx(L, 'partners.html'), data, site));
   out(ctx(L, 'books.html'), booksPage(ctx(L, 'books.html'), data, site, products));
+  for (const b of products.items.filter((x) => x.type === 'book')) { const c = ctx(L, `books/${b.id}.html`); out(c, bookPage(c, data, site, products, paths, b)); }
+  out(ctx(L, 'courses.html'), coursesPage(ctx(L, 'courses.html'), data, site, products));
+  for (const co of products.items.filter((x) => x.type === 'course')) { const c = ctx(L, `courses/${co.id}.html`); out(c, coursePage(c, data, site, products, paths, co)); }
+  out(ctx(L, 'paths/index.html'), pathsIndex(ctx(L, 'paths/index.html'), data, site, products, paths));
+  for (const p of paths.paths) { const c = ctx(L, `paths/${p.id}.html`); out(c, pathPage(c, data, site, products, paths, p)); }
+  for (const col of products.collections) { const c = ctx(L, `lists/${col.id}.html`); out(c, listPage(c, data, site, products, col)); }
+  out(ctx(L, 'search.html'), searchPage(ctx(L, 'search.html'), data, site), { index: false });
+  writeFileSync(join(root, `assets/search-${L}.json`), JSON.stringify(searchIndex(L, data, products, paths)));
   out(ctx(L, 'guides/index.html'), guidesIndex(ctx(L, 'guides/index.html'), data, site));
   for (const g of guides) { const c = ctx(L, `guides/${g.slug}.html`); out(c, guidePage(c, data, site, g)); }
   for (const key of Object.keys(legal)) { const c = ctx(L, `${key}.html`); out(c, legalPage(c, data, site, key)); }

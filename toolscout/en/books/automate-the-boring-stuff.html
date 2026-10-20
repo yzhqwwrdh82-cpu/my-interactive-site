@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'self'; frame-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Automate the Boring Stuff – Al Sweigart | ToolScout</title>
+<meta name="description" content="Learning Python through practical tasks: files, spreadsheets, email and automating repetitive work. by Al Sweigart.">
+
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#050A16">
+<link rel="canonical" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/books/automate-the-boring-stuff.html">
+<link rel="alternate" hreflang="en" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/books/automate-the-boring-stuff.html">
+<link rel="alternate" hreflang="he" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/books/automate-the-boring-stuff.html">
+<link rel="alternate" hreflang="x-default" href="https://benevolent-mooncake-e8a513.netlify.app/toolscout/books/automate-the-boring-stuff.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ToolScout">
+<meta property="og:title" content="Automate the Boring Stuff – Al Sweigart | ToolScout">
+<meta property="og:description" content="Learning Python through practical tasks: files, spreadsheets, email and automating repetitive work. by Al Sweigart.">
+<meta property="og:url" content="https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/books/automate-the-boring-stuff.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://benevolent-mooncake-e8a513.netlify.app/toolscout/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preload" href="../../assets/fonts/rubik-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+
+
+<link rel="stylesheet" href="../../assets/styles.css?v=3a6ab40e">
+<script src="../../assets/theme-init.js?v=3a6ab40e"></script>
+<script src="../../assets/app.js?v=3a6ab40e" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Automate the Boring Stuff with Python, 3rd Edition","author":[{"@type":"Person","name":"Al Sweigart"}],"isbn":"9781718503403","publisher":{"@type":"Organization","name":"No Starch Press"},"datePublished":"2025","inLanguage":"en","url":"https://nostarch.com/automate-boring-stuff-python-3rd-edition","bookEdition":"3rd Edition"}</script>
+</head>
+<body data-page="book" data-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="../">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 2l12.1 7L16 16 3.9 9z" fill="#3FD5FF"/><path d="M3.9 9L16 16v14L3.9 23z" fill="#2F6BFF"/><path d="M16 16l12.1-7v14L16 30z" fill="#6B4DFF"/><path d="M16 9.7l5.45 3.15v6.3L16 22.3l-5.45-3.15v-6.3z" fill="#071026"/><path d="M16 9.7v6.3l-5.45 3.15v-6.3z" fill="#0F2560"/><path d="M16 9.7l5.45 3.15v6.3L16 16z" fill="#1B1A63"/><path d="M16 16l5.45 3.15L16 22.3l-5.45-3.15z" fill="#2B63F5"/><path d="M16 2l12.1 7v14L16 30 3.9 23V9z" fill="none" stroke="#9FEFFF" stroke-opacity=".55" stroke-width=".8" stroke-linejoin="round"/></svg><span class="wordmark">Tool<span>Scout</span></span>
+    </a>
+    <nav class="nav-primary" aria-label="Main navigation"><a href="../books.html" aria-current="page">Books</a><a href="../paths/index.html">Paths</a><a href="../courses.html">Courses</a><a href="../catalog.html">AI tools</a><a href="../guides/index.html">Guides</a></nav>
+    <div class="header-actions">
+      <a class="icon-btn search-link" href="../search.html" aria-label="Search" title="Search"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg></a>
+      <a class="icon-btn fav-link" href="../account.html" aria-label="Favorites" title="Favorites"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.4-7.5-10.1A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7.5 2.9C19.5 15.6 12 20 12 20z"/></svg><span class="fav-count js-only" data-fav-count hidden>0</span></a>
+      <button type="button" class="icon-btn js-only" data-theme-toggle data-l-label="Color theme" data-l-system="System" data-l-light="Light" data-l-dark="Dark" aria-label="Color theme"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg></button>
+      <a class="lang-btn" href="../../books/automate-the-boring-stuff.html" hreflang="he" lang="he" aria-label="החלפה לעברית">עברית</a>
+      <details class="menu">
+        <summary class="icon-btn" aria-label="Menu"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+        <nav class="menu-panel" aria-label="Main navigation"><a href="../books.html" aria-current="page">Books</a><a href="../paths/index.html">Paths</a><a href="../courses.html">Courses</a><a href="../catalog.html">AI tools</a><a href="../guides/index.html">Guides</a><a href="../compare.html">Compare</a><a href="../search.html">Search</a><a href="../account.html">Your area</a><a href="../contact.html">Contact</a></nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="page-head item-head"><div class="wrap">
+  <nav class="crumbs" aria-label="breadcrumb"><ol><li><a href="../">Home</a></li><li><a href="../books.html">Books</a></li><li aria-current="page">Automate the Boring Stuff</li></ol></nav><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/"},{"@type":"ListItem","position":2,"name":"Books","item":"https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/books.html"},{"@type":"ListItem","position":3,"name":"Automate the Boring Stuff","item":"https://benevolent-mooncake-e8a513.netlify.app/toolscout/en/books/automate-the-boring-stuff.html"}]}</script>
+  <div class="item-hero">
+    <div class="book-cover lg"><span class="book-cover-gen lg" data-topic="programming" aria-hidden="true"><span class="bc-title">Automate the Boring Stuff</span><span class="bc-author">Al Sweigart</span></span></div>
+    <div class="item-hero-body">
+      <p class="item-type"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h9.5A2.5 2.5 0 0 1 17 7v12.5H7.5A2.5 2.5 0 0 1 5 17z"/><path d="M5 17a2.5 2.5 0 0 1 2.5-2.5H17"/></svg>Programming</p>
+      <h1 lang="en" dir="ltr">Automate the Boring Stuff with Python, 3rd Edition</h1>
+      <p class="lead">by <span lang="en" dir="ltr">Al Sweigart</span></p>
+      <div class="card-badges"><span class="tag">Print</span><span class="tag">E-book</span><span class="tag">Beginner</span></div>
+      <a class="btn btn-primary" href="https://nostarch.com/automate-boring-stuff-python-3rd-edition" target="_blank" rel="noopener">Official page<svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+    </div>
+  </div>
+</div></section>
+<div class="wrap item-layout">
+  <article class="item-main">
+    <section class="panel"><h2>About the book</h2><p class="item-desc">Learning Python through practical tasks: files, spreadsheets, email and automating repetitive work.</p><p class="fine">The description and level are our editorial view, not a quote from the publisher.</p></section>
+    <section class="panel"><h2>Part of learning paths</h2><ul class="mini-links">
+      <li><a href="../paths/learn-to-code.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h6"/></svg>Learning to code</a></li>
+      <li><a href="../lists/developers.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h9.5A2.5 2.5 0 0 1 17 7v12.5H7.5A2.5 2.5 0 0 1 5 17z"/><path d="M5 17a2.5 2.5 0 0 1 2.5-2.5H17"/></svg>Books for developers</a></li></ul></section>
+    <section><h2 class="sub-h">More books on this topic</h2><ul class="shelf"><li class="shelf-item"><a class="shelf-link" href="../books/hands-on-llms.html">
+    <span class="book-cover"><span class="book-cover-gen" data-topic="ai" aria-hidden="true"><span class="bc-title">Hands-On LLMs</span><span class="bc-author">Jay Alammar, Maarten Grootendorst</span></span></span>
+    <span class="shelf-title">Hands-On LLMs</span>
+    <span class="shelf-author">Jay Alammar, Maarten Grootendorst</span>
+    <span class="shelf-meta">AI · Intermediate</span></a></li><li class="shelf-item"><a class="shelf-link" href="../books/ai-engineering.html">
+    <span class="book-cover"><span class="book-cover-gen" data-topic="ai" aria-hidden="true"><span class="bc-title">AI Engineering</span><span class="bc-author">Chip Huyen</span></span></span>
+    <span class="shelf-title">AI Engineering</span>
+    <span class="shelf-author">Chip Huyen</span>
+    <span class="shelf-meta">AI · Advanced</span></a></li><li class="shelf-item"><a class="shelf-link" href="../books/pragmatic-programmer.html">
+    <span class="book-cover"><span class="book-cover-gen" data-topic="programming" aria-hidden="true"><span class="bc-title">Pragmatic Programmer</span><span class="bc-author">David Thomas, Andrew Hunt</span></span></span>
+    <span class="shelf-title">Pragmatic Programmer</span>
+    <span class="shelf-author">David Thomas, Andrew Hunt</span>
+    <span class="shelf-meta">Programming · Intermediate</span></a></li><li class="shelf-item"><a class="shelf-link" href="../books/designing-data-intensive-applications.html">
+    <span class="book-cover"><span class="book-cover-gen" data-topic="programming" aria-hidden="true"><span class="bc-title">DDIA</span><span class="bc-author">Martin Kleppmann, Chris Riccomini</span></span></span>
+    <span class="shelf-title">DDIA</span>
+    <span class="shelf-author">Martin Kleppmann, Chris Riccomini</span>
+    <span class="shelf-meta">Programming · Advanced</span></a></li></ul></section>
+  </article>
+  <aside class="item-side">
+    <div class="panel"><dl class="facts">
+      <div><dt>Publisher</dt><dd>No Starch Press</dd></div><div><dt>Year</dt><dd>2025</dd></div><div><dt>Edition</dt><dd>3rd Edition</dd></div>
+      <div><dt>ISBN</dt><dd><span dir="ltr">9781718503403</span></dd></div><div><dt>Language</dt><dd>English</dd></div>
+      <div><dt>Topics</dt><dd>Programming, Automation</dd></div>
+    </dl><p class="fine">Details checked against the publisher&#39;s page on 20 October 2026</p></div>
+    <div class="panel"><h2>Where to get it</h2>
+      <ul class="retailers"><li><a class="ext-link" href="https://nostarch.com/automate-boring-stuff-python-3rd-edition" target="_blank" rel="noopener">No Starch Press<svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li></ul>
+      <p class="fine">There are no paid purchase links yet. The link goes to the official page, where you can check price and availability. We do not show prices because they change and depend on store and country.</p></div>
+    <div class="panel"><h2>Related tools</h2><ul class="mini-tools"><li><a href="../tools/github-copilot.html"><span class="logo logo-xs"><img src="../../assets/logos/githubcopilot.svg" alt="" width="28" height="28" loading="lazy" decoding="async"></span><span>GitHub Copilot</span></a></li><li><a href="../tools/cursor.html"><span class="logo logo-xs logo-mono" data-cat="code" aria-hidden="true">CU</span><span>Cursor</span></a></li><li><a href="../tools/vscode.html"><span class="logo logo-xs logo-mono" data-cat="code" aria-hidden="true">VS</span><span>Visual Studio Code</span></a></li><li><a href="../tools/replit.html"><span class="logo logo-xs"><img src="../../assets/logos/replit.svg" alt="" width="28" height="28" loading="lazy" decoding="async"></span><span>Replit</span></a></li></ul></div>
+  </aside>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 2l12.1 7L16 16 3.9 9z" fill="#3FD5FF"/><path d="M3.9 9L16 16v14L3.9 23z" fill="#2F6BFF"/><path d="M16 16l12.1-7v14L16 30z" fill="#6B4DFF"/><path d="M16 9.7l5.45 3.15v6.3L16 22.3l-5.45-3.15v-6.3z" fill="#071026"/><path d="M16 9.7v6.3l-5.45 3.15v-6.3z" fill="#0F2560"/><path d="M16 9.7l5.45 3.15v6.3L16 16z" fill="#1B1A63"/><path d="M16 16l5.45 3.15L16 22.3l-5.45-3.15z" fill="#2B63F5"/><path d="M16 2l12.1 7v14L16 30 3.9 23V9z" fill="none" stroke="#9FEFFF" stroke-opacity=".55" stroke-width=".8" stroke-linejoin="round"/></svg><span class="wordmark">Tool<span>Scout</span></span></a>
+      <p>An independent catalog of AI tools and software, checked against official sources.</p>
+      <p class="footer-lang"><span>Language:</span> <strong>English</strong> · <a href="../../books/automate-the-boring-stuff.html" hreflang="he" lang="he">עברית</a></p>
+    </div>
+    <nav aria-label="AI tools by area"><h2>AI tools by area</h2><ul><li><a href="../category/assistants.html">AI assistants</a></li><li><a href="../category/writing.html">Writing &amp; language</a></li><li><a href="../category/design.html">Design, images &amp; 3D</a></li><li><a href="../category/media.html">Video, audio &amp; music</a></li><li><a href="../category/code.html">Code &amp; development</a></li><li><a href="../category/productivity.html">Productivity</a></li><li><a href="../category/automation.html">Automation</a></li><li><a href="../category/work.html">Work &amp; business</a></li><li><a href="../category/marketing.html">Marketing</a></li><li><a href="../category/security.html">Security &amp; privacy</a></li></ul></nav>
+    <nav aria-label="Explore"><h2>Explore</h2><ul>
+      <li><a href="../catalog.html">Catalog</a></li>
+      <li><a href="../compare.html">Compare</a></li>
+      <li><a href="../guides/index.html">Guides</a></li>
+      <li><a href="../books.html">Books</a></li>
+      <li><a href="../courses.html">Courses</a></li>
+      <li><a href="../paths/index.html">Paths</a></li>
+      <li><a href="../search.html">Search</a></li>
+      <li><a href="../how-we-verify.html">How we verify</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul></nav>
+    <nav aria-label="Service"><h2>Service</h2><ul>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../partners.html">Partnerships</a></li>
+      <li><a href="../account.html">Your area</a></li>
+      <li><a href="../service-preview.html">Service interfaces (demo)</a></li>
+    </ul></nav>
+    <nav aria-label="Legal"><h2>Legal</h2><ul>
+      <li><a href="../privacy.html">Privacy policy</a></li>
+      
+      <li><a href="../terms.html">Terms of use</a></li>
+      <li><a href="../accessibility.html">Accessibility statement</a></li>
+      <li><a href="../disclosure.html">Disclosure</a></li>
+    </ul></nav>
+  </div>
+  <div class="wrap footer-base">
+    <p>© 2026 ToolScout · Updated 19 October 2026</p>
+    <p class="credits">Logos are trademarks of their owners, via Simple Icons (CC0; GitHub Copilot icon under MIT). Typeface: Rubik (OFL).</p>
+  </div>
+</footer>
+<nav class="tabbar" aria-label="Quick navigation"><a href="../"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6.5 8 6.5"/><path d="M6 9.5V20h12V9.5M10 20v-5.5h4V20"/></svg><span>Home</span></a><a href="../books.html" aria-current="page"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v13"/></svg><span>Books</span></a><a href="../paths/index.html"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5l5-1.5 6 2 5-1.5v14l-5 1.5-6-2-5 1.5z"/><path d="M9 4v14M15 6v14"/></svg><span>Paths</span></a><a href="../catalog.html"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>AI tools</span></a><a href="../search.html"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><span>Search</span></a></nav>
+
+<div class="chat js-only" data-chat data-catalog="../../assets/catalog.json" data-catalog-base="../" data-contact="../contact.html" data-catalog-page="../catalog.html">
+  <button type="button" class="chat-fab" data-chat-open aria-expanded="false" aria-controls="chat-panel"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.6c-.5.4-1.3.1-1.3-.6V16A2.5 2.5 0 0 1 4 13.5z"/><path d="M8 8.5h8M8 11.5h5"/></svg><span>Help and search</span></button>
+  <section class="chat-panel" id="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>
+    <header class="chat-head">
+      <div class="chat-id">
+        <span class="chat-avatar" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg></span>
+        <div><h2 id="chat-title">ToolScout helper</h2><p class="chat-status"><span class="dot dot-ok" aria-hidden="true"></span>Local search</p></div>
+      </div>
+      <div class="chat-head-actions">
+        <button type="button" class="icon-btn sm" disabled aria-disabled="true" aria-label="Voice call: not connected yet" title="Voice call: not connected yet"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></button>
+        <button type="button" class="icon-btn sm" data-chat-close aria-label="Close help"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+    </header>
+    <div class="chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" data-chat-log></div>
+    <div class="chat-modes" role="group" aria-label="ToolScout helper">
+      <button type="button" class="chip sm" data-chat-mode="search">Find a tool</button>
+      <button type="button" class="chip sm" data-chat-mode="help">Site help</button>
+      <button type="button" class="chip sm" data-chat-mode="support">Contact support</button>
+      <button type="button" class="chip sm is-soon" data-chat-mode="agent" aria-describedby="chat-soon">Human agent <span class="soon">Soon</span></button>
+      <button type="button" class="chip sm is-soon" data-chat-mode="ai" aria-describedby="chat-soon">AI assistant <span class="soon">Soon</span></button>
+      <span id="chat-soon" class="sr-only">Not connected</span>
+    </div>
+    <form class="chat-form" data-chat-form>
+      <label class="sr-only" for="chat-input">Type what you are looking for…</label>
+      <input id="chat-input" type="text" autocomplete="off" maxlength="200" placeholder="Type what you are looking for…">
+      <button type="submit" class="icon-btn send" aria-label="Send"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-2.5-6.5z"/></svg></button>
+    </form>
+    <p class="chat-foot"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>Don&#39;t share personal information here.</p>
+  </section>
+</div>
+<template id="chat-i18n">{&quot;open&quot;:&quot;Help and search&quot;,&quot;close&quot;:&quot;Close help&quot;,&quot;title&quot;:&quot;ToolScout helper&quot;,&quot;status&quot;:&quot;Local search&quot;,&quot;intro&quot;:&quot;Hi! You can search the catalog here or ask about using the site. This helper runs in your browser: it isn&#39;t AI or a person, and the conversation isn&#39;t saved or sent.&quot;,&quot;ph&quot;:&quot;Type what you are looking for…&quot;,&quot;send&quot;:&quot;Send&quot;,&quot;you&quot;:&quot;You&quot;,&quot;bot&quot;:&quot;ToolScout&quot;,&quot;chips&quot;:{&quot;search&quot;:&quot;Find a tool&quot;,&quot;help&quot;:&quot;Site help&quot;,&quot;support&quot;:&quot;Contact support&quot;},&quot;soon&quot;:&quot;Soon&quot;,&quot;agent&quot;:&quot;Human agent&quot;,&quot;ai&quot;:&quot;AI assistant&quot;,&quot;voice&quot;:&quot;Voice call&quot;,&quot;notConnected&quot;:&quot;Not connected&quot;,&quot;voiceBtn&quot;:&quot;Voice call: not connected yet&quot;,&quot;loading&quot;:&quot;Loading the catalog…&quot;,&quot;error&quot;:&quot;We couldn&#39;t load the catalog.&quot;,&quot;retry&quot;:&quot;Try again&quot;,&quot;none&quot;:&quot;I didn&#39;t find a matching tool. Try another word or open the catalog.&quot;,&quot;openCatalog&quot;:&quot;Open the catalog&quot;,&quot;supportReply&quot;:&quot;You can write to us from the contact page. Note: it&#39;s still in demo mode and doesn&#39;t send messages.&quot;,&quot;contactLink&quot;:&quot;Go to the contact page&quot;,&quot;helpPrompt&quot;:&quot;How can I help? For example: what does \&quot;pricing verified\&quot; mean? How do I compare tools? Where are favorites stored?&quot;,&quot;searchPrompt&quot;:&quot;What do you want to do? For example \&quot;translation\&quot;, \&quot;video editing\&quot; or \&quot;open source\&quot;.&quot;,&quot;unavailable&quot;:&quot;This option isn&#39;t connected yet. When it is, we&#39;ll say so clearly here.&quot;,&quot;privacy&quot;:&quot;Don&#39;t share personal information here.&quot;,&quot;foundOne&quot;:&quot;I found 1 tool:&quot;,&quot;foundMany&quot;:&quot;I found {n} tools:&quot;}</template>
+
+<template id="ui-i18n">{&quot;card&quot;:{&quot;details&quot;:&quot;Details&quot;,&quot;visit&quot;:&quot;Official site&quot;,&quot;newTab&quot;:&quot;(opens in a new tab)&quot;,&quot;sponsoredBy&quot;:&quot;Sponsored by&quot;,&quot;fav&quot;:&quot;Add to favorites&quot;,&quot;unfav&quot;:&quot;Remove from favorites&quot;,&quot;compare&quot;:&quot;Compare&quot;,&quot;verified&quot;:&quot;Pricing verified&quot;,&quot;unverified&quot;:&quot;Pricing not verified&quot;,&quot;openSource&quot;:&quot;Open source&quot;,&quot;pick&quot;:&quot;Editors&#39; pick&quot;,&quot;by&quot;:&quot;by&quot;,&quot;paidLink&quot;:&quot;Paid link: we may earn a commission if you buy through it&quot;,&quot;paidShort&quot;:&quot;Paid link&quot;,&quot;sponsored&quot;:&quot;Advertisement&quot;},&quot;compare&quot;:{&quot;title&quot;:&quot;Compare tools | ToolScout&quot;,&quot;desc&quot;:&quot;Compare AI tools and software: pricing, platforms, verified pros and cons.&quot;,&quot;h1&quot;:&quot;Compare tools&quot;,&quot;lead&quot;:&quot;Pick up to 3 tools. The table shows catalog information only, and anything not verified is marked.&quot;,&quot;add&quot;:&quot;Add a tool to compare&quot;,&quot;choose&quot;:&quot;Choose a tool…&quot;,&quot;remove&quot;:&quot;Remove&quot;,&quot;presets&quot;:&quot;Ready-made comparisons&quot;,&quot;empty&quot;:&quot;No tools selected yet. Pick one from the list or start from a ready-made comparison.&quot;,&quot;noscript&quot;:&quot;Building your own comparison needs JavaScript. You can open the ready-made comparisons below.&quot;,&quot;rows&quot;:{&quot;category&quot;:&quot;Category&quot;,&quot;pricing&quot;:&quot;Pricing model&quot;,&quot;free&quot;:&quot;Free version&quot;,&quot;open&quot;:&quot;Open source&quot;,&quot;platforms&quot;:&quot;Platforms&quot;,&quot;pros&quot;:&quot;Verified pros&quot;,&quot;cons&quot;:&quot;Verified cons&quot;,&quot;checked&quot;:&quot;Checked&quot;,&quot;links&quot;:&quot;Links&quot;},&quot;freeYes&quot;:&quot;Yes&quot;,&quot;freeNo&quot;:&quot;No&quot;,&quot;freeUnknown&quot;:&quot;Not verified&quot;,&quot;share&quot;:&quot;The address bar updates with a link to this comparison.&quot;},&quot;tool&quot;:{&quot;crumbsHome&quot;:&quot;Home&quot;,&quot;what&quot;:&quot;What it is&quot;,&quot;verifiedTitle&quot;:&quot;Verified facts&quot;,&quot;pros&quot;:&quot;Pros&quot;,&quot;cons&quot;:&quot;Cons&quot;,&quot;noPros&quot;:&quot;No verified pros recorded yet.&quot;,&quot;noCons&quot;:&quot;No verified cons recorded yet.&quot;,&quot;sourcePricing&quot;:&quot;Source: pricing page&quot;,&quot;sourceOfficial&quot;:&quot;Source: official site&quot;,&quot;editorialTitle&quot;:&quot;Editorial summary&quot;,&quot;editorialNote&quot;:&quot;The description, audience and uses are ToolScout&#39;s summary, not a quote from the maker.&quot;,&quot;audience&quot;:&quot;Good for&quot;,&quot;uses&quot;:&quot;Uses&quot;,&quot;pricing&quot;:&quot;Pricing model&quot;,&quot;platforms&quot;:&quot;Platforms&quot;,&quot;platformsUnverified&quot;:&quot;Not verified&quot;,&quot;openSource&quot;:&quot;Open source&quot;,&quot;yes&quot;:&quot;Yes&quot;,&quot;no&quot;:&quot;No&quot;,&quot;unknown&quot;:&quot;Not verified&quot;,&quot;checked&quot;:&quot;Checked&quot;,&quot;status&quot;:&quot;Verification status&quot;,&quot;fieldPricing&quot;:&quot;Pricing&quot;,&quot;fieldPlatforms&quot;:&quot;Platforms&quot;,&quot;sVerified&quot;:&quot;Verified&quot;,&quot;sUnverified&quot;:&quot;Not verified&quot;,&quot;pricingPage&quot;:&quot;Official pricing page&quot;,&quot;similar&quot;:&quot;Similar tools&quot;,&quot;whoTitle&quot;:&quot;Who each tool suits&quot;,&quot;whoNote&quot;:&quot;Editorial summary based on the verified facts in the table.&quot;,&quot;compareWith&quot;:&quot;Compare with similar tools&quot;,&quot;affiliateNone&quot;:&quot;Links on this page are regular links, not affiliate links.&quot;,&quot;logoCredit&quot;:&quot;The logo is a trademark of its owner. Source: Simple Icons.&quot;,&quot;noLogo&quot;:&quot;No logo from a licensed source, so initials are shown.&quot;},&quot;catalog&quot;:{&quot;countTpl&quot;:&quot;{n} tools&quot;}}</template>
+</body>
+</html>

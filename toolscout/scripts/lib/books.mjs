@@ -2,11 +2,12 @@
 // until then it shows the planned structure, the filter design and a clearly labeled card specimen.
 import { esc, fmtDate } from './util.mjs';
 import { icon, page, crumbs } from './layout.mjs';
+import { K, listCard, coverHtml } from './knowledge.mjs';
 
 const T = {
   he: {
-    title: 'ספרים על AI, תכנות ועסקים | ToolScout', desc: 'ספרים, מדריכים ורשימות קריאה על AI, תכנות, עסקים, שיווק ועיצוב. בהכנה: יתווספו רק ספרים שפרטיהם אומתו.',
-    h1: 'ספרים ומדריכים', lead: 'ספרים על AI, תכנות ועסקים, כהשלמה לכלים שבקטלוג. מופיעים כאן רק ספרים שאת פרטיהם בדקנו מול עמוד ההוצאה לאור.',
+    title: 'ספרים על AI, תכנות, עסקים ופרודוקטיביות | ToolScout', desc: 'ספרים ורשימות קריאה על AI, תכנות, עסקים, פרודוקטיביות ועיצוב, עם פרטי הוצאה, ISBN ופורמטים שנבדקו מול עמוד ההוצאה.',
+    h1: 'ספרים', lead: 'ספרים על AI, תכנות, עסקים, פרודוקטיביות ועיצוב. מופיעים כאן רק ספרים שאת פרטיהם בדקנו מול עמוד ההוצאה לאור.',
     status: 'מתעדכן', levelNote: 'רמת הידע והתיאור הם הערכה עריכתית. כותרת, מחברים, הוצאה, שנה, ISBN ופורמטים נבדקו מול עמוד ההוצאה.', empty: 'עדיין אין ספרים בקטלוג. כשנוסיף ספרים, הם יופיעו כאן עם הפרטים שאומתו.',
     sectionsTitle: 'מה יש כאן ומה בהכנה', soon: 'עוד לא זמין', live: 'זמין',
     sections: [
@@ -31,8 +32,8 @@ const T = {
     by: 'מאת', checked: 'נבדק', publisher: 'עמוד ההוצאה', priceNone: 'מחיר: בעמוד ההוצאה', related: 'כלים קשורים בקטלוג', toCatalog: 'לקטלוג הכלים'
   },
   en: {
-    title: 'Books on AI, programming and business | ToolScout', desc: 'Books, guides and reading lists on AI, programming, business, marketing and design. Coming soon: only books with verified details.',
-    h1: 'Books and guides', lead: "Books on AI, programming and business, to go with the tools in the catalog. Only books whose details we checked against the publisher's page are listed.",
+    title: 'Books on AI, programming, business and productivity | ToolScout', desc: "Books and reading lists on AI, programming, business, productivity and design, with publisher, ISBN and formats checked against the publisher's page.",
+    h1: 'Books', lead: "Books on AI, programming, business, productivity and design. Only books whose details we checked against the publisher's page are listed.",
     status: 'Growing', levelNote: 'Level and description are editorial. Title, authors, publisher, year, ISBN and formats were checked against the publisher page.', empty: "There are no books in the catalog yet. When we add them, they'll appear here with their verified details.",
     sectionsTitle: "What's here and what's coming", soon: 'Not available yet', live: 'Available',
     sections: [
@@ -81,15 +82,15 @@ export function bookCard(item, products, c, { specimen = false } = {}) {
   const price = item.price ? `<span class="price" data-price="paid">${esc(item.price.amount + ' ' + item.price.currency)}</span>` : `<span class="price" data-price="unverified">${esc(k.priceNone)}</span>`;
   return `<li class="book${specimen ? ' is-specimen' : ''}" data-topics="${(item.topics || []).join(' ')}" data-langs="${(item.languages || []).join(' ')}" data-level="${item.level || ''}" data-formats="${(item.formats || []).join(' ')}" data-price="${item.price ? 'paid' : 'unverified'}">
   <article class="book-card">
-    <div class="book-cover">${cover(item, c)}</div>
+    <div class="book-cover">${specimen ? cover(item, c) : coverHtml(item, c)}</div>
     <div class="book-body">
-      <h3 class="book-title">${esc(item.title)}</h3>
+      <h3 class="book-title">${specimen ? esc(item.title) : `<a class="card-link" href="${c.u('books/' + item.id + '.html')}" lang="en" dir="ltr">${esc(item.title)}</a>`}</h3>
       <p class="book-author">${esc(k.by)} ${esc((item.authors || []).join(', '))}</p>
       <p class="book-meta">${esc(item.meta || [item.publisher, item.year].filter(Boolean).join(' · '))}${item.isbn13 ? ` · ISBN ${esc(item.isbn13)}` : ''}</p>
       ${item.description ? `<p class="book-desc">${esc(item.description[L])}</p>` : ''}
       <div class="card-badges">${fmts}${item.level ? `<span class="tag">${esc(name(products.levels, item.level, L))}</span>` : ''}</div>
       <div class="card-badges">${price}</div>
-      ${item.officialUrl ? `<a class="ext-link" href="${esc(item.officialUrl)}" target="_blank" rel="noopener">${esc(k.publisher)}${icon('ext')}</a>` : ''}
+      ${item.officialUrl ? `<a class="ext-link book-ext" href="${esc(item.officialUrl)}" target="_blank" rel="noopener">${esc(k.publisher)}${icon('ext')}</a>` : ''}
       ${item.checkedAt ? `<p class="fine">${esc(k.checked)} ${esc(fmtDate(item.checkedAt, L))}</p>` : ''}
     </div>
   </article>
@@ -104,13 +105,13 @@ export function booksPage(c, data, site, products) {
   const facet = (legend, list, key) => `<fieldset${has ? '' : ' disabled'}><legend>${esc(legend)}</legend>${list.map((x) =>
     `<label class="opt"><input type="checkbox" data-bf="${key}" value="${x.id}"><span>${esc(x[L])}</span></label>`).join('')}</fieldset>`;
   const specimen = { title: k.specTitle, authors: [k.specAuthor], meta: k.specMeta, formats: ['print', 'ebook'], level: 'beginner', topics: ['ai'], titleShort: 'AI' };
-  return page(c, data, site, { title: k.title, desc: k.desc, page: 'books' }, `
+  return page(c, data, site, { title: k.title, desc: k.desc, page: 'books', active: 'books' }, `
 <section class="page-head">
   <div class="wrap">
     ${crumbs(c, [[null, k.h1]])}
     <div class="cat-hero"><span class="cat-icon lg books-icon">${ic('book')}</span>
       <div><h1>${esc(k.h1)}</h1><p class="lead">${esc(k.lead)}</p></div></div>
-    <p class="hero-stats books-status"><span class="dot"></span>${esc(k.status)}</p>
+    <p class="hero-stats books-status">${esc(L === 'he' ? `${books.length} ספרים · ${products.collections.length} רשימות קריאה` : `${books.length} books · ${products.collections.length} reading lists`)}</p>
   </div>
 </section>
 
@@ -130,15 +131,10 @@ export function booksPage(c, data, site, products) {
   <div class="results">
     ${has ? `<p class="fine book-note">${esc(k.levelNote)}</p><ul class="book-grid" data-books>${books.map((b) => bookCard(b, products, c)).join('')}</ul>` : `<div class="empty">${ic('book').replace('class="ic"', 'class="ic empty-ic"')}<p class="empty-title">${esc(k.empty)}</p><a class="btn btn-primary" href="${c.u('catalog.html')}">${esc(k.toCatalog)}</a></div>`}
 
-    <h2 class="sub-h">${esc(k.sectionsTitle)}</h2>
-    <ul class="plan-grid">${k.sections.map(([i, h, p]) => `<li class="plan-card"><span class="roadmap-icon">${ic(i)}</span><h3>${esc(h)}</h3><p>${esc(p)}</p>${['book', 'ebook'].includes(i) && has ? `<span class="tag tag-open">${esc(k.live)}</span>` : `<span class="tag tag-soon">${esc(k.soon)}</span>`}</li>`).join('')}</ul>
-
-    <div class="two-col books-bottom">
-      <section class="panel" aria-labelledby="rules-h"><h2 id="rules-h">${icon('ok', 'h-ic')}${esc(k.rulesTitle)}</h2>
-        <ul class="facts-list pros rules">${k.rules.map((r) => `<li>${icon('ok')}<span>${esc(r)}</span></li>`).join('')}</ul></section>
-      <section class="specimen-wrap" aria-labelledby="spec-h"><h2 id="spec-h">${esc(k.specimenTitle)}</h2><p class="fine">${esc(k.specimenNote)}</p>
-        <ul class="book-grid single">${bookCard(specimen, products, c, { specimen: true })}</ul></section>
-    </div>
+    <section class="books-bottom" aria-labelledby="lists-h"><h2 id="lists-h" class="sub-h">${esc(K[L].listsTitle)}</h2><p class="muted">${esc(K[L].listsLead)}</p>
+      <ul class="list-grid">${products.collections.map((col) => listCard(col, { c, data, products })).join('')}</ul></section>
+    <section class="panel books-rules" aria-labelledby="rules-h"><h2 id="rules-h">${icon('ok', 'h-ic')}${esc(k.rulesTitle)}</h2>
+      <ul class="facts-list pros rules">${k.rules.map((r) => `<li>${icon('ok')}<span>${esc(r)}</span></li>`).join('')}</ul></section>
   </div>
 </section>
 `);

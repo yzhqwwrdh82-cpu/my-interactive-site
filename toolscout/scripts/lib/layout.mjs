@@ -106,7 +106,8 @@ export const wordmark = () => '<span class="wordmark">Tool<span>Scout</span></sp
 export function header(c, active = '') {
   const s = S[c.lang];
   const link = (href, key, label) => `<a href="${c.u(href)}"${active === key ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
-  const nav = `${link('catalog.html', 'catalog', s.nav.catalog)}${link('compare.html', 'compare', s.nav.compare)}${link('guides/index.html', 'guides', s.nav.guides)}${link('books.html', 'books', s.nav.books)}`;
+  const nav = `${link('books.html', 'books', s.nav.books)}${link('paths/index.html', 'paths', s.nav.paths)}${link('courses.html', 'courses', s.nav.courses)}${link('catalog.html', 'catalog', s.nav.tools)}${link('guides/index.html', 'guides', s.nav.guides)}`;
+  const navMore = `${link('compare.html', 'compare', s.nav.compare)}${link('search.html', 'search', s.nav.search)}`;
   return `
 <a class="skip-link" href="#main">${esc(s.skip)}</a>
 <header class="site-header">
@@ -116,13 +117,13 @@ export function header(c, active = '') {
     </a>
     <nav class="nav-primary" aria-label="${esc(s.nav.primary)}">${nav}</nav>
     <div class="header-actions">
-      <a class="icon-btn search-link" href="${c.u('catalog.html')}#q" aria-label="${esc(s.catalog.searchLabel)}" title="${esc(s.catalog.searchLabel)}">${icon('search')}</a>
+      <a class="icon-btn search-link" href="${c.u('search.html')}" aria-label="${esc(s.nav.search)}" title="${esc(s.nav.search)}">${icon('search')}</a>
       <a class="icon-btn fav-link" href="${c.u('account.html')}" aria-label="${esc(s.nav.favorites)}" title="${esc(s.nav.favorites)}">${icon('heart')}<span class="fav-count js-only" data-fav-count hidden>0</span></a>
       <button type="button" class="icon-btn js-only" data-theme-toggle data-l-label="${esc(s.theme.label)}" data-l-system="${esc(s.theme.system)}" data-l-light="${esc(s.theme.light)}" data-l-dark="${esc(s.theme.dark)}" aria-label="${esc(s.theme.label)}">${icon('theme')}</button>
       <a class="lang-btn" href="${c.alt()}" hreflang="${c.o}" lang="${c.o}" aria-label="${esc(s.switchLang)}">${esc(s.otherLangName)}</a>
       <details class="menu">
         <summary class="icon-btn" aria-label="${esc(s.nav.menu)}">${icon('menu')}</summary>
-        <nav class="menu-panel" aria-label="${esc(s.nav.primary)}">${nav}${link('account.html', 'account', s.footer.account)}${link('contact.html', 'contact', s.footer.contact)}</nav>
+        <nav class="menu-panel" aria-label="${esc(s.nav.primary)}">${nav}${navMore}${link('account.html', 'account', s.footer.account)}${link('contact.html', 'contact', s.footer.contact)}</nav>
       </details>
     </div>
   </div>
@@ -148,6 +149,9 @@ export function footer(c, data, site) {
       <li><a href="${c.u('compare.html')}">${esc(s.nav.compare)}</a></li>
       <li><a href="${c.u('guides/index.html')}">${esc(s.nav.guides)}</a></li>
       <li><a href="${c.u('books.html')}">${esc(s.nav.books)}</a></li>
+      <li><a href="${c.u('courses.html')}">${esc(s.nav.courses)}</a></li>
+      <li><a href="${c.u('paths/index.html')}">${esc(s.nav.paths)}</a></li>
+      <li><a href="${c.u('search.html')}">${esc(s.nav.search)}</a></li>
       <li><a href="${c.u('how-we-verify.html')}">${esc(s.nav.method)}</a></li>
       <li><a href="${c.u('about.html')}">${esc(s.nav.about)}</a></li>
     </ul></nav>
@@ -223,7 +227,7 @@ export function tabbar(c, active = '', pg = '') {
   const s = S[c.lang];
   const cur = active || (pg === 'home' ? 'home' : '');
   const item = (href, key, ic, label) => `<a href="${c.u(href)}"${cur === key ? ' aria-current="page"' : ''}>${icon(ic)}<span>${esc(label)}</span></a>`;
-  return `<nav class="tabbar" aria-label="${esc(s.nav.quick)}">${item('index.html', 'home', 'home', s.nav.home)}${item('catalog.html', 'catalog', 'grid', s.nav.catalog)}${item('compare.html', 'compare', 'compare', s.nav.compare)}${item('guides/index.html', 'guides', 'guide', s.nav.guides)}${item('account.html', 'account', 'heart', s.nav.favorites)}</nav>`;
+  return `<nav class="tabbar" aria-label="${esc(s.nav.quick)}">${item('index.html', 'home', 'home', s.nav.home)}${item('books.html', 'books', 'book', s.nav.books)}${item('paths/index.html', 'paths', 'guide', s.nav.paths)}${item('catalog.html', 'catalog', 'grid', s.nav.tools)}${item('search.html', 'search', 'search', s.nav.search)}</nav>`;
 }
 
 export function page(c, data, site, opts, body) {
