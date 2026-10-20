@@ -2,7 +2,7 @@
 // until then it shows the planned structure, the filter design and a clearly labeled card specimen.
 import { esc, fmtDate } from './util.mjs';
 import { icon, page, crumbs } from './layout.mjs';
-import { K, listCard, coverHtml } from './knowledge.mjs';
+import { K, listCard, coverHtml, TOPICS } from './knowledge.mjs';
 
 const T = {
   he: {
@@ -129,6 +129,7 @@ export function booksPage(c, data, site, products) {
     </div>
   </aside>
   <div class="results">
+    <nav class="topic-chips" aria-label="${esc(L === 'he' ? 'ספרים לפי נושא' : 'Books by topic')}">${TOPICS.map((tp) => `<a class="chip" href="${c.u('books/topic-' + tp.id + '.html')}">${esc(tp[L][0])}</a>`).join('')}</nav>
     ${has ? `<p class="fine book-note">${esc(k.levelNote)}</p><ul class="book-grid" data-books>${books.map((b) => bookCard(b, products, c)).join('')}</ul>` : `<div class="empty">${ic('book').replace('class="ic"', 'class="ic empty-ic"')}<p class="empty-title">${esc(k.empty)}</p><a class="btn btn-primary" href="${c.u('catalog.html')}">${esc(k.toCatalog)}</a></div>`}
 
     <section class="books-bottom" aria-labelledby="lists-h"><h2 id="lists-h" class="sub-h">${esc(K[L].listsTitle)}</h2><p class="muted">${esc(K[L].listsLead)}</p>

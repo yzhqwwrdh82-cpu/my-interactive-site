@@ -1454,3 +1454,4 @@ a.cat-card:hover .card-art { transform: scale(1.05); }
 @media (max-width: 1080px) { .cm5, .col5, .two5 { grid-template-columns: minmax(0, 1fr); } }
 .cm5-feature .btn, .il5 .btn { white-space: normal; text-align: center; }
 .chip[aria-pressed="true"] .n { opacity: 1; color: inherit; }
+.topic-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; } .topic-tools { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); display: grid; } .item-type a { color: inherit; }

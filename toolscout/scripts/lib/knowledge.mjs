@@ -135,7 +135,7 @@ export function bookPage(c, data, site, products, paths, b) {
   <div class="item-hero">
     <div class="book-cover lg">${coverHtml(b, c, 'lg')}</div>
     <div class="item-hero-body">
-      <p class="item-type">${kicon('book')}${esc(name(products.bookTopics, b.topics[0], L))}</p>
+      <p class="item-type">${kicon('book')}${topicOf(b) ? `<a href="${c.u('books/topic-' + topicOf(b).id + '.html')}">${esc(name(products.bookTopics, b.topics[0], L))}</a>` : esc(name(products.bookTopics, b.topics[0], L))}</p>
       <h1 lang="en" dir="ltr">${esc(b.title)}</h1>
       <p class="lead">${esc(k.by)} <span lang="en" dir="ltr">${esc(b.authors.join(', '))}</span></p>
       <div class="card-badges">${(b.formats || []).map((f) => `<span class="tag">${esc(name(products.formats, f, L))}</span>`).join('')}<span class="tag">${esc(k.lvl[b.level])}</span></div>
@@ -197,6 +197,7 @@ export function coursePage(c, data, site, products, paths, co) {
   <article class="item-main">
     <section class="panel"><h2>${esc(k.aboutCourse)}</h2><p class="item-desc">${esc(co.description[L])}</p><p class="fine">${esc(k.editorial)}</p></section>
     ${inPaths.length ? `<section class="panel"><h2>${esc(k.inPaths)}</h2><ul class="mini-links">${inPaths.map((p) => `<li><a href="${urls.path(c, p.id)}">${kicon('path')}${esc(p.title[L])}</a></li>`).join('')}</ul></section>` : ''}
+    ${(() => { const rb = products.items.filter((x) => x.type === 'book' && x.topics.some((t) => co.topics.includes(t))).slice(0, 6); return rb.length ? `<section><h2 class="sub-h">${esc(L === 'he' ? 'ספרים שמשלימים את הקורס' : 'Books that go with this course')}</h2><ul class="shelf">${rb.map((x) => shelfCard(x, c, products)).join('')}</ul></section>` : ''; })()}
   </article>
   <aside class="item-side"><div class="panel"><dl class="facts">
     <div><dt>${esc(k.provider)}</dt><dd>${esc(co.provider)}</dd></div>
@@ -251,6 +252,39 @@ export function listPage(c, data, site, products, col) {
 `);
 }
 
+
+// ---------- Topic hubs (books + courses + paths + tools per topic) ----------
+export const TOPICS = [
+  { id: 'ai', match: ['ai', 'society', 'prompts'], cat: 'assistants', he: ['ספרים על בינה מלאכותית', 'מה AI יכול לעשות היום, איך עובדים איתו נכון, ואילו שאלות הוא מעורר. מספרי מבוא בלי רקע טכני ועד ספרים מעשיים למי שבונה עם מודלי שפה.'], en: ['Books on artificial intelligence', 'What AI can do today, how to work with it well, and the questions it raises. From non-technical introductions to hands-on books for people building with language models.'] },
+  { id: 'programming', match: ['programming', 'technology', 'automation'], cat: 'code', he: ['ספרים על תכנות ופיתוח', 'מהצעדים הראשונים ב־Python, דרך הרגלי עבודה של מפתחים מקצועיים, ועד תכנון מערכות נתונים גדולות.'], en: ['Books on programming and software', 'From first steps in Python, through the habits of professional developers, to designing large data systems.'] },
+  { id: 'business', match: ['business', 'entrepreneurship', 'marketing', 'design'], cat: 'work', he: ['ספרים על עסקים, יזמות ומוצר', 'איך בודקים רעיון, בונים מוצר שאנשים מבינים, וחושבים על מה שהופך עסק לייחודי.'], en: ['Books on business, startups and product', 'How to test an idea, build a product people understand, and think about what makes a business unique.'] },
+  { id: 'productivity', match: ['productivity'], cat: 'productivity', he: ['ספרים על פרודוקטיביות והרגלים', 'הרגלים קטנים, עבודה מרוכזת וארגון מידע. ספרים שעוזרים לעבוד טוב יותר עם פחות לחץ.'], en: ['Books on productivity and habits', 'Small habits, focused work and organizing information. Books that help you work better with less stress.'] }
+];
+export function topicPage(c, data, site, products, paths, tp) {
+  const L = c.lang, k = K[L];
+  const [title, intro] = tp[L];
+  const books = products.items.filter((x) => x.type === 'book' && x.topics.some((t) => tp.match.includes(t)));
+  const courses = products.items.filter((x) => x.type === 'course' && x.topics.some((t) => tp.match.includes(t)));
+  const ids = new Set(books.map((b) => b.id).concat(courses.map((x) => x.id)));
+  const ps = paths.paths.filter((p) => p.steps.some(([, id]) => ids.has(id)));
+  const lists = products.collections.filter((col) => col.items.some(([id]) => ids.has(id)));
+  const tools = data.tools.filter((t) => t.category === tp.cat).slice(0, 6);
+  const ctx = { c, data, products };
+  const jsonld = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, inLanguage: L,
+    mainEntity: { '@type': 'ItemList', numberOfItems: books.length, itemListElement: books.map((b, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Book', name: b.title, isbn: b.isbn13 } })) } };
+  return page(c, data, site, { title: `${title} | ToolScout`, desc: intro.slice(0, 158), page: 'topic', active: 'books', jsonld }, `
+<section class="page-head"><div class="wrap">${crumbs(c, [[c.u('books.html'), k.books], [null, title]])}<h1>${esc(title)}</h1><p class="lead">${esc(intro)}</p>
+  <p class="meta-line">${esc(k.booksN(books.length))}${courses.length ? ` · ${esc(L === 'he' ? `${courses.length} קורסים` : `${courses.length} courses`)}` : ''}</p></div></section>
+<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.books)}</h2><ul class="shelf">${books.map((b) => shelfCard(b, c, products)).join('')}</ul></div></section>
+${courses.length ? `<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.courses)}</h2><ul class="course-grid">${courses.map((x) => courseCard(x, c)).join('')}</ul></div></section>` : ''}
+${ps.length ? `<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.paths)}</h2><ul class="path-grid">${ps.map((p) => pathCard(p, ctx)).join('')}</ul></div></section>` : ''}
+${lists.length ? `<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.lists)}</h2><ul class="list-grid">${lists.map((col) => listCard(col, ctx)).join('')}</ul></div></section>` : ''}
+${tools.length ? `<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.relatedTools)}</h2><ul class="mini-tools topic-tools">${tools.map((t) => `<li><a href="${urls.tool(c, t.id)}">${logoTile(t, c, 'xs')}<span>${esc(t.name)}</span></a></li>`).join('')}</ul>
+  <p><a class="text-link" href="${c.u('category/' + tp.cat + '.html')}">${esc(L === 'he' ? 'לכל הכלים בתחום' : 'All tools in this area')}${icon('arrow', 'flip')}</a></p></div></section>` : ''}
+`);
+}
+export const topicOf = (b) => TOPICS.find((tp) => b.topics.some((t) => tp.match.includes(t)));
+
 // ---------- Search ----------
 export function searchPage(c, data, site) {
   const L = c.lang, k = K[L];
@@ -283,6 +317,7 @@ export function searchIndex(L, data, products, paths) {
   }
   for (const p of paths.paths) out.push({ t: 'path', u: `${prefix}paths/${p.id}.html`, n: p.title[L], s: '', d: p.audience[L], k: p.steps.map((x) => x[1]).join(' ') });
   for (const col of products.collections) out.push({ t: 'list', u: `${prefix}lists/${col.id}.html`, n: col.title[L], s: '', d: col.description[L], k: col.items.map((x) => x[0]).join(' ') });
+  for (const tp of TOPICS) out.push({ t: 'list', u: `${prefix}books/topic-${tp.id}.html`, n: tp[L][0], s: '', d: tp[L][1], k: tp.match.join(' ') });
   for (const g of guides) out.push({ t: 'guide', u: `${prefix}guides/${g.slug}.html`, n: g.title[L], s: '', d: g.summary[L], k: g.tools.join(' ') });
   for (const t of data.tools) out.push({ t: 'tool', u: `${prefix}tools/${t.id}.html`, n: t.name, s: t.maker, d: t.description[L], k: [t.category, ...t.uses].join(' ') });
   return out;
