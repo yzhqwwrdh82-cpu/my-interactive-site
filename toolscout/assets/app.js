@@ -487,6 +487,18 @@
         return;
       }
       if (summary) summary.hidden = true;
+      var to = form.getAttribute('data-mailto');
+      if (to) {
+        // Real channel without a server: hand the message to the visitor's own email app. Keep the form filled.
+        var v = function (n) { var el = form.elements[n]; return el ? String(el.value || '').trim() : ''; };
+        var subject = (form.getAttribute('data-subject') || '') + (v('topic') || '');
+        var body = v('message') + '\n\n— ' + v('name') + (v('email') ? ' <' + v('email') + '>' : '');
+        status.textContent = status.getAttribute('data-done');
+        status.classList.add('ok');
+        status.hidden = false;
+        window.location.href = 'mailto:' + encodeURIComponent(to).replace('%40', '@') + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body.slice(0, 1800));
+        return;
+      }
       // Not connected: show the honest status and clear what was typed, so nothing lingers.
       status.textContent = status.getAttribute('data-not-connected');
       status.hidden = false;

@@ -1264,3 +1264,9 @@ input[type="text"], input[type="email"], textarea, select, .search input { backg
 @media (prefers-reduced-motion: reduce) { .book-cover.lg { transform: none !important; } }
 .book-cover-gen.sm { justify-content: flex-end; } .book-cover-gen.sm .bc-title { font-size: .8rem; letter-spacing: .02em; }
 [dir="rtl"] :is(.shelf-title, .shelf-author) { text-align: right; }
+/* Tablets: keep search and the extra links reachable through the menu */
+@media (max-width: 1024px) and (min-width: 721px) {
+  .menu { display: block; }
+  .nav-primary a:nth-child(n+5) { display: none; }
+}
+.form-status.ok { background: var(--ok-soft); color: var(--ok); }

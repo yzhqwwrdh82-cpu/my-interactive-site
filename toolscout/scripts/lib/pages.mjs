@@ -662,13 +662,14 @@ export function legalPage(c, data, site, key) {
 export function contactPage(c, data, site) {
   const s = S[c.lang];
   const k = s.contact;
+  const mail = site.owner && site.owner.email;
   const f = (id, label, input, err) => `<div class="field"><label for="${id}">${esc(label)} <span class="req" aria-hidden="true">*</span></label>${input}<p class="field-err" id="${id}-err" hidden></p></div>`;
   return page(c, data, site, { title: k.title, desc: k.desc, page: 'contact', active: 'contact' }, `
 <section class="page-head"><div class="wrap">${crumbs(c, [[null, k.h1]])}<h1>${esc(k.h1)}</h1><p class="lead">${esc(k.lead)}</p></div></section>
 <div class="wrap contact-layout">
-  <form class="panel contact-form demo-form" data-demo-form="contact" novalidate aria-labelledby="cf-h">
+  <form class="panel contact-form demo-form" data-demo-form="contact"${mail ? ` data-mailto="${esc(mail)}" data-subject="${esc('ToolScout: ')}"` : ''} novalidate aria-labelledby="cf-h">
     <h2 id="cf-h" class="sr-only">${esc(k.h1)}</h2>
-    <p class="callout warn">${icon('info')}${esc(k.demo)}</p>
+    <p class="callout${mail ? '' : ' warn'}">${icon('info')}${esc(mail ? k.mailtoNote : k.demo)}</p>
     <p class="field-err summary" data-summary data-text="${esc(k.errSummary)}" role="alert" hidden></p>
     <div class="field-row">
       ${f('cf-name', k.name, `<input id="cf-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="cf-name-err" data-err="${esc(k.errName)}">`)}
@@ -678,9 +679,9 @@ export function contactPage(c, data, site) {
     ${f('cf-msg', k.message, `<textarea id="cf-msg" name="message" rows="6" required minlength="10" maxlength="2000" aria-describedby="cf-msg-err" data-err="${esc(k.errMessage)}"></textarea>`)}
     <div class="check"><input id="cf-consent" name="consent" type="checkbox" required aria-describedby="cf-consent-err" data-err="${esc(k.errConsent)}"><label for="cf-consent">${esc(k.consent)} <a href="${c.u('privacy.html')}">${esc(k.privacy)}</a></label></div>
     <p class="field-err" id="cf-consent-err" hidden></p>
-    <p class="hint">${esc(k.notice)}</p>
-    <button type="submit" class="btn btn-primary" disabled data-enable-js>${icon('send')}${esc(k.send)}</button>
-    <p class="form-status" role="status" data-status data-not-connected="${esc(k.notSent)}" hidden></p>
+    <p class="hint">${esc(mail ? k.mailtoNotice : k.notice)}</p>
+    <button type="submit" class="btn btn-primary" disabled data-enable-js>${icon('send')}${esc(mail ? k.mailtoSend : k.send)}</button>
+    <p class="form-status" role="status" data-status data-not-connected="${esc(k.notSent)}" data-done="${esc(k.mailtoDone)}" hidden></p>
   </form>
   <aside class="contact-aside">
     <div class="panel"><h2>${esc(k.channels)}</h2>${(site.owner && site.owner.email) ? `<p>${esc(k.emailUs)} <a href="mailto:${esc(site.owner.email)}" dir="ltr">${esc(site.owner.email)}</a></p>` : `<p class="todo">${esc(k.channelsNote)}</p>`}<p class="fine">${esc((site.owner && site.owner.email) ? k.a11yLive : k.a11y)}</p></div>

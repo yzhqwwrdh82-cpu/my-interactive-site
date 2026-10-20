@@ -180,6 +180,32 @@ for (const c of money.channels) {
   if (!isDate(c.checkedAt)) errors.push(`${at}: checkedAt required`);
 }
 
+
+// Courses, reading lists and learning paths
+for (const it of products.items.filter((x) => x.type === 'course')) {
+  const at = `course "${it.id}"`;
+  if (!it.provider || !isHttps(it.officialUrl)) errors.push(`${at}: provider and https officialUrl required`);
+  if (!it.cost || !['free', 'paid', 'unverified'].includes(it.cost.model) || typeof it.cost.verified !== 'boolean') errors.push(`${at}: cost {model, verified} required`);
+  if (it.cost && it.cost.model !== 'unverified' && !it.cost.verified) errors.push(`${at}: cost model must be "unverified" unless verified`);
+  if (!bi(it.description)) errors.push(`${at}: description needs he + en`);
+}
+const productIds = new Set(products.items.map((x) => x.id));
+for (const col of products.collections || []) {
+  if (!bi(col.title) || !bi(col.description)) errors.push(`list "${col.id}": title and description need he + en`);
+  for (const [id, he, en] of col.items) { const b = products.items.find((x) => x.id === id); if (!b || b.type !== 'book') errors.push(`list "${col.id}": "${id}" is not a book in products.json`); if (!he || !en) errors.push(`list "${col.id}": "${id}" needs he + en note`); }
+}
+const pathsData = JSON.parse(readFileSync(join(root, 'data/paths.json'), 'utf8'));
+const { guides: guideList } = await import('./lib/content.mjs');
+const guideIds = new Set(guideList.map((g) => g.slug));
+for (const p of pathsData.paths) {
+  if (!bi(p.title) || !bi(p.audience)) errors.push(`path "${p.id}": title and audience need he + en`);
+  for (const [type, id, he, en] of p.steps) {
+    const ok = type === 'book' || type === 'course' ? (products.items.find((x) => x.id === id) || {}).type === type : type === 'tool' ? toolIds.has(id) : type === 'guide' ? guideIds.has(id) : false;
+    if (!ok) errors.push(`path "${p.id}": step ${type}:${id} does not exist`);
+    if (!he || !en) errors.push(`path "${p.id}": step ${id} needs he + en note`);
+  }
+}
+
 for (const w of warn) console.warn('warn:', w);
 if (errors.length) { for (const e of errors) console.error('error:', e); console.error(`\n${errors.length} error(s)`); process.exit(1); }
 console.log(`data ok: ${data.tools.length} tools, ${data.categories.length} categories, ${products.items.length} products, ${programs.programs.length} affiliate programs, ${money.channels.length} revenue channels`);
