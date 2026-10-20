@@ -257,7 +257,7 @@ export function searchPage(c, data, site) {
   const types = ['book', 'course', 'path', 'list', 'guide', 'tool'];
   return page(c, data, site, { title: `${k.searchTitle} | ToolScout`, desc: k.searchLead, page: 'search', active: 'search', noindex: true }, `
 <section class="page-head"><div class="wrap">${crumbs(c, [[null, k.search]])}<h1>${esc(k.searchTitle)}</h1><p class="lead">${esc(k.searchLead)}</p>
-  <form class="search search-hero" role="search" action="${c.u('search.html')}" method="get" data-site-search>
+  <form class="search search-hero" role="search" aria-label="${esc(k.searchTitle)}" action="${c.u('search.html')}" method="get" data-site-search>
     <label class="sr-only" for="sq">${esc(k.searchLabel)}</label>${icon('search', 'search-ic')}
     <input id="sq" name="q" type="search" autocomplete="off" placeholder="${esc(k.searchPh)}">
     <button type="submit" class="btn btn-primary">${esc(k.search)}</button>

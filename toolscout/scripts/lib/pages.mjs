@@ -177,7 +177,7 @@ export function homePage(c, data, site, products = null, paths = null) {
   <div class="wrap hero5-inner">
     <h1 id="hero-h">${esc(V.h1)}</h1>
     <p class="hero5-lead">${esc(V.lead)}</p>
-    <form class="search search-hero hero5-search" role="search" action="${c.u('search.html')}" method="get">
+    <form class="search search-hero hero5-search" role="search" aria-label="${esc(L === 'he' ? 'חיפוש ראשי' : 'Main search')}" action="${c.u('search.html')}" method="get">
       <label class="sr-only" for="hero-q">${esc(k.searchLabel)}</label>
       ${icon('search', 'search-ic')}
       <input id="hero-q" name="q" type="search" autocomplete="off" placeholder="${esc(V.searchPh)}">
@@ -355,7 +355,7 @@ export function catalogPage(c, data, site) {
     ${crumbs(c, [[null, k.h1]])}
     <h1>${esc(k.h1)}</h1>
     <p class="lead">${esc(k.lead)}</p>
-    <form class="search js-only" role="search" data-catalog-search>
+    <form class="search js-only" role="search" aria-label="${esc(s.catalog.searchLabel)}" data-catalog-search>
       <label class="sr-only" for="q">${esc(k.searchLabel)}</label>
       ${icon('search', 'search-ic')}
       <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="${esc(k.searchPh)}" aria-describedby="result-count">

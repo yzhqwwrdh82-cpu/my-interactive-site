@@ -117,7 +117,7 @@ export function header(c, active = '') {
       ${brandMark()}${wordmark()}
     </a>
     <nav class="nav-primary" aria-label="${esc(s.nav.primary)}">${nav}</nav>
-    <form class="header-search" role="search" action="${c.u('search.html')}" method="get"><label class="sr-only" for="hs-q">${esc(s.nav.search)}</label>${icon('search')}<input id="hs-q" name="q" type="search" autocomplete="off" placeholder="${esc(c.lang === 'he' ? 'חיפוש ספרים, קורסים, כלים ועוד…' : 'Search books, courses, tools…')}"></form>
+    <form class="header-search" role="search" aria-label="${esc(c.lang === 'he' ? 'חיפוש מהיר' : 'Quick search')}" action="${c.u('search.html')}" method="get"><label class="sr-only" for="hs-q">${esc(s.nav.search)}</label>${icon('search')}<input id="hs-q" name="q" type="search" autocomplete="off" placeholder="${esc(c.lang === 'he' ? 'חיפוש ספרים, קורסים, כלים ועוד…' : 'Search books, courses, tools…')}"></form>
     <div class="header-actions">
       <a class="icon-btn search-link" href="${c.u('search.html')}" aria-label="${esc(s.nav.search)}" title="${esc(s.nav.search)}">${icon('search')}</a>
       <a class="icon-btn fav-link" href="${c.u('account.html')}" aria-label="${esc(s.nav.favorites)}" title="${esc(s.nav.favorites)}">${icon('heart')}<span class="fav-count js-only" data-fav-count hidden>0</span></a>

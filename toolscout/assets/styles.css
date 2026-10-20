@@ -1288,7 +1288,7 @@ input[type="text"], input[type="email"], textarea, select, .search input { backg
   --shadow-3: 0 24px 50px -22px rgba(19, 33, 63, .32);
   color-scheme: light;
 }
-:root[data-theme="dark"] { --gold: #E8B44E; --gold-soft: #3A2C0E; --navy: #0B1427; --btn: #2F6BFF; --btn-hover: #3D7BFF; }
+:root[data-theme="dark"] { --gold: #E8B44E; --gold-soft: #3A2C0E; --navy: #0B1427; --btn: #1D4ED8; --btn-hover: #2563EB; }
 :root:not([data-theme="dark"]) body::before { background: none; }
 body { font-feature-settings: "kern"; }
 h1, h2, h3 { color: var(--ink); }
@@ -1450,3 +1450,7 @@ a.cat-card:hover .card-art { transform: scale(1.05); }
 .shelf-home { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 @media (max-width: 1080px) { .shelf-home { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 720px) { .shelf-home { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.hero5, .hero5-inner { grid-template-columns: minmax(0, 1fr); } .hero5-inner > * { max-width: 100%; }
+@media (max-width: 1080px) { .cm5, .col5, .two5 { grid-template-columns: minmax(0, 1fr); } }
+.cm5-feature .btn, .il5 .btn { white-space: normal; text-align: center; }
+.chip[aria-pressed="true"] .n { opacity: 1; color: inherit; }
