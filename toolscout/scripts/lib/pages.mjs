@@ -4,6 +4,8 @@ import { S } from './strings.mjs';
 import { icon, logoTile, page, crumbs } from './layout.mjs';
 import { guides, comparePresets, legal } from './content.mjs';
 import { K, shelfCard, courseCard, pathCard, listCard } from './knowledge.mjs';
+import { ART, heroArt } from './art.mjs';
+import { HOME5 } from './home-strings.mjs';
 
 const byId = (data) => Object.fromEntries(data.tools.map((x) => [x.id, x]));
 const cat = (data, id) => data.categories.find((c) => c.id === id);
@@ -148,82 +150,115 @@ export function homePage(c, data, site, products = null, paths = null) {
   const guideCards = guides.map((g) => guideCard(g, c, data)).join('');
 
   const jsonld = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'ToolScout', url: `${site.siteUrl}/${L === 'en' ? 'en/' : ''}`, inLanguage: L,
-    potentialAction: { '@type': 'SearchAction', target: `${site.siteUrl}/${L === 'en' ? 'en/' : ''}catalog.html?q={search_term_string}`, 'query-input': 'required name=search_term_string' } };
+    potentialAction: { '@type': 'SearchAction', target: `${site.siteUrl}/${L === 'en' ? 'en/' : ''}search.html?q={search_term_string}`, 'query-input': 'required name=search_term_string' } };
+
+  const V = HOME5[L];
+  const catCard = ([key, href, art, title, sub, n, soon]) => `<li><${soon ? 'div' : 'a'} class="cat-card${soon ? ' is-soon' : ''}"${soon ? '' : ` href="${c.u(href)}"`}>
+      <span class="cat-art">${ART[art]}</span>
+      <span class="cat-card-body"><span class="cat-card-title">${esc(title)}</span><span class="cat-card-sub">${esc(sub)}</span>
+      <span class="cat-card-foot">${soon ? `<span class="tag tag-soon">${esc(V.soon)}</span>` : `<span class="cat-card-n">${esc(n)}</span>${icon('arrow', 'flip')}`}</span></span></${soon ? 'div' : 'a'}></li>`;
+  const cats = [
+    ['books', 'books.html', 'books', V.cBooks, V.cBooksSub, V.nBooks(books.length)],
+    ['courses', 'courses.html', 'courses', V.cCourses, V.cCoursesSub, V.nCourses(courses.length)],
+    ['paths', 'paths/index.html', 'content', V.cPaths, V.cPathsSub, V.nPaths(paths.paths.length)],
+    ['tools', 'catalog.html', 'ai', V.cTools, V.cToolsSub, V.nTools(tools.length)],
+    ['guides', 'guides/index.html', 'qa', V.cGuides, V.cGuidesSub, V.nGuides(guides.length)],
+    ['compare', 'compare.html', 'groups', V.cCompare, V.cCompareSub, V.nCompare(comparePresets.length)],
+    ['products', '', 'products', V.cProducts, V.cProductsSub, '', true],
+    ['digital', '', 'events', V.cDigital, V.cDigitalSub, '', true]
+  ].map(catCard).join('');
+  const comm = [['events', V.cmEvents, V.cmEventsSub], ['content', V.cmContent, V.cmContentSub], ['groups', V.cmGroups, V.cmGroupsSub], ['qa', V.cmQa, V.cmQaSub]]
+    .map(([art, t, d]) => `<li><div class="cm-tile"><span class="cat-art">${ART[art]}</span><span class="cm-tile-body"><span class="cm-tile-title">${esc(t)}</span><span class="cm-tile-sub">${esc(d)}</span><span class="tag tag-soon">${esc(V.soon)}</span></span></div></li>`).join('');
+  const chip = (href, ic, label) => `<li><a class="hero-chip" href="${c.u(href)}">${ic}<span>${esc(label)}</span></a></li>`;
 
   return page(c, data, site, { title: s.home.title, desc: s.home.desc, page: 'home', jsonld }, `
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="kicker" lang="en" dir="ltr">${esc(s.home.kicker)}</p>
-      <h1><span class="h1-brand" lang="en" dir="ltr">Tool<span>Scout</span></span><span class="h1-sub">${esc(s.home.slogan)}</span></h1>
-      <p class="lead">${esc(s.home.lead)}</p>
-      <form class="search search-hero" role="search" action="${c.u('search.html')}" method="get">
-        <label class="sr-only" for="hero-q">${esc(K[L].searchLabel)}</label>
-        ${icon('search', 'search-ic')}
-        <input id="hero-q" name="q" type="search" autocomplete="off" placeholder="${esc(s.home.searchPh)}">
-        <button type="submit" class="btn btn-primary">${esc(s.home.searchBtn)}</button>
-      </form>
-      <div class="intents"><span class="intents-label">${esc(s.home.intentsLabel)}:</span>
-        <ul>${s.intents.map(([u, label]) => `<li><a class="chip" href="${c.u('catalog.html')}?use=${u}">${esc(label)}</a></li>`).join('')}</ul>
-      </div>
-      <p class="hero-stats">${esc(s.home.stats(tools.length, data.categories.length, fmtDate(site.updated, L)))}</p>
-    </div>
-    <div class="hero-3d" aria-hidden="true">
-      <div class="scene">
-        <div class="halo"></div>
-        <div class="orbit"></div>
-        <div class="spin">
-          <div class="cube c-outer"><i class="f f1"></i><i class="f f2"></i><i class="f f3"></i><i class="f f4"></i><i class="f f5"></i><i class="f f6"></i></div>
-          <div class="cube c-inner"><i class="f f1"></i><i class="f f2"></i><i class="f f3"></i><i class="f f4"></i><i class="f f5"></i><i class="f f6"></i></div>
-        </div>
-        <span class="shard s1"></span><span class="shard s2"></span><span class="shard s3"></span><span class="shard s4"></span>
-        <div class="pedestal"></div>
-      </div>
-    </div>
+<section class="hero5" aria-labelledby="hero-h">
+  <div class="hero5-art">${heroArt}</div>
+  <div class="wrap hero5-inner">
+    <h1 id="hero-h">${esc(V.h1)}</h1>
+    <p class="hero5-lead">${esc(V.lead)}</p>
+    <form class="search search-hero hero5-search" role="search" action="${c.u('search.html')}" method="get">
+      <label class="sr-only" for="hero-q">${esc(k.searchLabel)}</label>
+      ${icon('search', 'search-ic')}
+      <input id="hero-q" name="q" type="search" autocomplete="off" placeholder="${esc(V.searchPh)}">
+      <button type="submit" class="btn btn-primary">${esc(s.home.searchBtn)}</button>
+    </form>
+    <ul class="hero-chips">
+      ${chip('books.html', icon('book'), V.cBooks)}${chip('courses.html', icon('check'), V.cCourses)}${chip('paths/index.html', icon('guide'), V.cPaths)}${chip('catalog.html', icon('bolt'), V.cTools)}${chip('guides/index.html', icon('pen'), V.cGuides)}
+      <li><a class="hero-chip" href="#community">${icon('user')}<span>${esc(V.community)}</span></a></li>
+    </ul>
   </div>
 </section>
 
-<section class="features" aria-label="${esc(s.home.boardLabel)}">
-  <ul class="wrap feat-grid" data-reveal-grid>${s.home.features.map(([href, ic, title, sub], i) => `<li><a class="feat fx" href="${c.u(href)}"><span class="feat-ic">${icon(ic)}</span><span class="feat-t">${esc(title)}</span><span class="feat-s">${esc(sub([books.length, paths ? paths.paths.length : 0, courses.length, tools.length][i]))}</span></a></li>`).join('')}</ul>
+<section class="section band5" aria-labelledby="cats5-h">
+  <div class="wrap">
+    <div class="section-head5"><div><h2 id="cats5-h">${esc(V.catsTitle)}</h2><p>${esc(V.catsLead)}</p></div><a class="text-link" href="${c.u('search.html')}">${esc(V.searchAll)}${icon('arrow', 'flip')}</a></div>
+    <ul class="cat5-grid">${cats}</ul>
+  </div>
 </section>
 
-<section class="section" aria-labelledby="lists-h">
-  <div class="wrap">
-    <div class="section-head" data-reveal><h2 id="lists-h">${esc(k.listsTitle)}</h2><p>${esc(k.listsLead)}</p>
-      <a class="text-link" href="${c.u('books.html')}">${esc(k.books)}${icon('arrow', 'flip')}</a></div>
-    <ul class="list-grid" data-reveal-grid>${products.collections.map((col) => listCard(col, kctx)).join('')}</ul>
+<section class="section" id="community" aria-labelledby="cm5-h">
+  <div class="wrap cm5">
+    <div class="cm5-feature">
+      <span class="cm5-ic">${icon('user')}</span>
+      <h2 id="cm5-h">${esc(V.cmTitle)}</h2>
+      <p>${esc(V.cmLead)}</p>
+      <a class="btn btn-light" href="${c.u('contact.html')}">${esc(V.cmCta)}${icon('arrow', 'flip')}</a>
+      <p class="cm5-note">${esc(V.cmNote)}</p>
+    </div>
+    <ul class="cm5-grid">${comm}</ul>
+  </div>
+</section>
+
+<section class="section band5" aria-labelledby="col5-h">
+  <div class="wrap col5">
+    <div class="col5-lists">
+      <div class="section-head5"><div><h2 id="col5-h">${esc(V.colTitle)}</h2><p>${esc(k.listsLead)}</p></div><a class="text-link" href="${c.u('books.html')}">${esc(V.showAll)}${icon('arrow', 'flip')}</a></div>
+      <ul class="list-grid">${products.collections.map((col) => listCard(col, kctx)).join('')}</ul>
+    </div>
+    <aside class="il5" aria-labelledby="il5-h">
+      <h2 id="il5-h">${esc(V.ilTitle)}</h2>
+      <p>${esc(V.ilLead)}</p>
+      <ul class="il5-values">${V.values.map(([ic, t]) => `<li><span class="il5-ic">${icon(ic)}</span><span>${esc(t)}</span></li>`).join('')}</ul>
+      <a class="btn btn-primary" href="${c.u('about.html')}">${esc(V.ilCta)}${icon('arrow', 'flip')}</a>
+    </aside>
   </div>
 </section>
 
 <section class="section" aria-labelledby="shelf-h">
   <div class="wrap">
-    <div class="section-head" data-reveal><h2 id="shelf-h">${esc(k.books)}</h2><p>${esc(L === 'he' ? 'ספרים על AI, תכנות, עסקים, פרודוקטיביות ועיצוב.' : 'Books on AI, programming, business, productivity and design.')}</p>
-      <a class="text-link" href="${c.u('books.html')}">${esc(L === 'he' ? 'לכל הספרים' : 'All books')}${icon('arrow', 'flip')}</a></div>
-    <ul class="shelf" data-reveal-grid>${books.slice(0, 10).map((b) => shelfCard(b, c, products)).join('')}</ul>
+    <div class="section-head5"><div><h2 id="shelf-h">${esc(V.shelfTitle)}</h2><p>${esc(V.shelfLead)}</p></div><a class="text-link" href="${c.u('books.html')}">${esc(V.allBooks)}${icon('arrow', 'flip')}</a></div>
+    <ul class="shelf shelf-home">${books.slice(0, 12).map((b) => shelfCard(b, c, products)).join('')}</ul>
   </div>
 </section>
 
-<section class="section" aria-labelledby="paths-h">
-  <div class="wrap">
-    <div class="section-head" data-reveal><h2 id="paths-h">${esc(k.pathsTitle)}</h2><p>${esc(k.pathsLead)}</p>
-      <a class="text-link" href="${c.u('paths/index.html')}">${esc(L === 'he' ? 'לכל המסלולים' : 'All paths')}${icon('arrow', 'flip')}</a></div>
-    <ul class="path-grid" data-reveal-grid>${paths.paths.map((p) => pathCard(p, kctx)).join('')}</ul>
+<section class="section band5" aria-labelledby="paths-h">
+  <div class="wrap two5">
+    <div>
+      <div class="section-head5"><div><h2 id="paths-h">${esc(k.pathsTitle)}</h2><p>${esc(k.pathsLead)}</p></div><a class="text-link" href="${c.u('paths/index.html')}">${esc(V.showAll)}${icon('arrow', 'flip')}</a></div>
+      <ul class="path-grid compact">${paths.paths.map((p) => pathCard(p, kctx)).join('')}</ul>
+    </div>
+    <div>
+      <div class="section-head5"><div><h2 id="courses-h">${esc(k.coursesTitle)}</h2><p>${esc(V.coursesLead)}</p></div><a class="text-link" href="${c.u('courses.html')}">${esc(V.showAll)}${icon('arrow', 'flip')}</a></div>
+      <ul class="course-grid compact">${courses.map((x) => courseCard(x, c)).join('')}</ul>
+    </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="courses-h">
+<section class="section" aria-labelledby="picks-h">
   <div class="wrap">
-    <div class="section-head" data-reveal><h2 id="courses-h">${esc(k.coursesTitle)}</h2><p>${esc(k.coursesLead)}</p>
-      <a class="text-link" href="${c.u('courses.html')}">${esc(L === 'he' ? 'לכל הקורסים' : 'All courses')}${icon('arrow', 'flip')}</a></div>
-    <ul class="course-grid" data-reveal-grid>${courses.map((x) => courseCard(x, c)).join('')}</ul>
+    <div class="section-head5"><div><h2 id="picks-h">${esc(V.toolsTitle)}</h2><p>${esc(s.home.picksLead)}</p></div><a class="text-link" href="${c.u('catalog.html')}">${esc(s.home.allTools)}${icon('arrow', 'flip')}</a></div>
+    <ul class="grid">${picks.slice(0, 6).map((x) => card(x, data, c)).join('')}</ul>
+    <h3 class="sub-h">${esc(s.home.catsTitle)}</h3>
+    <ul class="cat-grid">${catTiles}</ul>
   </div>
 </section>
 
-<section class="section" aria-labelledby="cats-h">
-  <div class="wrap">
-    <div class="section-head" data-reveal><h2 id="cats-h">${esc(s.home.catsTitle)}</h2><p>${esc(s.home.catsLead)}</p></div>
-    <ul class="cat-grid" data-reveal-grid>${catTiles}</ul>
+<section class="section band" aria-labelledby="disc-h">
+  <div class="wrap band-grid">
+    <div><h2 id="disc-h">${esc(s.home.discoverTitle)}</h2><p>${esc(s.home.discoverLead)}</p>
+      <a class="btn btn-light" href="${c.u('compare.html')}">${icon('compare')}${esc(s.home.discoverCta)}</a></div>
+    <ul class="presets">${presets}</ul>
   </div>
 </section>
 
@@ -246,60 +281,20 @@ export function homePage(c, data, site, products = null, paths = null) {
   </div>
 </section>
 
-<section class="section" aria-labelledby="picks-h">
-  <div class="wrap">
-    <div class="section-head" data-reveal><h2 id="picks-h">${esc(s.home.picksTitle)}</h2><p>${esc(s.home.picksLead)}</p>
-      <a class="text-link" href="${c.u('catalog.html')}">${esc(s.home.allTools)}${icon('arrow', 'flip')}</a></div>
-    <ul class="grid" data-reveal-grid>${picks.map((x) => card(x, data, c)).join('')}</ul>
-  </div>
-</section>
-
-<section class="section wall-wrap" aria-labelledby="wall-h">
-  <div class="wrap">
-    <div class="section-head" data-reveal><h2 id="wall-h">${esc(s.home.wallTitle)}</h2><p>${esc(s.home.wallLead)}</p>
-      <a class="text-link" href="${c.u('catalog.html')}">${esc(s.home.allTools)}${icon('arrow', 'flip')}</a></div>
-    <div class="board" role="group" aria-label="${esc(s.home.boardLabel)}">
-      <div class="board-grid">${tiles}<a class="board-tile board-more" href="${c.u('catalog.html')}" aria-label="${esc(s.home.allTools)}">${icon('arrow', 'flip')}</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="section band" aria-labelledby="disc-h">
-  <div class="wrap band-grid">
-    <div><h2 id="disc-h">${esc(s.home.discoverTitle)}</h2><p>${esc(s.home.discoverLead)}</p>
-      <a class="btn btn-light" href="${c.u('compare.html')}">${icon('compare')}${esc(s.home.discoverCta)}</a></div>
-    <ul class="presets" data-reveal-grid>${presets}</ul>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="new-h">
-  <div class="wrap two-col">
-    <div>
-      <div class="section-head" data-reveal><h2 id="new-h">${esc(s.home.newTitle)}</h2><p>${esc(s.home.newLead)}</p></div>
-      <ul class="rows">${newest.map((x) => `<li><a class="row" href="${c.u('tools/' + x.id + '.html')}">${logoTile(x, c, 'sm')}
-        <span class="row-main"><span class="row-name">${esc(x.name)}</span><span class="row-desc">${esc(x.description[L])}</span></span>
-        <span class="row-side"><span class="price" data-price="${x.pricing}">${esc(priceName(data, x.pricing, L))}</span><time datetime="${x.addedAt}">${esc(fmtDate(x.addedAt, L))}</time></span></a></li>`).join('')}</ul>
-    </div>
-    <aside class="roadmap" aria-labelledby="road-h">
-      <span class="tag tag-soon">${esc(s.home.roadmapTag)}</span>
-      <span class="roadmap-icon">${icon('box')}</span>
-      <h2 id="road-h">${esc(s.home.roadmapTitle)}</h2>
-      <p>${esc(s.home.roadmapBody)}</p>
-      <a class="text-link" href="${c.u('books.html')}">${esc(s.home.roadmapLink)}${icon('arrow', 'flip')}</a>
-    </aside>
-  </div>
-</section>
-
 <section class="section" aria-labelledby="guides-h">
   <div class="wrap">
-    <div class="section-head" data-reveal><h2 id="guides-h">${esc(s.home.guidesTitle)}</h2><p>${esc(s.home.guidesLead)}</p>
-      <a class="text-link" href="${c.u('guides/index.html')}">${esc(s.home.allGuides)}${icon('arrow', 'flip')}</a></div>
-    <ul class="guide-grid" data-reveal-grid>${guideCards}</ul>
+    <div class="section-head5"><div><h2 id="guides-h">${esc(s.home.guidesTitle)}</h2><p>${esc(s.home.guidesLead)}</p></div><a class="text-link" href="${c.u('guides/index.html')}">${esc(s.home.allGuides)}${icon('arrow', 'flip')}</a></div>
+    <ul class="guide-grid">${guideCards}</ul>
   </div>
 </section>
 
 <section class="section" aria-labelledby="nl-h">
   <div class="wrap">${newsletterBlock(c, 'nl-h')}</div>
+</section>
+
+<section class="quote5" aria-label="${esc(V.quoteLabel)}">
+  <div class="quote5-art">${heroArt.replace(/id="h(s|sun|fade)"/g, 'id="q$1"').replace(/url\(#h(s|sun|fade)\)/g, 'url(#q$1)')}</div>
+  <p class="wrap"><span>${esc(V.quote)}</span></p>
 </section>
 `);
 }

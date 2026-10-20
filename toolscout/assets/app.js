@@ -46,7 +46,7 @@
 
   // ---------- Theme ----------
   var themeBtn = $('[data-theme-toggle]');
-  function themeNow() { return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; }
+  function themeNow() { return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
   function labelTheme() {
     if (!themeBtn) return;
     var t = themeNow();
@@ -57,7 +57,7 @@
   if (themeBtn) {
     labelTheme();
     themeBtn.addEventListener('click', function () {
-      var next = themeNow() === 'dark' ? 'light' : 'dark';
+      var next = themeNow() === 'light' ? 'dark' : 'light';
       root.setAttribute('data-theme', next); try { localStorage.setItem('ts-theme', next); } catch (e) {}
       labelTheme();
     });

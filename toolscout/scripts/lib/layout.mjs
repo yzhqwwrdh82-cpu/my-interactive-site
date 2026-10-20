@@ -35,6 +35,7 @@ const P = {
   grid: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
   book: '<path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v13"/>',
   guide: '<path d="M4 5.5l5-1.5 6 2 5-1.5v14l-5 1.5-6-2-5 1.5z"/><path d="M9 4v14M15 6v14"/>',
+  globe: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5S9.5 6.1 12 3.5z"/>',
   bolt: '<path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/>',
   lock: '<rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>'
 };
@@ -70,7 +71,7 @@ export function head(c, site, { title, desc, noindex = false, jsonld = null, ogI
 <meta name="description" content="${esc(desc)}">
 ${noindex ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#050A16">
+<meta name="theme-color" content="#FBF8F3">
 <link rel="canonical" href="${canon}">
 <link rel="alternate" hreflang="${c.lang}" href="${canon}">
 <link rel="alternate" hreflang="${c.o}" href="${alt}">
@@ -116,6 +117,7 @@ export function header(c, active = '') {
       ${brandMark()}${wordmark()}
     </a>
     <nav class="nav-primary" aria-label="${esc(s.nav.primary)}">${nav}</nav>
+    <form class="header-search" role="search" action="${c.u('search.html')}" method="get"><label class="sr-only" for="hs-q">${esc(s.nav.search)}</label>${icon('search')}<input id="hs-q" name="q" type="search" autocomplete="off" placeholder="${esc(c.lang === 'he' ? 'חיפוש ספרים, קורסים, כלים ועוד…' : 'Search books, courses, tools…')}"></form>
     <div class="header-actions">
       <a class="icon-btn search-link" href="${c.u('search.html')}" aria-label="${esc(s.nav.search)}" title="${esc(s.nav.search)}">${icon('search')}</a>
       <a class="icon-btn fav-link" href="${c.u('account.html')}" aria-label="${esc(s.nav.favorites)}" title="${esc(s.nav.favorites)}">${icon('heart')}<span class="fav-count js-only" data-fav-count hidden>0</span></a>
