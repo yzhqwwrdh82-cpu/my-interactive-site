@@ -6,7 +6,7 @@ import { K, listCard, coverHtml, TOPICS } from './knowledge.mjs';
 
 const T = {
   he: {
-    title: 'ספרים מומלצים: היסטוריה, פסיכולוגיה, עסקים, טכנולוגיה ו־AI | ToolScout', desc: 'ספרים ורשימות קריאה לפי נושא ומטרה: היסטוריה, פסיכולוגיה, פילוסופיה, עסקים, טכנולוגיה, AI ופרודוקטיביות, עם פרטי הוצאה ו־ISBN שנבדקו מול המקור.',
+    title: 'ספרים מומלצים: היסטוריה, פסיכולוגיה, עסקים, טכנולוגיה ו־AI | תקומה', desc: 'ספרים ורשימות קריאה לפי נושא ומטרה: היסטוריה, פסיכולוגיה, פילוסופיה, עסקים, טכנולוגיה, AI ופרודוקטיביות, עם פרטי הוצאה ו־ISBN שנבדקו מול המקור.',
     h1: 'ספרים', lead: 'ספרים מודפסים שאפשר לקנות בחנות או לשאול בספרייה: היסטוריה, פסיכולוגיה, פילוסופיה, עסקים, טכנולוגיה, AI ופרודוקטיביות. מופיעים כאן רק ספרים שאת פרטיהם בדקנו מול עמוד ההוצאה לאור.',
     status: 'מתעדכן', levelNote: 'רמת הידע והתיאור הם הערכה עריכתית. כותרת, מחברים, הוצאה, שנה, ISBN ופורמטים נבדקו מול עמוד ההוצאה.', empty: 'עדיין אין ספרים בקטלוג. כשנוסיף ספרים, הם יופיעו כאן עם הפרטים שאומתו.',
     sectionsTitle: 'מה יש כאן ומה בהכנה', soon: 'עוד לא זמין', live: 'זמין',
@@ -15,7 +15,7 @@ const T = {
       ['ebook', 'ספרים דיגיטליים', 'ספרים אלקטרוניים ומדריכים מקצועיים, רק כשזכויות ההפצה מאפשרות זאת.'],
       ['guide', 'מדריכים מעשיים', 'מדריכים לשימוש בכלי AI, לאוטומציה, לכתיבת פרומפטים ולפיתוח תוכנה.'],
       ['list', 'רשימות קריאה', 'המלצות לפי רמה, תחום, מטרה ותקציב, עם יתרונות וחסרונות כשאפשר לבסס אותם.'],
-      ['star', 'ספרים של ToolScout', 'בעתיד: ספרים דיגיטליים מקוריים, אחרי הכנת התוכן והסדרת הזכויות.']
+      ['star', 'ספרים של תקומה', 'בעתיד: ספרים דיגיטליים מקוריים, אחרי הכנת התוכן והסדרת הזכויות.']
     ],
     filtersTitle: 'סינון ספרים', filtersNote: 'המסננים יופעלו כשיתווספו ספרים. כל מסנן יוצג רק כשהמידע לגביו אומת.',
     topic: 'נושא', language: 'שפה', level: 'רמת ידע', format: 'פורמט', price: 'מחיר',
@@ -32,7 +32,7 @@ const T = {
     by: 'מאת', checked: 'נבדק', publisher: 'עמוד ההוצאה', priceNone: 'מחיר: בעמוד ההוצאה', related: 'כלים קשורים בקטלוג', toCatalog: 'לקטלוג הכלים'
   },
   en: {
-    title: 'Recommended books: history, psychology, business, technology and AI | ToolScout', desc: 'Books and reading lists by topic and goal: history, psychology, philosophy, business, technology, AI and productivity, with publisher and ISBN checked against the source.',
+    title: 'Recommended books: history, psychology, business, technology and AI | TKUMA', desc: 'Books and reading lists by topic and goal: history, psychology, philosophy, business, technology, AI and productivity, with publisher and ISBN checked against the source.',
     h1: 'Books', lead: "Print books you can buy in a store or borrow from a library: history, psychology, philosophy, business, technology, AI and productivity. Only books whose details we checked against the publisher's page are listed.",
     status: 'Growing', levelNote: 'Level and description are editorial. Title, authors, publisher, year, ISBN and formats were checked against the publisher page.', empty: "There are no books in the catalog yet. When we add them, they'll appear here with their verified details.",
     sectionsTitle: "What's here and what's coming", soon: 'Not available yet', live: 'Available',
@@ -41,7 +41,7 @@ const T = {
       ['ebook', 'Digital books', 'E-books and professional guides, only where distribution rights allow.'],
       ['guide', 'Practical guides', 'Guides to using AI tools, automation, writing prompts and software development.'],
       ['list', 'Reading lists', 'Recommendations by level, field, goal and budget, with pros and cons where they can be backed up.'],
-      ['star', 'ToolScout originals', 'Later: original digital books, once the content is ready and the rights are settled.']
+      ['star', 'TKUMA originals', 'Later: original digital books, once the content is ready and the rights are settled.']
     ],
     filtersTitle: 'Filter books', filtersNote: 'Filters turn on once books are added. Each filter appears only when its information is verified.',
     topic: 'Topic', language: 'Language', level: 'Level', format: 'Format', price: 'Price',

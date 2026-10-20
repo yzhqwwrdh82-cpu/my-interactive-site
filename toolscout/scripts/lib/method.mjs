@@ -4,10 +4,10 @@ import { icon, page, crumbs } from './layout.mjs';
 
 const T = {
   he: {
-    title: 'איך אנחנו בודקים כלים | ToolScout',
-    desc: 'השיטה של ToolScout: מה בדיוק אנחנו מאמתים מול האתרים הרשמיים, מה מסומן כלא מאומת, ומה אנחנו לא מפרסמים.',
+    title: 'איך אנחנו בודקים כלים | תקומה',
+    desc: 'השיטה של תקומה: מה בדיוק אנחנו מאמתים מול האתרים הרשמיים, מה מסומן כלא מאומת, ומה אנחנו לא מפרסמים.',
     h1: 'איך אנחנו בודקים כלים',
-    lead: 'בכל עמוד ב-ToolScout אפשר לדעת מה נבדק, מתי ומול איזה מקור, ומה עדיין לא אומת.',
+    lead: 'בכל עמוד בתקומה אפשר לדעת מה נבדק, מתי ומול איזה מקור, ומה עדיין לא אומת.',
     stats: (t, v, u, b) => `${t} כלים · ${v} עם תמחור מאומת · ${u} עם תמחור שלא אומת · ${b} ספרים`,
     steps: [
       ['search', 'מקור רשמי בלבד', 'את מודל התמחור (חינמי, חינמי ובתשלום, או בתשלום בלבד) ואת שמות התוכניות אנחנו בודקים בעמוד התמחור הרשמי של כל כלי. לא מבלוגים, לא מסיכומים ולא ממודלי AI.'],
@@ -23,7 +23,7 @@ const T = {
       'נתוני פופולריות. "בחירת העורכים" היא בחירה עריכתית, ומסומנת ככזו.'
     ],
     edTitle: 'עובדות לעומת סיכום עריכתי',
-    ed: 'התיאור, קהל היעד והשימושים של כל כלי הם סיכום של צוות ToolScout, ובעמוד הכלי הם מסומנים בבירור כ"סיכום עריכתי". כך אפשר להבחין בין מה שבדקנו לבין מה שאנחנו מסכמים.',
+    ed: 'התיאור, קהל היעד והשימושים של כל כלי הם סיכום של צוות תקומה, ובעמוד הכלי הם מסומנים בבירור כ"סיכום עריכתי". כך אפשר להבחין בין מה שבדקנו לבין מה שאנחנו מסכמים.',
     moneyTitle: 'כסף ועצמאות',
     money: 'כרגע איננו מקבלים תשלום מאף כלי. אם בעתיד יתווספו קישורי שותפים או תוכן ממומן, הם יסומנו ליד הקישור עצמו. הם לא ישנו את העובדות המאומתות או את בחירת העורכים.',
     fixTitle: 'מצאתם טעות?',
@@ -31,10 +31,10 @@ const T = {
     disclosure: 'לעמוד הגילוי הנאות', contact: 'לעמוד יצירת הקשר', updated: 'עודכן'
   },
   en: {
-    title: 'How we verify tools | ToolScout',
-    desc: "ToolScout's method: exactly what we verify against official sites, what's marked as unverified, and what we never publish.",
+    title: 'How we verify tools | TKUMA',
+    desc: "TKUMA's method: exactly what we verify against official sites, what's marked as unverified, and what we never publish.",
     h1: 'How we verify tools',
-    lead: "On every ToolScout page you can see what was checked, when, against which source, and what hasn't been verified yet.",
+    lead: "On every TKUMA page you can see what was checked, when, against which source, and what hasn't been verified yet.",
     stats: (t, v, u, b) => `${t} tools · ${v} with verified pricing · ${u} with unverified pricing · ${b} books`,
     steps: [
       ['search', 'Official sources only', "We check each tool's pricing model (free, free + paid, or paid only) and plan names on its official pricing page. Not blogs, not round-ups, not AI models."],
@@ -50,7 +50,7 @@ const T = {
       "Popularity data. \"Editors' picks\" is an editorial selection, and is labeled as such."
     ],
     edTitle: 'Facts vs editorial summary',
-    ed: "Each tool's description, audience and uses are ToolScout's summary, and they're clearly labeled \"Editorial summary\" on the tool page. That way you can tell what we checked from what we summarize.",
+    ed: "Each tool's description, audience and uses are TKUMA's summary, and they're clearly labeled \"Editorial summary\" on the tool page. That way you can tell what we checked from what we summarize.",
     moneyTitle: 'Money and independence',
     money: "We currently receive no payment from any tool. If affiliate links or sponsored content are added later, they'll be labeled right next to the link. They won't change verified facts or editors' picks.",
     fixTitle: 'Found a mistake?',

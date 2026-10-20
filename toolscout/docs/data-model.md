@@ -1,4 +1,4 @@
-# ToolScout data model
+# TKUMA data model
 
 All content lives in three JSON files. The build (`node toolscout/scripts/build.mjs`) validates them first and refuses to build on errors.
 
@@ -66,7 +66,7 @@ The same principles apply. Fields by type:
 ```
 
 - **Physical products** add `manufacturer` and `specs: [{ label: {he,en}, value, source }]`. Never add stock levels.
-- **Digital products** add `license` (what the buyer may do) and `seller`. A ToolScout-original product stays `availability: "not-for-sale"` until a real payment provider exists.
+- **Digital products** add `license` (what the buyer may do) and `seller`. A TKUMA-original product stays `availability: "not-for-sale"` until a real payment provider exists.
 - **Courses** add `provider`, `duration` (only if published) and `certificate` (true/false/null).
 - **Reading lists** (`collections[]`): `{ id, title {he,en}, level, goal, items: [productId…], editorialNote {he,en} }`.
 

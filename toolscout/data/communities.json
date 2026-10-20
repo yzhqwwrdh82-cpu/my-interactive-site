@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notes": "Community structure. Posts with author 'system' are written by the ToolScout team and labeled as such. No real user content exists until a backend is approved and connected.",
+  "notes": "Community structure. Posts with author 'system' are written by the TKUMA team and labeled as such. No real user content exists until a backend is approved and connected.",
   "groups": [
     {
       "id": "books-learning",
@@ -255,8 +255,8 @@
       "type": "announcement",
       "created": "2026-10-20",
       "title": {
-        "he": "ברוכים הבאים לקהילה של ToolScout",
-        "en": "Welcome to the ToolScout community"
+        "he": "ברוכים הבאים לקהילה של תקומה",
+        "en": "Welcome to the TKUMA community"
       },
       "body": {
         "he": "זה מקום רגוע לשאלות, להמלצות ולעזרה הדדית. אין כאן מרדף אחרי לייקים: תגובה שעזרה מסומנת \"מועיל\" על ידי מי ששאל. לפני שמתחילים, כדאי לקרוא את כללי הקהילה. הקהילה במצב הדגמה: מה שתכתבו נשמר רק בדפדפן שלכם, ואף אחד אחר לא רואה אותו.",

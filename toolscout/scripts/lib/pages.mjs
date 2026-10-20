@@ -149,7 +149,7 @@ export function homePage(c, data, site, products = null, paths = null) {
       <span class="preset-title">${esc(p.title[L])}</span>${icon('arrow', 'flip')}</a></li>`).join('');
   const guideCards = guides.map((g) => guideCard(g, c, data)).join('');
 
-  const jsonld = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'ToolScout', url: `${site.siteUrl}/${L === 'en' ? 'en/' : ''}`, inLanguage: L,
+  const jsonld = { '@context': 'https://schema.org', '@type': 'WebSite', name: L === 'he' ? 'תקומה' : 'TKUMA', alternateName: L === 'he' ? 'TKUMA' : 'תקומה', url: `${site.siteUrl}/${L === 'en' ? 'en/' : ''}`, inLanguage: L,
     potentialAction: { '@type': 'SearchAction', target: `${site.siteUrl}/${L === 'en' ? 'en/' : ''}search.html?q={search_term_string}`, 'query-input': 'required name=search_term_string' } };
 
   const V = HOME5[L];
@@ -178,6 +178,7 @@ export function homePage(c, data, site, products = null, paths = null) {
 <section class="hero5" aria-labelledby="hero-h">
   <div class="hero5-art">${heroArt}</div>
   <div class="wrap hero5-inner">
+    <p class="brand-tagline hero5-tagline">${esc(V.tagline)}</p>
     <h1 id="hero-h">${esc(V.h1)}</h1>
     <p class="hero5-lead">${esc(V.lead)}</p>
     <form class="search search-hero hero5-search" role="search" aria-label="${esc(L === 'he' ? 'חיפוש ראשי' : 'Main search')}" action="${c.u('search.html')}" method="get">
@@ -458,7 +459,7 @@ export function toolPage(c, data, site, tool) {
   const preset = comparePresets.find((p) => p.ids.includes(tool.id));
   const compareHref = preset ? c.u('compare/' + preset.slug + '.html') : c.u('compare.html') + '?ids=' + [tool.id, ...similar.slice(0, 2).map((x) => x.id)].join(',');
 
-  return page(c, data, site, { title: `${tool.name}: ${tool.description[L]} | ToolScout`.slice(0, 120), desc: `${tool.description[L]} ${s.card.by} ${tool.maker}. ${k.verifiedLead(fmtDate(tool.checkedAt, L))}`, page: 'tool', jsonld }, `
+  return page(c, data, site, { title: `${tool.name}: ${tool.description[L]} | TKUMA`.slice(0, 120), desc: `${tool.description[L]} ${s.card.by} ${tool.maker}. ${k.verifiedLead(fmtDate(tool.checkedAt, L))}`, page: 'tool', jsonld }, `
 <section class="page-head tool-head">
   <div class="wrap">
     ${crumbs(c, [[c.u('catalog.html'), s.nav.catalog], [c.u('category/' + category.id + '.html'), category[L]], [null, tool.name]])}
@@ -531,7 +532,7 @@ export function categoryPage(c, data, site, category) {
   const s = S[c.lang];
   const L = c.lang;
   const tools = data.tools.filter((x) => x.category === category.id);
-  return page(c, data, site, { title: `${category[L]} | ToolScout`, desc: `${category.intro ? category.intro[L] : category.blurb[L]}`.slice(0, 158), page: 'category' }, `
+  return page(c, data, site, { title: `${category[L]} | TKUMA`, desc: `${category.intro ? category.intro[L] : category.blurb[L]}`.slice(0, 158), page: 'category' }, `
 <section class="page-head">
   <div class="wrap">
     ${crumbs(c, [[c.u('catalog.html'), s.nav.catalog], [null, category[L]]])}
@@ -625,7 +626,7 @@ export function comparePresetPage(c, data, site, preset) {
   const L = c.lang;
   const bt = byId(data);
   const tools = preset.ids.map((id) => bt[id]);
-  return page(c, data, site, { title: `${preset.title[L]} | ToolScout`, desc: preset.lead[L], page: 'compare-preset', active: 'compare' }, `
+  return page(c, data, site, { title: `${preset.title[L]} | TKUMA`, desc: preset.lead[L], page: 'compare-preset', active: 'compare' }, `
 <section class="page-head">
   <div class="wrap">
     ${crumbs(c, [[c.u('compare.html'), s.compare.h1], [null, preset.title[L]]])}
@@ -659,8 +660,8 @@ export function guidePage(c, data, site, g) {
   const s = S[c.lang];
   const L = c.lang;
   const bt = byId(data);
-  const jsonld = { '@context': 'https://schema.org', '@type': 'Article', headline: g.title[L], dateModified: g.updated, inLanguage: L, publisher: { '@type': 'Organization', name: 'ToolScout' } };
-  return page(c, data, site, { title: `${g.title[L]} | ToolScout`, desc: g.summary[L], page: 'guide', active: 'guides', jsonld }, `
+  const jsonld = { '@context': 'https://schema.org', '@type': 'Article', headline: g.title[L], dateModified: g.updated, inLanguage: L, publisher: { '@type': 'Organization', name: L === 'he' ? 'תקומה' : 'TKUMA' } };
+  return page(c, data, site, { title: `${g.title[L]} | TKUMA`, desc: g.summary[L], page: 'guide', active: 'guides', jsonld }, `
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[c.u('guides/index.html'), s.guides.h1], [null, g.title[L]]])}
   <h1>${esc(g.title[L])}</h1><p class="lead">${esc(g.summary[L])}</p>
   <p class="meta-line">${esc(s.guides.updated)} <time datetime="${g.updated}">${esc(fmtDate(g.updated, L))}</time> · ${esc(s.guides.minutes(g.minutes))}</p></div></section>
@@ -676,7 +677,7 @@ export function legalPage(c, data, site, key) {
   const s = S[c.lang];
   const L = c.lang;
   const doc = legal[key];
-  return page(c, data, site, { title: `${doc.title[L]} | ToolScout`, desc: doc.body[L].find((b) => b[0] === 'p')[1].slice(0, 155), page: 'legal' }, `
+  return page(c, data, site, { title: `${doc.title[L]} | TKUMA`, desc: doc.body[L].find((b) => b[0] === 'p')[1].slice(0, 155), page: 'legal' }, `
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[null, doc.title[L]]])}<h1>${esc(doc.title[L])}</h1>
   <p class="meta-line">${esc(s.guides.updated)} <time datetime="${doc.updated}">${esc(fmtDate(doc.updated, L))}</time></p>
 </div></section>
@@ -687,13 +688,14 @@ export function legalPage(c, data, site, key) {
 // ---------- Contact ----------
 export function contactPage(c, data, site) {
   const s = S[c.lang];
+  const L = c.lang;
   const k = s.contact;
   const mail = site.owner && site.owner.email;
   const f = (id, label, input, err) => `<div class="field"><label for="${id}">${esc(label)} <span class="req" aria-hidden="true">*</span></label>${input}<p class="field-err" id="${id}-err" hidden></p></div>`;
   return page(c, data, site, { title: k.title, desc: k.desc, page: 'contact', active: 'contact' }, `
 <section class="page-head"><div class="wrap">${crumbs(c, [[null, k.h1]])}<h1>${esc(k.h1)}</h1><p class="lead">${esc(k.lead)}</p></div></section>
 <div class="wrap contact-layout">
-  <form class="panel contact-form demo-form" data-demo-form="contact"${mail ? ` data-mailto="${esc(mail)}" data-subject="${esc('ToolScout: ')}"` : ''} novalidate aria-labelledby="cf-h">
+  <form class="panel contact-form demo-form" data-demo-form="contact"${mail ? ` data-mailto="${esc(mail)}" data-subject="${esc(L === 'he' ? 'תקומה: ' : 'TKUMA: ')}"` : ''} novalidate aria-labelledby="cf-h">
     <h2 id="cf-h" class="sr-only">${esc(k.h1)}</h2>
     <p class="callout${mail ? '' : ' warn'}">${icon('info')}${esc(mail ? k.mailtoNote : k.demo)}</p>
     <p class="field-err summary" data-summary data-text="${esc(k.errSummary)}" role="alert" hidden></p>

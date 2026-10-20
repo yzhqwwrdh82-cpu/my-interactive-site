@@ -1,4 +1,4 @@
-/* ToolScout site search: books, courses, paths, lists, guides and tools.
+/* TKUMA site search: books, courses, paths, lists, guides and tools.
    Runs entirely in the browser over a static JSON index; nothing is sent anywhere. */
 (function () {
   'use strict';

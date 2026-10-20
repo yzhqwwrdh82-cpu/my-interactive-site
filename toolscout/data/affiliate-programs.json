@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "notes": "Research only. Nothing here has been applied for or joined. 'joinStatus' is ToolScout's own status (not-applied | applied | approved | rejected | closed | not-eligible). 'verification' is how well the terms were confirmed on the official page (verified | partial | unverified). Commission text is copied in substance from the source page and is not a promise of income. A tool's affiliate.status may become 'approved' only when its program here has joinStatus 'approved'. 'category' groups programs for the monetization roadmap. 'joinFree' is true only when the official page says so.",
+  "notes": "Research only. Nothing here has been applied for or joined. 'joinStatus' is TKUMA's own status (not-applied | applied | approved | rejected | closed | not-eligible). 'verification' is how well the terms were confirmed on the official page (verified | partial | unverified). Commission text is copied in substance from the source page and is not a promise of income. A tool's affiliate.status may become 'approved' only when its program here has joinStatus 'approved'. 'category' groups programs for the monetization roadmap. 'joinFree' is true only when the official page says so.",
   "programs": [
     {
       "id": "make",
@@ -10,7 +10,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -41,7 +41,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -72,7 +72,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -103,7 +103,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -134,7 +134,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -165,7 +165,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -196,7 +196,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -228,7 +228,7 @@
       "verification": "partial",
       "joinStatus": "not-applied",
       "programOpen": null,
-      "fitForToolScout": "unknown",
+      "fitForSite": "unknown",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -259,7 +259,7 @@
       "verification": "verified",
       "joinStatus": "closed",
       "programOpen": false,
-      "fitForToolScout": "closed",
+      "fitForSite": "closed",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -290,7 +290,7 @@
       "verification": "verified",
       "joinStatus": "closed",
       "programOpen": false,
-      "fitForToolScout": "closed",
+      "fitForSite": "closed",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -321,7 +321,7 @@
       "verification": "verified",
       "joinStatus": "not-eligible",
       "programOpen": true,
-      "fitForToolScout": "not-eligible",
+      "fitForSite": "not-eligible",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -341,7 +341,7 @@
       "linkedTools": [
         "heygen"
       ],
-      "notes": "Requires 5K+ followers and original video content; SEO/blog-only promotion is excluded, so ToolScout as a website does not qualify.",
+      "notes": "Requires 5K+ followers and original video content; SEO/blog-only promotion is excluded, so TKUMA as a website does not qualify.",
       "category": "software-ai"
     },
     {
@@ -352,7 +352,7 @@
       "verification": "unverified",
       "joinStatus": "not-applied",
       "programOpen": null,
-      "fitForToolScout": "unknown",
+      "fitForSite": "unknown",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -383,7 +383,7 @@
       "verification": "partial",
       "joinStatus": "not-applied",
       "programOpen": null,
-      "fitForToolScout": "unknown",
+      "fitForSite": "unknown",
       "countries": {
         "allowed": null,
         "note": "Not stated on the official page; confirm in full terms before applying."
@@ -413,7 +413,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "joinFree": true,
       "countries": {
         "allowed": null,
@@ -443,7 +443,7 @@
       "verification": "partial",
       "joinStatus": "not-applied",
       "programOpen": null,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "joinFree": null,
       "countries": {
         "allowed": null,
@@ -473,7 +473,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "fair",
+      "fitForSite": "fair",
       "joinFree": null,
       "countries": {
         "allowed": null,
@@ -503,7 +503,7 @@
       "verification": "partial",
       "joinStatus": "not-applied",
       "programOpen": null,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "joinFree": null,
       "countries": {
         "allowed": null,
@@ -533,7 +533,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "fair",
+      "fitForSite": "fair",
       "joinFree": null,
       "countries": {
         "allowed": null,
@@ -563,7 +563,7 @@
       "verification": "verified",
       "joinStatus": "not-applied",
       "programOpen": true,
-      "fitForToolScout": "good",
+      "fitForSite": "good",
       "joinFree": true,
       "countries": {
         "allowed": null,

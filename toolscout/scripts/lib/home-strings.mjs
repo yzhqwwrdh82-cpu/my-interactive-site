@@ -1,6 +1,7 @@
 // Homepage copy (v5 layout). Counts are passed in from real data; nothing here is a statistic.
 export const HOME5 = {
   he: {
+    tagline: 'שורשים עתיקים. עתיד נבנה.',
     h1: 'ספרים טובים, ומה שבא אחריהם.',
     lead: 'מגלים ספרים לפי נושא ומטרה, וממשיכים לקורסים, למסלולי למידה, לכלים ולקהילה. כל פרט נבדק מול המקור הרשמי, ומה שלא אומת מסומן.',
     searchPh: 'חיפוש ספר, מחבר, נושא, קורס או כלי…',
@@ -35,6 +36,7 @@ export const HOME5 = {
     quote: 'לומדים יחד, מתקדמים יחד.', quoteLabel: 'ציטוט'
   },
   en: {
+    tagline: 'Ancient roots. A future being built.',
     h1: 'Good books, and what comes next.',
     lead: 'Discover books by topic and goal, then go on to courses, learning paths, tools and community. Every detail is checked against the official source, and anything unverified is marked.',
     searchPh: 'Search a book, author, topic, course or tool…',

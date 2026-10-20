@@ -292,7 +292,7 @@ export const legal = {
       he: [
         ['todo', 'טיוטה לפני בדיקת עורך דין. פרטי בעל האתר עדיין חסרים ומסומנים "להשלמה".', 'noOwner'],
         ['todo', 'טיוטה לפני בדיקת עורך דין.', 'hasOwner'],
-        ['p', 'המדיניות הזו מתארת איזה מידע נאסף כשמשתמשים ב-ToolScout ואיך הוא משמש. היא משקפת את האתר כפי שהוא היום.'],
+        ['p', 'המדיניות הזו מתארת איזה מידע נאסף כשמשתמשים בתקומה ואיך הוא משמש. היא משקפת את האתר כפי שהוא היום.'],
         ['h2', 'מי אחראי על האתר'],
         ['owner'],
         ['h2', 'מה האתר עצמו אוסף'],
@@ -321,7 +321,7 @@ export const legal = {
       en: [
         ['todo', 'Draft pending legal review. Site owner details are still missing and marked "to be completed".', 'noOwner'],
         ['todo', 'Draft pending legal review.', 'hasOwner'],
-        ['p', 'This policy describes what information is collected when you use ToolScout and how it is used. It reflects the site as it is today.'],
+        ['p', 'This policy describes what information is collected when you use TKUMA and how it is used. It reflects the site as it is today.'],
         ['h2', 'Who is responsible for the site'],
         ['owner'],
         ['h2', 'What the site itself collects'],
@@ -359,7 +359,7 @@ export const legal = {
         ['h2', 'מי מפעיל את האתר'],
         ['owner'],
         ['h2', 'מטרת האתר'],
-        ['p', 'ToolScout הוא קטלוג מידע. הוא עוזר להכיר כלים ולהשוות ביניהם, אבל הוא לא מוכר מוצרים ולא מספק שירות של הכלים עצמם.'],
+        ['p', 'תקומה היא אתר מידע. היא עוזרת להכיר ספרים וכלים ולהשוות ביניהם, אבל היא לא מוכרת מוצרים ולא מספקת שירות של הכלים עצמם.'],
         ['h2', 'דיוק המידע'],
         ['p', 'אנחנו בודקים את המידע מול האתרים הרשמיים ומציינים את תאריך הבדיקה. מידע שלא הצלחנו לאמת מסומן ככזה. תוכניות, מחירים ותכונות משתנים, ולכן לפני רכישה או התחייבות כדאי לבדוק את התנאים העדכניים באתר הרשמי של הכלי. אם מצאתם טעות, נשמח שתעדכנו אותנו.'],
         ['h2', 'קישורים לאתרים אחרים'],
@@ -367,7 +367,7 @@ export const legal = {
         ['h2', 'סימני מסחר ולוגואים'],
         ['p', 'שמות המוצרים והלוגואים שייכים לבעליהם, ומשמשים רק כדי לזהות את המוצרים. השימוש בהם לא מעיד על שותפות, חסות או המלצה מצד בעליהם. בעל סימן שמבקש לשנות או להסיר את הצגתו מוזמן לפנות אלינו.'],
         ['h2', 'זכויות בתוכן'],
-        ['p', 'התיאורים, המדריכים והעיצוב באתר הם תוכן מקורי של ToolScout. רכיבים של צד שלישי, כמו לוגואים והגופן, משמשים לפי הרישיונות שלהם, כמפורט בעמוד הקרדיטים שבמאגר הקוד.'],
+        ['p', 'התיאורים, המדריכים והעיצוב באתר הם תוכן מקורי של תקומה. רכיבים של צד שלישי, כמו לוגואים והגופן, משמשים לפי הרישיונות שלהם, כמפורט בעמוד הקרדיטים שבמאגר הקוד.'],
         ['h2', 'שימוש באתר'],
         ['p', 'אין לשבש את פעולת האתר, לנסות לעקוף את מנגנוני האבטחה שלו, או להציג את תוכנו כאילו הוא של מישהו אחר.'],
         ['h2', 'אחריות'],
@@ -385,7 +385,7 @@ export const legal = {
         ['h2', 'Who operates the site'],
         ['owner'],
         ['h2', 'What the site is'],
-        ['p', 'ToolScout is an information catalog. It helps you discover and compare tools, but it does not sell products or provide the tools themselves.'],
+        ['p', 'TKUMA is an information catalog. It helps you discover and compare tools, but it does not sell products or provide the tools themselves.'],
         ['h2', 'Accuracy'],
         ['p', 'We check information against official sites and show the date of each check. Information we couldn\'t verify is marked as such. Plans, prices and features change, so check the current terms on the tool\'s official site before buying or committing. If you find a mistake, please let us know.'],
         ['h2', 'Links to other sites'],
@@ -393,7 +393,7 @@ export const legal = {
         ['h2', 'Trademarks and logos'],
         ['p', 'Product names and logos belong to their owners and are used only to identify the products. Their use does not imply any partnership, sponsorship or endorsement by their owners. A trademark owner who wants its mark shown differently or removed is welcome to contact us.'],
         ['h2', 'Content rights'],
-        ['p', 'The descriptions, guides and design on this site are ToolScout\'s original content. Third-party components such as logos and the typeface are used under their own licenses, as listed in the credits file in the code repository.'],
+        ['p', 'The descriptions, guides and design on this site are TKUMA\'s original content. Third-party components such as logos and the typeface are used under their own licenses, as listed in the credits file in the code repository.'],
         ['h2', 'Using the site'],
         ['p', 'Do not disrupt the site, try to bypass its security, or present its content as someone else\'s.'],
         ['h2', 'Liability'],
@@ -413,7 +413,7 @@ export const legal = {
     body: {
       he: [
         ['todo', 'טיוטה. פרטי רכז/ת הנגישות חסרים, ובדיקה ידנית מלאה עדיין לא בוצעה.'],
-        ['p', 'אנחנו רוצים ש-ToolScout יהיה נוח לשימוש לכל אחד, כולל אנשים עם מוגבלות. היעד שלנו הוא התקן הישראלי ת"י 5568, שמבוסס על הנחיות WCAG 2.0 ברמה AA. בנוסף, פעלנו לפי הנחיות WCAG 2.1 ברמה AA.'],
+        ['p', 'אנחנו רוצים שתקומה תהיה נוחה לשימוש לכל אחד, כולל אנשים עם מוגבלות. היעד שלנו הוא התקן הישראלי ת"י 5568, שמבוסס על הנחיות WCAG 2.0 ברמה AA. בנוסף, פעלנו לפי הנחיות WCAG 2.1 ברמה AA.'],
         ['p', 'אנחנו לא מצהירים על עמידה מלאה בתקן. עד כה בוצעו בדיקות אוטומטיות ובדיקות מקלדת בלבד. בדיקה מקצועית ידנית עדיין לא בוצעה.'],
         ['h2', 'מה עשינו'],
         ['p', 'האתר כולל ניווט מלא במקלדת עם סימון פוקוס ברור, קישור לדילוג לתוכן, מבנה כותרות מסודר ותוויות לשדות טפסים. הוא תומך בעברית מימין לשמאל ובאנגלית משמאל לימין, עם ניגודיות צבעים מספקת במצב בהיר ובמצב כהה. הוא מכבד את הגדרת "הפחתת תנועה" במערכת ההפעלה, וכל התוכן זמין גם בלי JavaScript.'],
@@ -429,7 +429,7 @@ export const legal = {
       ],
       en: [
         ['todo', 'Draft. Accessibility coordinator details are missing, and a full manual audit has not been done yet.'],
-        ['p', 'We want ToolScout to be easy for everyone to use, including people with disabilities. Our target is the Israeli standard IS 5568, which is based on WCAG 2.0 level AA. We also followed WCAG 2.1 level AA.'],
+        ['p', 'We want TKUMA to be easy for everyone to use, including people with disabilities. Our target is the Israeli standard IS 5568, which is based on WCAG 2.0 level AA. We also followed WCAG 2.1 level AA.'],
         ['p', 'We do not claim full conformance. So far only automated and keyboard testing has been done. A professional manual audit has not been carried out yet.'],
         ['h2', 'What we did'],
         ['p', 'The site has full keyboard navigation with a visible focus indicator, a skip-to-content link, a clear heading structure and labelled form fields. It supports right-to-left Hebrew and left-to-right English, with sufficient color contrast in light and dark themes. It respects the "reduce motion" system setting, and all content is available without JavaScript.'],
@@ -450,7 +450,7 @@ export const legal = {
     updated: '2026-10-19',
     body: {
       he: [
-        ['p', 'ToolScout הוא קטלוג עצמאי. המטרה שלנו היא לעזור לכם למצוא את הכלי המתאים, עם מידע שנבדק מול האתרים הרשמיים.'],
+        ['p', 'תקומה היא אתר עצמאי. המטרה שלנו היא לעזור לכם למצוא את הכלי המתאים, עם מידע שנבדק מול האתרים הרשמיים.'],
         ['h2', 'המצב היום'],
         ['p', 'כרגע אין באתר קישורי שותפים, פרסומות, תוכן ממומן או מיקום בתשלום, ואיננו מקבלים תשלום או טובת הנאה מאף כלי שמופיע באתר. כל הקישורים מובילים ישירות לאתרים הרשמיים.'],
         ['h2', 'איך נסמן קשרים מסחריים בעתיד'],
@@ -461,7 +461,7 @@ export const legal = {
         ['p', 'עמלות או חסויות לא משנות את העובדות המאומתות, את היתרונות והחסרונות, או את הבחירה אילו כלים נכנסים לקטלוג ול"בחירת העורכים".']
       ],
       en: [
-        ['p', 'ToolScout is an independent catalog. Our goal is to help you find the right tool, with information checked against the official sites.'],
+        ['p', 'TKUMA is an independent catalog. Our goal is to help you find the right tool, with information checked against the official sites.'],
         ['h2', 'Today'],
         ['p', 'There are no affiliate links, ads, sponsored content or paid placements on the site right now, and we receive no payment or benefit from any tool listed. Every link goes directly to the official site.'],
         ['h2', 'How we will label commercial relationships'],

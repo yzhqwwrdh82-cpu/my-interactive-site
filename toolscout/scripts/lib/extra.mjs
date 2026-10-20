@@ -5,10 +5,10 @@ import { ownerLine } from './pages.mjs';
 
 const ABOUT = {
   he: {
-    title: 'אודות ToolScout',
-    desc: 'מה זה ToolScout, איך אנחנו בודקים כלים, ממה האתר מתכוון להתפרנס ומי עומד מאחוריו.',
-    h1: 'אודות ToolScout',
-    lead: 'ToolScout עוזר למצוא כלי בינה מלאכותית, תוכנות וספרים שמתאימים למשימה, בעברית ובאנגלית, עם מחירים ופרטים שנבדקו מול המקור.',
+    title: 'אודות תקומה',
+    desc: 'מהי תקומה, איך אנחנו בודקים ספרים וכלים, ממה האתר מתכוון להתפרנס ומי עומד מאחוריו.',
+    h1: 'אודות תקומה',
+    lead: 'תקומה היא בית לספרים רגילים, לחוכמת ישראל, למסורת היהודית, לציונות, למחשבה שמרנית, לידע ולחיבור בין אנשים. המטרה שלנו: לחבר בין שורשי העם היהודי לבין בניית העתיד. שורשים עתיקים. עתיד נבנה.',
     sections: [
       ['מה יש כאן', (n, k, b) => `קטלוג של ${n} כלים ב-${k} קטגוריות, השוואות מוכנות, מדריכים קצרים ו-${b} ספרים מומלצים. כל כרטיס מציג למי הכלי מתאים, יתרונות וחסרונות, מסלול מחיר ותאריך בדיקה אחרון.`],
       ['איך אנחנו בודקים', () => 'כל מחיר ופלטפורמה נבדקים מול האתר הרשמי של היצרן, ותאריך הבדיקה מוצג בכרטיס. מה שלא הצלחנו לאמת מסומן בבירור כלא מאומת. אנחנו לא ממציאים דירוגים, ביקורות או נתוני שימוש.'],
@@ -21,10 +21,10 @@ const ABOUT = {
     contact: 'יצירת קשר'
   },
   en: {
-    title: 'About ToolScout',
-    desc: 'What ToolScout is, how we check tools, how the site plans to make money, and who runs it.',
-    h1: 'About ToolScout',
-    lead: 'ToolScout helps you find AI tools, software and books that fit the job, in English and Hebrew, with prices and details checked against the source.',
+    title: 'About TKUMA',
+    desc: 'What TKUMA is, how we check books and tools, how the site plans to make money, and who runs it.',
+    h1: 'About TKUMA',
+    lead: 'TKUMA (Hebrew for "rebirth" or "rising") is a home for print books, Jewish wisdom and tradition, Zionism, conservative thought, knowledge and connection between people. Our aim is to connect the roots of the Jewish people with building the future. Ancient roots. A future being built.',
     sections: [
       ['What you will find', (n, k, b) => `A catalog of ${n} tools in ${k} categories, ready-made comparisons, short guides and ${b} recommended books. Every card shows who the tool is for, pros and cons, the pricing model and the date it was last checked.`],
       ['How we check', () => 'Every price and platform is checked against the maker\'s official site, and the check date is shown on the card. Anything we could not verify is clearly marked as unverified. We do not invent ratings, reviews or usage numbers.'],
@@ -46,8 +46,8 @@ export function aboutPage(c, data, site, products = null) {
   const owner = (o.name && o.email)
     ? ownerLine(o, L)
     : `<p class="todo">${esc(L === 'he' ? 'להשלמה: שם בעל האתר או העסק ואימייל ליצירת קשר.' : 'To be completed: site owner or business name and a contact email.')}</p>`;
-  const jsonld = { '@context': 'https://schema.org', '@type': 'AboutPage', name: a.title, inLanguage: L, isPartOf: { '@type': 'WebSite', name: 'ToolScout', url: site.siteUrl + '/' } };
-  return page(c, data, site, { title: `${a.title} | ToolScout`, desc: a.desc, page: 'about', jsonld }, `
+  const jsonld = { '@context': 'https://schema.org', '@type': 'AboutPage', name: a.title, inLanguage: L, isPartOf: { '@type': 'WebSite', name: L === 'he' ? 'תקומה' : 'TKUMA', url: site.siteUrl + '/' } };
+  return page(c, data, site, { title: `${a.title} | TKUMA`, desc: a.desc, page: 'about', jsonld }, `
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[null, a.h1]])}<h1>${esc(a.h1)}</h1><p class="lead">${esc(a.lead)}</p></div></section>
 <article class="wrap narrow prose">
 ${a.sections.map(([h, fn]) => `<h2>${esc(h)}</h2>\n<p>${esc(fn(n, k, b))}</p>`).join('\n')}
@@ -69,7 +69,7 @@ export function notFoundPage(site, basePath) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="${csp}">
 <meta name="robots" content="noindex">
-<title>הדף לא נמצא · Page not found | ToolScout</title>
+<title>הדף לא נמצא · Page not found | תקומה</title>
 <link rel="icon" href="${b}/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="${b}/assets/styles.css?v=${site.version}">
 <script src="${b}/assets/theme-init.js?v=${site.version}"></script>
@@ -97,8 +97,8 @@ export function notFoundPage(site, basePath) {
 // ---------- Partnerships / advertise (B2B entry point; email only, nothing is collected on the site) ----------
 const PARTNER = {
   he: {
-    title: 'שיתופי פעולה ופרסום', desc: 'איך יצרני כלים, הוצאות ספרים וספקי קורסים יכולים לעבוד עם ToolScout, ואילו כללי עריכה חלים תמיד.',
-    lead: 'ToolScout עוזר לאנשים לבחור כלי AI, תוכנות וספרים לפי מידע שנבדק מול המקור. אלה הדרכים לעבוד איתנו בלי לפגוע באמון של הקוראים.',
+    title: 'שיתופי פעולה ופרסום', desc: 'איך יצרני כלים, הוצאות ספרים וספקי קורסים יכולים לעבוד עם תקומה, ואילו כללי עריכה חלים תמיד.',
+    lead: 'תקומה עוזרת לאנשים לבחור כלי AI, תוכנות וספרים לפי מידע שנבדק מול המקור. אלה הדרכים לעבוד איתנו בלי לפגוע באמון של הקוראים.',
     now: 'כרגע אין באתר תוכן ממומן, פרסומות או קישורי שותפים.',
     waysH: 'דרכים לשיתוף פעולה',
     ways: [
@@ -112,12 +112,12 @@ const PARTNER = {
     rules: ['לא מוכרים ביקורות, דירוגים או "בחירת העורכים".', 'כל תוכן ממומן וכל קישור בתשלום מסומנים ליד התוכן.', 'מחירים ופרטים נבדקים מול המקור גם בתוכן ממומן.', 'אנחנו יכולים לסרב לכל הצעה.'],
     audienceH: 'נתוני קהל',
     audience: 'האתר חדש. נתוני תנועה יפורסמו רק כשיהיה כלי מדידה מחובר, ולא נמסור הערכות.',
-    contactH: 'פנייה', contactTodo: 'להשלמה: אימייל ליצירת קשר.', contactText: 'כתבו לנו באימייל, וציינו את שם המוצר, סוג שיתוף הפעולה והקישור לאתר הרשמי:', subject: 'שיתוף פעולה עם ToolScout',
+    contactH: 'פנייה', contactTodo: 'להשלמה: אימייל ליצירת קשר.', contactText: 'כתבו לנו באימייל, וציינו את שם המוצר, סוג שיתוף הפעולה והקישור לאתר הרשמי:', subject: 'שיתוף פעולה עם תקומה',
     more: 'גילוי נאות'
   },
   en: {
-    title: 'Partnerships and advertising', desc: 'How tool makers, publishers and course providers can work with ToolScout, and the editorial rules that always apply.',
-    lead: 'ToolScout helps people choose AI tools, software and books based on information checked against the source. These are the ways to work with us without hurting readers\' trust.',
+    title: 'Partnerships and advertising', desc: 'How tool makers, publishers and course providers can work with TKUMA, and the editorial rules that always apply.',
+    lead: 'TKUMA helps people choose AI tools, software and books based on information checked against the source. These are the ways to work with us without hurting readers\' trust.',
     now: 'There is currently no sponsored content, advertising or affiliate links on the site.',
     waysH: 'Ways to work together',
     ways: [
@@ -131,7 +131,7 @@ const PARTNER = {
     rules: ['We do not sell reviews, rankings or "Editors\' picks".', 'Every sponsored item and paid link is labeled next to the content.', 'Prices and details are checked against the source, sponsored content included.', 'We can decline any offer.'],
     audienceH: 'Audience data',
     audience: 'The site is new. Traffic figures will be published only once a measurement tool is connected; we will not give estimates.',
-    contactH: 'Contact', contactTodo: 'To be completed: a contact email.', contactText: 'Email us with the product name, the type of partnership and a link to the official site:', subject: 'Partnership with ToolScout',
+    contactH: 'Contact', contactTodo: 'To be completed: a contact email.', contactText: 'Email us with the product name, the type of partnership and a link to the official site:', subject: 'Partnership with TKUMA',
     more: 'Disclosure'
   }
 };
@@ -142,7 +142,7 @@ export function partnersPage(c, data, site) {
   const contact = o.email
     ? `<p>${esc(a.contactText)} <a href="mailto:${esc(o.email)}?subject=${encodeURIComponent(a.subject)}" dir="ltr">${esc(o.email)}</a></p>`
     : `<p class="todo">${esc(a.contactTodo)}</p>`;
-  return page(c, data, site, { title: `${a.title} | ToolScout`, desc: a.desc, page: 'partners' }, `
+  return page(c, data, site, { title: `${a.title} | TKUMA`, desc: a.desc, page: 'partners' }, `
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[null, a.title]])}<h1>${esc(a.title)}</h1><p class="lead">${esc(a.lead)}</p></div></section>
 <article class="wrap narrow prose">
 <p class="callout">${esc(a.now)}</p>
@@ -162,9 +162,9 @@ ${contact}
 // ---------- Ideas hub and editorial line ----------
 const ED = {
   he: {
-    title: 'הקו המערכתי שלנו', desc: 'ToolScout הוא בית לספרים ולידע עם זהות ברורה: יהודית, ציונית ושמרנית, שמחויבת לחירות הפרט ולחופש המחשבה.',
+    title: 'הקו המערכתי שלנו', desc: 'תקומה היא בית לספרים ולידע עם זהות ברורה: יהודית, ציונית ושמרנית, שמחויבת לחירות הפרט ולחופש המחשבה.',
     sections: [
-      ['מי אנחנו', ['ToolScout הוא בית לספרים רגילים ולידע, עם זהות ברורה: יהודית, ציונית ושמרנית, שמחויבת לחירות הפרט ולחופש המחשבה. אנחנו לא מציגים את עצמנו כנייטרליים מבחינה רעיונית.', 'האתר פונה לישראלים ולקהל בינלאומי, בעברית ובאנגלית.']],
+      ['מי אנחנו', ['תקומה היא בית לספרים רגילים ולידע, עם זהות ברורה: יהודית, ציונית ושמרנית, שמחויבת לחירות הפרט ולחופש המחשבה. אנחנו לא מציגים את עצמנו כנייטרליים מבחינה רעיונית.', 'האתר פונה לישראלים ולקהל בינלאומי, בעברית ובאנגלית.']],
       ['מה זה אומר בפועל', ['אנחנו מבליטים אזורי ידע ביהדות ומסורת, בציונות ובהיסטוריה ישראלית, במחשבה שמרנית, בחירות הפרט ובכלכלה חופשית, במשפחה ובקהילה, בפילוסופיה ובמנהיגות ובביטחון.', 'יש לנו גם אזור של ביקורת רעיונית על פרוגרסיביות, תקינות פוליטית, תרבות הביטול וריכוז כוח מוסדי, עם ספרים אמיתיים ומקורות מדויקים.']],
       ['הספרים נשארים במרכז', ['לצד הקו הרעיוני, אנחנו ממליצים על ספרים טובים בהיסטוריה, בפסיכולוגיה, בטכנולוגיה, בעסקים ובתחומים רבים אחרים, לפי הערך שלהם לקורא.']],
       ['עובדה, פרשנות ודעה', ['עובדות: פרטי הספר (כותרת, מחבר, הוצאה, שנה ו־ISBN) נבדקים מול עמוד ההוצאה, ומסומנים "פרטים מאומתים".', 'פרשנות: תיאורי הספרים הם סיכום שלנו לתוכן, ולא ציטוט מהמוציא לאור.', 'דעה: המלצות ועמדות מסומנות "המלצה עריכתית" או "עמדה עריכתית".']],
@@ -174,9 +174,9 @@ const ED = {
     fix: 'מצאתם טעות? כתבו לנו, ונתקן ונציין את תאריך התיקון:', ideas: 'לאזורי הרעיונות'
   },
   en: {
-    title: 'Our editorial line', desc: 'ToolScout is a home for books and knowledge with a clear identity: Jewish, Zionist and conservative, committed to individual liberty and freedom of thought.',
+    title: 'Our editorial line', desc: 'TKUMA is a home for books and knowledge with a clear identity: Jewish, Zionist and conservative, committed to individual liberty and freedom of thought.',
     sections: [
-      ['Who we are', ['ToolScout is a home for print books and knowledge with a clear identity: Jewish, Zionist and conservative, committed to individual liberty and freedom of thought. We do not present ourselves as ideologically neutral.', 'The site serves Israelis and an international audience, in Hebrew and English.']],
+      ['Who we are', ['TKUMA is a home for print books and knowledge with a clear identity: Jewish, Zionist and conservative, committed to individual liberty and freedom of thought. We do not present ourselves as ideologically neutral.', 'The site serves Israelis and an international audience, in Hebrew and English.']],
       ['What this means in practice', ['We feature areas on Judaism and tradition, Zionism and Israeli history, conservative thought, individual liberty and free markets, family and community, philosophy, and leadership and security.', 'We also have an area of critique of progressivism, political correctness, cancel culture and the concentration of institutional power, with real books and exact sources.']],
       ['Books stay at the center', ['Alongside our editorial line, we recommend good books in history, psychology, technology, business and many other fields, based on their value to the reader.']],
       ['Fact, interpretation and opinion', ['Facts: book details (title, author, publisher, year and ISBN) are checked against the publisher page and marked "Verified details".', 'Interpretation: book descriptions are our summary of the content, not a quote from the publisher.', 'Opinion: recommendations and positions are marked "Editorial recommendation" or "Editorial position".']],
@@ -188,7 +188,7 @@ const ED = {
 };
 export function editorialPage(c, data, site) {
   const L = c.lang, e = ED[L], o = site.owner || {};
-  return page(c, data, site, { title: `${e.title} | ToolScout`, desc: e.desc, page: 'editorial' }, `
+  return page(c, data, site, { title: `${e.title} | TKUMA`, desc: e.desc, page: 'editorial' }, `
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[null, e.title]])}<h1>${esc(e.title)}</h1><p class="lead">${esc(e.desc)}</p></div></section>
 <article class="wrap narrow prose">
 ${e.sections.map(([h, ps]) => `<h2>${esc(h)}</h2>${ps.map((x) => `<p>${esc(x)}</p>`).join('')}`).join('\n')}

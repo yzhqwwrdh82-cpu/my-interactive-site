@@ -6,7 +6,7 @@ export const S = {
     nav: { ideas: 'רעיונות', editorial: 'הקו המערכתי', tools: 'כלי AI', courses: 'קורסים', paths: 'מסלולים', search: 'חיפוש', home: 'בית', quick: 'ניווט מהיר', about: 'אודות', books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
     theme: { label: 'ערכת צבעים', system: 'לפי המערכת', light: 'בהירה', dark: 'כהה' },
     home: {
-      title: 'ToolScout | ספרים מומלצים, קורסים וכלים, עם מידע שנבדק',
+      title: 'תקומה | שורשים עתיקים. עתיד נבנה. ספרים, ידע וקהילה',
       desc: 'ספרים מומלצים לפי נושא ומטרה, רשימות קריאה, קורסים, מסלולי למידה וכלי AI, בעברית ובאנגלית, עם פרטים שנבדקו מול המקור הרשמי.',
       h1: 'מוצאים את הכלי הנכון, עם מידע שנבדק.',
       lead: 'ספרים, קורסים, מסלולי למידה וכלי AI לעבודה, ליצירה וללימודים. כל פרט נבדק מול המקור הרשמי, ומה שלא אומת מסומן.',
@@ -14,8 +14,8 @@ export const S = {
       searchBtn: 'חיפוש',
       intentsLabel: 'חיפושים נפוצים',
       boardLabel: 'הכלים בקטלוג',
-      kicker: 'Discover. Compare. Create.',
-      slogan: 'מגלים כלים. משווים חכם. יוצרים יותר.',
+      kicker: 'Ancient roots. A future being built.',
+      slogan: 'שורשים עתיקים. עתיד נבנה.',
       wallTitle: 'כל הכלים במבט אחד',
       wallLead: 'לחצו על לוגו כדי לעבור לעמוד הכלי.',
       features: [
@@ -58,7 +58,7 @@ export const S = {
       paidLink: 'קישור בתשלום: ייתכן שנקבל עמלה על רכישה דרכו', paidShort: 'קישור בתשלום', sponsored: 'פרסומת'
     },
     catalog: {
-      title: 'קטלוג הכלים | ToolScout', desc: 'חיפוש וסינון של כלי AI ותוכנות לפי קטגוריה, שימוש, מחיר ופלטפורמה.',
+      title: 'קטלוג הכלים | תקומה', desc: 'חיפוש וסינון של כלי AI ותוכנות לפי קטגוריה, שימוש, מחיר ופלטפורמה.',
       h1: 'קטלוג הכלים', lead: 'חפשו, סננו והשוו. כל הנתונים נבדקו מול האתרים הרשמיים, ומה שלא אומת מסומן ככזה.',
       searchLabel: 'חיפוש בקטלוג', searchPh: 'שם כלי, משימה או מילת מפתח', clear: 'ניקוי החיפוש',
       filters: 'סינון', category: 'קטגוריה', all: 'הכול', use: 'שימוש', price: 'מחיר', platform: 'פלטפורמה',
@@ -74,7 +74,7 @@ export const S = {
       crumbsHome: 'דף הבית', what: 'מה זה', verifiedTitle: 'עובדות מאומתות', verifiedLead: (d) => `נבדק מול המקורות הרשמיים ב-${d}.`,
       pros: 'יתרונות', cons: 'חסרונות', noPros: 'עדיין לא תיעדנו יתרונות מאומתים.', noCons: 'עדיין לא תיעדנו חסרונות מאומתים.',
       sourcePricing: 'מקור: עמוד התמחור', sourceOfficial: 'מקור: האתר הרשמי',
-      editorialTitle: 'סיכום עריכתי', editorialNote: 'התיאור, קהל היעד והשימושים הם סיכום של צוות ToolScout, ולא ציטוט מהיצרן.',
+      editorialTitle: 'סיכום עריכתי', editorialNote: 'התיאור, קהל היעד והשימושים הם סיכום של צוות תקומה, ולא ציטוט מהיצרן.',
       audience: 'למי זה מתאים', uses: 'שימושים',
       pricing: 'מודל תמחור', platforms: 'פלטפורמות', platformsUnverified: 'לא אומת', openSource: 'קוד פתוח', yes: 'כן', no: 'לא', unknown: 'לא אומת',
       checked: 'נבדק', status: 'סטטוס אימות', fieldPricing: 'תמחור', fieldPlatforms: 'פלטפורמות',
@@ -84,7 +84,7 @@ export const S = {
       logoCredit: 'הלוגו הוא סימן מסחרי של בעליו. מקור: Simple Icons.', noLogo: 'אין לוגו ממקור מורשה, ולכן מוצגים ראשי תיבות.'
     },
     compare: {
-      title: 'השוואת כלים | ToolScout', desc: 'השוואה בין כלי AI ותוכנות: תמחור, פלטפורמות, יתרונות וחסרונות מאומתים.',
+      title: 'השוואת כלים | תקומה', desc: 'השוואה בין כלי AI ותוכנות: תמחור, פלטפורמות, יתרונות וחסרונות מאומתים.',
       h1: 'השוואת כלים', lead: 'בחרו עד 3 כלים. בטבלה מוצג רק מידע מהקטלוג, ומה שלא אומת מסומן ככזה.',
       add: 'הוספת כלי להשוואה', choose: 'בחירת כלי…', remove: 'הסרה', presets: 'השוואות מוכנות',
       empty: 'עוד לא נבחרו כלים. בחרו כלי מהרשימה או התחילו מהשוואה מוכנה.',
@@ -92,9 +92,9 @@ export const S = {
       rows: { category: 'קטגוריה', pricing: 'מודל תמחור', free: 'גרסה חינמית', open: 'קוד פתוח', platforms: 'פלטפורמות', pros: 'יתרונות מאומתים', cons: 'חסרונות מאומתים', checked: 'נבדק', links: 'קישורים' },
       freeYes: 'יש', freeNo: 'אין', freeUnknown: 'לא אומת', share: 'קישור להשוואה הזו מתעדכן בשורת הכתובת.'
     },
-    guides: { title: 'מדריכים | ToolScout', desc: 'מדריכים קצרים לבחירת כלי AI ותוכנות, על בסיס המידע שבקטלוג.', h1: 'מדריכים', lead: 'מדריכים קצרים שמבוססים על הנתונים שבקטלוג.', read: 'לקריאה', minutes: (m) => `${m} דקות קריאה`, toolsIn: 'הכלים במדריך', updated: 'עודכן' },
+    guides: { title: 'מדריכים | תקומה', desc: 'מדריכים קצרים לבחירת כלי AI ותוכנות, על בסיס המידע שבקטלוג.', h1: 'מדריכים', lead: 'מדריכים קצרים שמבוססים על הנתונים שבקטלוג.', read: 'לקריאה', minutes: (m) => `${m} דקות קריאה`, toolsIn: 'הכלים במדריך', updated: 'עודכן' },
     contact: {
-      title: 'יצירת קשר | ToolScout', desc: 'יצירת קשר עם ToolScout: שאלות, תיקונים למידע בקטלוג והצעות לכלים חדשים.', h1: 'יצירת קשר', lead: 'שאלה, תיקון למידע בקטלוג או הצעה לכלי חדש.',
+      title: 'יצירת קשר | תקומה', desc: 'יצירת קשר עם תקומה: שאלות, תיקונים למידע בקטלוג והצעות לכלים חדשים.', h1: 'יצירת קשר', lead: 'שאלה, תיקון למידע בקטלוג או הצעה לכלי חדש.',
       demo: 'מצב הדגמה: הטופס עדיין לא מחובר לשרת. ההודעה לא תישלח ולא תישמר.',
       name: 'שם', email: 'אימייל', topic: 'נושא', topics: ['שאלה כללית', 'תיקון מידע בקטלוג', 'הצעה לכלי חדש', 'שיתוף פעולה', 'נגישות'],
       message: 'הודעה', consent: 'אני מסכים/ה שהפרטים ישמשו רק כדי לענות לפנייה.',
@@ -109,14 +109,14 @@ export const S = {
       emailUs: 'אפשר לכתוב לנו באימייל:', a11yLive: 'בפנייה בנושא נגישות, ציינו את העמוד ואת הדפדפן או הטכנולוגיה המסייעת.'
     },
     newsletter: {
-      title: 'עדכונים מ-ToolScout', lead: 'סיכום חודשי של כלים חדשים ושינויים בתמחור. בלי ספאם, וההסרה בלחיצה אחת.',
-      email: 'כתובת אימייל', consent: 'אני מסכים/ה לקבל מ-ToolScout באימייל עדכונים ודברי פרסומת, בערך פעם בחודש. אפשר להסיר את ההרשמה בכל עת.',
+      title: 'עדכונים מתקומה', lead: 'סיכום חודשי של כלים חדשים ושינויים בתמחור. בלי ספאם, וההסרה בלחיצה אחת.',
+      email: 'כתובת אימייל', consent: 'אני מסכים/ה לקבל מתקומה באימייל עדכונים ודברי פרסומת, בערך פעם בחודש. אפשר להסיר את ההרשמה בכל עת.',
       notice: 'מסירת הכתובת אינה חובה. היא תשמש רק לשליחת העדכונים, ותישמר אצל ספק הדיוור [להשלמה: שם הספק] עד שתסירו את ההרשמה.',
       submit: 'הרשמה לעדכונים', demo: 'בהדגמה', doubleOptIn: 'אחרי ההרשמה יישלח אימייל לאישור הכתובת. רק אחרי האישור תצטרפו לרשימה.',
       notConnected: 'ההרשמה עדיין לא מחוברת לשירות דיוור. הכתובת לא נשמרה.', errEmail: 'נא למלא כתובת אימייל תקינה.', errConsent: 'נא לסמן הסכמה לקבלת עדכונים.'
     },
     account: {
-      title: 'אזור אישי | ToolScout', desc: 'המועדפים שלכם וניהול העדפות.', h1: 'אזור אישי',
+      title: 'אזור אישי | תקומה', desc: 'המועדפים שלכם וניהול העדפות.', h1: 'אזור אישי',
       lead: 'כרגע אין חשבונות משתמש. המועדפים נשמרים רק בדפדפן שלכם, במכשיר הזה.',
       working: 'פועל', pending: 'ממתין לחיבור',
       favTitle: 'המועדפים שלי', favEmpty: 'עוד אין מועדפים. לחצו על הלב בכרטיס של כלי כדי לשמור אותו כאן.', favClear: 'ניקוי המועדפים', favNoJs: 'המועדפים דורשים JavaScript.',
@@ -126,9 +126,9 @@ export const S = {
       loginTitle: 'חשבון והתחברות', loginBody: 'אין כרגע התחברות. חשבונות יתווספו רק עם מערכת אימות אמיתית ומאובטחת.'
     },
     chat: {
-      open: 'עזרה וחיפוש', close: 'סגירת חלון העזרה', title: 'עוזר ToolScout', status: 'חיפוש מקומי',
+      open: 'עזרה וחיפוש', close: 'סגירת חלון העזרה', title: 'עוזר תקומה', status: 'חיפוש מקומי',
       intro: 'שלום! אפשר לחפש כאן כלים בקטלוג או לשאול על השימוש באתר. העוזר רץ בדפדפן שלכם: הוא לא AI ולא נציג, והשיחה לא נשמרת ולא נשלחת.',
-      ph: 'כתבו מה אתם מחפשים…', send: 'שליחה', you: 'אתם', bot: 'ToolScout',
+      ph: 'כתבו מה אתם מחפשים…', send: 'שליחה', you: 'אתם', bot: 'תקומה',
       chips: { search: 'חיפוש כלי', help: 'עזרה באתר', support: 'פנייה לתמיכה' },
       soon: 'בקרוב', agent: 'נציג אנושי', ai: 'עוזר AI', voice: 'שיחה קולית', notConnected: 'לא מחובר',
       voiceBtn: 'שיחה קולית: עדיין לא מחוברת',
@@ -141,16 +141,16 @@ export const S = {
       privacy: 'אל תשתפו כאן מידע אישי.'
     },
     footer: { partners: 'שיתופי פעולה',
-      tagline: 'קטלוג עצמאי של כלי AI ותוכנות, עם מידע שנבדק מול המקורות הרשמיים.',
+      tagline: 'שורשים עתיקים. עתיד נבנה. בית לספרים, לחוכמת ישראל ולידע, עם מידע שנבדק מול המקור.',
       explore: 'גילוי', support: 'שירות', legal: 'מידע משפטי', language: 'שפה',
       contact: 'יצירת קשר', account: 'אזור אישי', preview: 'ממשקי שירות (הדגמה)',
       privacySettings: 'הגדרות פרטיות', privacy: 'מדיניות פרטיות', terms: 'תנאי שימוש', accessibility: 'הצהרת נגישות', disclosure: 'גילוי נאות',
       credits: 'הלוגואים הם סימנים מסחריים של בעליהם, ומגיעים מ-Simple Icons (CC0; הלוגו של GitHub Copilot ברישיון MIT). הגופן: Rubik (OFL).',
-      rights: 'ToolScout'
+      rights: 'תקומה | TKUMA'
     },
     consent: { title: 'הסכמה למדידה', body: 'נשמח למדוד שימוש אנונימי באתר בעזרת Google Analytics, כדי לשפר אותו. שום נתון לא נשלח לפני שתאשרו. אפשר לשנות את הבחירה בכל עת בקישור "הגדרות פרטיות" בתחתית העמוד.', accept: 'אישור מדידה', reject: 'בלי מדידה' },
     draft: 'טיוטה לפני בדיקה משפטית. הנוסח עשוי להשתנות לפני הפרסום.',
-    preview: { title: 'ממשקי שירות (הדגמה) | ToolScout', h1: 'ממשקי שירות: הדגמה', lead: 'כאן אפשר לראות את ממשקי האימייל, הניוזלטר, הצ\'אט, השיחה הקולית והאזור האישי. שום שירות חיצוני לא מחובר.' }
+    preview: { title: 'ממשקי שירות (הדגמה) | תקומה', h1: 'ממשקי שירות: הדגמה', lead: 'כאן אפשר לראות את ממשקי האימייל, הניוזלטר, הצ\'אט, השיחה הקולית והאזור האישי. שום שירות חיצוני לא מחובר.' }
   },
   en: {
     langName: 'English', otherLangName: 'עברית', switchLang: 'החלפה לעברית', locale: 'en_US',
@@ -158,7 +158,7 @@ export const S = {
     nav: { ideas: 'Ideas', editorial: 'Editorial line', tools: 'AI tools', courses: 'Courses', paths: 'Paths', search: 'Search', home: 'Home', quick: 'Quick navigation', about: 'About', books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
     theme: { label: 'Color theme', system: 'System', light: 'Light', dark: 'Dark' },
     home: {
-      title: 'ToolScout | Recommended books, courses and tools, with checked information',
+      title: 'TKUMA | Ancient roots. A future being built. Books, knowledge and community',
       desc: 'Books, reading lists, courses, learning paths and AI tools in English and Hebrew, with details checked against the official source.',
       h1: 'Find the right tool, with checked information.',
       lead: 'Books, courses, learning paths and AI tools for work, creative projects and study. Every detail is checked against the official source, and anything unverified is marked.',
@@ -166,8 +166,8 @@ export const S = {
       searchBtn: 'Search',
       intentsLabel: 'Popular searches',
       boardLabel: 'Tools in the catalog',
-      kicker: 'Discover. Compare. Create.',
-      slogan: 'Find the right tool, with checked information.',
+      kicker: 'Ancient roots. A future being built.',
+      slogan: 'Ancient roots. A future being built.',
       wallTitle: 'Every tool at a glance',
       wallLead: 'Select a logo to open that tool’s page.',
       features: [
@@ -210,7 +210,7 @@ export const S = {
       paidLink: 'Paid link: we may earn a commission if you buy through it', paidShort: 'Paid link', sponsored: 'Advertisement'
     },
     catalog: {
-      title: 'Tool catalog | ToolScout', desc: 'Search and filter AI tools and software by category, use, price and platform.',
+      title: 'Tool catalog | TKUMA', desc: 'Search and filter AI tools and software by category, use, price and platform.',
       h1: 'Tool catalog', lead: "Search, filter and compare. Everything is checked against the official sites, and anything we couldn't verify is marked.",
       searchLabel: 'Search the catalog', searchPh: 'Tool name, task or keyword', clear: 'Clear search',
       filters: 'Filters', category: 'Category', all: 'All', use: 'Use', price: 'Price', platform: 'Platform',
@@ -226,7 +226,7 @@ export const S = {
       crumbsHome: 'Home', what: 'What it is', verifiedTitle: 'Verified facts', verifiedLead: (d) => `Checked against official sources on ${d}.`,
       pros: 'Pros', cons: 'Cons', noPros: 'No verified pros recorded yet.', noCons: 'No verified cons recorded yet.',
       sourcePricing: 'Source: pricing page', sourceOfficial: 'Source: official site',
-      editorialTitle: 'Editorial summary', editorialNote: "The description, audience and uses are ToolScout's summary, not a quote from the maker.",
+      editorialTitle: 'Editorial summary', editorialNote: "The description, audience and uses are TKUMA's summary, not a quote from the maker.",
       audience: 'Good for', uses: 'Uses',
       pricing: 'Pricing model', platforms: 'Platforms', platformsUnverified: 'Not verified', openSource: 'Open source', yes: 'Yes', no: 'No', unknown: 'Not verified',
       checked: 'Checked', status: 'Verification status', fieldPricing: 'Pricing', fieldPlatforms: 'Platforms',
@@ -236,7 +236,7 @@ export const S = {
       logoCredit: 'The logo is a trademark of its owner. Source: Simple Icons.', noLogo: 'No logo from a licensed source, so initials are shown.'
     },
     compare: {
-      title: 'Compare tools | ToolScout', desc: 'Compare AI tools and software: pricing, platforms, verified pros and cons.',
+      title: 'Compare tools | TKUMA', desc: 'Compare AI tools and software: pricing, platforms, verified pros and cons.',
       h1: 'Compare tools', lead: 'Pick up to 3 tools. The table shows catalog information only, and anything not verified is marked.',
       add: 'Add a tool to compare', choose: 'Choose a tool…', remove: 'Remove', presets: 'Ready-made comparisons',
       empty: 'No tools selected yet. Pick one from the list or start from a ready-made comparison.',
@@ -244,9 +244,9 @@ export const S = {
       rows: { category: 'Category', pricing: 'Pricing model', free: 'Free version', open: 'Open source', platforms: 'Platforms', pros: 'Verified pros', cons: 'Verified cons', checked: 'Checked', links: 'Links' },
       freeYes: 'Yes', freeNo: 'No', freeUnknown: 'Not verified', share: 'The address bar updates with a link to this comparison.'
     },
-    guides: { title: 'Guides | ToolScout', desc: 'Short guides to choosing AI tools and software, based on the catalog.', h1: 'Guides', lead: 'Short guides based on the information in the catalog.', read: 'Read', minutes: (m) => `${m} min read`, toolsIn: 'Tools in this guide', updated: 'Updated' },
+    guides: { title: 'Guides | TKUMA', desc: 'Short guides to choosing AI tools and software, based on the catalog.', h1: 'Guides', lead: 'Short guides based on the information in the catalog.', read: 'Read', minutes: (m) => `${m} min read`, toolsIn: 'Tools in this guide', updated: 'Updated' },
     contact: {
-      title: 'Contact | ToolScout', desc: 'Contact ToolScout with questions, catalog corrections or suggestions for new tools.', h1: 'Contact', lead: 'A question, a correction to the catalog or a tool suggestion.',
+      title: 'Contact | TKUMA', desc: 'Contact TKUMA with questions, catalog corrections or suggestions for new tools.', h1: 'Contact', lead: 'A question, a correction to the catalog or a tool suggestion.',
       demo: "Demo mode: this form isn't connected to a server yet. Your message won't be sent or saved.",
       name: 'Name', email: 'Email', topic: 'Topic', topics: ['General question', 'Catalog correction', 'Suggest a tool', 'Partnership', 'Accessibility'],
       message: 'Message', consent: 'I agree that my details are used only to reply to this message.',
@@ -261,14 +261,14 @@ export const S = {
       emailUs: 'You can email us at:', a11yLive: 'For accessibility issues, please mention the page and the browser or assistive technology you use.'
     },
     newsletter: {
-      title: 'Updates from ToolScout', lead: 'A monthly round-up of new tools and pricing changes. No spam, and you can unsubscribe with one click.',
-      email: 'Email address', consent: 'I agree to receive updates and promotional emails from ToolScout, about once a month. I can unsubscribe at any time.',
+      title: 'Updates from TKUMA', lead: 'A monthly round-up of new tools and pricing changes. No spam, and you can unsubscribe with one click.',
+      email: 'Email address', consent: 'I agree to receive updates and promotional emails from TKUMA, about once a month. I can unsubscribe at any time.',
       notice: 'Giving your address is optional. It will be used only to send updates, and kept by the email provider [to be completed: provider name] until you unsubscribe.',
       submit: 'Subscribe to updates', demo: 'Demo', doubleOptIn: "After you subscribe, we'll send an email to confirm your address. You join the list only after you confirm.",
       notConnected: "Subscribing isn't connected to an email service yet. Your address was not saved.", errEmail: 'Enter a valid email address.', errConsent: 'Tick the box to agree to receive updates.'
     },
     account: {
-      title: 'Your area | ToolScout', desc: 'Your favorites and preferences.', h1: 'Your area',
+      title: 'Your area | TKUMA', desc: 'Your favorites and preferences.', h1: 'Your area',
       lead: 'There are no user accounts yet. Favorites are stored only in your browser, on this device.',
       working: 'Working', pending: 'Not connected yet',
       favTitle: 'My favorites', favEmpty: 'No favorites yet. Tap the heart on a tool card to save it here.', favClear: 'Clear favorites', favNoJs: 'Favorites need JavaScript.',
@@ -278,9 +278,9 @@ export const S = {
       loginTitle: 'Account and sign-in', loginBody: 'There is no sign-in yet. Accounts will be added only with a real, secure authentication system.'
     },
     chat: {
-      open: 'Help and search', close: 'Close help', title: 'ToolScout helper', status: 'Local search',
+      open: 'Help and search', close: 'Close help', title: 'TKUMA helper', status: 'Local search',
       intro: "Hi! You can search the catalog here or ask about using the site. This helper runs in your browser: it isn't AI or a person, and the conversation isn't saved or sent.",
-      ph: 'Type what you are looking for…', send: 'Send', you: 'You', bot: 'ToolScout',
+      ph: 'Type what you are looking for…', send: 'Send', you: 'You', bot: 'TKUMA',
       chips: { search: 'Find a tool', help: 'Site help', support: 'Contact support' },
       soon: 'Soon', agent: 'Human agent', ai: 'AI assistant', voice: 'Voice call', notConnected: 'Not connected',
       voiceBtn: 'Voice call: not connected yet',
@@ -293,15 +293,15 @@ export const S = {
       privacy: "Don't share personal information here."
     },
     footer: { partners: 'Partnerships',
-      tagline: 'An independent catalog of AI tools and software, checked against official sources.',
+      tagline: 'Ancient roots. A future being built. A home for books, Jewish wisdom and knowledge, checked against the source.',
       explore: 'Explore', support: 'Service', legal: 'Legal', language: 'Language',
       contact: 'Contact', account: 'Your area', preview: 'Service interfaces (demo)',
       privacySettings: 'Privacy settings', privacy: 'Privacy policy', terms: 'Terms of use', accessibility: 'Accessibility statement', disclosure: 'Disclosure',
       credits: 'Logos are trademarks of their owners, via Simple Icons (CC0; GitHub Copilot icon under MIT). Typeface: Rubik (OFL).',
-      rights: 'ToolScout'
+      rights: 'TKUMA'
     },
     consent: { title: 'Measurement consent', body: "We'd like to measure anonymous site usage with Google Analytics to improve the site. Nothing is sent until you agree. You can change your choice at any time from the \"Privacy settings\" link in the footer.", accept: 'Allow measurement', reject: 'No measurement' },
     draft: 'Draft pending legal review. Wording may change before launch.',
-    preview: { title: 'Service interfaces (demo) | ToolScout', h1: 'Service interfaces: demo', lead: 'Preview the email, newsletter, chat, voice call and personal-area interfaces. No external service is connected.' }
+    preview: { title: 'Service interfaces (demo) | TKUMA', h1: 'Service interfaces: demo', lead: 'Preview the email, newsletter, chat, voice call and personal-area interfaces. No external service is connected.' }
   }
 };

@@ -1,4 +1,4 @@
-// Shared helpers for the ToolScout static generator.
+// Shared helpers for the TKUMA static generator.
 
 export const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')

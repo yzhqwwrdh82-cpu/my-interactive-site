@@ -133,7 +133,7 @@ export function bookPage(c, data, site, products, paths, b) {
   const goals = (b.goals || []).map((g) => (products.readingGoals || []).find((x) => x.id === g)).filter(Boolean);
   const jsonld = { '@context': 'https://schema.org', '@type': 'Book', name: b.title, author: b.authors.map((a) => ({ '@type': 'Person', name: a })), isbn: b.isbn13, publisher: { '@type': 'Organization', name: b.publisher }, datePublished: String(b.year), inLanguage: 'en', url: b.officialUrl, ...(b.edition ? { bookEdition: b.edition } : {}) };
   const row = (label, val) => val ? `<div><dt>${esc(label)}</dt><dd>${val}</dd></div>` : '';
-  return page(c, data, site, { title: `${b.titleShort || b.title} – ${b.authors[0]} | ToolScout`, desc: `${b.description[L]} ${k.by} ${b.authors.join(', ')}.`.slice(0, 158), page: 'book', active: 'books', jsonld }, `
+  return page(c, data, site, { title: `${b.titleShort || b.title} – ${b.authors[0]} | TKUMA`, desc: `${b.description[L]} ${k.by} ${b.authors.join(', ')}.`.slice(0, 158), page: 'book', active: 'books', jsonld }, `
 <section class="page-head item-head"><div class="wrap">
   ${crumbs(c, [[c.u('books.html'), k.books], [null, b.titleShort || b.title]])}
   <div class="item-hero">
@@ -180,7 +180,7 @@ export function bookPage(c, data, site, products, paths, b) {
 export function coursesPage(c, data, site, products) {
   const L = c.lang, k = K[L];
   const courses = products.items.filter((x) => x.type === 'course');
-  return page(c, data, site, { title: `${k.coursesTitle} | ToolScout`, desc: k.coursesLead, page: 'courses', active: 'courses' }, `
+  return page(c, data, site, { title: `${k.coursesTitle} | TKUMA`, desc: k.coursesLead, page: 'courses', active: 'courses' }, `
 <section class="page-head"><div class="wrap">${crumbs(c, [[null, k.courses]])}<h1>${esc(k.coursesTitle)}</h1><p class="lead">${esc(k.coursesLead)}</p></div></section>
 <section class="section tight"><div class="wrap"><ul class="course-grid">${courses.map((x) => courseCard(x, c)).join('')}</ul></div></section>
 `);
@@ -190,7 +190,7 @@ export function coursePage(c, data, site, products, paths, co) {
   const L = c.lang, k = K[L];
   const inPaths = paths.paths.filter((p) => p.steps.some(([t, id]) => t === 'course' && id === co.id));
   const jsonld = { '@context': 'https://schema.org', '@type': 'Course', name: co.title, description: co.description.en, provider: { '@type': 'Organization', name: co.provider }, url: co.officialUrl, inLanguage: 'en' };
-  return page(c, data, site, { title: `${co.title} | ToolScout`, desc: co.description[L].slice(0, 158), page: 'course', active: 'courses', jsonld }, `
+  return page(c, data, site, { title: `${co.title} | TKUMA`, desc: co.description[L].slice(0, 158), page: 'course', active: 'courses', jsonld }, `
 <section class="page-head item-head"><div class="wrap">
   ${crumbs(c, [[c.u('courses.html'), k.courses], [null, co.title]])}
   <div class="item-hero no-cover">
@@ -223,7 +223,7 @@ export function coursePage(c, data, site, products, paths, co) {
 export function pathsIndex(c, data, site, products, paths) {
   const L = c.lang, k = K[L];
   const ctx = { c, data, products };
-  return page(c, data, site, { title: `${k.pathsTitle} | ToolScout`, desc: k.pathsLead, page: 'paths', active: 'paths' }, `
+  return page(c, data, site, { title: `${k.pathsTitle} | TKUMA`, desc: k.pathsLead, page: 'paths', active: 'paths' }, `
 <section class="page-head"><div class="wrap">${crumbs(c, [[null, k.paths]])}<h1>${esc(k.pathsTitle)}</h1><p class="lead">${esc(k.pathsLead)}</p></div></section>
 <section class="section tight"><div class="wrap"><ul class="path-grid">${paths.paths.map((p) => pathCard(p, ctx)).join('')}</ul></div></section>
 `);
@@ -240,7 +240,7 @@ export function pathPage(c, data, site, products, paths, p) {
         <span class="step-title">${esc(r.title)}</span><span class="step-why">${esc(L === 'he' ? he : en)}</span></span></a></li>`;
   }).join('');
   const jsonld = { '@context': 'https://schema.org', '@type': 'ItemList', name: p.title[L], itemListOrder: 'https://schema.org/ItemListOrderAscending', numberOfItems: p.steps.length };
-  return page(c, data, site, { title: `${p.title[L]} | ToolScout`, desc: p.audience[L], page: 'path', active: 'paths', jsonld }, `
+  return page(c, data, site, { title: `${p.title[L]} | TKUMA`, desc: p.audience[L], page: 'path', active: 'paths', jsonld }, `
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[c.u('paths/index.html'), k.paths], [null, p.title[L]]])}<h1>${esc(p.title[L])}</h1>
   <p class="lead">${esc(p.audience[L])}</p><p class="meta-line">${esc(k.stepsN(p.steps.length))} · ${esc(k.lvl[p.level])}</p></div></section>
 <section class="section tight"><div class="wrap narrow"><ol class="path-list">${steps}</ol></div></section>
@@ -253,7 +253,7 @@ export function listPage(c, data, site, products, col) {
   const items = col.items.map(([id, he, en]) => [products.items.find((x) => x.id === id), L === 'he' ? he : en]).filter(([b]) => b);
   const jsonld = { '@context': 'https://schema.org', '@type': 'ItemList', name: col.title[L], numberOfItems: items.length,
     itemListElement: items.map(([b], i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Book', name: b.title, author: b.authors.map((a) => ({ '@type': 'Person', name: a })), isbn: b.isbn13 } })) };
-  return page(c, data, site, { title: `${col.title[L]} | ToolScout`, desc: col.description[L], page: 'list', active: 'books', jsonld }, `
+  return page(c, data, site, { title: `${col.title[L]} | TKUMA`, desc: col.description[L], page: 'list', active: 'books', jsonld }, `
 <section class="page-head"><div class="wrap narrow">${crumbs(c, [[c.u('books.html'), k.books], [null, col.title[L]]])}<h1>${esc(col.title[L])}</h1><p class="lead">${esc(col.description[L])}</p></div></section>
 <section class="section tight"><div class="wrap narrow"><ol class="reading-list">${items.map(([b, why], i) => `<li><a class="rl-item" href="${urls.book(c, b.id)}">
   <span class="rl-n" aria-hidden="true">${i + 1}</span><span class="book-cover sm">${coverHtml(b, c, 'sm')}</span>
@@ -291,7 +291,7 @@ export function topicPage(c, data, site, products, paths, tp) {
   const ctx = { c, data, products };
   const jsonld = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, inLanguage: L,
     mainEntity: { '@type': 'ItemList', numberOfItems: books.length, itemListElement: books.map((b, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Book', name: b.title, isbn: b.isbn13 } })) } };
-  return page(c, data, site, { title: `${title} | ToolScout`, desc: intro.slice(0, 158), page: 'topic', active: 'books', jsonld }, `
+  return page(c, data, site, { title: `${title} | TKUMA`, desc: intro.slice(0, 158), page: 'topic', active: 'books', jsonld }, `
 <section class="page-head"><div class="wrap">${crumbs(c, tp.group === 'ideas' ? [[c.u('ideas.html'), L === 'he' ? 'רעיונות' : 'Ideas'], [null, title]] : [[c.u('books.html'), k.books], [null, title]])}${tp.group === 'ideas' ? `<p class="eyebrow">${esc(tp.stance ? (L === 'he' ? 'עמדה עריכתית' : 'Editorial position') : (L === 'he' ? 'רעיונות וזהות' : 'Ideas and identity'))}</p>` : ''}<h1>${esc(title)}</h1><p class="lead">${esc(intro)}</p>${tp.group === 'ideas' ? `<p class="fine"><a href="${c.u('editorial.html')}">${esc(L === 'he' ? 'הקו המערכתי שלנו, ואיך אנחנו מפרידים בין עובדה לדעה' : 'Our editorial line, and how we separate fact from opinion')}</a></p>` : ''}
   <p class="meta-line">${esc(k.booksN(books.length))}${courses.length ? ` · ${esc(L === 'he' ? `${courses.length} קורסים` : `${courses.length} courses`)}` : ''}</p></div></section>
 <section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.books)}</h2><ul class="shelf">${books.map((b) => shelfCard(b, c, products)).join('')}</ul></div></section>
@@ -317,7 +317,7 @@ export function authorPage(c, data, site, products, au) {
   const more = products.items.filter((x) => x.type === 'book' && !au.books.includes(x) && x.topics.some((t) => topics.includes(t))).slice(0, 6);
   const title = L === 'he' ? `ספרים של ${au.name}` : `Books by ${au.name}`;
   const jsonld = { '@context': 'https://schema.org', '@type': 'ProfilePage', mainEntity: { '@type': 'Person', name: au.name } };
-  return page(c, data, site, { title: `${title} | ToolScout`, desc: (L === 'he' ? `ספרים של ${au.name} בקטלוג ToolScout, עם פרטי הוצאה שנבדקו.` : `Books by ${au.name} in the ToolScout catalog, with checked publisher details.`), page: 'author', active: 'books', jsonld }, `
+  return page(c, data, site, { title: `${title} | TKUMA`, desc: (L === 'he' ? `ספרים של ${au.name} בקטלוג תקומה, עם פרטי הוצאה שנבדקו.` : `Books by ${au.name} in the TKUMA catalog, with checked publisher details.`), page: 'author', active: 'books', jsonld }, `
 <section class="page-head"><div class="wrap">${crumbs(c, [[c.u('books.html'), k.books], [null, au.name]])}<h1 lang="en" dir="ltr">${esc(au.name)}</h1>
   <p class="lead">${esc(k.booksN(au.books.length))} · ${esc(topics.map((t) => name(products.bookTopics, t, L)).join(', '))}</p></div></section>
 <section class="section tight"><div class="wrap"><ul class="shelf">${au.books.map((b) => shelfCard(b, c, products)).join('')}</ul></div></section>
@@ -331,11 +331,11 @@ export function ideasPage(c, data, site, products) {
   const L = c.lang, k = K[L];
   const ctx = { c, data, products };
   const title = L === 'he' ? 'יהדות, ציונות ורעיונות' : 'Judaism, Zionism and ideas';
-  const lead = L === 'he' ? 'אזורי ידע שמבטאים את הקו של ToolScout: יהדות ומסורת, ציונות, מחשבה שמרנית, חירות וכלכלה חופשית, מנהיגות וביטחון, וביקורת רעיונית. ספרים אמיתיים, פרטים שנבדקו, והפרדה ברורה בין עובדה לדעה.' : 'Areas that express ToolScout\'s line: Judaism and tradition, Zionism, conservative thought, liberty and free markets, leadership and security, and critique of ideas. Real books, checked details, and a clear line between fact and opinion.';
+  const lead = L === 'he' ? 'אזורי ידע שמבטאים את הקו של תקומה: יהדות ומסורת, ציונות, מחשבה שמרנית, חירות וכלכלה חופשית, מנהיגות וביטחון, וביקורת רעיונית. ספרים אמיתיים, פרטים שנבדקו, והפרדה ברורה בין עובדה לדעה.' : 'Areas that express TKUMA\'s line: Judaism and tradition, Zionism, conservative thought, liberty and free markets, leadership and security, and critique of ideas. Real books, checked details, and a clear line between fact and opinion.';
   const hubs = TOPICS.filter((tp) => tp.group === 'ideas');
   const books = products.items.filter((x) => x.type === 'book');
   const cols = products.collections.filter((col) => ['zionism-and-israel', 'conservative-foundations', 'israeli-authors-and-stories'].includes(col.id));
-  return page(c, data, site, { title: `${title} | ToolScout`, desc: lead.slice(0, 158), page: 'ideas', active: 'ideas' }, `
+  return page(c, data, site, { title: `${title} | TKUMA`, desc: lead.slice(0, 158), page: 'ideas', active: 'ideas' }, `
 <section class="page-head"><div class="wrap">${crumbs(c, [[null, title]])}<p class="eyebrow">${esc(L === 'he' ? 'רעיונות וזהות' : 'Ideas and identity')}</p><h1>${esc(title)}</h1><p class="lead">${esc(lead)}</p>
   <p><a class="text-link" href="${c.u('editorial.html')}">${esc(L === 'he' ? 'הקו המערכתי שלנו' : 'Our editorial line')}${icon('arrow', 'flip')}</a></p></div></section>
 <section class="section tight"><div class="wrap"><ul class="topic-grid">${hubs.map((tp) => { const tb = books.filter((b) => b.topics.some((t) => tp.match.includes(t))); return `<li><a class="topic-card" href="${c.u('books/topic-' + tp.id + '.html')}"><span class="list-covers" aria-hidden="true">${tb.slice(0, 3).map((b) => `<span class="book-cover sm">${coverHtml(b, c, 'sm')}</span>`).join('')}</span>${tp.stance ? `<span class="eyebrow">${esc(L === 'he' ? 'עמדה עריכתית' : 'Editorial position')}</span>` : ''}<span class="topic-title">${esc(tp[L][0])}</span><span class="topic-meta">${esc(k.booksN(tb.length))}</span></a></li>`; }).join('')}</ul></div></section>
@@ -347,7 +347,7 @@ export function ideasPage(c, data, site, products) {
 export function searchPage(c, data, site) {
   const L = c.lang, k = K[L];
   const types = ['book', 'course', 'path', 'list', 'guide', 'tool'];
-  return page(c, data, site, { title: `${k.searchTitle} | ToolScout`, desc: k.searchLead, page: 'search', active: 'search', noindex: true }, `
+  return page(c, data, site, { title: `${k.searchTitle} | TKUMA`, desc: k.searchLead, page: 'search', active: 'search', noindex: true }, `
 <section class="page-head"><div class="wrap">${crumbs(c, [[null, k.search]])}<h1>${esc(k.searchTitle)}</h1><p class="lead">${esc(k.searchLead)}</p>
   <form class="search search-hero" role="search" aria-label="${esc(k.searchTitle)}" action="${c.u('search.html')}" method="get" data-site-search>
     <label class="sr-only" for="sq">${esc(k.searchLabel)}</label>${icon('search', 'search-ic')}

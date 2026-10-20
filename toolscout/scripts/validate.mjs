@@ -1,4 +1,4 @@
-// Validates data/tools.json against the ToolScout data rules. Exits non-zero on errors.
+// Validates data/tools.json against the TKUMA data rules. Exits non-zero on errors.
 // Usage: node toolscout/scripts/validate.mjs
 import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';

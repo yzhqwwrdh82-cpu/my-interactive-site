@@ -1,4 +1,4 @@
-# ToolScout
+# TKUMA
 
 A bilingual (Hebrew RTL / English LTR) catalog for choosing AI tools and software, with information verified against official sources. It's a static site with no server, database, external services, cookies or analytics.
 

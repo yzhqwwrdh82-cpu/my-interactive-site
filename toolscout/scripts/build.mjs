@@ -1,4 +1,4 @@
-// ToolScout static site generator — zero dependencies (Node 18+).
+// TKUMA static site generator — zero dependencies (Node 18+).
 // Usage: node toolscout/scripts/build.mjs
 // Reads data/*.json, writes pre-rendered HTML for both languages, emails,
 // assets/catalog.json (client data), sitemap.xml and robots.txt.

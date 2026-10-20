@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ToolScout design system
+   TKUMA design system
    Cool mineral neutrals, deep teal accent, amber "scout" signal.
    One typeface (Rubik, Hebrew + Latin), logical properties for RTL/LTR.
    ========================================================================== */
@@ -772,7 +772,7 @@ code.key { font: 500 .9em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monos
 .linklike { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; cursor: pointer; font-size: inherit; }
 
 /* ==========================================================================
-   v4 "Vector" — ToolScout premium brand layer
+   v4 "Vector" — TKUMA (formerly ToolScout) premium brand layer
    Deep blue-black, electric blue / cyan / violet, chamfered surfaces,
    CSS-only 3D hero object. Everything below overrides earlier rules.
    ========================================================================== */
@@ -1573,3 +1573,48 @@ h1, h2, .hero5 h1, .section-head5 h2, .page-head h1, .item-hero-body h1, .cm5-fe
   .start-card { grid-template-columns: 80px minmax(0, 1fr); }
 }
 .book-card .book-cover, .book-card .book-cover:hover { text-decoration: none; color: #fff; }
+
+/* ==========================================================================
+   v7 TKUMA / תקומה brand: mark colours follow the theme; bilingual wordmark.
+   ========================================================================== */
+.brand-mark .bm-ink { fill: var(--navy, #13213F); }
+.brand-mark .bm-ink-s { stroke: var(--navy, #13213F); }
+.brand-mark .bm-sun { fill: #B97D14; }
+.brand-mark .bm-sun-s { stroke: #B97D14; }
+:root[data-theme="dark"] .brand-mark .bm-ink { fill: #F5F1EA; }
+:root[data-theme="dark"] .brand-mark .bm-ink-s { stroke: #F5F1EA; }
+:root[data-theme="dark"] .brand-mark .bm-sun { fill: #E8B44E; }
+:root[data-theme="dark"] .brand-mark .bm-sun-s { stroke: #E8B44E; }
+.brand { gap: 10px; align-items: center; }
+.brand-mark, .brand-mark:hover { width: 40px; height: 40px; filter: none; transform: none; transition: none; }
+.brand:hover .brand-mark { transform: none; }
+.wordmark { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; direction: rtl; letter-spacing: 0; gap: 3px; }
+.wordmark .wm-he { font-family: var(--font-display, "Frank Ruhl Libre", serif); font-weight: 800; font-size: 1.62rem; line-height: .9; color: var(--ink);
+  background: none; -webkit-text-fill-color: currentColor; }
+.wordmark .wm-en { font-family: var(--font-display, "Frank Ruhl Libre", serif); font-weight: 600; font-size: .62rem; letter-spacing: .42em; margin-inline-end: -.42em;
+  color: var(--ink-2); background: none; -webkit-text-fill-color: currentColor; direction: ltr; }
+.wordmark span, :root[data-theme="dark"] .wordmark span, :root:not([data-theme="dark"]) .wordmark span { background-image: none; }
+.footer-brand .brand-mark { width: 44px; height: 44px; }
+@media (max-width: 720px) {
+  .brand-mark, .brand-mark:hover { width: 34px; height: 34px; }
+  .wordmark .wm-he { font-size: 1.38rem; }
+  .wordmark .wm-en { font-size: .56rem; }
+}
+.brand-tagline { font-family: var(--font-display, serif); color: var(--gold); font-weight: 600; letter-spacing: .01em; }
+.hero5-tagline { font-size: clamp(1rem, .9rem + .5vw, 1.25rem); margin: 0 0 6px; color: #6E4504; letter-spacing: .02em; }
+:root[data-theme="dark"] .hero5-tagline { color: #F1C66B; }
+/* Cover palettes for the ideas topics: deep, bookish tones in the brand family */
+[data-topic="judaism"], [data-topic="family"] { --bc1: #7A1F2B; --bc2: #3B0D14; }
+[data-topic="zionism"] { --bc1: #1E3A8A; --bc2: #0B1A44; }
+[data-topic="conservatism"] { --bc1: #14532D; --bc2: #052E16; }
+[data-topic="liberty"], [data-topic="economics"] { --bc1: #8A5A0B; --bc2: #3F2A05; }
+[data-topic="leadership"] { --bc1: #334155; --bc2: #0F172A; }
+[data-topic="critique"] { --bc1: #6B2A12; --bc2: #2A0F06; }
+/* Long topic names (ideas hubs) must wrap inside the filter panel on phones */
+.filters, .filters-body, .filters fieldset { min-width: 0; max-width: 100%; }
+.filters .opt { white-space: normal; overflow-wrap: anywhere; min-width: 0; }
+.filters .opt > span { min-width: 0; }
+@media (max-width: 900px) { .books-layout { grid-template-columns: minmax(0, 1fr); } .books-layout > * { min-width: 0; } }
+/* Long topic names wrap instead of overflowing on phones */
+a.chip { max-width: 100%; }
+@media (max-width: 720px) { a.chip { white-space: normal; text-align: start; line-height: 1.3; height: auto; min-height: 40px; } }

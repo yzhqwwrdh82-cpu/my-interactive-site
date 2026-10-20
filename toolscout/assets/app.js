@@ -1,4 +1,4 @@
-/* ToolScout — progressive enhancement. All content is pre-rendered; this adds
+/* TKUMA — progressive enhancement. All content is pre-rendered; this adds
    theme, favorites, compare, catalog filtering, demo-form validation and the
    local chat helper. No network calls except loading /assets/catalog.json
    (same origin). Nothing typed by the user is sent anywhere. */

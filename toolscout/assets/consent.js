@@ -1,4 +1,4 @@
-/* ToolScout analytics consent (loaded only when GA4 is enabled in data/site.json).
+/* TKUMA analytics consent (loaded only when GA4 is enabled in data/site.json).
    Nothing is sent to Google until the visitor clicks "Allow". The choice is stored
    locally (localStorage "ts-consent") and can be changed from the footer link. */
 (function () {
