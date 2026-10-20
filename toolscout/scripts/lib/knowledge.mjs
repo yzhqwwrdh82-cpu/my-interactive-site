@@ -65,7 +65,9 @@ export const urls = {
 // Generated typographic cover (no copyrighted artwork).
 export function coverHtml(item, c, size = '') {
   if (item.cover && item.cover.file && item.cover.license) return `<img class="book-cover-img" src="${c.a('assets/covers/' + item.cover.file)}" alt="" loading="lazy">`;
-  return `<span class="book-cover-gen${size ? ' ' + size : ''}" data-topic="${esc((item.topics || ['ai'])[0])}" aria-hidden="true"><span class="bc-title">${esc(item.titleShort || item.title || '')}</span><span class="bc-author">${esc((item.authors || [item.provider || '']).join(', '))}</span></span>`;
+  const t = item.titleShort || item.title || '';
+  const label = size === 'sm' ? t.split(/[\s:-]+/).filter((w) => /^[A-Za-z0-9]/.test(w)).slice(0, 3).map((w) => w[0].toUpperCase()).join('') : t;
+  return `<span class="book-cover-gen${size ? ' ' + size : ''}" data-topic="${esc((item.topics || ['ai'])[0])}" aria-hidden="true"><span class="bc-title">${esc(label)}</span><span class="bc-author">${esc((item.authors || [item.provider || '']).join(', '))}</span></span>`;
 }
 
 export function shelfCard(item, c, products) {
