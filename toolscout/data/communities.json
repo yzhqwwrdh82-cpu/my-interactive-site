@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "notes": "Community structure. Posts with author 'system' are written by the TKUMA team and labeled as such. No real user content exists until a backend is approved and connected.",
+  "groups": [
+    {
+      "id": "books-learning",
+      "he": "ספרים, קריאה ולימוד",
+      "en": "Books, reading and learning"
+    },
+    {
+      "id": "career-business",
+      "he": "לימודים, קריירה ועסקים",
+      "en": "Study, career and business"
+    },
+    {
+      "id": "tech-creation",
+      "he": "טכנולוגיה, AI ויצירה",
+      "en": "Tech, AI and creation"
+    },
+    {
+      "id": "culture-society",
+      "he": "תרבות, תחביבים ועשייה חברתית",
+      "en": "Culture, hobbies and social impact"
+    },
+    {
+      "id": "local",
+      "he": "קהילות מקומיות ואירועים",
+      "en": "Local communities and events"
+    }
+  ],
+  "communities": [
+    {
+      "id": "book-club",
+      "group": "books-learning",
+      "name": {
+        "he": "מועדון קריאה",
+        "en": "Book club"
+      },
+      "description": {
+        "he": "המלצות, דיונים על ספרים שקראתם ואתגרי קריאה משותפים.",
+        "en": "Recommendations, discussions about books you read and shared reading challenges."
+      },
+      "topics": [
+        "productivity",
+        "business",
+        "ai"
+      ]
+    },
+    {
+      "id": "jewish-learning",
+      "group": "books-learning",
+      "name": {
+        "he": "יהדות ולימוד",
+        "en": "Jewish learning"
+      },
+      "description": {
+        "he": "לימוד משותף, מקורות, שאלות ושיעורים. בכבוד לכל הגישות.",
+        "en": "Learning together, sources, questions and classes, with respect for every approach."
+      },
+      "topics": []
+    },
+    {
+      "id": "nonfiction",
+      "group": "books-learning",
+      "name": {
+        "he": "ספרי עיון וידע",
+        "en": "Non-fiction and ideas"
+      },
+      "description": {
+        "he": "ספרי עיון, מדע, היסטוריה ורעיונות. מה למדתם השבוע?",
+        "en": "Non-fiction, science, history and ideas. What did you learn this week?"
+      },
+      "topics": [
+        "society",
+        "ai"
+      ]
+    },
+    {
+      "id": "career",
+      "group": "career-business",
+      "name": {
+        "he": "קריירה ופיתוח מקצועי",
+        "en": "Career and growth"
+      },
+      "description": {
+        "he": "קורות חיים, ראיונות, מעבר תחום ולמידה לאורך החיים.",
+        "en": "CVs, interviews, career changes and lifelong learning."
+      },
+      "topics": [
+        "productivity"
+      ]
+    },
+    {
+      "id": "founders",
+      "group": "career-business",
+      "name": {
+        "he": "יזמות ועסקים קטנים",
+        "en": "Founders and small business"
+      },
+      "description": {
+        "he": "שאלות של עסקים קטנים ויזמים: שיווק, כלים, תמחור והתחלה נכונה.",
+        "en": "Questions from small businesses and founders: marketing, tools, pricing and getting started."
+      },
+      "topics": [
+        "business",
+        "entrepreneurship",
+        "marketing"
+      ]
+    },
+    {
+      "id": "ai-at-work",
+      "group": "tech-creation",
+      "name": {
+        "he": "כלי AI בעבודה",
+        "en": "AI tools at work"
+      },
+      "description": {
+        "he": "איך משתמשים בכלי AI בפועל, מה עובד ומה לא. בלי הייפ.",
+        "en": "How people actually use AI tools, what works and what does not. No hype."
+      },
+      "topics": [
+        "ai",
+        "prompts",
+        "automation"
+      ]
+    },
+    {
+      "id": "developers",
+      "group": "tech-creation",
+      "name": {
+        "he": "תכנות ופיתוח",
+        "en": "Programming"
+      },
+      "description": {
+        "he": "שאלות קוד, מקורות לימוד ופרויקטים משותפים.",
+        "en": "Code questions, learning resources and shared projects."
+      },
+      "topics": [
+        "programming",
+        "technology"
+      ]
+    },
+    {
+      "id": "makers",
+      "group": "tech-creation",
+      "name": {
+        "he": "יצירה ועיצוב",
+        "en": "Making and design"
+      },
+      "description": {
+        "he": "עיצוב, וידאו, צילום ויצירה דיגיטלית.",
+        "en": "Design, video, photography and digital making."
+      },
+      "topics": [
+        "design"
+      ]
+    },
+    {
+      "id": "hobbies",
+      "group": "culture-society",
+      "name": {
+        "he": "תרבות ותחביבים",
+        "en": "Culture and hobbies"
+      },
+      "description": {
+        "he": "מוזיקה, קולנוע, טיולים ותחביבים אחרים.",
+        "en": "Music, film, hiking and other hobbies."
+      },
+      "topics": []
+    },
+    {
+      "id": "volunteering",
+      "group": "culture-society",
+      "name": {
+        "he": "התנדבות ועשייה חברתית",
+        "en": "Volunteering and social impact"
+      },
+      "description": {
+        "he": "יוזמות, התנדבות ועזרה הדדית.",
+        "en": "Initiatives, volunteering and mutual help."
+      },
+      "topics": []
+    },
+    {
+      "id": "north",
+      "group": "local",
+      "name": {
+        "he": "צפון",
+        "en": "North"
+      },
+      "description": {
+        "he": "מפגשים, המלצות ופעילות בצפון הארץ.",
+        "en": "Meetups, recommendations and activities in the north."
+      },
+      "topics": []
+    },
+    {
+      "id": "center",
+      "group": "local",
+      "name": {
+        "he": "מרכז",
+        "en": "Center"
+      },
+      "description": {
+        "he": "מפגשים, המלצות ופעילות במרכז הארץ.",
+        "en": "Meetups, recommendations and activities in the center."
+      },
+      "topics": []
+    },
+    {
+      "id": "jerusalem",
+      "group": "local",
+      "name": {
+        "he": "ירושלים והסביבה",
+        "en": "Jerusalem area"
+      },
+      "description": {
+        "he": "מפגשים, המלצות ופעילות בירושלים והסביבה.",
+        "en": "Meetups, recommendations and activities in the Jerusalem area."
+      },
+      "topics": []
+    },
+    {
+      "id": "south",
+      "group": "local",
+      "name": {
+        "he": "דרום",
+        "en": "South"
+      },
+      "description": {
+        "he": "מפגשים, המלצות ופעילות בדרום הארץ.",
+        "en": "Meetups, recommendations and activities in the south."
+      },
+      "topics": []
+    },
+    {
+      "id": "abroad",
+      "group": "local",
+      "name": {
+        "he": "ישראלים בעולם",
+        "en": "Israelis abroad"
+      },
+      "description": {
+        "he": "קשר, עזרה והמלצות לישראלים שגרים מחוץ לישראל.",
+        "en": "Connection, help and tips for Israelis living abroad."
+      },
+      "topics": []
+    }
+  ],
+  "systemPosts": [
+    {
+      "id": "sys-welcome",
+      "community": null,
+      "pinned": true,
+      "type": "announcement",
+      "created": "2026-10-20",
+      "title": {
+        "he": "ברוכים הבאים לקהילה של תקומה",
+        "en": "Welcome to the TKUMA community"
+      },
+      "body": {
+        "he": "זה מקום רגוע לשאלות, להמלצות ולעזרה הדדית. אין כאן מרדף אחרי לייקים: תגובה שעזרה מסומנת \"מועיל\" על ידי מי ששאל. לפני שמתחילים, כדאי לקרוא את כללי הקהילה. הקהילה במצב הדגמה: מה שתכתבו נשמר רק בדפדפן שלכם, ואף אחד אחר לא רואה אותו.",
+        "en": "This is a calm place for questions, recommendations and mutual help. There is no chasing likes: a reply that helped is marked \"Helpful\" by the person who asked. Please read the community rules first. The community is in demo mode: what you write is saved only in your browser, and nobody else can see it."
+      }
+    },
+    {
+      "id": "sys-book-club",
+      "community": "book-club",
+      "pinned": false,
+      "type": "discussion",
+      "created": "2026-10-20",
+      "title": {
+        "he": "איזה ספר קראתם החודש?",
+        "en": "What did you read this month?"
+      },
+      "body": {
+        "he": "שתפו ספר אחד שקראתם, משפט אחד על מה שלמדתם ממנו, ולמי הייתם ממליצים עליו.",
+        "en": "Share one book you read, one sentence on what you learned and who you would recommend it to."
+      },
+      "ref": {
+        "type": "list",
+        "id": "focus-and-productivity"
+      }
+    },
+    {
+      "id": "sys-ai-at-work",
+      "community": "ai-at-work",
+      "pinned": false,
+      "type": "question",
+      "created": "2026-10-20",
+      "title": {
+        "he": "לאיזו משימה אתם משתמשים בעוזר AI?",
+        "en": "What task do you use an AI assistant for?"
+      },
+      "body": {
+        "he": "תארו משימה אחת שעוזר AI חוסך לכם בה זמן, ומשימה אחת שבה הוא עדיין לא עוזר.",
+        "en": "Describe one task where an AI assistant saves you time and one where it still does not help."
+      },
+      "ref": {
+        "type": "guide",
+        "id": "choose-ai-assistant"
+      }
+    },
+    {
+      "id": "sys-founders",
+      "community": "founders",
+      "pinned": false,
+      "type": "question",
+      "created": "2026-10-20",
+      "title": {
+        "he": "מה הכלי הראשון שהייתם ממליצים לעסק חדש?",
+        "en": "What is the first tool you would recommend to a new business?"
+      },
+      "body": {
+        "he": "כלי אחד, ולמה. עדיף חינמי או זול.",
+        "en": "One tool, and why. Free or cheap preferred."
+      },
+      "ref": {
+        "type": "guide",
+        "id": "small-business-free-stack"
+      }
+    },
+    {
+      "id": "sys-developers",
+      "community": "developers",
+      "pinned": false,
+      "type": "discussion",
+      "created": "2026-10-20",
+      "title": {
+        "he": "מאיפה התחלתם ללמוד לתכנת?",
+        "en": "Where did you start learning to code?"
+      },
+      "body": {
+        "he": "קורס, ספר או פרויקט. מה עבד בשבילכם?",
+        "en": "A course, a book or a project. What worked for you?"
+      },
+      "ref": {
+        "type": "path",
+        "id": "learn-to-code"
+      }
+    }
+  ]
+}

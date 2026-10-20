@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "notes": "Learning paths combine books, courses, tools and guides. Steps reference existing ids only (validated). 'why' is editorial.",
+  "paths": [
+    {
+      "id": "start-with-ai",
+      "title": {
+        "he": "מתחילים עם AI",
+        "en": "Getting started with AI"
+      },
+      "level": "beginner",
+      "audience": {
+        "he": "למי שרוצה להבין AI ולהתחיל להשתמש בו נכון, בלי רקע טכני.",
+        "en": "For anyone who wants to understand AI and start using it well, no technical background needed."
+      },
+      "steps": [
+        [
+          "course",
+          "elements-of-ai",
+          "להבין מה AI יכול ולא יכול לעשות.",
+          "Understand what AI can and cannot do."
+        ],
+        [
+          "book",
+          "co-intelligence",
+          "ללמוד לעבוד עם AI כשותף ביום־יום.",
+          "Learn to work with AI as a daily partner."
+        ],
+        [
+          "guide",
+          "choose-ai-assistant",
+          "לבחור עוזר AI שמתאים לכם.",
+          "Choose an AI assistant that fits you."
+        ],
+        [
+          "tool",
+          "claude",
+          "לנסות עוזר AI בפועל.",
+          "Try an AI assistant in practice."
+        ],
+        [
+          "book",
+          "human-compatible",
+          "להבין את שאלת השליטה במערכות AI.",
+          "Understand the question of controlling AI."
+        ]
+      ]
+    },
+    {
+      "id": "learn-to-code",
+      "title": {
+        "he": "לומדים לתכנת",
+        "en": "Learning to code"
+      },
+      "level": "beginner",
+      "audience": {
+        "he": "למתחילים שרוצים לכתוב קוד שעושה משהו מועיל, ולהמשיך משם לרמה מקצועית.",
+        "en": "For beginners who want to write useful code and grow toward professional level."
+      },
+      "steps": [
+        [
+          "course",
+          "cs50x",
+          "יסודות מדעי המחשב והתכנות.",
+          "Computer science and programming foundations."
+        ],
+        [
+          "book",
+          "automate-the-boring-stuff",
+          "Python מעשי לאוטומציה של משימות.",
+          "Practical Python to automate tasks."
+        ],
+        [
+          "tool",
+          "vscode",
+          "עורך קוד חינמי לעבודה יומיומית.",
+          "A free code editor for daily work."
+        ],
+        [
+          "book",
+          "pragmatic-programmer",
+          "הרגלים של מפתחים מקצועיים.",
+          "Habits of professional developers."
+        ],
+        [
+          "book",
+          "designing-data-intensive-applications",
+          "לשלב הבא: מערכות גדולות.",
+          "Next level: large systems."
+        ]
+      ]
+    },
+    {
+      "id": "build-a-business",
+      "title": {
+        "he": "בונים עסק עם כלים חכמים",
+        "en": "Building a business with smart tools"
+      },
+      "level": "beginner",
+      "audience": {
+        "he": "ליזמים ולעסקים קטנים שרוצים לבדוק רעיון ולעבוד יעיל עם תקציב קטן.",
+        "en": "For founders and small businesses who want to test an idea and work efficiently on a small budget."
+      },
+      "steps": [
+        [
+          "book",
+          "lean-startup",
+          "לבדוק רעיון בניסויים קטנים.",
+          "Test an idea with small experiments."
+        ],
+        [
+          "guide",
+          "small-business-free-stack",
+          "לבחור כלים חינמיים לניהול העסק.",
+          "Pick free tools to run the business."
+        ],
+        [
+          "tool",
+          "notion",
+          "מקום אחד למסמכים ולמשימות.",
+          "One place for docs and tasks."
+        ],
+        [
+          "tool",
+          "make",
+          "אוטומציה בין האפליקציות.",
+          "Automation between apps."
+        ],
+        [
+          "book",
+          "zero-to-one",
+          "לחשוב על מה שהופך מוצר לייחודי.",
+          "Think about what makes a product unique."
+        ]
+      ]
+    },
+    {
+      "id": "focus-system",
+      "title": {
+        "he": "מערכת לפוקוס ולארגון",
+        "en": "A system for focus and organization"
+      },
+      "level": "beginner",
+      "audience": {
+        "he": "למי שרוצה לעבוד מרוכז יותר ולארגן משימות, רשימות ורעיונות.",
+        "en": "For anyone who wants to focus better and organize tasks, notes and ideas."
+      },
+      "steps": [
+        [
+          "book",
+          "deep-work",
+          "למה עבודה מרוכזת שווה כל כך.",
+          "Why focused work is so valuable."
+        ],
+        [
+          "book",
+          "atomic-habits",
+          "לבנות הרגלים שמחזיקים.",
+          "Build habits that last."
+        ],
+        [
+          "book",
+          "building-a-second-brain",
+          "שיטה לארגון מידע ורעיונות.",
+          "A method for organizing information and ideas."
+        ],
+        [
+          "tool",
+          "obsidian",
+          "כלי חינמי לרשימות מקושרות.",
+          "A free tool for linked notes."
+        ],
+        [
+          "tool",
+          "todoist",
+          "ניהול משימות פשוט.",
+          "Simple task management."
+        ]
+      ]
+    }
+  ]
+}

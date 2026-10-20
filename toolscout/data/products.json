@@ -1,0 +1,2500 @@
+{
+  "schemaVersion": 1,
+  "notes": "Non-tool offerings: books, physical products, digital products and courses. Add only real items verified against the publisher/manufacturer page; level and description are editorial. Never add invented titles, prices, stock, reviews or affiliate links. See toolscout/docs/data-model.md. retailers: where to buy, [{name, type: publisher|store|ebook-store|audiobook-store|library, url, checkedAt, affiliate: {status, programId}}]. No store prices are stored; a store link becomes paid only when its programId is approved in affiliate-programs.json.",
+  "types": [
+    {
+      "id": "book",
+      "he": "ספר",
+      "en": "Book"
+    },
+    {
+      "id": "physical-product",
+      "he": "מוצר פיזי",
+      "en": "Physical product"
+    },
+    {
+      "id": "digital-product",
+      "he": "מוצר דיגיטלי",
+      "en": "Digital product"
+    },
+    {
+      "id": "course",
+      "he": "קורס",
+      "en": "Course"
+    }
+  ],
+  "bookTopics": [
+    {
+      "id": "ai",
+      "he": "בינה מלאכותית",
+      "en": "AI"
+    },
+    {
+      "id": "prompts",
+      "he": "כתיבת פרומפטים",
+      "en": "Prompting"
+    },
+    {
+      "id": "automation",
+      "he": "אוטומציה",
+      "en": "Automation"
+    },
+    {
+      "id": "programming",
+      "he": "תכנות",
+      "en": "Programming"
+    },
+    {
+      "id": "business",
+      "he": "עסקים",
+      "en": "Business"
+    },
+    {
+      "id": "marketing",
+      "he": "שיווק",
+      "en": "Marketing"
+    },
+    {
+      "id": "design",
+      "he": "עיצוב",
+      "en": "Design"
+    },
+    {
+      "id": "entrepreneurship",
+      "he": "יזמות",
+      "en": "Entrepreneurship"
+    },
+    {
+      "id": "technology",
+      "he": "טכנולוגיה",
+      "en": "Technology"
+    },
+    {
+      "id": "productivity",
+      "he": "פרודוקטיביות",
+      "en": "Productivity"
+    },
+    {
+      "id": "society",
+      "he": "חברה ועתיד",
+      "en": "Society and the future"
+    },
+    {
+      "id": "philosophy",
+      "he": "פילוסופיה",
+      "en": "Philosophy"
+    },
+    {
+      "id": "history",
+      "he": "היסטוריה",
+      "en": "History"
+    },
+    {
+      "id": "psychology",
+      "he": "פסיכולוגיה",
+      "en": "Psychology"
+    },
+    {
+      "id": "israel",
+      "he": "ישראל",
+      "en": "Israel"
+    },
+    {
+      "id": "judaism",
+      "he": "יהדות ומסורת",
+      "en": "Judaism and tradition"
+    },
+    {
+      "id": "zionism",
+      "he": "ציונות והיסטוריה ישראלית",
+      "en": "Zionism and Israeli history"
+    },
+    {
+      "id": "conservatism",
+      "he": "מחשבה שמרנית",
+      "en": "Conservative thought"
+    },
+    {
+      "id": "liberty",
+      "he": "חירות הפרט",
+      "en": "Individual liberty"
+    },
+    {
+      "id": "economics",
+      "he": "כלכלה חופשית",
+      "en": "Free-market economics"
+    },
+    {
+      "id": "family",
+      "he": "משפחה וקהילה",
+      "en": "Family and community"
+    },
+    {
+      "id": "leadership",
+      "he": "מנהיגות וביטחון",
+      "en": "Leadership and security"
+    },
+    {
+      "id": "critique",
+      "he": "ביקורת רעיונית",
+      "en": "Critique of ideas"
+    }
+  ],
+  "languages": [
+    {
+      "id": "he",
+      "he": "עברית",
+      "en": "Hebrew"
+    },
+    {
+      "id": "en",
+      "he": "אנגלית",
+      "en": "English"
+    }
+  ],
+  "levels": [
+    {
+      "id": "beginner",
+      "he": "מתחילים",
+      "en": "Beginner"
+    },
+    {
+      "id": "intermediate",
+      "he": "בינוני",
+      "en": "Intermediate"
+    },
+    {
+      "id": "advanced",
+      "he": "מתקדמים",
+      "en": "Advanced"
+    }
+  ],
+  "formats": [
+    {
+      "id": "print",
+      "he": "מודפס",
+      "en": "Print"
+    },
+    {
+      "id": "ebook",
+      "he": "ספר אלקטרוני",
+      "en": "E-book"
+    },
+    {
+      "id": "audiobook",
+      "he": "ספר שמע",
+      "en": "Audiobook"
+    },
+    {
+      "id": "guide",
+      "he": "מדריך מעשי",
+      "en": "Practical guide"
+    }
+  ],
+  "priceBands": [
+    {
+      "id": "free",
+      "he": "חינם",
+      "en": "Free"
+    },
+    {
+      "id": "paid",
+      "he": "בתשלום",
+      "en": "Paid"
+    },
+    {
+      "id": "unverified",
+      "he": "מחיר לא אומת",
+      "en": "Price not verified"
+    }
+  ],
+  "collections": [
+    {
+      "id": "ai-essentials",
+      "title": {
+        "he": "ספרי AI שכדאי לקרוא",
+        "en": "AI books worth reading"
+      },
+      "description": {
+        "he": "מהבנה כללית של AI והשלכותיו ועד בנייה מעשית עם מודלי שפה.",
+        "en": "From a general understanding of AI and its impact to hands-on building with language models."
+      },
+      "items": [
+        [
+          "co-intelligence",
+          "נקודת פתיחה מעשית: איך לעבוד עם AI ביום־יום.",
+          "A practical start: working with AI day to day."
+        ],
+        [
+          "the-coming-wave",
+          "התמונה הגדולה: כוח, סיכונים והזדמנויות.",
+          "The big picture: power, risks and opportunities."
+        ],
+        [
+          "human-compatible",
+          "למה שליטה במערכות AI היא שאלה מרכזית.",
+          "Why controlling AI systems is a central question."
+        ],
+        [
+          "prompt-engineering-generative-ai",
+          "לעבודה מקצועית עם פרומפטים.",
+          "For professional prompt work."
+        ],
+        [
+          "hands-on-llms",
+          "לבנייה מעשית עם מודלי שפה.",
+          "For hands-on building with language models."
+        ],
+        [
+          "ai-engineering",
+          "לבניית מוצרים על מודלים קיימים.",
+          "For building products on existing models."
+        ]
+      ]
+    },
+    {
+      "id": "developers",
+      "title": {
+        "he": "ספרים למפתחים",
+        "en": "Books for developers"
+      },
+      "description": {
+        "he": "מהצעדים הראשונים ב־Python ועד תכנון מערכות נתונים גדולות.",
+        "en": "From first steps in Python to designing large data systems."
+      },
+      "items": [
+        [
+          "automate-the-boring-stuff",
+          "התחלה מעשית בתכנות.",
+          "A practical start in programming."
+        ],
+        [
+          "pragmatic-programmer",
+          "הרגלים ושיטות עבודה של מפתחים מקצועיים.",
+          "Habits and practices of professional developers."
+        ],
+        [
+          "designing-data-intensive-applications",
+          "כשהמערכת גדלה: נתונים, קנה מידה ואמינות.",
+          "When systems grow: data, scale and reliability."
+        ],
+        [
+          "ai-engineering",
+          "כשמוסיפים AI למוצר.",
+          "When you add AI to a product."
+        ]
+      ]
+    },
+    {
+      "id": "business-builders",
+      "title": {
+        "he": "ספרים למי שבונה עסק",
+        "en": "Books for business builders"
+      },
+      "description": {
+        "he": "איך בודקים רעיון, בונים מוצר ומשקיעים במה שחשוב.",
+        "en": "How to test an idea, build a product and focus on what matters."
+      },
+      "items": [
+        [
+          "lean-startup",
+          "בדיקת רעיונות בניסויים קטנים.",
+          "Testing ideas with small experiments."
+        ],
+        [
+          "zero-to-one",
+          "לחשוב על מוצר חדש באמת.",
+          "Thinking about genuinely new products."
+        ],
+        [
+          "design-of-everyday-things",
+          "לעצב מוצר שאנשים מבינים.",
+          "Designing products people understand."
+        ],
+        [
+          "co-intelligence",
+          "איך AI משנה את העבודה בעסק.",
+          "How AI changes work in a business."
+        ]
+      ]
+    },
+    {
+      "id": "focus-and-productivity",
+      "title": {
+        "he": "פוקוס ופרודוקטיביות",
+        "en": "Focus and productivity"
+      },
+      "description": {
+        "he": "הרגלים, ריכוז וארגון מידע, לעבודה טובה יותר עם פחות לחץ.",
+        "en": "Habits, focus and organizing information, for better work with less stress."
+      },
+      "items": [
+        [
+          "atomic-habits",
+          "בניית הרגלים בצעדים קטנים.",
+          "Building habits in small steps."
+        ],
+        [
+          "deep-work",
+          "עבודה מרוכזת בעולם של הסחות.",
+          "Focused work in a distracted world."
+        ],
+        [
+          "building-a-second-brain",
+          "ארגון רעיונות ומידע דיגיטלי.",
+          "Organizing ideas and digital information."
+        ]
+      ]
+    },
+    {
+      "id": "big-ideas",
+      "title": {
+        "he": "ספרים על רעיונות גדולים",
+        "en": "Books about big ideas"
+      },
+      "description": {
+        "he": "היסטוריה, פסיכולוגיה ופילוסופיה: ספרים שמשנים את הדרך שבה מסתכלים על העולם.",
+        "en": "History, psychology and philosophy: books that change how you see the world."
+      },
+      "items": [
+        [
+          "sapiens",
+          "מבט רחב על ההיסטוריה האנושית.",
+          "A wide view of human history."
+        ],
+        [
+          "thinking-fast-and-slow",
+          "איך אנחנו חושבים ומחליטים.",
+          "How we think and decide."
+        ],
+        [
+          "guns-germs-and-steel",
+          "למה חברות התפתחו בצורה שונה.",
+          "Why societies developed differently."
+        ],
+        [
+          "mans-search-for-meaning",
+          "משמעות גם בתנאים קשים.",
+          "Meaning even in hard conditions."
+        ],
+        [
+          "meditations",
+          "פילוסופיה מעשית מלפני 1,800 שנה.",
+          "Practical philosophy from 1,800 years ago."
+        ]
+      ]
+    },
+    {
+      "id": "israeli-authors-and-stories",
+      "title": {
+        "he": "מחברים ישראלים וסיפורים מישראל",
+        "en": "Israeli authors and stories from Israel"
+      },
+      "description": {
+        "he": "ספרים של מחברים ישראלים וספרים על החדשנות הישראלית, שנקראים בכל העולם.",
+        "en": "Books by Israeli authors and about Israeli innovation, read around the world."
+      },
+      "items": [
+        [
+          "sapiens",
+          "ההיסטוריון יובל נח הררי על סיפור האנושות.",
+          "Historian Yuval Noah Harari on the story of humankind."
+        ],
+        [
+          "nexus",
+          "הררי על רשתות מידע ועל AI.",
+          "Harari on information networks and AI."
+        ],
+        [
+          "thinking-fast-and-slow",
+          "דניאל כהנמן על חשיבה והחלטות.",
+          "Daniel Kahneman on thinking and decisions."
+        ],
+        [
+          "start-up-nation",
+          "איך ישראל הפכה למרכז של סטארטאפים.",
+          "How Israel became a startup hub."
+        ]
+      ]
+    },
+    {
+      "id": "zionism-and-israel",
+      "title": {
+        "he": "ציונות וישראל: מהרעיון למדינה",
+        "en": "Zionism and Israel: from idea to state"
+      },
+      "description": {
+        "he": "מהחיבור של הרצל, דרך מלחמת ששת הימים ועד החדשנות הישראלית והוויכוח על מדינת הלאום.",
+        "en": "From Herzl's essay, through the Six-Day War, to Israeli innovation and the debate over the nation-state."
+      },
+      "items": [
+        [
+          "the-jewish-state",
+          "המקור: הרעיון של מדינה יהודית.",
+          "The source: the idea of a Jewish state."
+        ],
+        [
+          "six-days-of-war",
+          "רגע מכונן בביטחון ובהיסטוריה של ישראל.",
+          "A defining moment in Israel's security and history."
+        ],
+        [
+          "start-up-nation",
+          "איך המדינה הקטנה הפכה למעצמת חדשנות.",
+          "How a small state became an innovation powerhouse."
+        ],
+        [
+          "the-virtue-of-nationalism",
+          "הטיעון בעד מדינות לאום עצמאיות.",
+          "The case for independent nation-states."
+        ]
+      ]
+    },
+    {
+      "id": "conservative-foundations",
+      "title": {
+        "he": "יסודות המחשבה השמרנית והחירות",
+        "en": "Foundations of conservative and liberty thought"
+      },
+      "description": {
+        "he": "טקסטים קלאסיים ומודרניים על מסורת, מוסדות, חירות ושוק חופשי.",
+        "en": "Classic and modern texts on tradition, institutions, liberty and free markets."
+      },
+      "items": [
+        [
+          "reflections-on-the-revolution-in-france",
+          "טקסט היסוד: מסורת ושינוי הדרגתי.",
+          "The founding text: tradition and gradual change."
+        ],
+        [
+          "the-road-to-serfdom",
+          "חירות מול תכנון מרכזי.",
+          "Liberty versus central planning."
+        ],
+        [
+          "capitalism-and-freedom",
+          "הקשר בין חופש כלכלי לחופש פוליטי.",
+          "Economic freedom and political freedom."
+        ],
+        [
+          "basic-economics",
+          "כלכלה בשפה פשוטה.",
+          "Economics in plain language."
+        ],
+        [
+          "morality-jonathan-sacks",
+          "משפחה, קהילה ומוסר משותף.",
+          "Family, community and shared morality."
+        ]
+      ]
+    }
+  ],
+  "items": [
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "co-intelligence",
+      "title": "Co-Intelligence: Living and Working with AI",
+      "titleShort": "Co-Intelligence",
+      "authors": [
+        "Ethan Mollick"
+      ],
+      "publisher": "Portfolio",
+      "year": 2024,
+      "isbn13": "9780593716717",
+      "topics": [
+        "ai",
+        "business"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguinrandomhouse.com/books/741805/co-intelligence-by-ethan-mollick/",
+      "description": {
+        "he": "איך לעבוד, ללמוד ולחיות לצד AI גנרטיבי: כעמית לעבודה, כמורה וכמאמן.",
+        "en": "How to work, learn and live alongside generative AI as a co-worker, co-teacher and coach."
+      },
+      "retailers": [
+        {
+          "name": "Portfolio",
+          "type": "publisher",
+          "url": "https://www.penguinrandomhouse.com/books/741805/co-intelligence-by-ethan-mollick/",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שרוצה להתחיל לעבוד עם AI בעבודה ובלימודים, בלי רקע טכני.",
+        "en": "Anyone who wants to start using AI at work or school, no technical background needed."
+      },
+      "goals": [
+        "understand-ai"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "prompt-engineering-generative-ai",
+      "title": "Prompt Engineering for Generative AI",
+      "titleShort": "Prompt Engineering",
+      "authors": [
+        "James Phoenix",
+        "Mike Taylor"
+      ],
+      "publisher": "O'Reilly Media",
+      "year": 2024,
+      "isbn13": "9781098153427",
+      "topics": [
+        "prompts",
+        "ai"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [],
+      "officialUrl": "https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/",
+      "description": {
+        "he": "עקרונות לכתיבת פרומפטים, כדי לקבל תוצאות אמינות ממודלי שפה וממודלים ליצירת תמונות.",
+        "en": "Prompting principles for reliable results from language models and image models."
+      },
+      "retailers": [
+        {
+          "name": "O'Reilly Media",
+          "type": "publisher",
+          "url": "https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שכבר משתמש בכלי AI ורוצה תוצאות עקביות ומקצועיות.",
+        "en": "People already using AI tools who want consistent, professional results."
+      },
+      "goals": [
+        "understand-ai"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "hands-on-llms",
+      "title": "Hands-On Large Language Models",
+      "titleShort": "Hands-On LLMs",
+      "authors": [
+        "Jay Alammar",
+        "Maarten Grootendorst"
+      ],
+      "publisher": "O'Reilly Media",
+      "year": 2024,
+      "isbn13": "9781098150952",
+      "topics": [
+        "ai",
+        "programming"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [],
+      "officialUrl": "https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/",
+      "description": {
+        "he": "מדריך מעשי לשימוש במודלי שפה גדולים, לבנייה שלהם ולהתאמה שלהם למשימות כמו סיווג וחיפוש סמנטי.",
+        "en": "A practical guide to using, building and fine-tuning large language models for tasks such as classification and semantic search."
+      },
+      "retailers": [
+        {
+          "name": "O'Reilly Media",
+          "type": "publisher",
+          "url": "https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למפתחים ולאנשי נתונים שרוצים לבנות עם מודלי שפה.",
+        "en": "Developers and data people who want to build with language models."
+      },
+      "goals": [
+        "understand-ai",
+        "code"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "ai-engineering",
+      "title": "AI Engineering",
+      "titleShort": "AI Engineering",
+      "authors": [
+        "Chip Huyen"
+      ],
+      "publisher": "O'Reilly Media",
+      "year": 2024,
+      "isbn13": "9781098166298",
+      "topics": [
+        "ai",
+        "programming"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "advanced",
+      "formats": [],
+      "officialUrl": "https://www.oreilly.com/library/view/ai-engineering/9781098166298/",
+      "description": {
+        "he": "בניית אפליקציות AI על בסיס מודלים קיימים: התאמת מודלים, הערכה ופריסה יעילה.",
+        "en": "Building AI applications on existing foundation models: adaptation, evaluation and efficient deployment."
+      },
+      "retailers": [
+        {
+          "name": "O'Reilly Media",
+          "type": "publisher",
+          "url": "https://www.oreilly.com/library/view/ai-engineering/9781098166298/",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למפתחים ולמנהלי מוצר שבונים מוצרים על מודלי AI קיימים.",
+        "en": "Engineers and product managers building products on existing AI models."
+      },
+      "goals": [
+        "understand-ai",
+        "code"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-19",
+      "checkedAt": "2026-10-19",
+      "pros": [],
+      "cons": [],
+      "id": "pragmatic-programmer",
+      "title": "The Pragmatic Programmer: Your Journey to Mastery (20th Anniversary Edition)",
+      "titleShort": "Pragmatic Programmer",
+      "authors": [
+        "David Thomas",
+        "Andrew Hunt"
+      ],
+      "publisher": "Addison-Wesley Professional",
+      "year": 2019,
+      "isbn13": "9780135957059",
+      "topics": [
+        "programming"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.pearson.com/en-us/subject-catalog/p/pragmatic-programmer-the-your-journey-to-mastery-20th-anniversary-edition/P200000000337/9780135956915",
+      "description": {
+        "he": "מהדורה מעודכנת של ספר קלאסי על פיתוח תוכנה מעשי: קוד גמיש, בדיקות, מקביליות ועבודה בצוות.",
+        "en": "An updated edition of a classic on practical software development: flexible code, testing, concurrency and teamwork."
+      },
+      "retailers": [
+        {
+          "name": "Addison-Wesley Professional",
+          "type": "publisher",
+          "url": "https://www.pearson.com/en-us/subject-catalog/p/pragmatic-programmer-the-your-journey-to-mastery-20th-anniversary-edition/P200000000337/9780135956915",
+          "checkedAt": "2026-10-19",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למפתחים בתחילת הדרך ובאמצעה שרוצים לעבוד מקצועי יותר.",
+        "en": "Early- and mid-career developers who want to work more professionally."
+      },
+      "goals": [
+        "code"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "atomic-habits",
+      "title": "Atomic Habits: Tiny Changes, Remarkable Results",
+      "titleShort": "Atomic Habits",
+      "authors": [
+        "James Clear"
+      ],
+      "publisher": "Random House Business (Penguin)",
+      "year": 2018,
+      "isbn13": "9781847941831",
+      "topics": [
+        "productivity"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/434095/atomic-habits",
+      "description": {
+        "he": "איך שינויים קטנים והרגלים יומיומיים מצטברים לתוצאות גדולות, ואיך בונים הרגלים טובים ושוברים הרגלים רעים.",
+        "en": "How small daily habits compound into big results, and how to build good habits and break bad ones."
+      },
+      "retailers": [
+        {
+          "name": "Random House Business (Penguin)",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/434095/atomic-habits",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "לכל מי שרוצה לשנות הרגל או לבנות שגרה חדשה.",
+        "en": "Anyone who wants to change a habit or build a new routine."
+      },
+      "goals": [
+        "focus"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "deep-work",
+      "title": "Deep Work: Rules for Focused Success in a Distracted World",
+      "titleShort": "Deep Work",
+      "authors": [
+        "Cal Newport"
+      ],
+      "publisher": "Grand Central Publishing",
+      "year": 2016,
+      "isbn13": "9781455586691",
+      "topics": [
+        "productivity"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print"
+      ],
+      "officialUrl": "https://hachettebookgroupusdistribution.com/titles/cal-newport/deep-work/9781455586691",
+      "description": {
+        "he": "למה עבודה מרוכזת בלי הסחות היא יכולת נדירה וחשובה, ואיך מתרגלים אותה.",
+        "en": "Why focused, distraction-free work is a rare and valuable skill, and how to practice it."
+      },
+      "retailers": [
+        {
+          "name": "Grand Central Publishing",
+          "type": "publisher",
+          "url": "https://hachettebookgroupusdistribution.com/titles/cal-newport/deep-work/9781455586691",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "לעובדי ידע, סטודנטים ויוצרים שמתקשים להתרכז.",
+        "en": "Knowledge workers, students and creators who struggle to focus."
+      },
+      "goals": [
+        "focus"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "lean-startup",
+      "title": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses",
+      "titleShort": "The Lean Startup",
+      "authors": [
+        "Eric Ries"
+      ],
+      "publisher": "Crown Currency",
+      "year": 2011,
+      "isbn13": "9780307887894",
+      "topics": [
+        "business",
+        "entrepreneurship"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguinrandomhouse.com/books/210088/the-lean-startup-by-eric-ries/",
+      "description": {
+        "he": "שיטה לבניית מוצר ועסק בניסויים קטנים: בונים, מודדים, לומדים ומשפרים.",
+        "en": "A method for building products and businesses through small experiments: build, measure, learn."
+      },
+      "retailers": [
+        {
+          "name": "Crown Currency",
+          "type": "publisher",
+          "url": "https://www.penguinrandomhouse.com/books/210088/the-lean-startup-by-eric-ries/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "ליזמים ולצוותי מוצר שרוצים לבדוק רעיון לפני שמשקיעים בו הרבה.",
+        "en": "Founders and product teams who want to test an idea before investing heavily."
+      },
+      "goals": [
+        "build-business"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "zero-to-one",
+      "title": "Zero to One: Notes on Startups, or How to Build the Future",
+      "titleShort": "Zero to One",
+      "authors": [
+        "Peter Thiel",
+        "Blake Masters"
+      ],
+      "publisher": "Crown Currency",
+      "year": 2014,
+      "isbn13": "9780804139298",
+      "topics": [
+        "business",
+        "entrepreneurship"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguinrandomhouse.com/books/234730/zero-to-one-by-peter-thiel-with-blake-masters",
+      "description": {
+        "he": "מחשבות על הקמת סטארטאפ שיוצר משהו חדש באמת, במקום להעתיק את מה שכבר קיים.",
+        "en": "Notes on building startups that create something genuinely new rather than copying what exists."
+      },
+      "retailers": [
+        {
+          "name": "Crown Currency",
+          "type": "publisher",
+          "url": "https://www.penguinrandomhouse.com/books/234730/zero-to-one-by-peter-thiel-with-blake-masters",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "ליזמים ולמי שחושב על בניית מוצר או חברה חדשה.",
+        "en": "Founders and anyone thinking about building a new product or company."
+      },
+      "goals": [
+        "build-business",
+        "think"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "building-a-second-brain",
+      "title": "Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential",
+      "titleShort": "Second Brain",
+      "authors": [
+        "Tiago Forte"
+      ],
+      "publisher": "Simon Element (Simon & Schuster)",
+      "year": 2022,
+      "isbn13": "9781982167400",
+      "topics": [
+        "productivity"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.simonandschuster.ca/books/Building-a-Second-Brain/Tiago-Forte/9781982167400",
+      "description": {
+        "he": "שיטה לארגון רשימות, קבצים ורעיונות דיגיטליים כך שיהיה קל למצוא אותם ולהשתמש בהם ביצירה.",
+        "en": "A method for organizing digital notes, files and ideas so they are easy to find and use creatively."
+      },
+      "retailers": [
+        {
+          "name": "Simon Element (Simon & Schuster)",
+          "type": "publisher",
+          "url": "https://www.simonandschuster.ca/books/Building-a-Second-Brain/Tiago-Forte/9781982167400",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שמרגיש שהמידע, הרשימות והרעיונות שלו מפוזרים.",
+        "en": "Anyone whose information, notes and ideas feel scattered."
+      },
+      "goals": [
+        "focus"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "the-coming-wave",
+      "title": "The Coming Wave: AI, Power and Our Future",
+      "titleShort": "The Coming Wave",
+      "authors": [
+        "Mustafa Suleyman",
+        "Michael Bhaskar"
+      ],
+      "publisher": "Vintage (Penguin)",
+      "year": 2024,
+      "isbn13": "9781529923834",
+      "topics": [
+        "ai",
+        "society"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/453418/the-coming-wave-by-suleyman-mustafa/9781529923834",
+      "description": {
+        "he": "על הגל הטכנולוגי של AI וביולוגיה סינתטית, ההזדמנויות שהוא מביא והאתגר לשלוט בו.",
+        "en": "On the technology wave of AI and synthetic biology, its opportunities and the challenge of containing it."
+      },
+      "retailers": [
+        {
+          "name": "Vintage (Penguin)",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/453418/the-coming-wave-by-suleyman-mustafa/9781529923834",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שרוצה להבין את ההשלכות הגדולות של AI על החברה.",
+        "en": "Anyone who wants to understand the big societal impact of AI."
+      },
+      "goals": [
+        "understand-ai",
+        "big-picture"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "human-compatible",
+      "title": "Human Compatible: AI and the Problem of Control",
+      "titleShort": "Human Compatible",
+      "authors": [
+        "Stuart Russell"
+      ],
+      "publisher": "Penguin",
+      "year": 2023,
+      "isbn13": "9780141987507",
+      "topics": [
+        "ai",
+        "society"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/305661/human-compatible-by-russell-stuart/9780141987507",
+      "description": {
+        "he": "אחד מחוקרי ה־AI המובילים מסביר למה צריך לבנות מערכות שנשארות בשליטה אנושית, ואיך.",
+        "en": "A leading AI researcher explains why and how to build systems that stay under human control."
+      },
+      "retailers": [
+        {
+          "name": "Penguin",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/305661/human-compatible-by-russell-stuart/9780141987507",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שמתעניין בשאלות של בטיחות ושליטה במערכות AI.",
+        "en": "Readers interested in AI safety and control."
+      },
+      "goals": [
+        "understand-ai",
+        "big-picture"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "designing-data-intensive-applications",
+      "title": "Designing Data-Intensive Applications",
+      "titleShort": "DDIA",
+      "authors": [
+        "Martin Kleppmann",
+        "Chris Riccomini"
+      ],
+      "publisher": "O'Reilly Media",
+      "year": 2026,
+      "isbn13": "9781098119058",
+      "topics": [
+        "programming",
+        "technology"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "advanced",
+      "formats": [],
+      "officialUrl": "https://www.oreilly.com/library/view/designing-data-intensive/9781098119058/",
+      "description": {
+        "he": "יסודות של מערכות נתונים: אחסון, שכפול, חלוקה ועקביות, למפתחים שבונים מערכות גדולות.",
+        "en": "Foundations of data systems: storage, replication, partitioning and consistency, for engineers building large systems."
+      },
+      "retailers": [
+        {
+          "name": "O'Reilly Media",
+          "type": "publisher",
+          "url": "https://www.oreilly.com/library/view/designing-data-intensive/9781098119058/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "edition": "2nd Edition",
+      "audience": {
+        "he": "למפתחים מנוסים שבונים מערכות גדולות.",
+        "en": "Experienced engineers building large systems."
+      },
+      "goals": [
+        "code"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "design-of-everyday-things",
+      "title": "The Design of Everyday Things (Revised and Expanded Edition)",
+      "titleShort": "Everyday Things",
+      "authors": [
+        "Don Norman"
+      ],
+      "publisher": "Basic Books",
+      "year": 2013,
+      "isbn13": "9780465050659",
+      "topics": [
+        "design"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/don-norman/the-design-of-everyday-things-revised-and-expanded-edition/9780465050659/",
+      "description": {
+        "he": "ספר יסוד על עיצוב שמתמקד באדם: למה מוצרים מבלבלים, ואיך מעצבים אותם כך שיהיו ברורים.",
+        "en": "A foundational book on human-centered design: why products confuse people and how to make them clear."
+      },
+      "retailers": [
+        {
+          "name": "Basic Books",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/don-norman/the-design-of-everyday-things-revised-and-expanded-edition/9780465050659/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למעצבים, מפתחים ומנהלי מוצר, ולכל מי שבונה משהו לאנשים.",
+        "en": "Designers, developers, product managers and anyone building for people."
+      },
+      "goals": [
+        "design",
+        "build-business"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "automate-the-boring-stuff",
+      "title": "Automate the Boring Stuff with Python, 3rd Edition",
+      "titleShort": "Automate the Boring Stuff",
+      "authors": [
+        "Al Sweigart"
+      ],
+      "publisher": "No Starch Press",
+      "year": 2025,
+      "isbn13": "9781718503403",
+      "topics": [
+        "programming",
+        "automation"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://nostarch.com/automate-boring-stuff-python-3rd-edition",
+      "description": {
+        "he": "לימוד Python דרך משימות מעשיות: קבצים, גיליונות, אימיילים ואוטומציה של עבודה חוזרת.",
+        "en": "Learning Python through practical tasks: files, spreadsheets, email and automating repetitive work."
+      },
+      "retailers": [
+        {
+          "name": "No Starch Press",
+          "type": "publisher",
+          "url": "https://nostarch.com/automate-boring-stuff-python-3rd-edition",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "edition": "3rd Edition",
+      "audience": {
+        "he": "למתחילים לגמרי שרוצים ש־Python יחסוך להם עבודה.",
+        "en": "Complete beginners who want Python to save them work."
+      },
+      "goals": [
+        "code"
+      ]
+    },
+    {
+      "type": "course",
+      "id": "cs50x",
+      "title": "CS50x: Introduction to Computer Science",
+      "provider": "Harvard University",
+      "officialUrl": "https://cs50.harvard.edu/x/",
+      "cost": {
+        "model": "free",
+        "verified": true,
+        "note": {
+          "he": "לפי האתר הרשמי אפשר לקחת את הקורס בחינם. תעודות של edX בתשלום.",
+          "en": "Per the official site the course can be taken for free. edX certificates are paid."
+        }
+      },
+      "level": "beginner",
+      "topics": [
+        "programming"
+      ],
+      "languages": [
+        "en"
+      ],
+      "certificate": {
+        "he": "תעודת edX בתשלום (אופציונלית)",
+        "en": "Paid edX certificate (optional)"
+      },
+      "price": null,
+      "cover": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "description": {
+        "he": "מבוא למדעי המחשב: חשיבה חישובית, אלגוריתמים ותכנות ב־C, ‏Python, ‏SQL ו־JavaScript, עם פרויקט מסכם.",
+        "en": "Intro to computer science: computational thinking, algorithms and programming in C, Python, SQL and JavaScript, with a final project."
+      }
+    },
+    {
+      "type": "course",
+      "id": "elements-of-ai",
+      "title": "Elements of AI",
+      "provider": "MinnaLearn and the University of Helsinki",
+      "officialUrl": "https://www.elementsofai.com/",
+      "cost": {
+        "model": "free",
+        "verified": true,
+        "note": {
+          "he": "לפי האתר הרשמי \"Introduction to AI\" הוא קורס חינמי.",
+          "en": "Per the official site, \"Introduction to AI\" is a free course."
+        }
+      },
+      "level": "beginner",
+      "topics": [
+        "ai"
+      ],
+      "languages": [
+        "en"
+      ],
+      "certificate": null,
+      "price": null,
+      "cover": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "description": {
+        "he": "מבוא ל־AI בלי תכנות: מה זה AI, מה הוא יכול ולא יכול לעשות, ואיך הוא משפיע על החיים. חלק שני מתעמק באלגוריתמים.",
+        "en": "An intro to AI without coding: what AI is, what it can and cannot do and how it affects our lives. Part two covers the algorithms."
+      }
+    },
+    {
+      "type": "course",
+      "id": "google-ml-crash-course",
+      "title": "Machine Learning Crash Course",
+      "provider": "Google for Developers",
+      "officialUrl": "https://developers.google.com/machine-learning/crash-course",
+      "cost": {
+        "model": "unverified",
+        "verified": false,
+        "note": {
+          "he": "העמוד הרשמי לא מציין מחיר, ולכן העלות לא אומתה.",
+          "en": "The official page does not state a price, so cost is not verified."
+        }
+      },
+      "level": "intermediate",
+      "topics": [
+        "ai",
+        "programming"
+      ],
+      "languages": [
+        "en"
+      ],
+      "certificate": null,
+      "price": null,
+      "cover": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "description": {
+        "he": "מבוא מעשי ומהיר ללמידת מכונה: רגרסיה, סיווג, רשתות נוירונים, embeddings, מודלי שפה ומערכות ייצור.",
+        "en": "A fast, practical intro to machine learning: regression, classification, neural networks, embeddings, LLMs and production systems."
+      }
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "sapiens",
+      "title": "Sapiens: A Brief History of Humankind",
+      "titleShort": "Sapiens",
+      "authors": [
+        "Yuval Noah Harari"
+      ],
+      "publisher": "Vintage (Penguin)",
+      "year": 2015,
+      "isbn13": "9780099590088",
+      "topics": [
+        "history",
+        "society",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/419795/sapiens-by-harari-yuval-noah/9781448190690",
+      "description": {
+        "he": "סיפור האנושות מהציידים־לקטים ועד ימינו: איך סיפורים משותפים, כסף ואימפריות עיצבו את העולם.",
+        "en": "The story of humankind from hunter-gatherers to today: how shared stories, money and empires shaped the world."
+      },
+      "retailers": [
+        {
+          "name": "Vintage (Penguin)",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/419795/sapiens-by-harari-yuval-noah/9781448190690",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שרוצה מבט רחב ומעורר מחשבה על ההיסטוריה האנושית.",
+        "en": "Anyone who wants a broad, thought-provoking look at human history."
+      },
+      "goals": [
+        "big-picture",
+        "think"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "nexus",
+      "title": "Nexus: A Brief History of Information Networks from the Stone Age to AI",
+      "titleShort": "Nexus",
+      "authors": [
+        "Yuval Noah Harari"
+      ],
+      "publisher": "Vintage (Penguin)",
+      "year": 2025,
+      "isbn13": "9781529933611",
+      "topics": [
+        "history",
+        "ai",
+        "society",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://penguin.co.uk/books/451878/nexus-by-harari-yuval-noah/9781529919240",
+      "description": {
+        "he": "איך רשתות מידע עיצבו את ההיסטוריה, מהעולם העתיק ועד עידן הבינה המלאכותית.",
+        "en": "How information networks shaped history, from the ancient world to the age of AI."
+      },
+      "retailers": [
+        {
+          "name": "Vintage (Penguin)",
+          "type": "publisher",
+          "url": "https://penguin.co.uk/books/451878/nexus-by-harari-yuval-noah/9781529919240",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שרוצה להבין את AI דרך ההיסטוריה של המידע.",
+        "en": "Anyone who wants to understand AI through the history of information."
+      },
+      "goals": [
+        "big-picture",
+        "understand-ai"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "thinking-fast-and-slow",
+      "title": "Thinking, Fast and Slow",
+      "titleShort": "Thinking, Fast and Slow",
+      "authors": [
+        "Daniel Kahneman"
+      ],
+      "publisher": "Penguin",
+      "year": 2024,
+      "isbn13": "9780141033570",
+      "topics": [
+        "psychology",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/56314/thinking--fast-and-slow/9780141033570.html",
+      "description": {
+        "he": "שתי מערכות החשיבה, המהירה והאיטית, וההטיות שמשפיעות על ההחלטות שלנו.",
+        "en": "The two systems of thinking, fast and slow, and the biases that shape our decisions."
+      },
+      "retailers": [
+        {
+          "name": "Penguin",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/56314/thinking--fast-and-slow/9780141033570.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שרוצה להבין איך אנחנו מקבלים החלטות, ולמה אנחנו טועים.",
+        "en": "Anyone who wants to understand how we make decisions, and why we get them wrong."
+      },
+      "goals": [
+        "think"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "start-up-nation",
+      "title": "Start-up Nation: The Story of Israel's Economic Miracle",
+      "titleShort": "Start-up Nation",
+      "authors": [
+        "Dan Senor",
+        "Saul Singer"
+      ],
+      "publisher": "Twelve (Hachette)",
+      "year": 2011,
+      "isbn13": "9780446541473",
+      "topics": [
+        "israel",
+        "business",
+        "entrepreneurship",
+        "leadership"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/dan-senor/start-up-nation/9780446541473/",
+      "description": {
+        "he": "למה ישראל הפכה למרכז של חדשנות וסטארטאפים, ומה אפשר ללמוד מזה.",
+        "en": "Why Israel became a hub of innovation and startups, and what others can learn from it."
+      },
+      "retailers": [
+        {
+          "name": "Twelve (Hachette)",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/dan-senor/start-up-nation/9780446541473/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "ליזמים, ולמי שרוצה להבין את סיפור החדשנות הישראלית.",
+        "en": "Founders, and anyone curious about the story of Israeli innovation."
+      },
+      "goals": [
+        "build-business",
+        "big-picture"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "mans-search-for-meaning",
+      "title": "Man's Search For Meaning",
+      "titleShort": "Man's Search For Meaning",
+      "authors": [
+        "Viktor E. Frankl"
+      ],
+      "publisher": "Rider (Penguin)",
+      "year": 2021,
+      "isbn13": "9781846046384",
+      "topics": [
+        "psychology",
+        "philosophy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/347571/mans-search-for-meaning-by-viktor-e-frankl/9781846046384",
+      "description": {
+        "he": "פסיכיאטר ששרד את מחנות הריכוז כותב על החיפוש אחר משמעות גם בתנאים הקשים ביותר.",
+        "en": "A psychiatrist who survived the concentration camps writes about finding meaning even in the hardest conditions."
+      },
+      "retailers": [
+        {
+          "name": "Rider (Penguin)",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/347571/mans-search-for-meaning-by-viktor-e-frankl/9781846046384",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "לכל מי שמחפש משמעות, חוסן ונקודת מבט בתקופות קשות.",
+        "en": "Anyone looking for meaning, resilience and perspective in hard times."
+      },
+      "goals": [
+        "meaning"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "guns-germs-and-steel",
+      "title": "Guns, Germs and Steel: A short history of everybody for the last 13,000 years",
+      "titleShort": "Guns, Germs and Steel",
+      "authors": [
+        "Jared Diamond"
+      ],
+      "publisher": "Vintage (Penguin)",
+      "year": 2017,
+      "isbn13": "9780099302780",
+      "topics": [
+        "history",
+        "society"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/355771/guns-germs-and-steel-by-jared-diamond/9780099302780",
+      "description": {
+        "he": "למה חברות אנושיות התפתחו בקצב שונה: גאוגרפיה, חקלאות, מחלות וטכנולוגיה.",
+        "en": "Why human societies developed at different speeds: geography, farming, disease and technology."
+      },
+      "retailers": [
+        {
+          "name": "Vintage (Penguin)",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/355771/guns-germs-and-steel-by-jared-diamond/9780099302780",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "audience": {
+        "he": "למי שאוהב היסטוריה גדולה ושאלות של \"למה זה קרה ככה\".",
+        "en": "Readers who love big history and \"why did it happen this way\" questions."
+      },
+      "goals": [
+        "big-picture"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "meditations",
+      "title": "Meditations",
+      "titleShort": "Meditations",
+      "authors": [
+        "Marcus Aurelius"
+      ],
+      "publisher": "Penguin Classics",
+      "year": 2006,
+      "isbn13": "9780140449334",
+      "topics": [
+        "philosophy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/35489/meditations-by-aurelius-marcus/9780241429662",
+      "description": {
+        "he": "רשימות אישיות של קיסר רומי ופילוסוף סטואי על שליטה עצמית, אחריות ושלוות נפש. בתרגום מרטין המונד.",
+        "en": "Personal notes of a Roman emperor and Stoic philosopher on self-control, duty and calm. Translated by Martin Hammond."
+      },
+      "retailers": [
+        {
+          "name": "Penguin Classics",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/35489/meditations-by-aurelius-marcus/9780241429662",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "translator": "Martin Hammond",
+      "audience": {
+        "he": "למי שמחפש פילוסופיה מעשית לחיי היום־יום.",
+        "en": "Anyone looking for practical philosophy for daily life."
+      },
+      "goals": [
+        "meaning",
+        "think"
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "coddling-of-the-american-mind",
+      "title": "The Coddling of the American Mind: How Good Intentions and Bad Ideas Are Setting Up a Generation for Failure",
+      "titleShort": "The Coddling of the American Mind",
+      "authors": [
+        "Jonathan Haidt",
+        "Greg Lukianoff"
+      ],
+      "publisher": "Penguin",
+      "year": 2019,
+      "isbn13": "9780141986302",
+      "topics": [
+        "critique",
+        "psychology"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/305816/the-coddling-of-the-american-mind-by-lukianoff-jonathan-haidt-and-greg/9780241393659",
+      "description": {
+        "he": "פסיכולוג חברתי ומשפטן בוחנים את תרבות הקמפוסים, הגבלת חופש הביטוי ו\"תרבות הביטחון\", ומציעים דרך אחרת.",
+        "en": "A social psychologist and a free-speech lawyer examine campus culture, limits on speech and \"safetyism\", and propose another way."
+      },
+      "audience": {
+        "he": "למי שמודאג מצמצום חופש הביטוי ומתרבות הביטול באקדמיה.",
+        "en": "Readers concerned about shrinking free speech and cancel culture in academia."
+      },
+      "goals": [
+        "ideas",
+        "think"
+      ],
+      "retailers": [
+        {
+          "name": "Penguin",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/305816/the-coddling-of-the-american-mind-by-lukianoff-jonathan-haidt-and-greg/9780241393659",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "reflections-on-the-revolution-in-france",
+      "title": "Reflections on the Revolution in France",
+      "titleShort": "Reflections on the Revolution in France",
+      "authors": [
+        "Edmund Burke"
+      ],
+      "publisher": "Penguin Classics",
+      "year": 2003,
+      "isbn13": "9780140432046",
+      "topics": [
+        "conservatism",
+        "philosophy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "advanced",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/34068/reflections-on-the-revolution-in-france-by-edmund-burke-ed-conor-cruise-obrien/9780140432046",
+      "description": {
+        "he": "החיבור הקלאסי שבו ברק מבקר את המהפכה הצרפתית ומגן על מסורת, מוסדות ושינוי הדרגתי. בעריכת קונור קרוז אובריאן.",
+        "en": "The classic essay in which Burke criticizes the French Revolution and defends tradition, institutions and gradual change. Edited by Conor Cruise O'Brien."
+      },
+      "audience": {
+        "he": "למי שרוצה להכיר את אחד מטקסטי היסוד של המחשבה השמרנית.",
+        "en": "Anyone who wants to read one of the founding texts of conservative thought."
+      },
+      "goals": [
+        "ideas",
+        "big-picture"
+      ],
+      "retailers": [
+        {
+          "name": "Penguin Classics",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/34068/reflections-on-the-revolution-in-france-by-edmund-burke-ed-conor-cruise-obrien/9780140432046",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "the-jewish-state",
+      "title": "The Jewish State",
+      "titleShort": "The Jewish State",
+      "authors": [
+        "Theodor Herzl"
+      ],
+      "publisher": "Penguin (Penguin Great Ideas)",
+      "year": 2010,
+      "isbn13": "9780141957173",
+      "topics": [
+        "zionism"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "ebook"
+      ],
+      "officialUrl": "https://penguin.co.uk/books/177638/the-jewish-state/9780141192901.html",
+      "description": {
+        "he": "החיבור של הרצל משנת 1896 שהציג את הרעיון של מדינה יהודית, ונעשה מסמך יסוד של הציונות המדינית.",
+        "en": "Herzl's 1896 essay that set out the idea of a Jewish state and became a founding document of political Zionism."
+      },
+      "audience": {
+        "he": "לכל מי שרוצה לקרוא את המקור שממנו התחילה הציונות המדינית.",
+        "en": "Anyone who wants to read the source where political Zionism began."
+      },
+      "goals": [
+        "tradition",
+        "ideas"
+      ],
+      "retailers": [
+        {
+          "name": "Penguin (Penguin Great Ideas)",
+          "type": "publisher",
+          "url": "https://penguin.co.uk/books/177638/the-jewish-state/9780141192901.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "formatNote": {
+        "he": "בעמוד ההוצאה מופיעה רק מהדורה אלקטרונית של הוצאה זו. מהדורה מודפסת לא אומתה.",
+        "en": "The publisher page lists only an e-book for this edition. A print edition was not verified."
+      }
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "the-virtue-of-nationalism",
+      "title": "The Virtue of Nationalism",
+      "titleShort": "The Virtue of Nationalism",
+      "authors": [
+        "Yoram Hazony"
+      ],
+      "publisher": "Basic Liberty (Basic Books)",
+      "year": 2025,
+      "isbn13": "9781541607262",
+      "topics": [
+        "conservatism",
+        "zionism",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/yoram-hazony/the-virtue-of-nationalism/9781541607262/",
+      "description": {
+        "he": "טיעון בעד עולם של מדינות לאום עצמאיות, ונגד אימפריות ומוסדות על־לאומיים.",
+        "en": "An argument for a world of independent nation-states, and against empires and supranational institutions."
+      },
+      "audience": {
+        "he": "למי שמתעניין בלאומיות, בריבונות ובמקומה של ישראל בדיון.",
+        "en": "Readers interested in nationalism, sovereignty and Israel's place in the debate."
+      },
+      "goals": [
+        "ideas",
+        "tradition"
+      ],
+      "retailers": [
+        {
+          "name": "Basic Liberty (Basic Books)",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/yoram-hazony/the-virtue-of-nationalism/9781541607262/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "morality-jonathan-sacks",
+      "title": "Morality: Restoring the Common Good in Divided Times",
+      "titleShort": "Morality",
+      "authors": [
+        "Jonathan Sacks"
+      ],
+      "publisher": "Basic Books",
+      "year": 2022,
+      "isbn13": "9781541675339",
+      "topics": [
+        "judaism",
+        "family",
+        "conservatism"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/jonathan-sacks/morality/9781541675339/",
+      "description": {
+        "he": "הרב יונתן זקס על המעבר מ\"אני\" ל\"אנחנו\": משפחה, קהילה ומוסר משותף בחברה מפולגת.",
+        "en": "Rabbi Jonathan Sacks on moving from \"I\" to \"we\": family, community and shared morality in a divided society."
+      },
+      "audience": {
+        "he": "למי שמחפש מבט יהודי ומוסרי על משפחה, קהילה וחברה.",
+        "en": "Anyone looking for a Jewish, moral perspective on family, community and society."
+      },
+      "goals": [
+        "tradition",
+        "meaning"
+      ],
+      "retailers": [
+        {
+          "name": "Basic Books",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/jonathan-sacks/morality/9781541675339/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "basic-economics",
+      "title": "Basic Economics: A Common Sense Guide to the Economy",
+      "titleShort": "Basic Economics",
+      "authors": [
+        "Thomas Sowell"
+      ],
+      "publisher": "Basic Books",
+      "year": 2014,
+      "isbn13": "9780465060733",
+      "topics": [
+        "economics",
+        "liberty"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/thomas-sowell/basic-economics/9780465060733/",
+      "description": {
+        "he": "מבוא לכלכלה בלי גרפים ונוסחאות: מחירים, תמריצים ומה קורה כשמתערבים בשוק.",
+        "en": "An introduction to economics without graphs or equations: prices, incentives and what happens when markets are overridden."
+      },
+      "audience": {
+        "he": "למי שרוצה להבין כלכלה מאפס, בשפה פשוטה.",
+        "en": "Anyone who wants to understand economics from scratch, in plain language."
+      },
+      "goals": [
+        "ideas",
+        "think"
+      ],
+      "retailers": [
+        {
+          "name": "Basic Books",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/thomas-sowell/basic-economics/9780465060733/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "capitalism-and-freedom",
+      "title": "Capitalism and Freedom",
+      "titleShort": "Capitalism and Freedom",
+      "authors": [
+        "Milton Friedman"
+      ],
+      "publisher": "University of Chicago Press",
+      "year": 2020,
+      "isbn13": "9780226734798",
+      "topics": [
+        "economics",
+        "liberty"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [],
+      "officialUrl": "https://www.press.uchicago.edu/ucp/books/book/chicago/C/bo68666099.html",
+      "description": {
+        "he": "מילטון פרידמן על הקשר בין חופש כלכלי לחופש פוליטי, ועל תפקידה המוגבל של הממשלה. מהדורה עם הקדמה חדשה.",
+        "en": "Milton Friedman on the link between economic and political freedom, and the limited role of government. New edition with a new foreword."
+      },
+      "audience": {
+        "he": "למי שרוצה להכיר את הטיעון הקלאסי בעד שוק חופשי.",
+        "en": "Readers who want the classic case for free markets."
+      },
+      "goals": [
+        "ideas"
+      ],
+      "retailers": [
+        {
+          "name": "University of Chicago Press",
+          "type": "publisher",
+          "url": "https://www.press.uchicago.edu/ucp/books/book/chicago/C/bo68666099.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "the-road-to-serfdom",
+      "title": "The Road to Serfdom: Text and Documents, The Definitive Edition",
+      "titleShort": "The Road to Serfdom",
+      "authors": [
+        "F. A. Hayek"
+      ],
+      "publisher": "University of Chicago Press",
+      "year": 2007,
+      "isbn13": "9780226320557",
+      "topics": [
+        "liberty",
+        "economics",
+        "critique"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "advanced",
+      "formats": [],
+      "officialUrl": "https://press.uchicago.edu/ucp/books/book/chicago/R/bo4138549.html",
+      "description": {
+        "he": "האזהרה של האייק מפני תכנון מרכזי וריכוז כוח בידי המדינה, ומה שהם עלולים לעשות לחירות. בעריכת ברוס קולדוול.",
+        "en": "Hayek's warning against central planning and the concentration of state power, and what they can do to freedom. Edited by Bruce Caldwell."
+      },
+      "audience": {
+        "he": "למי שמתעניין בחירות, בכוח המדינה ובביקורת על תכנון מרכזי.",
+        "en": "Readers interested in liberty, state power and the critique of central planning."
+      },
+      "goals": [
+        "ideas",
+        "big-picture"
+      ],
+      "retailers": [
+        {
+          "name": "University of Chicago Press",
+          "type": "publisher",
+          "url": "https://press.uchicago.edu/ucp/books/book/chicago/R/bo4138549.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "12-rules-for-life",
+      "title": "12 Rules for Life: An Antidote to Chaos",
+      "titleShort": "12 Rules for Life",
+      "authors": [
+        "Jordan B. Peterson"
+      ],
+      "publisher": "Penguin",
+      "year": 2019,
+      "isbn13": "9780141988511",
+      "topics": [
+        "psychology",
+        "philosophy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/1309610/12-rules-for-life/9780141988733.html",
+      "description": {
+        "he": "שנים־עשר כללים לחיים של אחריות ומשמעות, שמשלבים פסיכולוגיה, מיתולוגיה ודת.",
+        "en": "Twelve rules for a life of responsibility and meaning, drawing on psychology, mythology and religion."
+      },
+      "audience": {
+        "he": "למי שמחפש עצות מעשיות על אחריות אישית וסדר בחיים.",
+        "en": "Anyone looking for practical advice on personal responsibility and order."
+      },
+      "goals": [
+        "meaning",
+        "focus"
+      ],
+      "retailers": [
+        {
+          "name": "Penguin",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/1309610/12-rules-for-life/9780141988733.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "six-days-of-war",
+      "title": "Six Days of War: June 1967 and the Making of the Modern Middle East",
+      "titleShort": "Six Days of War",
+      "authors": [
+        "Michael B. Oren"
+      ],
+      "publisher": "Presidio Press",
+      "year": 2003,
+      "isbn13": "9780345461926",
+      "topics": [
+        "zionism",
+        "leadership",
+        "history",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://penguinrandomhouse.com/books/124784/six-days-of-war-by-michael-b-oren",
+      "description": {
+        "he": "ההיסטוריה של מלחמת ששת הימים: הרקע, ההחלטות והשפעתה על המזרח התיכון, מאת ההיסטוריון ושגריר ישראל לשעבר בארה\"ב.",
+        "en": "The history of the Six-Day War: its background, the decisions and its impact on the Middle East, by the historian and former Israeli ambassador to the US."
+      },
+      "audience": {
+        "he": "למי שרוצה להבין רגע מכונן בהיסטוריה של ישראל ובביטחונה.",
+        "en": "Anyone who wants to understand a defining moment in Israel's history and security."
+      },
+      "goals": [
+        "big-picture",
+        "tradition"
+      ],
+      "retailers": [
+        {
+          "name": "Presidio Press",
+          "type": "publisher",
+          "url": "https://penguinrandomhouse.com/books/124784/six-days-of-war-by-michael-b-oren",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    }
+  ],
+  "courseCosts": [
+    {
+      "id": "free",
+      "he": "חינם",
+      "en": "Free"
+    },
+    {
+      "id": "paid",
+      "he": "בתשלום",
+      "en": "Paid"
+    },
+    {
+      "id": "unverified",
+      "he": "עלות לא אומתה",
+      "en": "Cost not verified"
+    }
+  ],
+  "readingGoals": [
+    {
+      "id": "understand-ai",
+      "he": "להבין AI",
+      "en": "Understand AI"
+    },
+    {
+      "id": "code",
+      "he": "ללמוד לתכנת",
+      "en": "Learn to code"
+    },
+    {
+      "id": "build-business",
+      "he": "לבנות עסק",
+      "en": "Build a business"
+    },
+    {
+      "id": "focus",
+      "he": "לעבוד טוב יותר",
+      "en": "Work better"
+    },
+    {
+      "id": "think",
+      "he": "לחשוב טוב יותר",
+      "en": "Think better"
+    },
+    {
+      "id": "big-picture",
+      "he": "להבין את התמונה הגדולה",
+      "en": "See the big picture"
+    },
+    {
+      "id": "meaning",
+      "he": "משמעות והשראה",
+      "en": "Meaning and inspiration"
+    },
+    {
+      "id": "design",
+      "he": "לעצב מוצרים",
+      "en": "Design products"
+    },
+    {
+      "id": "tradition",
+      "he": "להעמיק במסורת ובזהות",
+      "en": "Deepen tradition and identity"
+    },
+    {
+      "id": "ideas",
+      "he": "להבין רעיונות פוליטיים",
+      "en": "Understand political ideas"
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "source": "Simple Icons",
+  "version": "13.21.0",
+  "url": "https://simpleicons.org/",
+  "projectLicense": "CC0-1.0",
+  "icons": {
+    "openai": {
+      "title": "OpenAI",
+      "hex": "000000",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://openai.com/brand",
+      "guidelines": "https://openai.com/brand"
+    },
+    "claude": {
+      "title": "Claude",
+      "hex": "D97757",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://claude.ai",
+      "guidelines": null
+    },
+    "googlegemini": {
+      "title": "Google Gemini",
+      "hex": "8E75B2",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://gemini.google.com",
+      "guidelines": null
+    },
+    "perplexity": {
+      "title": "Perplexity",
+      "hex": "1FB8CD",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.perplexity.ai",
+      "guidelines": null
+    },
+    "grammarly": {
+      "title": "Grammarly",
+      "hex": "027E6F",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.grammarly.com/media-assets",
+      "guidelines": null
+    },
+    "deepl": {
+      "title": "DeepL",
+      "hex": "0F2B46",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.deepl.com/press.html",
+      "guidelines": null
+    },
+    "canva": {
+      "title": "Canva",
+      "hex": "00C4CC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.canva.com",
+      "guidelines": null
+    },
+    "figma": {
+      "title": "Figma",
+      "hex": "F24E1E",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.figma.com/using-the-figma-brand/",
+      "guidelines": "https://www.figma.com/using-the-figma-brand/"
+    },
+    "adobe": {
+      "title": "Adobe",
+      "hex": "FF0000",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.adobe.com",
+      "guidelines": "https://developer.adobe.com/developer-distribution/creative-cloud/docs/guides/branding_guidelines"
+    },
+    "blender": {
+      "title": "Blender",
+      "hex": "E87D0D",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.blender.org/about/logo",
+      "guidelines": "https://www.blender.org/about/logo"
+    },
+    "elevenlabs": {
+      "title": "ElevenLabs",
+      "hex": "000000",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://elevenlabs.io/brand",
+      "guidelines": "https://elevenlabs.io/brand"
+    },
+    "suno": {
+      "title": "Suno",
+      "hex": "000000",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://suno.com",
+      "guidelines": null
+    },
+    "davinciresolve": {
+      "title": "DaVinci Resolve",
+      "hex": "233A51",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.blackmagicdesign.com/media/images/davinci-resolve-logo-square",
+      "guidelines": null
+    },
+    "obsstudio": {
+      "title": "OBS Studio",
+      "hex": "302E31",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://commons.wikimedia.org/wiki/File:OBS.svg",
+      "guidelines": null
+    },
+    "audacity": {
+      "title": "Audacity",
+      "hex": "0000CC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://github.com/audacity/audacity/blob/c818449c69193f5311b430fbf600d8d6cbe49047/images/audacity.svg",
+      "guidelines": null
+    },
+    "githubcopilot": {
+      "title": "GitHub Copilot",
+      "hex": "000000",
+      "license": "MIT",
+      "source": "https://primer.style/foundations/icons/copilot-24",
+      "guidelines": null
+    },
+    "notion": {
+      "title": "Notion",
+      "hex": "000000",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.notion.so",
+      "guidelines": null
+    },
+    "obsidian": {
+      "title": "Obsidian",
+      "hex": "7C3AED",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://obsidian.md",
+      "guidelines": null
+    },
+    "zapier": {
+      "title": "Zapier",
+      "hex": "FF4F00",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.figma.com/file/NQFxTCE5pGR3dHZt0DkOyy/Zapier-Brand-Guidelines-%5BExternal%5D?type=design&node-id=101-9701&mode=design",
+      "guidelines": "https://www.figma.com/file/NQFxTCE5pGR3dHZt0DkOyy/Zapier-Brand-Guidelines-%5BExternal%5D?type=design&node-id=101-9701&mode=design"
+    },
+    "make": {
+      "title": "Make",
+      "hex": "6D00CC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.make.com/en/press",
+      "guidelines": "https://www.make.com/en/press"
+    },
+    "n8n": {
+      "title": "n8n",
+      "hex": "EA4B71",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://n8n.io/press",
+      "guidelines": null
+    },
+    "gimp": {
+      "title": "GIMP",
+      "hex": "5C5543",
+      "license": "CC-BY-SA-3.0",
+      "source": "https://www.gimp.org/about/linking.html#wilber-the-gimp-mascot",
+      "guidelines": null
+    },
+    "inkscape": {
+      "title": "Inkscape",
+      "hex": "000000",
+      "license": "CC-BY-SA-3.0",
+      "source": "https://inkscape.org/gallery/=inkscape-branding/inkscape-brand-assets/",
+      "guidelines": null
+    },
+    "krita": {
+      "title": "Krita",
+      "hex": "3BABFF",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://krita.org/en/about/press/",
+      "guidelines": null
+    },
+    "replit": {
+      "title": "Replit",
+      "hex": "F26207",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://repl.it",
+      "guidelines": null
+    },
+    "todoist": {
+      "title": "Todoist",
+      "hex": "E44332",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://doist.com/press",
+      "guidelines": null
+    },
+    "miro": {
+      "title": "Miro",
+      "hex": "050038",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://miro.com",
+      "guidelines": null
+    },
+    "kdenlive": {
+      "title": "Kdenlive",
+      "hex": "527EB2",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://kdenlive.org/en/trademark-logo/",
+      "guidelines": "https://kdenlive.org/en/trademark-logo/"
+    },
+    "bitwarden": {
+      "title": "Bitwarden",
+      "hex": "175DDC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://github.com/bitwarden/brand/blob/6182cd64321d810c6f6255db08c2a17804d2b724/icons/icon.svg",
+      "guidelines": null
+    },
+    "1password": {
+      "title": "1Password",
+      "hex": "3B66BC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://1password.com/press",
+      "guidelines": "https://1password.com/press"
+    },
+    "protonvpn": {
+      "title": "Proton VPN",
+      "hex": "66DEB1",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://proton.me/media/kit",
+      "guidelines": null
+    },
+    "buffer": {
+      "title": "Buffer",
+      "hex": "231F20",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://buffer.com",
+      "guidelines": null
+    },
+    "hootsuite": {
+      "title": "Hootsuite",
+      "hex": "FF4C46",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://hootsuite.widencollective.com/portals/bafpk5oo/bafpk5oo/MediaKitAssets/c/b9e3a7bb-aca7-48d7-90ed-cff5898aafd0",
+      "guidelines": "https://hootsuite.widencollective.com/portals/bafpk5oo/MediaKitAssets"
+    },
+    "mailchimp": {
+      "title": "MailChimp",
+      "hex": "241C15",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://mailchimp.com/about/brand-assets",
+      "guidelines": "https://mailchimp.com/about/brand-assets"
+    },
+    "airtable": {
+      "title": "Airtable",
+      "hex": "18BFFF",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://airtable.com/press",
+      "guidelines": null
+    },
+    "clickup": {
+      "title": "ClickUp",
+      "hex": "7B68EE",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://clickup.com/brand",
+      "guidelines": null
+    },
+    "calendly": {
+      "title": "Calendly",
+      "hex": "006BFF",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://calendly.com/newsroom",
+      "guidelines": "https://calendly.com/newsroom"
+    },
+    "trello": {
+      "title": "Trello",
+      "hex": "0052CC",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://atlassian.design/resources/logo-library",
+      "guidelines": "https://atlassian.design/foundations/logos"
+    },
+    "asana": {
+      "title": "Asana",
+      "hex": "F06A6A",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://asana.com/brand",
+      "guidelines": "https://asana.com/brand"
+    },
+    "postman": {
+      "title": "Postman",
+      "hex": "FF6C37",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.getpostman.com/resources/media-assets/",
+      "guidelines": null
+    },
+    "github": {
+      "title": "GitHub",
+      "hex": "181717",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://github.com/logos",
+      "guidelines": "https://github.com/logos"
+    },
+    "loom": {
+      "title": "Loom",
+      "hex": "625DF5",
+      "license": "CC0-1.0 (project default; not confirmed per icon)",
+      "source": "https://www.loom.com/press",
+      "guidelines": null
+    }
+  }
+}

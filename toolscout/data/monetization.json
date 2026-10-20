@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "notes": "Revenue channel registry for docs/monetization-roadmap.md. Research and preparation only: nothing here is active. status: idea | prepared | active. priority: now | phase2 | future. Commission or price text appears only when verified on the official source; otherwise it says so. 'active' requires explicit owner approval.",
+  "channels": [
+    {
+      "id": "aff-catalog-software",
+      "channel": "affiliate",
+      "name": "שותפים לכלים שכבר בקטלוג",
+      "howMoneyIsMade": "עמלה כשמבקר נרשם או משלם דרך קישור מסומן",
+      "payer": "היצרן (דרך התוכנית או הרשת)",
+      "providers": [
+        {
+          "name": "Make",
+          "url": "https://www.make.com/affiliate",
+          "verified": true
+        },
+        {
+          "name": "ElevenLabs",
+          "url": "https://elevenlabs.io/affiliates",
+          "verified": true
+        },
+        {
+          "name": "Synthesia",
+          "url": "https://www.synthesia.io/partners/affiliates",
+          "verified": true
+        },
+        {
+          "name": "ClickUp",
+          "url": "https://clickup.com/partners/affiliates",
+          "verified": true
+        },
+        {
+          "name": "1Password",
+          "url": "https://1password.com/affiliate",
+          "verified": true
+        },
+        {
+          "name": "Proton",
+          "url": "https://proton.me/partners/affiliates",
+          "verified": true
+        },
+        {
+          "name": "Descript",
+          "url": "https://www.descript.com/affiliate",
+          "verified": true
+        }
+      ],
+      "joinFree": null,
+      "requirements": "אתר פעיל עם תוכן; לרוב בדיקה ידנית של הבקשה",
+      "verifiedTerms": "ראו data/affiliate-programs.json (עמלות מאומתות לכל תוכנית בנפרד)",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "גבוהה: הכלים כבר בקטלוג עם עמודים והשוואות",
+      "preparedNow": "מבנה affiliate בכל כלי, תווית \"קישור בתשלום\" ו־rel=\"sponsored\", בודק שחוסם קישור לא מאושר, עמוד גילוי נאות",
+      "needsOwner": "הרשמה לכל תוכנית (בשמך), אישור מפורש להפעלת קישורים, דיווח מס",
+      "priority": "now",
+      "status": "prepared",
+      "affiliatePrograms": [
+        "make",
+        "elevenlabs",
+        "synthesia",
+        "clickup",
+        "1password",
+        "proton",
+        "descript"
+      ],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "aff-hosting-domains",
+      "channel": "affiliate",
+      "name": "אחסון, דומיינים וענן",
+      "howMoneyIsMade": "עמלה על רכישה ראשונה או מודל היברידי",
+      "payer": "ספקי האחסון",
+      "providers": [
+        {
+          "name": "Hostinger",
+          "url": "https://www.hostinger.com/affiliates",
+          "verified": true
+        },
+        {
+          "name": "Cloudways",
+          "url": "https://www.cloudways.com/en/web-hosting-affiliate-program",
+          "verified": true
+        },
+        {
+          "name": "Namecheap",
+          "url": "https://www.namecheap.com/affiliates/",
+          "verified": false
+        }
+      ],
+      "joinFree": null,
+      "requirements": "Hostinger: חינם, אימות לחשבון. Cloudways: \"כל אחד יכול להצטרף\"",
+      "verifiedTerms": "Hostinger: החל מ־40%. Cloudways: עד 125$ למכירה או 30$ + 7% לכל החיים",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "בינונית: דורש קטגוריה ותוכן חדשים (מדריך \"איך לבנות אתר עם AI\")",
+      "preparedNow": "רשומות בתוכניות המרכזיות; אין עדיין קטגוריה",
+      "needsOwner": "אישור להוספת קטגוריה; הרשמה",
+      "priority": "phase2",
+      "status": "idea",
+      "affiliatePrograms": [
+        "hostinger",
+        "cloudways",
+        "namecheap"
+      ],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "aff-marketing-seo",
+      "channel": "affiliate",
+      "name": "כלי שיווק ו־SEO",
+      "howMoneyIsMade": "עמלה קבועה למכירה או לניסיון",
+      "payer": "Semrush",
+      "providers": [
+        {
+          "name": "Semrush (Impact)",
+          "url": "https://www.semrush.com/kb/97-affiliate-program",
+          "verified": true
+        }
+      ],
+      "joinFree": null,
+      "requirements": "הרשמה דרך Impact; בדיקה בתוך כ־2 ימי עבודה",
+      "verifiedTerms": "\"עמלות קבועות\" (הסכום לא מופיע בטקסט); עוגייה 120 יום",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "בינונית: קטגוריית שיווק קיימת, Semrush עוד לא בקטלוג",
+      "preparedNow": "—",
+      "needsOwner": "אישור להוספת הכלי; הרשמה",
+      "priority": "phase2",
+      "status": "idea",
+      "affiliatePrograms": [
+        "semrush"
+      ],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "aff-security-vpn",
+      "channel": "affiliate",
+      "name": "אבטחה ו־VPN",
+      "howMoneyIsMade": "אחוז מהמכירה הראשונה ומחידושים",
+      "payer": "ספקי האבטחה",
+      "providers": [
+        {
+          "name": "Proton",
+          "url": "https://proton.me/partners/affiliates",
+          "verified": true
+        },
+        {
+          "name": "NordVPN",
+          "url": "https://nordvpn.com/affiliate/",
+          "verified": true
+        },
+        {
+          "name": "1Password (CJ)",
+          "url": "https://1password.com/affiliate",
+          "verified": true
+        }
+      ],
+      "joinFree": null,
+      "requirements": "Proton: בלוגרים ומפרסמים. NordVPN: לא נדרש אתר",
+      "verifiedTerms": "Proton VPN עד 100% על מנוי חדש לשנה או שנתיים; NordVPN 40% על שנה או שנתיים",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "גבוהה: יש השוואת מנהלי סיסמאות וקטגוריית אבטחה",
+      "preparedNow": "רשומות מאומתות",
+      "needsOwner": "הרשמה ואישור",
+      "priority": "now",
+      "status": "prepared",
+      "affiliatePrograms": [
+        "proton",
+        "nordvpn",
+        "1password"
+      ],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "aff-courses",
+      "channel": "affiliate",
+      "name": "קורסים",
+      "howMoneyIsMade": "אחוז מרכישת קורס או מנוי",
+      "payer": "Coursera",
+      "providers": [
+        {
+          "name": "Coursera (Impact)",
+          "url": "https://coursera.org/about/affiliates",
+          "verified": true
+        }
+      ],
+      "joinFree": true,
+      "requirements": "הרשמה חינמית",
+      "verifiedTerms": "15%–45% בבסיס; מנוי חודשי משולם רק על החודש הראשון; עוגייה 30 יום",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "בינונית: מתאים למדריכים ולספרים, אין עדיין רשימת קורסים",
+      "preparedNow": "סוג \"course\" קיים ב־products.json",
+      "needsOwner": "אישור להוספת קורסים אמיתיים; הרשמה",
+      "priority": "phase2",
+      "status": "idea",
+      "affiliatePrograms": [
+        "coursera"
+      ],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "aff-books-hardware",
+      "channel": "affiliate",
+      "name": "ספרים, מחשבים וציוד ליוצרים",
+      "howMoneyIsMade": "עמלה על רכישה בחנות",
+      "payer": "Amazon ואחרים",
+      "providers": [
+        {
+          "name": "Amazon Associates",
+          "url": "https://affiliate-program.amazon.com/help/operating/participation/",
+          "verified": false
+        }
+      ],
+      "joinFree": null,
+      "requirements": "לפי Amazon: מחיר וזמינות מוצגים רק דרך ה־API הרשמי; כל חנות היא תוכנית נפרדת",
+      "verifiedTerms": "לא אומתו עמלות",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "בינונית לספרים (5 ספרים מאומתים); נמוכה לציוד עד שתהיה קטגוריה",
+      "preparedNow": "מבנה retailers לספרים עם affiliate.programId, בלי מחירים שמורים",
+      "needsOwner": "בדיקת זמינות התוכנית למגיש מישראל; הרשמה",
+      "priority": "phase2",
+      "status": "prepared",
+      "affiliatePrograms": [
+        "amazon"
+      ],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "ads-adsense",
+      "channel": "ads",
+      "name": "פרסומות AdSense",
+      "howMoneyIsMade": "תשלום לפי חשיפות או קליקים על מודעות",
+      "payer": "Google (מהמפרסמים)",
+      "providers": [
+        {
+          "name": "Google AdSense",
+          "url": "https://support.google.com/adsense/answer/9724?hl=en",
+          "verified": true
+        }
+      ],
+      "joinFree": null,
+      "requirements": "גיל 18+, תוכן מקורי, גישה ל־HTML. לא צוין מינימום תנועה",
+      "verifiedTerms": "לא מפורסם תעריף קבוע",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪ (פלטפורמת הסכמה של Google בחינם)",
+      "fitNow": "נמוכה בהתחלה: הכנסה תלויה בתנועה, ופוגעת בחוויה ובמהירות",
+      "preparedNow": "תג אימות, ads.txt, סעיף פרטיות מותנה; הכול כבוי",
+      "needsOwner": "חשבון AdSense, הודעת הסכמה לאירופה, אישור",
+      "priority": "phase2",
+      "status": "prepared",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "ads-premium-networks",
+      "channel": "ads",
+      "name": "רשתות פרסום פרימיום",
+      "howMoneyIsMade": "חלוקת הכנסות מפרסום",
+      "payer": "Journey/Mediavine, Raptive, EthicalAds",
+      "providers": [
+        {
+          "name": "Mediavine / Journey",
+          "url": "https://www.mediavine.com/mediavine-requirements/",
+          "verified": true
+        },
+        {
+          "name": "Raptive",
+          "url": "https://raptive.com/creators/",
+          "verified": true
+        },
+        {
+          "name": "EthicalAds",
+          "url": "https://www.ethicalads.io/publishers/",
+          "verified": true
+        }
+      ],
+      "joinFree": null,
+      "requirements": "Journey: 1,000 כניסות מארצות Tier 1 ב־30 יום. Raptive: 25,000 צפיות בחודש, רוב התנועה מארה\"ב, קנדה, בריטניה, אוסטרליה או ניו זילנד. EthicalAds: אתר למפתחים עם 50,000 צפיות",
+      "verifiedTerms": "EthicalAds: הערכה של כ־2.50$ ל־1,000 צפיות; מינימום תשלום 50$",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "נמוכה עכשיו: אין עדיין תנועה",
+      "preparedNow": "—",
+      "needsOwner": "רק אחרי שיש תנועה מדודה",
+      "priority": "future",
+      "status": "idea",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "sponsorship-direct",
+      "channel": "sponsorship",
+      "name": "חסויות ופרסום ישיר",
+      "howMoneyIsMade": "יצרן משלם על מיקום מסומן (כרטיס ממומן, באנר, אזכור בניוזלטר)",
+      "payer": "יצרני כלים",
+      "providers": [],
+      "joinFree": true,
+      "requirements": "אין; נדרשים כללי עריכה ברורים ותווית \"ממומן\"",
+      "verifiedTerms": "מחיר נקבע במשא ומתן; אין מחירון עד שיש נתוני תנועה",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "בינונית: הקהל ממוקד בכלים, אבל אין עדיין נתוני תנועה",
+      "preparedNow": "עמוד \"שיתופי פעולה\" עם פנייה באימייל, שדה sponsored בכל כלי עם תווית \"פרסומת\" ושם נותן החסות, ובדיקה אוטומטית שחוסמת חסות בלי אישור ותאריכים; כבוי",
+      "needsOwner": "מענה לפניות, אישור כל חסות, קביעת מחיר",
+      "priority": "now",
+      "status": "prepared",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "digital-products",
+      "channel": "digital-product",
+      "name": "מוצרים דיגיטליים משלנו",
+      "howMoneyIsMade": "מכירה ישירה של מדריכים, ערכות פרומפטים ותבניות",
+      "payer": "לקוחות האתר",
+      "providers": [
+        {
+          "name": "Lemon Squeezy (Merchant of Record)",
+          "url": "https://www.lemonsqueezy.com/",
+          "verified": false
+        },
+        {
+          "name": "Gumroad",
+          "url": "https://gumroad.com/",
+          "verified": false
+        }
+      ],
+      "joinFree": null,
+      "requirements": "ספק סליקה שמטפל במע\"מ ובמסים (Merchant of Record); תנאי מכירה ומדיניות ביטול",
+      "verifiedTerms": "עמלות הספקים לא אומתו מהעמוד הרשמי",
+      "setupCost": "0 ₪ (ספקים גובים עמלה לכל מכירה)",
+      "runningCost": "עמלה לכל מכירה בלבד",
+      "fitNow": "בינונית: יש תוכן שאפשר להרחיב (7 מדריכים)",
+      "preparedNow": "סוג digital-product עם availability (not-for-sale / waitlist / for-sale) ובדיקה שחוסמת מכירה בלי אישור",
+      "needsOwner": "אישור מוצר ראשון, פתיחת חשבון אצל ספק, תנאי מכירה",
+      "priority": "phase2",
+      "status": "prepared",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "newsletter",
+      "channel": "newsletter",
+      "name": "ניוזלטר וקהילה",
+      "howMoneyIsMade": "חסויות בניוזלטר, רשת הפרסום של הספק, המלצות בתשלום ובהמשך תוכן בתשלום",
+      "payer": "מפרסמים וקוראים",
+      "providers": [
+        {
+          "name": "beehiiv",
+          "url": "https://www.beehiiv.com/pricing",
+          "verified": true
+        }
+      ],
+      "joinFree": true,
+      "requirements": "beehiiv: חינם עד 2,500 מנויים",
+      "verifiedTerms": "מנויים בתשלום ורשת פרסום מופיעים בתוכניות Lite ו־Pro (מ־49$ לחודש בחיוב שנתי)",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪ עד 2,500 מנויים",
+      "fitNow": "גבוהה כנכס: בונה קהל שהאתר עצמו לא שומר",
+      "preparedNow": "טופס הרשמה (הדגמה), נוסח הסכמה כפולה, סעיף פרטיות לעתיד",
+      "needsOwner": "פתיחת חשבון ספק, אישור לחיבור הטופס ועדכון מדיניות הפרטיות",
+      "priority": "now",
+      "status": "prepared",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "premium-subscription",
+      "channel": "subscription",
+      "name": "מנוי פרימיום",
+      "howMoneyIsMade": "תשלום חודשי או שנתי על תכונות נוספות",
+      "payer": "משתמשים",
+      "providers": [],
+      "joinFree": null,
+      "requirements": "נדרשים מערכת חשבונות, סליקה ותמיכה",
+      "verifiedTerms": "—",
+      "setupCost": "גבוהה (פיתוח, חשבונות, סליקה)",
+      "runningCost": "שוטפות",
+      "fitNow": "נמוכה עכשיו: אין משתמשים רשומים ואין הוכחת ביקוש",
+      "preparedNow": "לא נבנה, במכוון",
+      "needsOwner": "החלטה עסקית אחרי בדיקת ביקוש",
+      "priority": "future",
+      "status": "idea",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "b2b-leads",
+      "channel": "leads",
+      "name": "לידים ושירותי B2B",
+      "howMoneyIsMade": "עמלת הפניה או דמי ליד מספקי הטמעה, אוטומציה וייעוץ AI; או שירותי ייעוץ של בעל האתר",
+      "payer": "עסקים וספקים",
+      "providers": [],
+      "joinFree": true,
+      "requirements": "טופס פנייה פעיל עם הסכמה; הסכמי הפניה עם ספקים",
+      "verifiedTerms": "—",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪ (טיפול ידני בפניות)",
+      "fitNow": "בינונית: מתאים למדריך \"כלים חינמיים לעסק קטן\"",
+      "preparedNow": "—",
+      "needsOwner": "אישור לאסוף פרטי פונים, ספקים אמיתיים והסכמים",
+      "priority": "phase2",
+      "status": "idea",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "own-software",
+      "channel": "software",
+      "name": "מוצר תוכנה משלנו",
+      "howMoneyIsMade": "מנוי או רישיון לכלי עצמאי",
+      "payer": "משתמשים ועסקים",
+      "providers": [],
+      "joinFree": null,
+      "requirements": "בדיקת ביקוש לפני פיתוח",
+      "verifiedTerms": "—",
+      "setupCost": "משתנה",
+      "runningCost": "משתנה",
+      "fitNow": "עתידית",
+      "preparedNow": "רעיונות ומבחני ביקוש במסמך",
+      "needsOwner": "החלטה אחרי מבחן ביקוש",
+      "priority": "future",
+      "status": "idea",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "content-licensing",
+      "channel": "licensing",
+      "name": "רישוי תוכן ונתונים",
+      "howMoneyIsMade": "רישוי של נתוני הקטלוג המאומתים (מחיר, פלטפורמות, תאריך בדיקה) או תוכן עברי",
+      "payer": "אתרים, כלי השוואה, ארגונים",
+      "providers": [],
+      "joinFree": null,
+      "requirements": "תנאי רישיון והסכם",
+      "verifiedTerms": "—",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "נמוכה עכשיו; גדלה עם היקף הקטלוג",
+      "preparedNow": "הנתונים כבר מובנים ב־JSON",
+      "needsOwner": "החלטה על תנאי רישיון",
+      "priority": "future",
+      "status": "idea",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    },
+    {
+      "id": "localization-partnerships",
+      "channel": "partnership",
+      "name": "שיתופי פעולה והתאמה לעברית",
+      "howMoneyIsMade": "חברות כלים משלמות על תוכן עברי מסומן, הדרכות או סקירת נגישות בעברית",
+      "payer": "יצרני כלים שנכנסים לשוק הישראלי",
+      "providers": [],
+      "joinFree": true,
+      "requirements": "כללי סימון ועריכה כמו בחסות",
+      "verifiedTerms": "—",
+      "setupCost": "0 ₪",
+      "runningCost": "0 ₪",
+      "fitNow": "בינונית: יתרון ייחודי של אתר דו־לשוני",
+      "preparedNow": "עמוד שיתופי פעולה",
+      "needsOwner": "מענה ואישור כל שיתוף פעולה",
+      "priority": "phase2",
+      "status": "idea",
+      "affiliatePrograms": [],
+      "checkedAt": "2026-10-19"
+    }
+  ]
+}
