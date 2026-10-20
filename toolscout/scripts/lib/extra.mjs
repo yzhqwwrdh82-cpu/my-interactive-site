@@ -158,3 +158,42 @@ ${contact}
 </article>
 `);
 }
+
+// ---------- Ideas hub and editorial line ----------
+const ED = {
+  he: {
+    title: 'הקו המערכתי שלנו', desc: 'ToolScout הוא בית לספרים ולידע עם זהות ברורה: יהודית, ציונית ושמרנית, שמחויבת לחירות הפרט ולחופש המחשבה.',
+    sections: [
+      ['מי אנחנו', ['ToolScout הוא בית לספרים רגילים ולידע, עם זהות ברורה: יהודית, ציונית ושמרנית, שמחויבת לחירות הפרט ולחופש המחשבה. אנחנו לא מציגים את עצמנו כנייטרליים מבחינה רעיונית.', 'האתר פונה לישראלים ולקהל בינלאומי, בעברית ובאנגלית.']],
+      ['מה זה אומר בפועל', ['אנחנו מבליטים אזורי ידע ביהדות ומסורת, בציונות ובהיסטוריה ישראלית, במחשבה שמרנית, בחירות הפרט ובכלכלה חופשית, במשפחה ובקהילה, בפילוסופיה ובמנהיגות ובביטחון.', 'יש לנו גם אזור של ביקורת רעיונית על פרוגרסיביות, תקינות פוליטית, תרבות הביטול וריכוז כוח מוסדי, עם ספרים אמיתיים ומקורות מדויקים.']],
+      ['הספרים נשארים במרכז', ['לצד הקו הרעיוני, אנחנו ממליצים על ספרים טובים בהיסטוריה, בפסיכולוגיה, בטכנולוגיה, בעסקים ובתחומים רבים אחרים, לפי הערך שלהם לקורא.']],
+      ['עובדה, פרשנות ודעה', ['עובדות: פרטי הספר (כותרת, מחבר, הוצאה, שנה ו־ISBN) נבדקים מול עמוד ההוצאה, ומסומנים "פרטים מאומתים".', 'פרשנות: תיאורי הספרים הם סיכום שלנו לתוכן, ולא ציטוט מהמוציא לאור.', 'דעה: המלצות ועמדות מסומנות "המלצה עריכתית" או "עמדה עריכתית".']],
+      ['מה לא נעשה', ['לא נמציא ציטוטים, מקורות, ביקורות, דירוגים או נתוני מכירות.', 'לא נוסיף ספר, מחבר או מאמר שלא אימתנו.', 'נתקן טעויות גם כשהתיקון לא מתאים לעמדה שלנו.']],
+      ['כללי שיח', ['כשהקהילה תיפתח, נשמח בוויכוח נמרץ ובחופש ביטוי.', 'אסורים: איומים, הטרדה ממוקדת, חשיפת פרטים אישיים, התקפות על אנשים בשל זהותם, וספאם.']]
+    ],
+    fix: 'מצאתם טעות? כתבו לנו, ונתקן ונציין את תאריך התיקון:', ideas: 'לאזורי הרעיונות'
+  },
+  en: {
+    title: 'Our editorial line', desc: 'ToolScout is a home for books and knowledge with a clear identity: Jewish, Zionist and conservative, committed to individual liberty and freedom of thought.',
+    sections: [
+      ['Who we are', ['ToolScout is a home for print books and knowledge with a clear identity: Jewish, Zionist and conservative, committed to individual liberty and freedom of thought. We do not present ourselves as ideologically neutral.', 'The site serves Israelis and an international audience, in Hebrew and English.']],
+      ['What this means in practice', ['We feature areas on Judaism and tradition, Zionism and Israeli history, conservative thought, individual liberty and free markets, family and community, philosophy, and leadership and security.', 'We also have an area of critique of progressivism, political correctness, cancel culture and the concentration of institutional power, with real books and exact sources.']],
+      ['Books stay at the center', ['Alongside our editorial line, we recommend good books in history, psychology, technology, business and many other fields, based on their value to the reader.']],
+      ['Fact, interpretation and opinion', ['Facts: book details (title, author, publisher, year and ISBN) are checked against the publisher page and marked "Verified details".', 'Interpretation: book descriptions are our summary of the content, not a quote from the publisher.', 'Opinion: recommendations and positions are marked "Editorial recommendation" or "Editorial position".']],
+      ['What we will not do', ['We will not invent quotes, sources, reviews, ratings or sales figures.', 'We will not add a book, author or article we have not verified.', 'We correct mistakes even when the correction does not suit our position.']],
+      ['Discussion rules', ['When the community opens, vigorous debate and free expression are welcome.', 'Not allowed: threats, targeted harassment, exposing personal details, attacks on people for their identity, and spam.']]
+    ],
+    fix: 'Found a mistake? Write to us, and we will fix it and note the date:', ideas: 'Go to the ideas areas'
+  }
+};
+export function editorialPage(c, data, site) {
+  const L = c.lang, e = ED[L], o = site.owner || {};
+  return page(c, data, site, { title: `${e.title} | ToolScout`, desc: e.desc, page: 'editorial' }, `
+<section class="page-head"><div class="wrap narrow">${crumbs(c, [[null, e.title]])}<h1>${esc(e.title)}</h1><p class="lead">${esc(e.desc)}</p></div></section>
+<article class="wrap narrow prose">
+${e.sections.map(([h, ps]) => `<h2>${esc(h)}</h2>${ps.map((x) => `<p>${esc(x)}</p>`).join('')}`).join('\n')}
+${o.email ? `<p>${esc(e.fix)} <a href="mailto:${esc(o.email)}" dir="ltr">${esc(o.email)}</a></p>` : ''}
+<p><a href="${c.u('ideas.html')}">${esc(e.ideas)}</a></p>
+</article>
+`);
+}

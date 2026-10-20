@@ -164,6 +164,7 @@ export function bookPage(c, data, site, products, paths, b) {
       ${row(k.isbn, `<span dir="ltr">${esc(b.isbn13)}</span>`)}${row(k.language, L === 'he' ? 'אנגלית' : 'English')}
       ${row(k.topics, b.topics.map((t) => esc(name(products.bookTopics, t, L))).join(', '))}
       ${row(k.formats, (b.formats || []).length ? b.formats.map((f) => esc(name(products.formats, f, L))).join(', ') : esc(L === 'he' ? 'לא צוין בעמוד ההוצאה' : 'Not stated on the publisher page'))}
+      ${b.formatNote ? `<div><dt></dt><dd class="fine">${esc(b.formatNote[L])}</dd></div>` : ''}
     </dl><p class="fine">${esc(k.checked)}${esc(fmtDate(b.checkedAt, L))}</p></div>
     <div class="panel"><h2>${esc(k.where)}</h2>
       <ul class="retailers">${(b.retailers || []).map((r) => `<li><a class="ext-link" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.name)}${icon('ext')}</a></li>`).join('')}
@@ -270,6 +271,12 @@ export const TOPICS = [
   { id: 'history', match: ['history', 'society'], cat: null, he: ['ספרי היסטוריה וחברה', 'ספרים שמסבירים איך הגענו לכאן: התפתחות החברה האנושית, טכנולוגיה, כוח ומידע לאורך אלפי שנים.'], en: ['History and society books', 'Books that explain how we got here: the development of human society, technology, power and information across millennia.'] },
   { id: 'mind', match: ['psychology', 'philosophy'], cat: null, he: ['ספרי פסיכולוגיה ופילוסופיה', 'איך אנחנו חושבים, מחליטים ומוצאים משמעות. ספרים קלאסיים ומודרניים שאפשר ליישם בחיים.'], en: ['Psychology and philosophy books', 'How we think, decide and find meaning. Classic and modern books you can apply to life.'] },
   { id: 'israel', match: ['israel'], cat: null, he: ['מחברים ישראלים וסיפורים מישראל', 'ספרים של מחברים ישראלים וספרים על החדשנות הישראלית, שנקראים בכל העולם.'], en: ['Israeli authors and stories from Israel', 'Books by Israeli authors and about Israeli innovation, read around the world.'] },
+  { id: 'judaism', group: 'ideas', match: ['judaism', 'family'], cat: null, he: ['יהדות, מסורת וקהילה', 'מסורת, זהות ומוסר יהודי, ומקומם של המשפחה והקהילה בחברה. האזור בהרחבה, ונוסיף ספרים רק אחרי אימות.'], en: ['Judaism, tradition and community', 'Jewish tradition, identity and ethics, and the place of family and community in society. This area is growing, and books are added only after verification.'] },
+  { id: 'zionism', group: 'ideas', match: ['zionism'], cat: null, he: ['ציונות והיסטוריה ישראלית', 'מהרעיון של מדינה יהודית ועד ישראל של היום: הוגים, מלחמות, חדשנות והוויכוח על מדינת הלאום.'], en: ['Zionism and Israeli history', 'From the idea of a Jewish state to today\'s Israel: thinkers, wars, innovation and the nation-state debate.'] },
+  { id: 'conservatism', group: 'ideas', match: ['conservatism'], cat: null, he: ['מחשבה שמרנית', 'מסורת, מוסדות, שינוי הדרגתי ולאומיות: טקסטים קלאסיים והוגים בני זמננו, ישראלים ובינלאומיים.'], en: ['Conservative thought', 'Tradition, institutions, gradual change and nationhood: classic texts and contemporary thinkers, Israeli and international.'] },
+  { id: 'liberty', group: 'ideas', match: ['liberty', 'economics'], cat: null, he: ['חירות הפרט וכלכלה חופשית', 'למה חופש כלכלי וחופש פוליטי קשורים, מה עושים תמריצים ומחירים, ומה קורה כשהמדינה מרכזת כוח.'], en: ['Individual liberty and free markets', 'Why economic and political freedom are linked, what incentives and prices do, and what happens when the state concentrates power.'] },
+  { id: 'leadership', group: 'ideas', match: ['leadership'], cat: null, he: ['מנהיגות וביטחון', 'החלטות בשעת משבר, ביטחון לאומי והחוסן שמאחורי ההצלחה הישראלית.'], en: ['Leadership and security', 'Decisions in times of crisis, national security and the resilience behind Israel\'s success.'] },
+  { id: 'critique', group: 'ideas', stance: true, match: ['critique'], cat: null, he: ['ביקורת רעיונית: פרוגרסיביות, תקינות פוליטית ותרבות הביטול', 'ספרים שמבקרים את צמצום חופש הביטוי, את תרבות הביטול, את התקינות הפוליטית ואת ריכוז הכוח בידי מוסדות ומדינה. זו עמדה עריכתית: אנחנו מציגים את הטיעונים כפי שהמחברים מנסחים אותם, עם מקורות מדויקים.'], en: ['Critique of ideas: progressivism, political correctness and cancel culture', 'Books that criticize shrinking free speech, cancel culture, political correctness and the concentration of power in institutions and the state. This is an editorial position: we present the arguments as their authors make them, with exact sources.'] },
   { id: 'productivity', match: ['productivity'], cat: 'productivity', he: ['ספרים על פרודוקטיביות והרגלים', 'הרגלים קטנים, עבודה מרוכזת וארגון מידע. ספרים שעוזרים לעבוד טוב יותר עם פחות לחץ.'], en: ['Books on productivity and habits', 'Small habits, focused work and organizing information. Books that help you work better with less stress.'] }
 ];
 export function topicPage(c, data, site, products, paths, tp) {
@@ -285,7 +292,7 @@ export function topicPage(c, data, site, products, paths, tp) {
   const jsonld = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, inLanguage: L,
     mainEntity: { '@type': 'ItemList', numberOfItems: books.length, itemListElement: books.map((b, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Book', name: b.title, isbn: b.isbn13 } })) } };
   return page(c, data, site, { title: `${title} | ToolScout`, desc: intro.slice(0, 158), page: 'topic', active: 'books', jsonld }, `
-<section class="page-head"><div class="wrap">${crumbs(c, [[c.u('books.html'), k.books], [null, title]])}<h1>${esc(title)}</h1><p class="lead">${esc(intro)}</p>
+<section class="page-head"><div class="wrap">${crumbs(c, tp.group === 'ideas' ? [[c.u('ideas.html'), L === 'he' ? 'רעיונות' : 'Ideas'], [null, title]] : [[c.u('books.html'), k.books], [null, title]])}${tp.group === 'ideas' ? `<p class="eyebrow">${esc(tp.stance ? (L === 'he' ? 'עמדה עריכתית' : 'Editorial position') : (L === 'he' ? 'רעיונות וזהות' : 'Ideas and identity'))}</p>` : ''}<h1>${esc(title)}</h1><p class="lead">${esc(intro)}</p>${tp.group === 'ideas' ? `<p class="fine"><a href="${c.u('editorial.html')}">${esc(L === 'he' ? 'הקו המערכתי שלנו, ואיך אנחנו מפרידים בין עובדה לדעה' : 'Our editorial line, and how we separate fact from opinion')}</a></p>` : ''}
   <p class="meta-line">${esc(k.booksN(books.length))}${courses.length ? ` · ${esc(L === 'he' ? `${courses.length} קורסים` : `${courses.length} courses`)}` : ''}</p></div></section>
 <section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.books)}</h2><ul class="shelf">${books.map((b) => shelfCard(b, c, products)).join('')}</ul></div></section>
 ${courses.length ? `<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.courses)}</h2><ul class="course-grid">${courses.map((x) => courseCard(x, c)).join('')}</ul></div></section>` : ''}
@@ -315,6 +322,24 @@ export function authorPage(c, data, site, products, au) {
   <p class="lead">${esc(k.booksN(au.books.length))} · ${esc(topics.map((t) => name(products.bookTopics, t, L)).join(', '))}</p></div></section>
 <section class="section tight"><div class="wrap"><ul class="shelf">${au.books.map((b) => shelfCard(b, c, products)).join('')}</ul></div></section>
 ${more.length ? `<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.related)}</h2><ul class="shelf">${more.map((b) => shelfCard(b, c, products)).join('')}</ul></div></section>` : ''}
+`);
+}
+
+
+// ---------- Ideas hub ----------
+export function ideasPage(c, data, site, products) {
+  const L = c.lang, k = K[L];
+  const ctx = { c, data, products };
+  const title = L === 'he' ? 'יהדות, ציונות ורעיונות' : 'Judaism, Zionism and ideas';
+  const lead = L === 'he' ? 'אזורי ידע שמבטאים את הקו של ToolScout: יהדות ומסורת, ציונות, מחשבה שמרנית, חירות וכלכלה חופשית, מנהיגות וביטחון, וביקורת רעיונית. ספרים אמיתיים, פרטים שנבדקו, והפרדה ברורה בין עובדה לדעה.' : 'Areas that express ToolScout\'s line: Judaism and tradition, Zionism, conservative thought, liberty and free markets, leadership and security, and critique of ideas. Real books, checked details, and a clear line between fact and opinion.';
+  const hubs = TOPICS.filter((tp) => tp.group === 'ideas');
+  const books = products.items.filter((x) => x.type === 'book');
+  const cols = products.collections.filter((col) => ['zionism-and-israel', 'conservative-foundations', 'israeli-authors-and-stories'].includes(col.id));
+  return page(c, data, site, { title: `${title} | ToolScout`, desc: lead.slice(0, 158), page: 'ideas', active: 'ideas' }, `
+<section class="page-head"><div class="wrap">${crumbs(c, [[null, title]])}<p class="eyebrow">${esc(L === 'he' ? 'רעיונות וזהות' : 'Ideas and identity')}</p><h1>${esc(title)}</h1><p class="lead">${esc(lead)}</p>
+  <p><a class="text-link" href="${c.u('editorial.html')}">${esc(L === 'he' ? 'הקו המערכתי שלנו' : 'Our editorial line')}${icon('arrow', 'flip')}</a></p></div></section>
+<section class="section tight"><div class="wrap"><ul class="topic-grid">${hubs.map((tp) => { const tb = books.filter((b) => b.topics.some((t) => tp.match.includes(t))); return `<li><a class="topic-card" href="${c.u('books/topic-' + tp.id + '.html')}"><span class="list-covers" aria-hidden="true">${tb.slice(0, 3).map((b) => `<span class="book-cover sm">${coverHtml(b, c, 'sm')}</span>`).join('')}</span>${tp.stance ? `<span class="eyebrow">${esc(L === 'he' ? 'עמדה עריכתית' : 'Editorial position')}</span>` : ''}<span class="topic-title">${esc(tp[L][0])}</span><span class="topic-meta">${esc(k.booksN(tb.length))}</span></a></li>`; }).join('')}</ul></div></section>
+<section class="section tight"><div class="wrap"><h2 class="sub-h">${esc(k.lists)}</h2><ul class="list-grid">${cols.map((col) => listCard(col, ctx)).join('')}</ul></div></section>
 `);
 }
 

@@ -210,7 +210,7 @@ export function homePage(c, data, site, products = null, paths = null) {
 <section class="section band5" aria-labelledby="topics5-h">
   <div class="wrap">
     <div class="section-head5"><div><h2 id="topics5-h">${esc(V.topicsTitle)}</h2><p>${esc(V.topicsLead)}</p></div><a class="text-link" href="${c.u('books.html')}">${esc(V.allBooks)}${icon('arrow', 'flip')}</a></div>
-    <ul class="topic-grid">${TOPICS.map((tp) => { const tb = books.filter((b) => b.topics.some((t) => tp.match.includes(t))); return tb.length ? `<li><a class="topic-card" href="${c.u('books/topic-' + tp.id + '.html')}"><span class="list-covers" aria-hidden="true">${tb.slice(0, 3).map((b) => `<span class="book-cover sm">${coverHtml(b, c, 'sm')}</span>`).join('')}</span><span class="topic-title">${esc(tp[L][0])}</span><span class="topic-meta">${esc(V.nBooks(tb.length))}</span></a></li>` : ''; }).join('')}</ul>
+    <ul class="topic-grid">${TOPICS.filter((tp) => !tp.group).map((tp) => { const tb = books.filter((b) => b.topics.some((t) => tp.match.includes(t))); return tb.length ? `<li><a class="topic-card" href="${c.u('books/topic-' + tp.id + '.html')}"><span class="list-covers" aria-hidden="true">${tb.slice(0, 3).map((b) => `<span class="book-cover sm">${coverHtml(b, c, 'sm')}</span>`).join('')}</span><span class="topic-title">${esc(tp[L][0])}</span><span class="topic-meta">${esc(V.nBooks(tb.length))}</span></a></li>` : ''; }).join('')}</ul>
     <h3 class="sub-h">${esc(V.goalsTitle)}</h3>
     <ul class="goal-chips big">${(products.readingGoals || []).map((g) => `<li><a class="chip" href="${c.u('books.html')}?goal=${g.id}">${esc(g[L])}</a></li>`).join('')}</ul>
   </div>
@@ -223,6 +223,14 @@ export function homePage(c, data, site, products = null, paths = null) {
       <ul class="list-grid lists-home">${products.collections.map((col) => listCard(col, kctx)).join('')}</ul>
     </div>
     
+  </div>
+</section>
+
+<section class="section ideas5" aria-labelledby="ideas5-h">
+  <div class="wrap">
+    <div class="section-head5"><div><p class="eyebrow">${esc(L === 'he' ? 'רעיונות וזהות' : 'Ideas and identity')}</p><h2 id="ideas5-h">${esc(L === 'he' ? 'יהדות, ציונות ורעיונות' : 'Judaism, Zionism and ideas')}</h2><p>${esc(L === 'he' ? 'ספרים על מסורת, על תקומת ישראל, על מחשבה שמרנית ועל חירות. ספרים אמיתיים ופרטים שנבדקו, עם הפרדה בין עובדה לדעה.' : 'Books on tradition, Israel\'s rebirth, conservative thought and liberty. Real books and checked details, with fact kept apart from opinion.')}</p></div><a class="text-link" href="${c.u('ideas.html')}">${esc(L === 'he' ? 'לכל אזורי הרעיונות' : 'All idea areas')}${icon('arrow', 'flip')}</a></div>
+    <ul class="topic-grid">${TOPICS.filter((tp) => tp.group === 'ideas').map((tp) => { const tb = books.filter((b) => b.topics.some((t) => tp.match.includes(t))); return tb.length ? `<li><a class="topic-card" href="${c.u('books/topic-' + tp.id + '.html')}"><span class="list-covers" aria-hidden="true">${tb.slice(0, 3).map((b) => `<span class="book-cover sm">${coverHtml(b, c, 'sm')}</span>`).join('')}</span><span class="topic-title">${esc(tp[L][0])}</span><span class="topic-meta">${esc(V.nBooks(tb.length))}</span></a></li>` : ''; }).join('')}</ul>
+    <p class="fine"><a href="${c.u('editorial.html')}">${esc(L === 'he' ? 'הקו המערכתי שלנו: עובדה, פרשנות ודעה' : 'Our editorial line: fact, interpretation and opinion')}</a></p>
   </div>
 </section>
 

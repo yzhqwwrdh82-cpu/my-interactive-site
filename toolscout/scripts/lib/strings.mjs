@@ -3,7 +3,7 @@ export const S = {
   he: {
     langName: 'עברית', otherLangName: 'English', switchLang: 'Switch to English', locale: 'he_IL',
     skip: 'דילוג לתוכן',
-    nav: { tools: 'כלי AI', courses: 'קורסים', paths: 'מסלולים', search: 'חיפוש', home: 'בית', quick: 'ניווט מהיר', about: 'אודות', books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
+    nav: { ideas: 'רעיונות', editorial: 'הקו המערכתי', tools: 'כלי AI', courses: 'קורסים', paths: 'מסלולים', search: 'חיפוש', home: 'בית', quick: 'ניווט מהיר', about: 'אודות', books: 'ספרים', method: 'איך אנחנו בודקים', catalog: 'קטלוג', compare: 'השוואה', guides: 'מדריכים', favorites: 'מועדפים', menu: 'תפריט', primary: 'ניווט ראשי', settings: 'הגדרות' },
     theme: { label: 'ערכת צבעים', system: 'לפי המערכת', light: 'בהירה', dark: 'כהה' },
     home: {
       title: 'ToolScout | ספרים מומלצים, קורסים וכלים, עם מידע שנבדק',
@@ -155,7 +155,7 @@ export const S = {
   en: {
     langName: 'English', otherLangName: 'עברית', switchLang: 'החלפה לעברית', locale: 'en_US',
     skip: 'Skip to content',
-    nav: { tools: 'AI tools', courses: 'Courses', paths: 'Paths', search: 'Search', home: 'Home', quick: 'Quick navigation', about: 'About', books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
+    nav: { ideas: 'Ideas', editorial: 'Editorial line', tools: 'AI tools', courses: 'Courses', paths: 'Paths', search: 'Search', home: 'Home', quick: 'Quick navigation', about: 'About', books: 'Books', method: 'How we verify', catalog: 'Catalog', compare: 'Compare', guides: 'Guides', favorites: 'Favorites', menu: 'Menu', primary: 'Main navigation', settings: 'Settings' },
     theme: { label: 'Color theme', system: 'System', light: 'Light', dark: 'Dark' },
     home: {
       title: 'ToolScout | Recommended books, courses and tools, with checked information',

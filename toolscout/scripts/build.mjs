@@ -13,9 +13,9 @@ import { methodPage } from './lib/method.mjs';
 import { setFeatures, isSponsored, homePage, catalogPage, toolPage, categoryPage, comparePage, comparePresetPage, guidesIndex, guidePage, legalPage, contactPage, accountPage } from './lib/pages.mjs';
 import { previewPage } from './lib/preview.mjs';
 import { booksPage } from './lib/books.mjs';
-import { notFoundPage, aboutPage, partnersPage } from './lib/extra.mjs';
+import { notFoundPage, aboutPage, partnersPage, editorialPage } from './lib/extra.mjs';
 import { emailHtml, EMAILS } from './lib/emails.mjs';
-import { authorsOf, authorPage, topicPage, TOPICS, bookPage, coursesPage, coursePage, pathsIndex, pathPage, listPage, searchPage, searchIndex } from './lib/knowledge.mjs';
+import { ideasPage, authorsOf, authorPage, topicPage, TOPICS, bookPage, coursesPage, coursePage, pathsIndex, pathPage, listPage, searchPage, searchIndex } from './lib/knowledge.mjs';
 import { guides, comparePresets, legal, chatHelp } from './lib/content.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -61,6 +61,8 @@ for (const L of LANGS) {
   for (const t of data.tools) { const c = ctx(L, `tools/${t.id}.html`); out(c, toolPage(c, data, site, t)); }
   for (const k of data.categories) { const c = ctx(L, `category/${k.id}.html`); out(c, categoryPage(c, data, site, k)); }
   out(ctx(L, 'about.html'), aboutPage(ctx(L, 'about.html'), data, site, products));
+  out(ctx(L, 'ideas.html'), ideasPage(ctx(L, 'ideas.html'), data, site, products));
+  out(ctx(L, 'editorial.html'), editorialPage(ctx(L, 'editorial.html'), data, site));
   out(ctx(L, 'partners.html'), partnersPage(ctx(L, 'partners.html'), data, site));
   out(ctx(L, 'books.html'), booksPage(ctx(L, 'books.html'), data, site, products));
   for (const b of products.items.filter((x) => x.type === 'book')) { const c = ctx(L, `books/${b.id}.html`); out(c, bookPage(c, data, site, products, paths, b)); }

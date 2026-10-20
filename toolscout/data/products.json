@@ -98,6 +98,46 @@
       "id": "israel",
       "he": "ישראל",
       "en": "Israel"
+    },
+    {
+      "id": "judaism",
+      "he": "יהדות ומסורת",
+      "en": "Judaism and tradition"
+    },
+    {
+      "id": "zionism",
+      "he": "ציונות והיסטוריה ישראלית",
+      "en": "Zionism and Israeli history"
+    },
+    {
+      "id": "conservatism",
+      "he": "מחשבה שמרנית",
+      "en": "Conservative thought"
+    },
+    {
+      "id": "liberty",
+      "he": "חירות הפרט",
+      "en": "Individual liberty"
+    },
+    {
+      "id": "economics",
+      "he": "כלכלה חופשית",
+      "en": "Free-market economics"
+    },
+    {
+      "id": "family",
+      "he": "משפחה וקהילה",
+      "en": "Family and community"
+    },
+    {
+      "id": "leadership",
+      "he": "מנהיגות וביטחון",
+      "en": "Leadership and security"
+    },
+    {
+      "id": "critique",
+      "he": "ביקורת רעיונית",
+      "en": "Critique of ideas"
     }
   ],
   "languages": [
@@ -374,6 +414,77 @@
           "start-up-nation",
           "איך ישראל הפכה למרכז של סטארטאפים.",
           "How Israel became a startup hub."
+        ]
+      ]
+    },
+    {
+      "id": "zionism-and-israel",
+      "title": {
+        "he": "ציונות וישראל: מהרעיון למדינה",
+        "en": "Zionism and Israel: from idea to state"
+      },
+      "description": {
+        "he": "מהחיבור של הרצל, דרך מלחמת ששת הימים ועד החדשנות הישראלית והוויכוח על מדינת הלאום.",
+        "en": "From Herzl's essay, through the Six-Day War, to Israeli innovation and the debate over the nation-state."
+      },
+      "items": [
+        [
+          "the-jewish-state",
+          "המקור: הרעיון של מדינה יהודית.",
+          "The source: the idea of a Jewish state."
+        ],
+        [
+          "six-days-of-war",
+          "רגע מכונן בביטחון ובהיסטוריה של ישראל.",
+          "A defining moment in Israel's security and history."
+        ],
+        [
+          "start-up-nation",
+          "איך המדינה הקטנה הפכה למעצמת חדשנות.",
+          "How a small state became an innovation powerhouse."
+        ],
+        [
+          "the-virtue-of-nationalism",
+          "הטיעון בעד מדינות לאום עצמאיות.",
+          "The case for independent nation-states."
+        ]
+      ]
+    },
+    {
+      "id": "conservative-foundations",
+      "title": {
+        "he": "יסודות המחשבה השמרנית והחירות",
+        "en": "Foundations of conservative and liberty thought"
+      },
+      "description": {
+        "he": "טקסטים קלאסיים ומודרניים על מסורת, מוסדות, חירות ושוק חופשי.",
+        "en": "Classic and modern texts on tradition, institutions, liberty and free markets."
+      },
+      "items": [
+        [
+          "reflections-on-the-revolution-in-france",
+          "טקסט היסוד: מסורת ושינוי הדרגתי.",
+          "The founding text: tradition and gradual change."
+        ],
+        [
+          "the-road-to-serfdom",
+          "חירות מול תכנון מרכזי.",
+          "Liberty versus central planning."
+        ],
+        [
+          "capitalism-and-freedom",
+          "הקשר בין חופש כלכלי לחופש פוליטי.",
+          "Economic freedom and political freedom."
+        ],
+        [
+          "basic-economics",
+          "כלכלה בשפה פשוטה.",
+          "Economics in plain language."
+        ],
+        [
+          "morality-jonathan-sacks",
+          "משפחה, קהילה ומוסר משותף.",
+          "Family, community and shared morality."
         ]
       ]
     }
@@ -1535,7 +1646,8 @@
       "topics": [
         "israel",
         "business",
-        "entrepreneurship"
+        "entrepreneurship",
+        "leadership"
       ],
       "languages": [
         "en"
@@ -1739,6 +1851,581 @@
         "meaning",
         "think"
       ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "coddling-of-the-american-mind",
+      "title": "The Coddling of the American Mind: How Good Intentions and Bad Ideas Are Setting Up a Generation for Failure",
+      "titleShort": "The Coddling of the American Mind",
+      "authors": [
+        "Jonathan Haidt",
+        "Greg Lukianoff"
+      ],
+      "publisher": "Penguin",
+      "year": 2019,
+      "isbn13": "9780141986302",
+      "topics": [
+        "critique",
+        "psychology"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/305816/the-coddling-of-the-american-mind-by-lukianoff-jonathan-haidt-and-greg/9780241393659",
+      "description": {
+        "he": "פסיכולוג חברתי ומשפטן בוחנים את תרבות הקמפוסים, הגבלת חופש הביטוי ו\"תרבות הביטחון\", ומציעים דרך אחרת.",
+        "en": "A social psychologist and a free-speech lawyer examine campus culture, limits on speech and \"safetyism\", and propose another way."
+      },
+      "audience": {
+        "he": "למי שמודאג מצמצום חופש הביטוי ומתרבות הביטול באקדמיה.",
+        "en": "Readers concerned about shrinking free speech and cancel culture in academia."
+      },
+      "goals": [
+        "ideas",
+        "think"
+      ],
+      "retailers": [
+        {
+          "name": "Penguin",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/305816/the-coddling-of-the-american-mind-by-lukianoff-jonathan-haidt-and-greg/9780241393659",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "reflections-on-the-revolution-in-france",
+      "title": "Reflections on the Revolution in France",
+      "titleShort": "Reflections on the Revolution in France",
+      "authors": [
+        "Edmund Burke"
+      ],
+      "publisher": "Penguin Classics",
+      "year": 2003,
+      "isbn13": "9780140432046",
+      "topics": [
+        "conservatism",
+        "philosophy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "advanced",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/34068/reflections-on-the-revolution-in-france-by-edmund-burke-ed-conor-cruise-obrien/9780140432046",
+      "description": {
+        "he": "החיבור הקלאסי שבו ברק מבקר את המהפכה הצרפתית ומגן על מסורת, מוסדות ושינוי הדרגתי. בעריכת קונור קרוז אובריאן.",
+        "en": "The classic essay in which Burke criticizes the French Revolution and defends tradition, institutions and gradual change. Edited by Conor Cruise O'Brien."
+      },
+      "audience": {
+        "he": "למי שרוצה להכיר את אחד מטקסטי היסוד של המחשבה השמרנית.",
+        "en": "Anyone who wants to read one of the founding texts of conservative thought."
+      },
+      "goals": [
+        "ideas",
+        "big-picture"
+      ],
+      "retailers": [
+        {
+          "name": "Penguin Classics",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/34068/reflections-on-the-revolution-in-france-by-edmund-burke-ed-conor-cruise-obrien/9780140432046",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "the-jewish-state",
+      "title": "The Jewish State",
+      "titleShort": "The Jewish State",
+      "authors": [
+        "Theodor Herzl"
+      ],
+      "publisher": "Penguin (Penguin Great Ideas)",
+      "year": 2010,
+      "isbn13": "9780141957173",
+      "topics": [
+        "zionism"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "ebook"
+      ],
+      "officialUrl": "https://penguin.co.uk/books/177638/the-jewish-state/9780141192901.html",
+      "description": {
+        "he": "החיבור של הרצל משנת 1896 שהציג את הרעיון של מדינה יהודית, ונעשה מסמך יסוד של הציונות המדינית.",
+        "en": "Herzl's 1896 essay that set out the idea of a Jewish state and became a founding document of political Zionism."
+      },
+      "audience": {
+        "he": "לכל מי שרוצה לקרוא את המקור שממנו התחילה הציונות המדינית.",
+        "en": "Anyone who wants to read the source where political Zionism began."
+      },
+      "goals": [
+        "tradition",
+        "ideas"
+      ],
+      "retailers": [
+        {
+          "name": "Penguin (Penguin Great Ideas)",
+          "type": "publisher",
+          "url": "https://penguin.co.uk/books/177638/the-jewish-state/9780141192901.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ],
+      "formatNote": {
+        "he": "בעמוד ההוצאה מופיעה רק מהדורה אלקטרונית של הוצאה זו. מהדורה מודפסת לא אומתה.",
+        "en": "The publisher page lists only an e-book for this edition. A print edition was not verified."
+      }
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "the-virtue-of-nationalism",
+      "title": "The Virtue of Nationalism",
+      "titleShort": "The Virtue of Nationalism",
+      "authors": [
+        "Yoram Hazony"
+      ],
+      "publisher": "Basic Liberty (Basic Books)",
+      "year": 2025,
+      "isbn13": "9781541607262",
+      "topics": [
+        "conservatism",
+        "zionism",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/yoram-hazony/the-virtue-of-nationalism/9781541607262/",
+      "description": {
+        "he": "טיעון בעד עולם של מדינות לאום עצמאיות, ונגד אימפריות ומוסדות על־לאומיים.",
+        "en": "An argument for a world of independent nation-states, and against empires and supranational institutions."
+      },
+      "audience": {
+        "he": "למי שמתעניין בלאומיות, בריבונות ובמקומה של ישראל בדיון.",
+        "en": "Readers interested in nationalism, sovereignty and Israel's place in the debate."
+      },
+      "goals": [
+        "ideas",
+        "tradition"
+      ],
+      "retailers": [
+        {
+          "name": "Basic Liberty (Basic Books)",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/yoram-hazony/the-virtue-of-nationalism/9781541607262/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "morality-jonathan-sacks",
+      "title": "Morality: Restoring the Common Good in Divided Times",
+      "titleShort": "Morality",
+      "authors": [
+        "Jonathan Sacks"
+      ],
+      "publisher": "Basic Books",
+      "year": 2022,
+      "isbn13": "9781541675339",
+      "topics": [
+        "judaism",
+        "family",
+        "conservatism"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/jonathan-sacks/morality/9781541675339/",
+      "description": {
+        "he": "הרב יונתן זקס על המעבר מ\"אני\" ל\"אנחנו\": משפחה, קהילה ומוסר משותף בחברה מפולגת.",
+        "en": "Rabbi Jonathan Sacks on moving from \"I\" to \"we\": family, community and shared morality in a divided society."
+      },
+      "audience": {
+        "he": "למי שמחפש מבט יהודי ומוסרי על משפחה, קהילה וחברה.",
+        "en": "Anyone looking for a Jewish, moral perspective on family, community and society."
+      },
+      "goals": [
+        "tradition",
+        "meaning"
+      ],
+      "retailers": [
+        {
+          "name": "Basic Books",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/jonathan-sacks/morality/9781541675339/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "basic-economics",
+      "title": "Basic Economics: A Common Sense Guide to the Economy",
+      "titleShort": "Basic Economics",
+      "authors": [
+        "Thomas Sowell"
+      ],
+      "publisher": "Basic Books",
+      "year": 2014,
+      "isbn13": "9780465060733",
+      "topics": [
+        "economics",
+        "liberty"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://www.hachettebookgroup.com/titles/thomas-sowell/basic-economics/9780465060733/",
+      "description": {
+        "he": "מבוא לכלכלה בלי גרפים ונוסחאות: מחירים, תמריצים ומה קורה כשמתערבים בשוק.",
+        "en": "An introduction to economics without graphs or equations: prices, incentives and what happens when markets are overridden."
+      },
+      "audience": {
+        "he": "למי שרוצה להבין כלכלה מאפס, בשפה פשוטה.",
+        "en": "Anyone who wants to understand economics from scratch, in plain language."
+      },
+      "goals": [
+        "ideas",
+        "think"
+      ],
+      "retailers": [
+        {
+          "name": "Basic Books",
+          "type": "publisher",
+          "url": "https://www.hachettebookgroup.com/titles/thomas-sowell/basic-economics/9780465060733/",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "capitalism-and-freedom",
+      "title": "Capitalism and Freedom",
+      "titleShort": "Capitalism and Freedom",
+      "authors": [
+        "Milton Friedman"
+      ],
+      "publisher": "University of Chicago Press",
+      "year": 2020,
+      "isbn13": "9780226734798",
+      "topics": [
+        "economics",
+        "liberty"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [],
+      "officialUrl": "https://www.press.uchicago.edu/ucp/books/book/chicago/C/bo68666099.html",
+      "description": {
+        "he": "מילטון פרידמן על הקשר בין חופש כלכלי לחופש פוליטי, ועל תפקידה המוגבל של הממשלה. מהדורה עם הקדמה חדשה.",
+        "en": "Milton Friedman on the link between economic and political freedom, and the limited role of government. New edition with a new foreword."
+      },
+      "audience": {
+        "he": "למי שרוצה להכיר את הטיעון הקלאסי בעד שוק חופשי.",
+        "en": "Readers who want the classic case for free markets."
+      },
+      "goals": [
+        "ideas"
+      ],
+      "retailers": [
+        {
+          "name": "University of Chicago Press",
+          "type": "publisher",
+          "url": "https://www.press.uchicago.edu/ucp/books/book/chicago/C/bo68666099.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "the-road-to-serfdom",
+      "title": "The Road to Serfdom: Text and Documents, The Definitive Edition",
+      "titleShort": "The Road to Serfdom",
+      "authors": [
+        "F. A. Hayek"
+      ],
+      "publisher": "University of Chicago Press",
+      "year": 2007,
+      "isbn13": "9780226320557",
+      "topics": [
+        "liberty",
+        "economics",
+        "critique"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "advanced",
+      "formats": [],
+      "officialUrl": "https://press.uchicago.edu/ucp/books/book/chicago/R/bo4138549.html",
+      "description": {
+        "he": "האזהרה של האייק מפני תכנון מרכזי וריכוז כוח בידי המדינה, ומה שהם עלולים לעשות לחירות. בעריכת ברוס קולדוול.",
+        "en": "Hayek's warning against central planning and the concentration of state power, and what they can do to freedom. Edited by Bruce Caldwell."
+      },
+      "audience": {
+        "he": "למי שמתעניין בחירות, בכוח המדינה ובביקורת על תכנון מרכזי.",
+        "en": "Readers interested in liberty, state power and the critique of central planning."
+      },
+      "goals": [
+        "ideas",
+        "big-picture"
+      ],
+      "retailers": [
+        {
+          "name": "University of Chicago Press",
+          "type": "publisher",
+          "url": "https://press.uchicago.edu/ucp/books/book/chicago/R/bo4138549.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "12-rules-for-life",
+      "title": "12 Rules for Life: An Antidote to Chaos",
+      "titleShort": "12 Rules for Life",
+      "authors": [
+        "Jordan B. Peterson"
+      ],
+      "publisher": "Penguin",
+      "year": 2019,
+      "isbn13": "9780141988511",
+      "topics": [
+        "psychology",
+        "philosophy"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "beginner",
+      "formats": [
+        "print",
+        "ebook",
+        "audiobook"
+      ],
+      "officialUrl": "https://www.penguin.co.uk/books/1309610/12-rules-for-life/9780141988733.html",
+      "description": {
+        "he": "שנים־עשר כללים לחיים של אחריות ומשמעות, שמשלבים פסיכולוגיה, מיתולוגיה ודת.",
+        "en": "Twelve rules for a life of responsibility and meaning, drawing on psychology, mythology and religion."
+      },
+      "audience": {
+        "he": "למי שמחפש עצות מעשיות על אחריות אישית וסדר בחיים.",
+        "en": "Anyone looking for practical advice on personal responsibility and order."
+      },
+      "goals": [
+        "meaning",
+        "focus"
+      ],
+      "retailers": [
+        {
+          "name": "Penguin",
+          "type": "publisher",
+          "url": "https://www.penguin.co.uk/books/1309610/12-rules-for-life/9780141988733.html",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
+    },
+    {
+      "type": "book",
+      "cover": null,
+      "price": null,
+      "affiliate": {
+        "status": "none"
+      },
+      "addedAt": "2026-10-20",
+      "checkedAt": "2026-10-20",
+      "pros": [],
+      "cons": [],
+      "id": "six-days-of-war",
+      "title": "Six Days of War: June 1967 and the Making of the Modern Middle East",
+      "titleShort": "Six Days of War",
+      "authors": [
+        "Michael B. Oren"
+      ],
+      "publisher": "Presidio Press",
+      "year": 2003,
+      "isbn13": "9780345461926",
+      "topics": [
+        "zionism",
+        "leadership",
+        "history",
+        "israel"
+      ],
+      "languages": [
+        "en"
+      ],
+      "level": "intermediate",
+      "formats": [
+        "print",
+        "ebook"
+      ],
+      "officialUrl": "https://penguinrandomhouse.com/books/124784/six-days-of-war-by-michael-b-oren",
+      "description": {
+        "he": "ההיסטוריה של מלחמת ששת הימים: הרקע, ההחלטות והשפעתה על המזרח התיכון, מאת ההיסטוריון ושגריר ישראל לשעבר בארה\"ב.",
+        "en": "The history of the Six-Day War: its background, the decisions and its impact on the Middle East, by the historian and former Israeli ambassador to the US."
+      },
+      "audience": {
+        "he": "למי שרוצה להבין רגע מכונן בהיסטוריה של ישראל ובביטחונה.",
+        "en": "Anyone who wants to understand a defining moment in Israel's history and security."
+      },
+      "goals": [
+        "big-picture",
+        "tradition"
+      ],
+      "retailers": [
+        {
+          "name": "Presidio Press",
+          "type": "publisher",
+          "url": "https://penguinrandomhouse.com/books/124784/six-days-of-war-by-michael-b-oren",
+          "checkedAt": "2026-10-20",
+          "affiliate": {
+            "status": "none"
+          }
+        }
+      ]
     }
   ],
   "courseCosts": [
@@ -1798,6 +2485,16 @@
       "id": "design",
       "he": "לעצב מוצרים",
       "en": "Design products"
+    },
+    {
+      "id": "tradition",
+      "he": "להעמיק במסורת ובזהות",
+      "en": "Deepen tradition and identity"
+    },
+    {
+      "id": "ideas",
+      "he": "להבין רעיונות פוליטיים",
+      "en": "Understand political ideas"
     }
   ]
 }

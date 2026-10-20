@@ -108,8 +108,8 @@ export const wordmark = () => '<span class="wordmark">Tool<span>Scout</span></sp
 export function header(c, active = '') {
   const s = S[c.lang];
   const link = (href, key, label) => `<a href="${c.u(href)}"${active === key ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
-  const nav = `${link('books.html', 'books', s.nav.books)}${link('paths/index.html', 'paths', s.nav.paths)}${link('courses.html', 'courses', s.nav.courses)}${link('catalog.html', 'catalog', s.nav.tools)}${link('guides/index.html', 'guides', s.nav.guides)}`;
-  const navMore = `${link('compare.html', 'compare', s.nav.compare)}${link('search.html', 'search', s.nav.search)}`;
+  const nav = `${link('books.html', 'books', s.nav.books)}${link('paths/index.html', 'paths', s.nav.paths)}${link('courses.html', 'courses', s.nav.courses)}${link('catalog.html', 'catalog', s.nav.tools)}${link('ideas.html', 'ideas', s.nav.ideas)}`;
+  const navMore = `${link('guides/index.html', 'guides', s.nav.guides)}${link('compare.html', 'compare', s.nav.compare)}${link('search.html', 'search', s.nav.search)}`;
   return `
 <a class="skip-link" href="#main">${esc(s.skip)}</a>
 <header class="site-header">
@@ -157,6 +157,9 @@ export function footer(c, data, site) {
       <li><a href="${c.u('search.html')}">${esc(s.nav.search)}</a></li>
       <li><a href="${c.u('how-we-verify.html')}">${esc(s.nav.method)}</a></li>
       <li><a href="${c.u('about.html')}">${esc(s.nav.about)}</a></li>
+      <li><a href="${c.u('ideas.html')}">${esc(s.nav.ideas)}</a></li>
+      <li><a href="${c.u('editorial.html')}">${esc(s.nav.editorial)}</a></li>
+      <li><a href="${c.u('guides/index.html')}">${esc(s.nav.guides)}</a></li>
     </ul></nav>
     <nav aria-label="${esc(f.support)}"><h2>${esc(f.support)}</h2><ul>
       <li><a href="${c.u('contact.html')}">${esc(f.contact)}</a></li>
